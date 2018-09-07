@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../favicon.ico" />
+
+	<title>Osnovni koncepti programiranja</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="../css/simple-sidebar.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="../css/style.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li>
+				  <a href="#" data-toggle="collapse" data-target="#menu2" role="button" aria-expanded="false">Programiranje in algoritmi</a>
+				  <div id="menu2" class="collapse in">
+					<ul class="sidebar-subnav">
+					<li><a href="../1220/index.html">Uvod</a></li>
+					<li class="active"><a href="../1221/index.html">Osnovni koncepti programiranja</a></li>
+					<li><a href="../1222/index.html">Izdelava samostojnih programov in pogojni stavki</a></li>
+					<li><a href="../1223/index.html">Zanke</a></li>
+					<li><a href="../1224/index.html">Tabele</a></li>
+					<li><a href="../1225/index.html">Funkcije</a></li>
+					<li><a href="../1226/index.html">Nizi</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li><a href="../editor.html">Urejevalnik</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../index.html">Slikovno programiranje</a>
+			</div>
+			<div id="google_cse_wrapper">
+                <script type="text/javascript" src="../js/google-cse.js"></script>
+                <gcse:search linktarget="_self"></gcse:search>
+                <link href="../css/google-cse.css" rel="stylesheet">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#menu-toggle" id="menu-toggle" title="Pokaži/Skrij kazalo"><span class="fa fa-file-text-o"></span></a></li>
+					<li><a href="#license" title="Licenca" data-toggle="modal" data-target="#license"><span class="fa fa-creative-commons"></span></a></li>
+					<li><a href="../1901/index.html" title="Kolofon"><span class="fa fa-book"></span></a></li>
+					<li><a href="../1901/index1.html" title="Viri"><span class="fa fa-paperclip"></span></a></li>
+					<li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span></a></li>
+					<li><a href="https://github.com/anzeljg/prog/releases" title="Prenos"><span class="fa fa-download"></span></a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+		</nav>
+
+		<!-- Modal (popup) window: License -->
+		<div id="license" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Licenca</h4>
+					</div>
+					<div class="modal-body">
+						<p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
+						<p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
+						<p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
+						<p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Modal (popup) window: True -->
+		<div id="true" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-sm">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Odgovor</h4>
+					</div>
+					<div class="modal-body bg-success">
+						<p class="text-success">Pravilno zaporedje.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Modal (popup) window: False -->
+		<div id="false" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-sm">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Odgovor</h4>
+					</div>
+					<div class="modal-body bg-danger">
+						<p class="text-danger">Nepravilno zaporedje. Poizkusi ponovno.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+<!-- Left column start -->
+<h1>Osnovni koncepti programiranja</h1>
+ 
+<p align="justify">Računalnik je naprava, ki nam omogoča reševanje najrazličnejših problemov: od najpreprostejšega računanja do krmiljenja vesoljske rakete. Z računalnikom danes pravzaprav počnemo mnogo več, kot samo rešujemo probleme: urejamo besedila, iščemo najrazličnejše informacije, komuniciramo, se izobražujemo, si dopisujemo, se zabavamo, telefoniramo (da, tudi napravice, ki jih nosite v žepu, so dejansko računalniki!), ... Težko je najti področje, kamor računalniki še niso posegli.</p>
+
+<p align="justify">Kako lahko računalnik pripravimo do tega, da zmore početi vse naštete reči (in še mnogo več)? Tako, da zanj napišemo ustrezne <b>programe</b>. Program ni nič drugega kot zaporedje navodil za reševanje določenega problema. Računalnik <b>izvršuje</b> programe, ki mu jih napišemo. Z besedo <b>programiranje</b> pa označujemo dejavnost pisanja programov. Zaradi razširjenosti računalnikov in računalniških naprav je programiranje danes ena od ključnih veščin.</p>
+
+<p align="justify">Računalniki so zanesljivi: vsak program bodo vedno izvedli na enak način. V nasprotju z nami se zlepa ne utrudijo. Vendar pa so tudi razmeroma »neumni«, saj zahtevajo izjemno natančna navodila.
+</p>
+
+<h4>V razmislek</h4>
+
+<div class="alert alert-info" role="alert">
+<p align="justify">»Kupi čokolado!« Ljudem se zdi takšno navodilo sila enostavno. Vendar — ali je res tako? Kako bi ga razložil »vesoljcu«, ki ne ve, kaj pomeni <i>kupiti</i> in kako izgleda <i>čokolada</i>? Kako bi mu pojasnil, da mora poiskati trgovino, da potrebuje denar? Računalnik je točno tak vesoljec!</p>
+<p align="justify">Seveda moramo računalniku navodila podati v pravilnem zaporedju, sicer se kaj hitro »zmede«.</p>
+</div>
+<!-- Left column end -->
+					</div>
+					<div class="col-md-6">
+<!-- Right column start -->
+<h4>Vaja</h4>
+
+<div class="alert alert-info" role="alert">
+<p>Razvrsti sledeča navodila v smiselno zaporedje:</p>
+<div id="content_blocks" style="width:100%; height:200px; margin-bottom:10px; margin-top:4px;"></div>
+<button type="button" class="btn btn-info"  id="resetButton"><span class="fa fa-refresh"></span> Ponastavi</button>
+<button type="button" class="btn btn-info"  id="checkButton"><span class="fa fa-check"></span> Preveri</button>
+</div>
+
+<xml id="toolbox" style="display: none">
+  <block type="step4"></block>
+  <sep gap="8"></sep>
+  <block type="step5"></block>
+  <sep gap="8"></sep>
+  <block type="step3"></block>
+  <sep gap="8"></sep>
+  <block type="step2"></block>
+  <sep gap="8"></sep>
+  <block type="step1"></block>
+</xml>
+
+<p align="justify">Ljudje se med seboj sporazumevamo v različnih jezikih. Tudi za podajanje navodil računalniku — torej programiranje — uporabljamo posebne jezike. Imenujemo jih <b>programski jeziki</b>. Tako kot naravnih (človeških) jezikov je tudi programskih cela vrsta. V tem učbeniku bomo programirali v <b>slikovnem programskem jeziku</b>, ki je primeren za popolne začetnike. Vendar pa večina <b>tekstovnih programskih jezikov</b> (npr. java, C++, C#, python, pascal ipd.) temelji na podobnih idejah. Zato se ti v prihodnje po potrebi ne bo težko naučiti še kakšnega programskega jezika.
+</p>
+
+<h4>V razmislek</h4>
+
+<div class="alert alert-info" role="alert">
+<p align="justify">Katere naravne jezike poznaš? So med njimi kakšne podobnosti?</p>
+</div>
+<!-- Right column end -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Pagination in Footer -->
+			<div class="col-md-12">
+				<center>
+				<ul class="pagination pagination-sm">
+					<li><a href="../1220/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
+					<li><a href="../1221/index.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
+					<li><a href="../1221/index.html">2</a></li>
+					<li class="active"><a href="#">3</a></li>
+					<li><a href="../1221/index2.html">4</a></li>
+					<li><a href="../1221/index3.html">5</a></li>
+					<li><a href="../1221/index4.html">6</a></li>
+					<li><a href="../1221/index5.html">7</a></li>
+					<li><a href="../1221/index6.html">8</a></li>
+					<li><a href="../1221/index7.html">9</a></li>
+					<li><a href="../1221/index8.html">10</a></li>
+					<li><a href="../1221/index9.html">11</a></li>
+					<li><a href="../1221/index2.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
+					<li><a href="../1222/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
+				</ul>
+				</center>
+			</div>
+
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- rPage: Highly responsive pagination for Bootstrap -->
+	<script src="../js/responsive-paginate.js"></script>
+	<script>
+	$(document).ready(function () {
+		$(".pagination").rPage();
+	});
+	</script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+	</script>
+
+<!-- Blockly -->
+<script src="../blockly/storage.js"></script>
+<script src="../blockly/blockly_compressed.js"></script>
+<script src="../blockly/javascript_compressed.js"></script>
+<script src="../blockly/msg/js/sl.js"></script>
+<script src="../blockly/local/algorithm_blocks.js"></script>
+<script>
+'use strict';
+
+/**
+ * Create a namespace for the application.
+ */
+var Code12211b = {};
+
+Code12211b.workspace = Blockly.inject('content_blocks',
+	{grid:
+		{spacing: 25,
+		length: 0,
+		colour: '#ccc',
+		snap: true},
+	media: '../blockly/media/',
+	toolbox: document.getElementById('toolbox')
+});
+
+/**
+ * Bind a function to a button's click event.
+ * On touch enabled browsers, ontouchend is treated as equivalent to onclick.
+ * @param {!Element|string} el Button element or ID thereof.
+ * @param {!Function} func Event handler to bind.
+ */
+Code12211b.bindClick = function(el, func) {
+  if (typeof el == 'string') {
+    el = document.getElementById(el);
+  }
+  el.addEventListener('click', func, true);
+  el.addEventListener('touchend', func, true);
+};
+
+Code12211b.bindClick('resetButton', function() {Code12211b.discard();});
+Code12211b.bindClick('checkButton', function() {Code12211b.runJS();});
+
+/**
+ * Discard all blocks from the workspace.
+ */
+Code12211b.discard = function() {
+  var count = Code12211b.workspace.getAllBlocks().length;
+  Code12211b.workspace.clear();
+  window.location.hash = '';
+};
+
+/**
+ * Execute the user's Code12211b.
+ * Just a quick and dirty eval.  Catch infinite loops.
+ */
+Code12211b.runJS = function() {
+  Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
+  var timeouts = 0;
+  var checkTimeout = function() {
+    if (timeouts++ > 1000000) {
+      throw 'Timeout';
+    }
+  };
+  var code = Blockly.JavaScript.workspaceToCode(Code12211b.workspace);
+  code = code.replace(/\r?\n|\r/g, "")
+  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+  if (code == 'wakeUp();getUp();eatBreakfast();dressUp();gotoBus();') {
+	jQuery('#true').modal('show');
+  }
+  else {
+	jQuery('#false').modal('show');
+  }
+};
+</script>
+
+
+<!-- CookieCuttr -->
+<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="../cc/cookiecuttr.css">
+<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript" src="../cc/setup.cookiecuttr.js"></script>
+
+
+<script>
+document.body.addEventListener("keydown", function (event) {
+    var code = event.keyCode || event.which;
+    var alt  = event.altKey;
+    if (alt && code === 33 /* Alt+PgUp */) {
+        window.location.replace("../1221/index.html");
+    }
+    if (alt && code === 34 /* Alt+PgDn */) {
+        window.location.replace("../1221/index2.html");
+    }
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../favicon.ico" />
+
+	<title>Vhod in izhod</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../css/simple-sidebar.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="../css/style.css" rel="stylesheet">
+
+	<!-- Blockly editor -->
+	<link href="../blockly/local/editor.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li>
+				  <a href="#" data-toggle="collapse" data-target="#menu2" role="button" aria-expanded="false">Programiranje in algoritmi</a>
+				  <div id="menu2" class="collapse in">
+					<ul class="sidebar-subnav">
+					<li><a href="../1220/index.html">Uvod</a></li>
+					<li><a href="../1221/index.html">Osnovni koncepti programiranja</a></li>
+					<li class="active"><a href="../1222/index.html">Izdelava samostojnih programov in pogojni stavki</a></li>
+					<li><a href="../1223/index.html">Zanke</a></li>
+					<li><a href="../1224/index.html">Tabele</a></li>
+					<li><a href="../1225/index.html">Funkcije</a></li>
+					<li><a href="../1226/index.html">Nizi</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li><a href="../editor.html">Urejevalnik</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../index.html">Slikovno programiranje</a>
+			</div>
+			<div id="google_cse_wrapper">
+                <script type="text/javascript" src="../js/google-cse.js"></script>
+                <gcse:search linktarget="_self"></gcse:search>
+                <link href="../css/google-cse.css" rel="stylesheet">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#menu-toggle" id="menu-toggle" title="Pokaži/Skrij kazalo"><span class="fa fa-file-text-o"></span></a></li>
+					<li><a href="#license" title="Licenca" data-toggle="modal" data-target="#license"><span class="fa fa-creative-commons"></span></a></li>
+					<li><a href="../1901/index.html" title="Kolofon"><span class="fa fa-book"></span></a></li>
+					<li><a href="../1901/index1.html" title="Viri"><span class="fa fa-paperclip"></span></a></li>
+					<li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span></a></li>
+					<li><a href="https://github.com/anzeljg/prog/releases" title="Prenos"><span class="fa fa-download"></span></a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+		</nav>
+
+		<!-- Modal (popup) window: License -->
+		<div id="license" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Licenca</h4>
+					</div>
+					<div class="modal-body">
+						<p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
+						<p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
+						<p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
+						<p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Modal (popup) window: Hint 1 -->
+		<div id="hint1" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Namig</h4>
+					</div>
+					<div class="modal-body">
+						<p align="justify">Vhodne podatke preberi v tri različne spremenljivke. Kakšnega tipa naj bodo? Za izračun starosti uvedi še četrto spremenljivko, nato pa rezultat izpiši.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Modal (popup) window: Solution 1 -->
+		<div id="solution1" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Rešitev</h4>
+					</div>
+					<div class="modal-body">
+<pre>
+<img src="img/1222-04-3.png">
+</pre>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+<!-- Left column start -->
+<h1>Vhod in izhod</h1>
+
+<p align="justify">Naš program za izračun hitrosti ni najbolj prijazen. Če želimo izračunati povprečno hitrost za drugačne podatke, kot so trenutno navedeni v programu, moramo program spremeniti. Veliko bolje bi bilo, če bi program <b>povprašal</b> uporabnika po vhodnih podatkih:
+<pre>
+<img src="img/1222-04-1.png">
+  Koliko km si prevozil(a)? <u>30</u>
+<img src="img/1222-04-2.png">
+</pre>
+Izpis:
+<pre>
+30
+</pre>
+</p>
+
+<p align="justify">Kocka <code>vprašaj za</code> izpiše besedilo, ki ji ga podamo (zakaj potrebujemo navednice?), nato pa počaka, da uporabnik vnese podatek. Denimo, da vnesemo število 30. Uporabnikov vnos smo podčrtali (<u>30</u>); tako bomo počeli tudi v nadaljevanju. Uporabnikov vnos (rezultat funkcije <code>vprašaj za</code>) se priredi spremenljivki <code>pot</code>.</p>
+
+<table width="100%">
+  <tr id="tabRow" height="1em">
+    <td id="tab1_blocks" class="tabon">...</td>
+    <td class="tabmin">&nbsp;</td>
+    <td id="tab1_python" class="taboff">Python</td>
+    <td class="tabmin">&nbsp;</td>
+    <td class="tabmax" align="right">
+      <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
+      <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" id="content1_area"></td>
+  </tr>
+</table>
+<table width="100%">
+  <tr>
+    <td style="position:relative; height:420px;">
+      <div id="content1_blocks" class="content"></div>
+      <pre id="content1_python" class="content"></pre>
+    </td>
+  </tr>
+</table>
+<div style="margin-top:10px"><pre id="output"></pre></div>
+
+<xml id="toolbox" style="display: none">
+  <category name="{catMath}" colour="220">
+    <block type="math_number"></block>
+    <block type="math_arithmetic">
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_floor_division">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="{catText}" colour="50">
+    <block type="text"></block>
+    <block type="text_join"></block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+</xml>
+
+<xml id="workspace" style="display: none">
+  <block type="variables_set" id="10" x="10" y="10">
+    <field name="VAR">pot</field>
+    <comment pinned="false" h="80" w="160">definiramo spremenljivke</comment>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="11">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="12">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text" id="13">
+            <field name="TEXT">Koliko km si prevozil(a)?</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="14">
+        <field name="VAR">uraZacetka</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="15">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="16">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text" id="17">
+                <field name="TEXT">Vnesi uro začetka:</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="18">
+            <field name="VAR">minZacetka</field>
+            <value name="VALUE">
+              <block type="text_prompt_ext" id="19">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <shadow type="text" id="20">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text" id="21">
+                    <field name="TEXT">Vnesi minuto začetka:</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="22">
+                <field name="VAR">uraKonca</field>
+                <value name="VALUE">
+                  <block type="text_prompt_ext" id="23">
+                    <mutation type="NUMBER"></mutation>
+                    <field name="TYPE">NUMBER</field>
+                    <value name="TEXT">
+                      <shadow type="text" id="24">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="text" id="25">
+                        <field name="TEXT">Vnesi uro konca:</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="26">
+                    <field name="VAR">minKonca</field>
+                    <value name="VALUE">
+                      <block type="text_prompt_ext" id="27">
+                        <mutation type="NUMBER"></mutation>
+                        <field name="TYPE">NUMBER</field>
+                        <value name="TEXT">
+                          <shadow type="text" id="28">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="text" id="29">
+                            <field name="TEXT">Vnesi minuto konca:</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="variables_set" id="30" x="10" y="155">
+    <field name="VAR">razlikaUr</field>
+    <comment pinned="false" h="80" w="160">izračunamo porabo časa v urah</comment>
+    <value name="VALUE">
+      <block type="math_arithmetic" id="31" collapsed="true">
+        <field name="OP">MINUS</field>
+        <value name="A">
+          <shadow type="math_number" id="32">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="33">
+            <field name="VAR">uraKonca</field>
+          </block>
+        </value>
+        <value name="B">
+          <shadow type="math_number" id="34">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="35">
+            <field name="VAR">uraZacetka</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="36">
+        <field name="VAR">razlikaMinut</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="37" collapsed="true">
+            <field name="OP">MINUS</field>
+            <value name="A">
+              <shadow type="math_number" id="38">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="39">
+                <field name="VAR">minKonca</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="40">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="41">
+                <field name="VAR">minZacetka</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="42">
+            <field name="VAR">porabaCasaVMin</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="43" collapsed="true">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <shadow type="math_number" id="44">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="math_arithmetic" id="45">
+                    <field name="OP">MULTIPLY</field>
+                    <value name="A">
+                      <shadow type="math_number" id="46">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="math_number" id="47">
+                        <field name="NUM">60</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="48">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="49">
+                        <field name="VAR">razlikaUr</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="50">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="51">
+                    <field name="VAR">razlikaMinut</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="52">
+                <field name="VAR">porabaCasaVUrah</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="53" collapsed="true">
+                    <field name="OP">DIVIDE</field>
+                    <value name="A">
+                      <shadow type="math_number" id="54">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="55">
+                        <field name="VAR">porabaCasaVMin</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="56">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="math_number" id="57">
+                        <field name="NUM">60</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="variables_set" id="58" x="10" y="275">
+    <field name="VAR">povprecnaHitrost</field>
+    <comment pinned="false" h="80" w="160">izračunamo in izpišemo povprečno hitrost v km/h</comment>
+    <value name="VALUE">
+      <block type="math_arithmetic" id="59" collapsed="true">
+        <field name="OP">DIVIDE</field>
+        <value name="A">
+          <shadow type="math_number" id="60">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="61">
+            <field name="VAR">pot</field>
+          </block>
+        </value>
+        <value name="B">
+          <shadow type="math_number" id="62">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="63">
+            <field name="VAR">porabaCasaVUrah</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="64">
+        <value name="TEXT">
+          <shadow type="text" id="65">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text_join" id="66">
+            <mutation items="3"></mutation>
+            <value name="ADD0">
+              <block type="text" id="67">
+                <field name="TEXT">Vozil(a) si s povprečno hitrostjo </field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="variables_get" id="68">
+                <field name="VAR">povprecnaHitrost</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text" id="69">
+                <field name="TEXT"> km/h.</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>
+<!-- Left column end -->
+					</div>
+					<div class="col-md-6">
+						<br />
+<!-- Right column start -->
+<div class="alert alert-warning" role="alert">
+<p>
+	<span class="label label-warning"><b>POZOR</b></span>
+</p>
+<p align="justify">Nekatere kocke imajo levo zgoraj ikono <span class="fa fa-cog"></span>, ki jo lahko kliknemo, da dodatno prilagodimo izgled in delovanje kocke.</p>
+</div>
+
+<p align="justify">Poženimo naš novi program s spodnjimi podatki:
+<pre>
+Koliko kilometrov si prevozil(a)? <u>20</u>
+Vnesi uro ob začetku vožnje: <u>8</u>
+Vnesi minuto ob začetku vožnje: <u>50</u>
+Vnesi uro ob koncu vožnje: <u>10</u>
+Vnesi minuto ob koncu vožnje: <u>0</u>
+Vozil(a) si s povprečno hitrostjo 17.142857142857142 km/h.
+</pre>
+</p>
+
+<p align="justify">Prevožena pot je v splošnem lahko realno število. Interaktivni tolmač nam rezultat izpiše na veliko preveč decimalk natančno, a se s tem problemom ne bomo ukvarjali. Pomembneje je, da se naš program zna »pogovarjati« z uporabnikom: uporabnik programu poda <b>vhod</b>, program pa mu izpiše svoj <b>izhod</b>. V splošnem je <b>vhod</b> v program množica podatkov, ki jih program prejme. Vhod lahko — tako kot v našem primeru — vnese uporabnik, lahko pa ga program pridobi iz datoteke ali z interneta ali pa mu ga posreduje nek drug program. <b>Izhod</b> pa je skupno ime za vse podatke, ki jih program proizvede pri danem vhodu. V našem primeru smo izhod izpisali na zaslon, lahko pa ga program tudi zapiše v datoteko ali posreduje nekemu drugemu programu.</p>
+
+<h4>V razmislek</h4>
+
+<div class="alert alert-info" role="alert">
+<p align="justify">Ali program za vse smiselne vhode deluje pravilno? Kaj bi se zgodilo, če bi se Evina tura zavlekla čez polnoč? Pustimo zaskrbljene starše ob strani, zanima nas samo delovanje programa ...</p>
+</div>
+
+<h4>Vaja</h4>
+
+<div class="alert alert-info" role="alert">
+<p align="justify">Napiši program, ki deluje po sledečem vzorcu:
+<pre>
+Kako ti je ime? <u>Jaka</u>
+Vnesi svoje leto rojstva: <u>2000</u>
+Katerega leta smo letos? <u>2015</u>
+Jaka, letos praznuješ svoj 15. rojstni dan.
+</pre>
+</p>
+<p>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#hint1"><span class="fa fa-question"></span> Namig</button>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#solution1"><span class="fa fa-check"></span> Rešitev</button>
+</p>
+</div>
+<!-- Right column end -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Pagination in Footer -->
+			<div class="col-md-12">
+				<center>
+				<ul class="pagination pagination-sm">
+					<li><a href="../1221/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
+					<li><a href="../1222/index3.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
+					<li><a href="../1222/index.html">12</a></li>
+					<li><a href="../1222/index1.html">13</a></li>
+					<li><a href="../1222/index2.html">14</a></li>
+					<li><a href="../1222/index3.html">15</a></li>
+					<li class="active"><a href="#">16</a></li>
+					<li><a href="../1222/index5.html">17</a></li>
+					<li><a href="../1222/index6.html">18</a></li>
+					<li><a href="../1222/index7.html">19</a></li>
+					<li><a href="../1222/index8.html">20</a></li>
+					<li><a href="../1222/index9.html">21</a></li>
+					<li><a href="../1222/index10.html">22</a></li>
+					<li><a href="../1222/index11.html">23</a></li>
+					<li><a href="../1222/index12.html">24</a></li>
+					<li><a href="../1222/index13.html">25</a></li>
+					<li><a href="../1222/index5.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
+					<li><a href="../1223/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
+				</ul>
+				</center>
+			</div>
+
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- rPage: Highly responsive pagination for Bootstrap -->
+	<script src="../js/responsive-paginate.js"></script>
+	<script>
+	$(document).ready(function () {
+		$(".pagination").rPage();
+	});
+	</script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+	</script>
+
+<!-- Blockly -->
+<script src="../blockly/storage.js"></script>
+<script src="../blockly/blockly_compressed.js"></script>
+<script src="../blockly/blocks_compressed.js"></script>
+<script src="../blockly/javascript_compressed.js"></script>
+<script src="../blockly/python_compressed.js"></script>
+<script src="../blockly/local/custom_blocks.js"></script>
+<script src="index4.js"></script>
+<script>
+  var elementID = "";
+  $("#runButton").click(function() {
+    elementID = "#output";
+  });
+  window.alert = function(msg) {
+    $(elementID).append(msg + "\n");
+  };
+</script>
+
+
+<!-- CookieCuttr -->
+<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="../cc/cookiecuttr.css">
+<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript" src="../cc/setup.cookiecuttr.js"></script>
+
+
+<script>
+document.body.addEventListener("keydown", function (event) {
+    var code = event.keyCode || event.which;
+    var alt  = event.altKey;
+    if (alt && code === 33 /* Alt+PgUp */) {
+        window.location.replace("../1222/index3.html");
+    }
+    if (alt && code === 34 /* Alt+PgDn */) {
+        window.location.replace("../1222/index5.html");
+    }
+});
+</script>
+
+</body>
+
+</html>

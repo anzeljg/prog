@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../favicon.ico" />
+
+	<title>Sprehod po elementih tabele</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../css/simple-sidebar.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="../css/style.css" rel="stylesheet">
+
+	<!-- Blockly editor -->
+	<link href="../blockly/local/editor.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li>
+				  <a href="#" data-toggle="collapse" data-target="#menu2" role="button" aria-expanded="false">Programiranje in algoritmi</a>
+				  <div id="menu2" class="collapse in">
+					<ul class="sidebar-subnav">
+					<li><a href="../1220/index.html">Uvod</a></li>
+					<li><a href="../1221/index.html">Osnovni koncepti programiranja</a></li>
+					<li><a href="../1222/index.html">Izdelava samostojnih programov in pogojni stavki</a></li>
+					<li><a href="../1223/index.html">Zanke</a></li>
+					<li class="active"><a href="../1224/index.html">Tabele</a></li>
+					<li><a href="../1225/index.html">Funkcije</a></li>
+					<li><a href="../1226/index.html">Nizi</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li><a href="../editor.html">Urejevalnik</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../index.html">Slikovno programiranje</a>
+			</div>
+			<div id="google_cse_wrapper">
+                <script type="text/javascript" src="../js/google-cse.js"></script>
+                <gcse:search linktarget="_self"></gcse:search>
+                <link href="../css/google-cse.css" rel="stylesheet">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#menu-toggle" id="menu-toggle" title="Pokaži/Skrij kazalo"><span class="fa fa-file-text-o"></span></a></li>
+					<li><a href="#license" title="Licenca" data-toggle="modal" data-target="#license"><span class="fa fa-creative-commons"></span></a></li>
+					<li><a href="../1901/index.html" title="Kolofon"><span class="fa fa-book"></span></a></li>
+					<li><a href="../1901/index1.html" title="Viri"><span class="fa fa-paperclip"></span></a></li>
+					<li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span></a></li>
+					<li><a href="https://github.com/anzeljg/prog/releases" title="Prenos"><span class="fa fa-download"></span></a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+		</nav>
+
+		<!-- Modal (popup) window: License -->
+		<div id="license" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Licenca</h4>
+					</div>
+					<div class="modal-body">
+						<p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
+						<p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
+						<p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
+						<p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+<!-- Left column start -->
+<h1>Sprehod po elementih tabele</h1>
+
+<p align="justify">Če želimo sešteti elemente v tabeli, ugotoviti, kateri je največji ipd., se moramo znati po tabeli <b>sprehoditi</b> — obiskati vsak element posebej. Osnovni sprehod po tabeli smo si na kratko že ogledali v prejšnji učni enoti:
+<pre>
+<img src="img/1224-04-1.png">
+</pre>
+</p>
+<!-- Left column end -->
+					</div>
+					<div class="col-md-6">
+                        <br />
+<!-- Right column start -->
+<p align="justify">V prvem obhodu zanke se v spremenljivko <code>element</code> zapiše prvi element tabele, v drugem drugi itd.
+Oglejmo si primer. Koliko kilogramov sladkarij je Liza Bonbonc prodala v celotnem letu? Na to vprašanje lahko odgovorimo s sprehodom po tabeli in pomožno spremenljivko, ki hrani skupno količino sladkarij do trenutnega meseca. Pomožno spremenljivko (imenovali jo bomo <code>prodajaLeto</code>) najprej postavimo na 0, v vsakem koraku zanke pa ji prištejemo trenutni element tabele. Napišimo program:</p>
+<!-- Right column end -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+<!-- Second row start -->
+<table width="100%">
+  <tr id="tabRow" height="1em">
+    <td id="tab1_blocks" class="tabon">...</td>
+    <td class="tabmin">&nbsp;</td>
+    <td id="tab1_python" class="taboff">Python</td>
+    <td class="tabmin">&nbsp;</td>
+    <td class="tabmax" align="right">
+      <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
+      <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" id="content1_area"></td>
+  </tr>
+</table>
+<table width="100%">
+  <tr>
+    <td style="position:relative; height:350px;">
+      <div id="content1_blocks" class="content"></div>
+      <pre id="content1_python" class="content"></pre>
+    </td>
+  </tr>
+</table>
+<div style="margin-top:10px"><pre id="output"></pre></div>
+
+<xml id="toolbox" style="display: none">
+  <category name="{catLogic}" colour="200">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_operation"></block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean"></block>
+  </category>
+  <category name="{catLoops}" colour="320">
+    <block type="controls_repeat_ext">
+      <value name="TIMES">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_whileUntil"></block>
+    <block type="controls_for">
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="BY">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_forEach"></block>
+    <block type="controls_flow_statements"></block>
+  </category>
+  <category name="{catMath}" colour="220">
+    <block type="math_number"></block>
+    <block type="math_arithmetic">
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_single">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">9</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_trig">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constant"></block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_floor_division">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="{catLists}" colour="10">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with"></block>
+    <block type="lists_length"></block>
+    <block type="lists_getIndex">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+  </category>
+  <category name="{catText}" colour="50">
+    <block type="text"></block>
+    <block type="text_join"></block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+</xml>
+
+<xml id="workspace" style="display: none">
+  <block type="variables_set" id="10" x="10" y="10">
+    <field name="VAR">prodaja</field>
+    <value name="VALUE">
+      <block type="lists_create_with" id="11" inline="true">
+        <mutation items="12"></mutation>
+        <value name="ADD0">
+          <block type="math_number" id="12">
+            <field name="NUM">182</field>
+          </block>
+        </value>
+        <value name="ADD1">
+          <block type="math_number" id="13">
+            <field name="NUM">250</field>
+          </block>
+        </value>
+        <value name="ADD2">
+          <block type="math_number" id="14">
+            <field name="NUM">225</field>
+          </block>
+        </value>
+        <value name="ADD3">
+          <block type="math_number" id="15">
+            <field name="NUM">315</field>
+          </block>
+        </value>
+        <value name="ADD4">
+          <block type="math_number" id="16">
+            <field name="NUM">328</field>
+          </block>
+        </value>
+        <value name="ADD5">
+          <block type="math_number" id="17">
+            <field name="NUM">160</field>
+          </block>
+        </value>
+        <value name="ADD6">
+          <block type="math_number" id="18">
+            <field name="NUM">51</field>
+          </block>
+        </value>
+        <value name="ADD7">
+          <block type="math_number" id="19">
+            <field name="NUM">36</field>
+          </block>
+        </value>
+        <value name="ADD8">
+          <block type="math_number" id="20">
+            <field name="NUM">340</field>
+          </block>
+        </value>
+        <value name="ADD9">
+          <block type="math_number" id="21">
+            <field name="NUM">280</field>
+          </block>
+        </value>
+        <value name="ADD10">
+          <block type="math_number" id="22">
+            <field name="NUM">378</field>
+          </block>
+        </value>
+        <value name="ADD11">
+          <block type="math_number" id="23">
+            <field name="NUM">320</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="24">
+        <field name="VAR">prodajaLeto</field>
+        <value name="VALUE">
+          <block type="math_number" id="25">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_forEach" id="26">
+            <field name="VAR">prodajaMesec</field>
+            <value name="LIST">
+              <block type="variables_get" id="27">
+                <field name="VAR">prodaja</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="28">
+                <field name="VAR">prodajaLeto</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="29" collapsed="true">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <shadow type="math_number" id="30">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="31">
+                        <field name="VAR">prodajaLeto</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="32">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="33">
+                        <field name="VAR">prodajaMesec</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="text_print" id="34">
+                <value name="TEXT">
+                  <shadow type="text" id="35">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="variables_get" id="36">
+                    <field name="VAR">prodajaLeto</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
+
+<p align="justify">V prvem obhodu zanke ima spremenljivka <code>prodajaMesec</code> vrednost 182, v drugem 250, v tretjem 225 itd. Spremenljivka <code>prodajaLeto</code> pa ima po prvem obhodu zanke vrednost 0 + 182 = 182, v drugem 182 + 250 = 432 (torej vsoto po prvih dveh mesecih), v tretjem 432 + 225 = 657 (vsoto po prvih treh mesecih) itd. Ko se zanka zaključi, spremenljivka <code>prodajaLeto</code> vsebuje skupno količino prodanih sladkarij v celotnem letu.</p>
+<!-- Second row end -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Pagination in Footer -->
+			<div class="col-md-12">
+				<center>
+				<ul class="pagination pagination-sm">
+					<li><a href="../1223/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
+					<li><a href="../1224/index3.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
+					<li><a href="../1224/index.html">38</a></li>
+					<li><a href="../1224/index1.html">39</a></li>
+					<li><a href="../1224/index2.html">40</a></li>
+					<li><a href="../1224/index3.html">41</a></li>
+					<li class="active"><a href="#">42</a></li>
+					<li><a href="../1224/index5.html">43</a></li>
+					<li><a href="../1224/index6.html">44</a></li>
+					<li><a href="../1224/index7.html">45</a></li>
+					<li><a href="../1224/index8.html">46</a></li>
+					<li><a href="../1224/index9.html">47</a></li>
+					<li><a href="../1224/index10.html">48</a></li>
+					<li><a href="../1224/index11.html">49</a></li>
+					<li><a href="../1224/index12.html">50</a></li>
+					<li><a href="../1224/index13.html">51</a></li>
+					<li><a href="../1224/index14.html">52</a></li>
+					<li><a href="../1224/index15.html">53</a></li>
+					<li><a href="../1224/index5.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
+					<li><a href="../1225/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
+				</ul>
+				</center>
+			</div>
+
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- rPage: Highly responsive pagination for Bootstrap -->
+	<script src="../js/responsive-paginate.js"></script>
+	<script>
+	$(document).ready(function () {
+		$(".pagination").rPage();
+	});
+	</script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+	</script>
+
+<!-- Blockly -->
+<script src="../blockly/storage.js"></script>
+<script src="../blockly/blockly_compressed.js"></script>
+<script src="../blockly/blocks_compressed.js"></script>
+<script src="../blockly/javascript_compressed.js"></script>
+<script src="../blockly/python_compressed.js"></script>
+<script src="../blockly/local/custom_blocks.js"></script>
+<script src="index4.js"></script>
+<script>
+  var elementID = "";
+  $("#runButton").click(function() {
+    elementID = "#output";
+  });
+  window.alert = function(msg) {
+    $(elementID).append(msg + "\n");
+  };
+</script>
+
+<script>
+function walkTable() {
+  var n = 1;
+  var najProdaja = 180;
+  var element = [180, 250, 225, 315, 328, 160, 51, 36, 340, 280, 378, 320]
+  var interval = setInterval(function() {
+    // Highlight selected element in the table
+    for (i = 0; i < 12; i++) {
+      var id = 'el' + i;
+      if (i == n) {
+        document.getElementById(id).className = 'selected';
+      } else {
+        document.getElementById(id).className = '';
+      }
+    }
+    document.getElementById('element').innerHTML = 'Vrednost spremenljivke <code>prodajaMesec</code>: '+element[n];
+    if (element[n] > najProdaja) {
+      najProdaja = element[n];
+    }
+    document.getElementById('najvecji').innerHTML = 'Vrednost spremenljivke <code>najProdaja</code>: '+najProdaja;
+    n++;
+    if (n >= element.length) clearInterval(interval);
+  }, 1500);
+}
+</script>
+
+
+<!-- CookieCuttr -->
+<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="../cc/cookiecuttr.css">
+<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript" src="../cc/setup.cookiecuttr.js"></script>
+
+
+<script>
+document.body.addEventListener("keydown", function (event) {
+    var code = event.keyCode || event.which;
+    var alt  = event.altKey;
+    if (alt && code === 33 /* Alt+PgUp */) {
+        window.location.replace("../1224/index3.html");
+    }
+    if (alt && code === 34 /* Alt+PgDn */) {
+        window.location.replace("../1224/index5.html");
+    }
+});
+</script>
+
+</body>
+
+</html>

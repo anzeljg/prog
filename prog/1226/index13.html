@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../favicon.ico" />
+
+	<title>Naloge</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../css/simple-sidebar.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="../css/style.css" rel="stylesheet">
+
+	<!-- Blockly editor -->
+	<link href="../blockly/local/editor.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li>
+				  <a href="#" data-toggle="collapse" data-target="#menu2" role="button" aria-expanded="false">Programiranje in algoritmi</a>
+				  <div id="menu2" class="collapse in">
+					<ul class="sidebar-subnav">
+					<li><a href="../1220/index.html">Uvod</a></li>
+					<li><a href="../1221/index.html">Osnovni koncepti programiranja</a></li>
+					<li><a href="../1222/index.html">Izdelava samostojnih programov in pogojni stavki</a></li>
+					<li><a href="../1223/index.html">Zanke</a></li>
+					<li><a href="../1224/index.html">Tabele</a></li>
+					<li><a href="../1225/index.html">Funkcije</a></li>
+					<li class="active"><a href="../1226/index.html">Nizi</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li><a href="../editor.html">Urejevalnik</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../index.html">Slikovno programiranje</a>
+			</div>
+			<div id="google_cse_wrapper">
+                <script type="text/javascript" src="../js/google-cse.js"></script>
+                <gcse:search linktarget="_self"></gcse:search>
+                <link href="../css/google-cse.css" rel="stylesheet">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#menu-toggle" id="menu-toggle" title="Pokaži/Skrij kazalo"><span class="fa fa-file-text-o"></span></a></li>
+					<li><a href="#license" title="Licenca" data-toggle="modal" data-target="#license"><span class="fa fa-creative-commons"></span></a></li>
+					<li><a href="../1901/index.html" title="Kolofon"><span class="fa fa-book"></span></a></li>
+					<li><a href="../1901/index1.html" title="Viri"><span class="fa fa-paperclip"></span></a></li>
+					<li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span></a></li>
+					<li><a href="https://github.com/anzeljg/prog/releases" title="Prenos"><span class="fa fa-download"></span></a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+		</nav>
+
+		<!-- Modal (popup) window: License -->
+		<div id="license" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Licenca</h4>
+					</div>
+					<div class="modal-body">
+						<p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
+						<p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
+						<p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
+						<p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Modal (popup) window: Solution 7 -->
+		<div id="solution7" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Rešitev</h4>
+					</div>
+					<div class="modal-body">
+<p>
+<pre>
+<img src="img/1226-12-7.png">
+</pre>
+</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+<!-- Content column start -->
+<h1>Naloge</h1>
+
+<div class="alert alert-info" role="alert">
+<p>
+	<span class="label label-primary"><b>7</b></span>
+	<span class="fa fa-star pull-right"></span>
+</p>
+<div style="width:50%;margin-top:8px;float:left">
+<p align="justify">Napiši funkcijo <code>Koledar(dolzina, prvi)</code>, ki izpiše lepo oblikovan koledar za mesec, dolg <code>dolzina</code> dni, pri čemer spremenljivka <code>prvi</code> pove, na kateri dan v tednu (1 = ponedeljek, 7 = nedelja) pade prvi dan tega meseca.<br /> Primer: <code>Koledar(31, 3)</code> naj izpiše</p>
+</div>
+<div style="width:45%;margin-top:8px;float:right;margin-right:20px">
+<pre>
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+</pre>
+</div>
+<p>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#solution7"><span class="fa fa-check"></span> Rešitev</button>
+</p>
+</div>
+<!-- Content column end -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+<!-- Second row start -->
+<table width="100%">
+  <tr id="tabRow" height="1em">
+    <td id="tab1_blocks" class="tabon">...</td>
+    <td class="tabmin">&nbsp;</td>
+    <td id="tab1_python" class="taboff">Python</td>
+    <td class="tabmin">&nbsp;</td>
+    <td class="tabmax" align="right">
+      <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
+      <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" id="content1_area"></td>
+  </tr>
+</table>
+<table width="100%">
+  <tr>
+    <td style="position:relative; height:400px;">
+      <div id="content1_blocks" class="content"></div>
+      <pre id="content1_python" class="content"></pre>
+    </td>
+  </tr>
+</table>
+<div style="margin-top:10px"><pre id="output"></pre></div>
+
+<xml id="toolbox" style="display: none">
+  <category name="{catLogic}" colour="200">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_operation"></block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean"></block>
+  </category>
+  <category name="{catLoops}" colour="320">
+    <block type="controls_whileUntil"></block>
+    <block type="controls_for">
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="BY">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_forEach"></block>
+    <block type="controls_flow_statements"></block>
+  </category>
+  <category name="{catMath}" colour="220">
+    <block type="math_number"></block>
+    <block type="math_arithmetic">
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_single">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">9</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_trig">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constant"></block>
+    <block type="math_number_property">
+      <value name="NUMBER_TO_CHECK">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_round">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">3.1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_on_list"></block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_floor_division">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_to_number">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">5</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="{catLists}" colour="10">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with"></block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_getIndex">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_sort"></block>
+  </category>
+  <category name="{catText}" colour="50">
+    <block type="text"></block>
+    <block type="text_join"></block>
+    <block type="text_append">
+      <value name="TEXT">
+        <shadow type="text"></shadow>
+      </value>
+    </block>
+    <block type="text_repeat">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">5</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_length">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_charAt">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{textVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_getSubstring">
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR">{textVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_chr">
+      <value name="VALUE">
+        <shadow type="math_number">
+          <field name="NUM">65</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_contains">
+      <field name="OPTION">CONTAINS</field>
+      <value name="TEXT">
+        <block type="variables_get">
+          <field name="VAR">besedilo</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_check">
+      <field name="CHECK">ISALPHA</field>
+      <value name="TEXT">
+        <block type="variables_get">
+          <field name="VAR">besedilo</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_replace">
+      <value name="TEXT">
+        <block type="variables_get">
+          <field name="VAR">besedilo</field>
+        </block>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+</xml>
+<!-- Second row end -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Pagination in Footer -->
+			<div class="col-md-12">
+				<center>
+				<ul class="pagination pagination-sm">
+					<li><a href="../1225/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
+					<li><a href="../1226/index12.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
+					<li><a href="../1226/index.html">72</a></li>
+					<li><a href="../1226/index1.html">73</a></li>
+					<li><a href="../1226/index2.html">74</a></li>
+					<li><a href="../1226/index3.html">75</a></li>
+					<li><a href="../1226/index4.html">76</a></li>
+					<li><a href="../1226/index5.html">77</a></li>
+					<li><a href="../1226/index6.html">78</a></li>
+					<li><a href="../1226/index7.html">79</a></li>
+					<li><a href="../1226/index8.html">80</a></li>
+					<li><a href="../1226/index9.html">81</a></li>
+					<li><a href="../1226/index10.html">82</a></li>
+					<li><a href="../1226/index11.html">83</a></li>
+					<li><a href="../1226/index12.html">84</a></li>
+					<li class="active"><a href="#">85</a></li>
+					<li><a href="../1901/index.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
+					<li><a href="../1901/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
+				</ul>
+				</center>
+			</div>
+
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- rPage: Highly responsive pagination for Bootstrap -->
+	<script src="../js/responsive-paginate.js"></script>
+	<script>
+	$(document).ready(function () {
+		$(".pagination").rPage();
+	});
+	</script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+	</script>
+
+<!-- Blockly -->
+<script src="../blockly/storage.js"></script>
+<script src="../blockly/blockly_compressed.js"></script>
+<script src="../blockly/blocks_compressed.js"></script>
+<script src="../blockly/javascript_compressed.js"></script>
+<script src="../blockly/python_compressed.js"></script>
+<script src="../blockly/local/custom_blocks.js"></script>
+<script src="index13.js"></script>
+<script>
+  var elementID = "";
+  $("#runButton").click(function() {
+    elementID = "#output";
+  });
+  window.alert = function(msg) {
+    $(elementID).append(msg + "\n");
+  };
+</script>
+
+
+<!-- CookieCuttr -->
+<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="../cc/cookiecuttr.css">
+<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript" src="../cc/setup.cookiecuttr.js"></script>
+
+
+<script>
+document.body.addEventListener("keydown", function (event) {
+    var code = event.keyCode || event.which;
+    var alt  = event.altKey;
+    if (alt && code === 33 /* Alt+PgUp */) {
+        window.location.replace("../1226/index12.html");
+    }
+    if (alt && code === 34 /* Alt+PgDn */) {
+        window.location.replace("../1901/index.html");
+    }
+});
+</script>
+
+</body>
+
+</html>

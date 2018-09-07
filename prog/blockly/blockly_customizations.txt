@@ -1,0 +1,16 @@
+blockly_compressed.js
+=====================
+Blockly.HSV_SATURATION=.45 => Blockly.HSV_SATURATION=1
+Blockly.HSV_VALUE=.65      => Blockly.HSV_VALUE=.9
+
+blocks_compressed.js
+====================
+Blockly.Blocks.logic.HUE=210      => Blockly.Blocks.logic.HUE=200
+Blockly.Blocks.loops.HUE=120      => Blockly.Blocks.loops.HUE=320
+Blockly.Blocks.math.HUE=230       => Blockly.Blocks.math.HUE=220
+Blockly.Blocks.texts.HUE=160      => Blockly.Blocks.texts.HUE=50
+Blockly.Blocks.lists.HUE=260      => Blockly.Blocks.lists.HUE=10
+//Blockly.Blocks.colour.HUE=20    => Blockly.Blocks.colour.HUE=140
+
+Blockly.Blocks.variables.HUE=330  => Blockly.Blocks.variables.HUE=280
+Blockly.Blocks.procedures.HUE=290 => Blockly.Blocks.procedures.HUE=140

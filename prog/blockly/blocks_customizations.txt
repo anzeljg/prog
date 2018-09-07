@@ -1,0 +1,8 @@
+
+Remove FROM_END options from the following blocks (block functions):
+====================================================================
+
+- Blockly.Blocks.lists_getIndex
+- Blockly.Blocks.lists_setIndex
+- Blockly.Blocks.lists_getSublist
+

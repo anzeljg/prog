@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../favicon.ico" />
+
+	<title>Operacije na nizih</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../css/simple-sidebar.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="../css/style.css" rel="stylesheet">
+
+	<!-- Blockly editor -->
+	<link href="../blockly/local/editor.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li>
+				  <a href="#" data-toggle="collapse" data-target="#menu2" role="button" aria-expanded="false">Programiranje in algoritmi</a>
+				  <div id="menu2" class="collapse in">
+					<ul class="sidebar-subnav">
+					<li><a href="../1220/index.html">Uvod</a></li>
+					<li><a href="../1221/index.html">Osnovni koncepti programiranja</a></li>
+					<li><a href="../1222/index.html">Izdelava samostojnih programov in pogojni stavki</a></li>
+					<li><a href="../1223/index.html">Zanke</a></li>
+					<li><a href="../1224/index.html">Tabele</a></li>
+					<li><a href="../1225/index.html">Funkcije</a></li>
+					<li class="active"><a href="../1226/index.html">Nizi</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li><a href="../editor.html">Urejevalnik</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../index.html">Slikovno programiranje</a>
+			</div>
+			<div id="google_cse_wrapper">
+                <script type="text/javascript" src="../js/google-cse.js"></script>
+                <gcse:search linktarget="_self"></gcse:search>
+                <link href="../css/google-cse.css" rel="stylesheet">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#menu-toggle" id="menu-toggle" title="Pokaži/Skrij kazalo"><span class="fa fa-file-text-o"></span></a></li>
+					<li><a href="#license" title="Licenca" data-toggle="modal" data-target="#license"><span class="fa fa-creative-commons"></span></a></li>
+					<li><a href="../1901/index.html" title="Kolofon"><span class="fa fa-book"></span></a></li>
+					<li><a href="../1901/index1.html" title="Viri"><span class="fa fa-paperclip"></span></a></li>
+					<li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span></a></li>
+					<li><a href="https://github.com/anzeljg/prog/releases" title="Prenos"><span class="fa fa-download"></span></a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+		</nav>
+
+		<!-- Modal (popup) window: License -->
+		<div id="license" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Licenca</h4>
+					</div>
+					<div class="modal-body">
+						<p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
+						<p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
+						<p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
+						<p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Modal (popup) window: Solution 1 -->
+		<div id="solution1" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Rešitev</h4>
+					</div>
+					<div class="modal-body">
+<pre>
+<img src="img/1226-06-2.png">
+</pre>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+<!-- Left column start -->
+<h1>Operacije na nizih - preverjanje znakov</h1>
+
+<p align="justify">Pogosto želimo preveriti, ali je nek znak (ali niz) črka, števka in podobno.</p>
+
+<p align="justify">Nizi imajo precej funkcij, ki nam pri tem pomagajo:
+<ul align="justify">
+	<li><code>samo črke</code> preveri, če je znak črka;</li>
+	<li><code>samo številke</code> preveri, če je števka;</li>
+	<li><code>samo VELIKE ČRKE</code> in <code>samo male črke</code> preverita, če je velika oz. mala črka;</li>
+	<li><code>samo črke in številke</code> preveri, če je znak črka ali števka.</li>
+</ul>
+Lahko jih uporabimo tudi na nizih, dolgih več kot 1 znak; tedaj preverijo, če so vsi znaki niza taki (glej spodnji program).</p>
+
+<p align="justify">V funkciji <code>PrestejCrke</code> imamo zanko, ki se sprehodi po vseh znakih niza. Pravzaprav se s spremenljivko <code>i</code> sprehodi po vseh indeksih od <code>0</code> do <nobr><code>len(s) - 1</code></nobr>, nato pa do posameznih znakov pride z izrazom <code>s[i]</code>. Če nam indeksi niso pomembni, lahko gremo z zanko tudi neposredno po znakih niza (glej primer na desni):</p>
+
+<p align="justify">Če na primer pokličemo <code>PrestejCrke("1ab")</code>, bi bil <code>c</code> v prvi iteraciji zanke enak <code>"1"</code>, v drugi iteraciji <code>"a"</code> in v tretji <code>"b"</code>.</p>
+<!-- Left column end -->
+					</div>
+					<div class="col-md-6">
+						<br />
+<!-- Right column start -->
+<pre>
+<img src="img/1226-06-1.png">
+</pre>
+<h4>Vaja</h4>
+
+<div class="alert alert-info" role="alert">
+<p align="justify">Napiši funkcijo <code>NizVStevilo(s)</code>, ki kot parameter dobi niz z zapisom nekega naravnega števila v desetiškem zapisu; funkcija naj vrne to število. Primer: <code>NizVStevilo("123")</code> mora vrniti <code>123</code> (kot celo število, ne kot niz).</p>
+<p>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#solution1"><span class="fa fa-check"></span> Rešitev</button>
+</p>
+</div>
+<!-- Right column end -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+<!-- Second row start -->
+<table width="100%">
+  <tr id="tabRow" height="1em">
+    <td id="tab1_blocks" class="tabon">...</td>
+    <td class="tabmin">&nbsp;</td>
+    <td id="tab1_python" class="taboff">Python</td>
+    <td class="tabmin">&nbsp;</td>
+    <td class="tabmax" align="right">
+      <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
+      <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" id="content1_area"></td>
+  </tr>
+</table>
+<table width="100%">
+  <tr>
+    <td style="position:relative; height:350px;">
+      <div id="content1_blocks" class="content"></div>
+      <pre id="content1_python" class="content"></pre>
+    </td>
+  </tr>
+</table>
+<div style="margin-top:10px"><pre id="output"></pre></div>
+
+<xml id="toolbox" style="display: none">
+  <category name="{catLogic}" colour="200">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_operation"></block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean"></block>
+  </category>
+  <category name="{catLoops}" colour="320">
+    <block type="controls_repeat_ext">
+      <value name="TIMES">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_whileUntil"></block>
+    <block type="controls_for">
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="BY">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_forEach"></block>
+    <block type="controls_flow_statements"></block>
+  </category>
+  <category name="{catMath}" colour="220">
+    <block type="math_number"></block>
+    <block type="math_arithmetic">
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_single">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">9</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_trig">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constant"></block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_floor_division">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_ord">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">A</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="{catLists}" colour="10">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with"></block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_getIndex">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_sort"></block>
+  </category>
+  <category name="{catText}" colour="50">
+    <block type="text"></block>
+    <block type="text_join"></block>
+    <block type="text_append">
+      <value name="TEXT">
+        <shadow type="text"></shadow>
+      </value>
+    </block>
+    <block type="text_length">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_charAt">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{textVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_getSubstring">
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR">{textVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_chr">
+      <value name="VALUE">
+        <shadow type="math_number">
+          <field name="NUM">65</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_contains">
+      <field name="OPTION">CONTAINS</field>
+      <value name="TEXT">
+        <block type="variables_get">
+          <field name="VAR">besedilo</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_check">
+      <field name="CHECK">ISALPHA</field>
+      <value name="TEXT">
+        <block type="variables_get">
+          <field name="VAR">besedilo</field>
+        </block>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+</xml>
+
+<xml id="workspace" style="display: none">
+  <block type="variables_set" id="10" x="10" y="10">
+    <field name="VAR">s</field>
+    <value name="VALUE">
+      <block type="text" id="11">
+        <field name="TEXT">Ab1</field>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="12">
+        <value name="TEXT">
+          <shadow type="text" id="13">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text_check" id="14">
+            <field name="CHECK">ISUPPER</field>
+            <value name="TEXT">
+              <block type="text_charAt" id="15" collapsed="true">
+                <mutation at="true"></mutation>
+                <field name="WHERE">FROM_START</field>
+                <value name="VALUE">
+                  <block type="variables_get" id="16">
+                    <field name="VAR">s</field>
+                  </block>
+                </value>
+                <value name="AT">
+                  <block type="math_number" id="17">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" id="18">
+            <value name="TEXT">
+              <shadow type="text" id="19">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text_check" id="20">
+                <field name="CHECK">ISLOWER</field>
+                <value name="TEXT">
+                  <block type="text_charAt" id="21" collapsed="true">
+                    <mutation at="true"></mutation>
+                    <field name="WHERE">FROM_START</field>
+                    <value name="VALUE">
+                      <block type="variables_get" id="22">
+                        <field name="VAR">s</field>
+                      </block>
+                    </value>
+                    <value name="AT">
+                      <block type="math_number" id="23">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="text_print" id="24">
+                <value name="TEXT">
+                  <shadow type="text" id="25">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text_check" id="26">
+                    <field name="CHECK">ISDIGIT</field>
+                    <value name="TEXT">
+                      <block type="text_charAt" id="27" collapsed="true">
+                        <mutation at="true"></mutation>
+                        <field name="WHERE">FROM_START</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="28">
+                            <field name="VAR">s</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="29">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="text_print" id="30">
+                    <value name="TEXT">
+                      <shadow type="text" id="31">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="text_check" id="32">
+                        <field name="CHECK">ISALNUM</field>
+                        <value name="TEXT">
+                          <block type="variables_get" id="33">
+                            <field name="VAR">s</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defreturn" id="34" x="10" y="200">
+    <mutation>
+      <arg name="s"></arg>
+    </mutation>
+    <field name="NAME">PrestejCrke</field>
+    <comment pinned="false" h="80" w="160">Opiši to funkcijo...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="35">
+        <field name="VAR">n</field>
+        <value name="VALUE">
+          <block type="math_number" id="36">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_for" id="37">
+            <field name="VAR">i</field>
+            <value name="FROM">
+              <shadow type="math_number" id="38">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_number" id="39">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="40">
+                <field name="NUM">10</field>
+              </shadow>
+              <block type="text_length" id="41">
+                <value name="VALUE">
+                  <shadow type="text" id="42">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="variables_get" id="43">
+                    <field name="VAR">s</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="44">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="controls_if" id="45">
+                <value name="IF0">
+                  <block type="text_check" id="46">
+                    <field name="CHECK">ISALPHA</field>
+                    <value name="TEXT">
+                      <block type="text_charAt" id="47" collapsed="true">
+                        <mutation at="true"></mutation>
+                        <field name="WHERE">FROM_START</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="48">
+                            <field name="VAR">s</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="variables_get" id="49">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set" id="50">
+                    <field name="VAR">n</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="51" collapsed="true">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <shadow type="math_number" id="52">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="53">
+                            <field name="VAR">n</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="54">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="math_number" id="55">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="56">
+        <field name="VAR">n</field>
+      </block>
+    </value>
+  </block>
+  <block type="text_print" id="57" x="10" y="425">
+    <value name="TEXT">
+      <shadow type="text" id="58">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="procedures_callreturn" id="59" inline="true">
+        <mutation name="PrestejCrke">
+          <arg name="s"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="text" id="60">
+            <field name="TEXT">Abeceda123</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>
+<!-- Second row end -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Pagination in Footer -->
+			<div class="col-md-12">
+				<center>
+				<ul class="pagination pagination-sm">
+					<li><a href="../1225/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
+					<li><a href="../1226/index5.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
+					<li><a href="../1226/index.html">72</a></li>
+					<li><a href="../1226/index1.html">73</a></li>
+					<li><a href="../1226/index2.html">74</a></li>
+					<li><a href="../1226/index3.html">75</a></li>
+					<li><a href="../1226/index4.html">76</a></li>
+					<li><a href="../1226/index5.html">77</a></li>
+					<li class="active"><a href="#">78</a></li>
+					<li><a href="../1226/index7.html">79</a></li>
+					<li><a href="../1226/index8.html">80</a></li>
+					<li><a href="../1226/index9.html">81</a></li>
+					<li><a href="../1226/index10.html">82</a></li>
+					<li><a href="../1226/index11.html">83</a></li>
+					<li><a href="../1226/index12.html">84</a></li>
+					<li><a href="../1226/index13.html">85</a></li>
+					<li><a href="../1226/index7.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
+					<li><a href="../1901/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
+				</ul>
+				</center>
+			</div>
+
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- rPage: Highly responsive pagination for Bootstrap -->
+	<script src="../js/responsive-paginate.js"></script>
+	<script>
+	$(document).ready(function () {
+		$(".pagination").rPage();
+	});
+	</script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+	</script>
+
+<!-- Blockly -->
+<script src="../blockly/storage.js"></script>
+<script src="../blockly/blockly_compressed.js"></script>
+<script src="../blockly/blocks_compressed.js"></script>
+<script src="../blockly/javascript_compressed.js"></script>
+<script src="../blockly/python_compressed.js"></script>
+<script src="../blockly/local/custom_blocks.js"></script>
+<script src="index6.js"></script>
+<script>
+  var elementID = "";
+  $("#runButton").click(function() {
+    elementID = "#output";
+  });
+  window.alert = function(msg) {
+    $(elementID).append(msg + "\n");
+  };
+</script>
+
+
+<!-- CookieCuttr -->
+<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="../cc/cookiecuttr.css">
+<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript" src="../cc/setup.cookiecuttr.js"></script>
+
+
+<script>
+document.body.addEventListener("keydown", function (event) {
+    var code = event.keyCode || event.which;
+    var alt  = event.altKey;
+    if (alt && code === 33 /* Alt+PgUp */) {
+        window.location.replace("../1226/index5.html");
+    }
+    if (alt && code === 34 /* Alt+PgDn */) {
+        window.location.replace("../1226/index7.html");
+    }
+});
+</script>
+
+</body>
+
+</html>

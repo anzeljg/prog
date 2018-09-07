@@ -1,0 +1,63 @@
+/*
+ * Change how python code for for loop is generated,
+ * so it resembles python style more closely:
+ * =================================================
+ */
+
+FROM:
+Blockly.JavaScript.controls_for=function(a){var b=Blockly.JavaScript.variableDB_.getName(a.getFieldValue("VAR"),Blockly.Variables.NAME_TYPE),c=Blockly.JavaScript.valueToCode(a,"FROM",Blockly.JavaScript.ORDER_ASSIGNMENT)||"0",d=Blockly.JavaScript.valueToCode(a,"TO",Blockly.JavaScript.ORDER_ASSIGNMENT)||"0",e=Blockly.JavaScript.valueToCode(a,"BY",Blockly.JavaScript.ORDER_ASSIGNMENT)||"1",f=Blockly.JavaScript.statementToCode(a,"DO"),f=Blockly.JavaScript.addLoopTrap(f,a.id);if(Blockly.isNumber(c)&&Blockly.isNumber(d)&&
+Blockly.isNumber(e)){var g=parseFloat(c)<=parseFloat(d);a="for ("+b+" = "+c+"; "+b+(g?" <= ":" >= ")+d+"; "+b;b=Math.abs(parseFloat(e));a=(1==b?a+(g?"++":"--"):a+((g?" += ":" -= ")+b))+(") {\n"+f+"}\n")}else a="",g=c,c.match(/^\w+$/)||Blockly.isNumber(c)||(g=Blockly.JavaScript.variableDB_.getDistinctName(b+"_start",Blockly.Variables.NAME_TYPE),a+="var "+g+" = "+c+";\n"),c=d,d.match(/^\w+$/)||Blockly.isNumber(d)||(c=Blockly.JavaScript.variableDB_.getDistinctName(b+"_end",Blockly.Variables.NAME_TYPE),
+a+="var "+c+" = "+d+";\n"),d=Blockly.JavaScript.variableDB_.getDistinctName(b+"_inc",Blockly.Variables.NAME_TYPE),a+="var "+d+" = ",a=Blockly.isNumber(e)?a+(Math.abs(e)+";\n"):a+("Math.abs("+e+");\n"),a=a+("if ("+g+" > "+c+") {\n")+(Blockly.JavaScript.INDENT+d+" = -"+d+";\n"),a+="}\n",a+="for ("+b+" = "+g+"; "+d+" >= 0 ? "+b+" <= "+c+" : "+b+" >= "+c+"; "+b+" += "+d+") {\n"+f+"}\n";return a};
+
+TO:
+Blockly.JavaScript.controls_for=function(a){var b=Blockly.JavaScript.variableDB_.getName(a.getFieldValue("VAR"),Blockly.Variables.NAME_TYPE),c=Blockly.JavaScript.valueToCode(a,"FROM",Blockly.JavaScript.ORDER_ASSIGNMENT)||"0",d=Blockly.JavaScript.valueToCode(a,"TO",Blockly.JavaScript.ORDER_ASSIGNMENT)||"0",e=Blockly.JavaScript.valueToCode(a,"BY",Blockly.JavaScript.ORDER_ASSIGNMENT)||"1",f=Blockly.JavaScript.statementToCode(a,"DO"),f=Blockly.JavaScript.addLoopTrap(f,a.id);if(Blockly.isNumber(c)&&Blockly.isNumber(d)&&
+Blockly.isNumber(e)){var g=parseFloat(c)<=parseFloat(d);a="for ("+b+" = "+c+"; "+b+(g?" < ":" > ")+d+"; "+b;b=Math.abs(parseFloat(e));a=(1==b?a+(g?"++":"--"):a+((g?" += ":" -= ")+b))+(") {\n"+f+"}\n")}else a="",g=c,c.match(/^\w+$/)||Blockly.isNumber(c)||(g=Blockly.JavaScript.variableDB_.getDistinctName(b+"_start",Blockly.Variables.NAME_TYPE),a+="var "+g+" = "+c+";\n"),c=d,d.match(/^\w+$/)||Blockly.isNumber(d)||(c=Blockly.JavaScript.variableDB_.getDistinctName(b+"_end",Blockly.Variables.NAME_TYPE),
+a+="var "+c+" = "+d+";\n"),d=Blockly.JavaScript.variableDB_.getDistinctName(b+"_inc",Blockly.Variables.NAME_TYPE),a+="var "+d+" = ",a=Blockly.isNumber(e)?a+(Math.abs(e)+";\n"):a+("Math.abs("+e+");\n"),a=a+("if ("+g+" > "+c+") {\n")+(Blockly.JavaScript.INDENT+d+" = -"+d+";\n"),a+="}\n",a+="for ("+b+" = "+g+"; "+d+" > 0 ? "+b+" < "+c+" : "+b+" >= "+c+"; "+b+" += "+d+") {\n"+f+"}\n";return a};
+
+
+/*
+ * Change how lists are printed using square brackets:
+ * ===================================================
+ */
+
+FROM:
+Blockly.JavaScript.text_print=function(a){return"window.alert("+(Blockly.JavaScript.valueToCode(a,"TEXT",Blockly.JavaScript.ORDER_NONE)||"''")+");\n"};
+
+TO:
+Blockly.JavaScript.text_print=function(a){var msg=Blockly.JavaScript.valueToCode(a,"TEXT",Blockly.JavaScript.ORDER_NONE)||"''";var f=msg.charAt(0);var l=msg.charAt(msg.length-1);if(f=="["&&l=="]"||f=="{"&&l=="}"||msg.indexOf('split')!==-1){return"window.alert(JSON.stringify("+msg+"));\n";}else{return"window.alert("+msg+");\n";}};
+
+
+/*
+ * Change how sublist ranges (upper and lower index) work:
+ * =======================================================
+ */
+
+FROM:
+Blockly.JavaScript.lists_getSublist=function(a){var b=Blockly.JavaScript.valueToCode(a,"LIST",Blockly.JavaScript.ORDER_MEMBER)||"[]",c=a.getFieldValue("WHERE1"),d=a.getFieldValue("WHERE2");if("FIRST"==c&&"LAST"==d)b+=".slice(0)";else if(b.match(/^\w+$/)||"FROM_END"!=c&&"FROM_START"==d){switch(c){case "FROM_START":var e=Blockly.JavaScript.getAdjusted(a,"AT1");break;case "FROM_END":e=Blockly.JavaScript.getAdjusted(a,"AT1",1,!1,Blockly.JavaScript.ORDER_SUBTRACTION);e=b+".length - "+e;break;case "FIRST":e=
+"0";break;default:throw"Unhandled option (lists_getSublist).";}switch(d){case "FROM_START":a=Blockly.JavaScript.getAdjusted(a,"AT2",1);break;case "FROM_END":a=Blockly.JavaScript.getAdjusted(a,"AT2",0,!1,Blockly.JavaScript.ORDER_SUBTRACTION);a=b+".length - "+a;break;case "LAST":a=b+".length";break;default:throw"Unhandled option (lists_getSublist).";}b=b+".slice("+e+", "+a+")"}else{e=Blockly.JavaScript.getAdjusted(a,"AT1");a=Blockly.JavaScript.getAdjusted(a,"AT2");var f=Blockly.JavaScript.lists.getIndex_,
+g={FIRST:"First",LAST:"Last",FROM_START:"FromStart",FROM_END:"FromEnd"},b=Blockly.JavaScript.provideFunction_("subsequence"+g[c]+g[d],["function "+Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_+"(sequence"+("FROM_END"==c||"FROM_START"==c?", at1":"")+("FROM_END"==d||"FROM_START"==d?", at2":"")+") {","  var start = "+f("sequence",c,"at1")+";","  var end = "+f("sequence",d,"at2")+" + 1;","  return sequence.slice(start, end);","}"])+"("+b+("FROM_END"==c||"FROM_START"==c?", "+e:"")+("FROM_END"==d||"FROM_START"==
+d?", "+a:"")+")"}return[b,Blockly.JavaScript.ORDER_FUNCTION_CALL]};
+
+TO:
+Blockly.JavaScript.lists_getSublist=function(a){var b=Blockly.JavaScript.valueToCode(a,"LIST",Blockly.JavaScript.ORDER_MEMBER)||"[]",c=a.getFieldValue("WHERE1"),d=a.getFieldValue("WHERE2");if("FIRST"==c&&"LAST"==d)b+=".slice(0)";else if(b.match(/^\w+$/)||"FROM_END"!=c&&"FROM_START"==d){switch(c){case "FROM_START":var e=Blockly.JavaScript.getAdjusted(a,"AT1");break;case "FROM_END":e=Blockly.JavaScript.getAdjusted(a,"AT1",1,!1,Blockly.JavaScript.ORDER_SUBTRACTION);e=b+".length - "+e;break;case "FIRST":e=
+"0";break;default:throw"Unhandled option (lists_getSublist).";}switch(d){case "FROM_START":a=Blockly.JavaScript.getAdjusted(a,"AT2",0,!1,Blockly.JavaScript.ORDER_SUBTRACTION);break;case "FROM_END":a=Blockly.JavaScript.getAdjusted(a,"AT2",0,!1,Blockly.JavaScript.ORDER_SUBTRACTION);a=b+".length - "+a;break;case "LAST":a=b+".length";break;default:throw"Unhandled option (lists_getSublist).";}b=b+".slice("+e+", "+a+")"}else{e=Blockly.JavaScript.getAdjusted(a,"AT1");a=Blockly.JavaScript.getAdjusted(a,"AT2");var f=Blockly.JavaScript.lists.getIndex_,
+g={FIRST:"First",LAST:"Last",FROM_START:"FromStart",FROM_END:"FromEnd"},b=Blockly.JavaScript.provideFunction_("subsequence"+g[c]+g[d],["function "+Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_+"(sequence"+("FROM_END"==c||"FROM_START"==c?", at1":"")+("FROM_END"==d||"FROM_START"==d?", at2":"")+") {","  var start = "+f("sequence",c,"at1")+";","  var end = "+f("sequence",d,"at2")+" + 1;","  return sequence.slice(start, end);","}"])+"("+b+("FROM_END"==c||"FROM_START"==c?", "+e:"")+("FROM_END"==d||"FROM_START"==
+d?", "+a:"")+")"}return[b,Blockly.JavaScript.ORDER_FUNCTION_CALL]};
+
+
+/*
+ * Change how substring ranges (upper and lower index) work:
+ * =========================================================
+ */
+
+FROM:
+Blockly.JavaScript.text_getSubstring=function(a){var b=Blockly.JavaScript.valueToCode(a,"STRING",Blockly.JavaScript.ORDER_FUNCTION_CALL)||"''",c=a.getFieldValue("WHERE1"),d=a.getFieldValue("WHERE2");if("FIRST"!=c||"LAST"!=d)if(b.match(/^'?\w+'?$/)||"FROM_END"!=c&&"LAST"!=c&&"FROM_END"!=d&&"LAST"!=d){switch(c){case "FROM_START":var e=Blockly.JavaScript.getAdjusted(a,"AT1");break;case "FROM_END":e=Blockly.JavaScript.getAdjusted(a,"AT1",1,!1,Blockly.JavaScript.ORDER_SUBTRACTION);e=b+".length - "+e;break;
+case "FIRST":e="0";break;default:throw"Unhandled option (text_getSubstring).";}switch(d){case "FROM_START":a=Blockly.JavaScript.getAdjusted(a,"AT2",1);break;case "FROM_END":a=Blockly.JavaScript.getAdjusted(a,"AT2",0,!1,Blockly.JavaScript.ORDER_SUBTRACTION);a=b+".length - "+a;break;case "LAST":a=b+".length";break;default:throw"Unhandled option (text_getSubstring).";}b=b+".slice("+e+", "+a+")"}else{e=Blockly.JavaScript.getAdjusted(a,"AT1");a=Blockly.JavaScript.getAdjusted(a,"AT2");var f=Blockly.JavaScript.text.getIndex_,
+g={FIRST:"First",LAST:"Last",FROM_START:"FromStart",FROM_END:"FromEnd"},b=Blockly.JavaScript.provideFunction_("subsequence"+g[c]+g[d],["function "+Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_+"(sequence"+("FROM_END"==c||"FROM_START"==c?", at1":"")+("FROM_END"==d||"FROM_START"==d?", at2":"")+") {","  var start = "+f("sequence",c,"at1")+";","  var end = "+f("sequence",d,"at2")+" + 1;","  return sequence.slice(start, end);","}"])+"("+b+("FROM_END"==c||"FROM_START"==c?", "+e:"")+("FROM_END"==d||"FROM_START"==
+d?", "+a:"")+")"}return[b,Blockly.JavaScript.ORDER_FUNCTION_CALL]};
+
+TO:
+Blockly.JavaScript.text_getSubstring=function(a){var b=Blockly.JavaScript.valueToCode(a,"STRING",Blockly.JavaScript.ORDER_FUNCTION_CALL)||"''",c=a.getFieldValue("WHERE1"),d=a.getFieldValue("WHERE2");if("FIRST"!=c||"LAST"!=d)if(b.match(/^'?\w+'?$/)||"FROM_END"!=c&&"LAST"!=c&&"FROM_END"!=d&&"LAST"!=d){switch(c){case "FROM_START":var e=Blockly.JavaScript.getAdjusted(a,"AT1");break;case "FROM_END":e=Blockly.JavaScript.getAdjusted(a,"AT1",1,!1,Blockly.JavaScript.ORDER_SUBTRACTION);e=b+".length - "+e;break;
+case "FIRST":e="0";break;default:throw"Unhandled option (text_getSubstring).";}switch(d){case "FROM_START":a=Blockly.JavaScript.getAdjusted(a,"AT2",0,!1,Blockly.JavaScript.ORDER_SUBTRACTION);break;case "FROM_END":a=Blockly.JavaScript.getAdjusted(a,"AT2",0,!1,Blockly.JavaScript.ORDER_SUBTRACTION);a=b+".length - "+a;break;case "LAST":a=b+".length";break;default:throw"Unhandled option (text_getSubstring).";}b=b+".slice("+e+", "+a+")"}else{e=Blockly.JavaScript.getAdjusted(a,"AT1");a=Blockly.JavaScript.getAdjusted(a,"AT2");var f=Blockly.JavaScript.text.getIndex_,
+g={FIRST:"First",LAST:"Last",FROM_START:"FromStart",FROM_END:"FromEnd"},b=Blockly.JavaScript.provideFunction_("subsequence"+g[c]+g[d],["function "+Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_+"(sequence"+("FROM_END"==c||"FROM_START"==c?", at1":"")+("FROM_END"==d||"FROM_START"==d?", at2":"")+") {","  var start = "+f("sequence",c,"at1")+";","  var end = "+f("sequence",d,"at2")+" + 1;","  return sequence.slice(start, end);","}"])+"("+b+("FROM_END"==c||"FROM_START"==c?", "+e:"")+("FROM_END"==d||"FROM_START"==
+d?", "+a:"")+")"}return[b,Blockly.JavaScript.ORDER_FUNCTION_CALL]};

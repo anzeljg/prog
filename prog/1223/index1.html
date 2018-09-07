@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../favicon.ico" />
+
+	<title>Zanka while</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../css/simple-sidebar.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="../css/style.css" rel="stylesheet">
+
+	<!-- Blockly editor -->
+	<link href="../blockly/local/editor.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li>
+				  <a href="#" data-toggle="collapse" data-target="#menu2" role="button" aria-expanded="false">Programiranje in algoritmi</a>
+				  <div id="menu2" class="collapse in">
+					<ul class="sidebar-subnav">
+					<li><a href="../1220/index.html">Uvod</a></li>
+					<li><a href="../1221/index.html">Osnovni koncepti programiranja</a></li>
+					<li><a href="../1222/index.html">Izdelava samostojnih programov in pogojni stavki</a></li>
+					<li class="active"><a href="../1223/index.html">Zanke</a></li>
+					<li><a href="../1224/index.html">Tabele</a></li>
+					<li><a href="../1225/index.html">Funkcije</a></li>
+					<li><a href="../1226/index.html">Nizi</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li><a href="../editor.html">Urejevalnik</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../index.html">Slikovno programiranje</a>
+			</div>
+			<div id="google_cse_wrapper">
+                <script type="text/javascript" src="../js/google-cse.js"></script>
+                <gcse:search linktarget="_self"></gcse:search>
+                <link href="../css/google-cse.css" rel="stylesheet">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#menu-toggle" id="menu-toggle" title="Pokaži/Skrij kazalo"><span class="fa fa-file-text-o"></span></a></li>
+					<li><a href="#license" title="Licenca" data-toggle="modal" data-target="#license"><span class="fa fa-creative-commons"></span></a></li>
+					<li><a href="../1901/index.html" title="Kolofon"><span class="fa fa-book"></span></a></li>
+					<li><a href="../1901/index1.html" title="Viri"><span class="fa fa-paperclip"></span></a></li>
+					<li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span></a></li>
+					<li><a href="https://github.com/anzeljg/prog/releases" title="Prenos"><span class="fa fa-download"></span></a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+		</nav>
+
+		<!-- Modal (popup) window: License -->
+		<div id="license" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Licenca</h4>
+					</div>
+					<div class="modal-body">
+						<p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
+						<p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
+						<p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
+						<p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Modal (popup) window: Solution 1 -->
+		<div id="solution1" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Rešitev</h4>
+					</div>
+					<div class="modal-body">
+						<p align="justify">Če pokrijemo samo prvo polje, potrebujemo 1 zrno. Za dve polji potrebujemo 1 + 2 = 3 zrna. Za tri polja potrebujemo 1 + 2 + 4 = 7 zrn. Za štiri polja potrebujemo 1 + 2 + 4 + 8 = 15 zrn itd. Za pokritje 64 polj torej potrebujemo 1 + 2 + 4 + 8 + ... + 2<sup>63</sup> zrn, kar je natanko 18 446 744 073 709 551 615 zrn.</p>
+						<p align="justify">Če predpostavimo, da eno zrno riža tehta 25 mg, bi ves riž skupaj tehtal malo manj kot 461 168 601 843 ton, kar je skoraj tisoč krat več, kot je znašala svetovna proizvodnja riža v letu 2010 (464 000 000 ton).</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+<!-- Left column start -->
+<h1>Zanka while</h1>
+ 
+<p align="justify">Doslej smo videli, da računalnik načeloma izvaja stavke našega programa po vrsti, kot so zapisani v programu, vsakega po enkrat. S pogojnimi stavki smo se tudi naučili doseči, da izvajanje nek del programa preskoči (če pogoj ni izpolnjen). Kaj pa, če hočemo, da se nek del programa izvede po večkrat? Tedaj lahko uporabimo <b>zanko</b>.</p>
+
+<h4>Primer</h4>
+
+<div class="alert alert-info" role="alert">
+<p align="justify">Naslednja zanka izpiše števila od 1 do 10.</p>
+</div>
+
+<table width="100%">
+  <tr id="tabRow" height="1em">
+    <td id="tab1_blocks" class="tabon">...</td>
+    <td class="tabmin">&nbsp;</td>
+    <td id="tab1_python" class="taboff">Python</td>
+    <td class="tabmin">&nbsp;</td>
+    <td class="tabmax" align="right">
+      <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
+      <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" id="content1_area"></td>
+  </tr>
+</table>
+<table width="100%">
+  <tr>
+    <td style="position:relative; height:250px;">
+      <div id="content1_blocks" class="content"></div>
+      <pre id="content1_python" class="content"></pre>
+    </td>
+  </tr>
+</table>
+<div style="margin-top:10px"><pre id="output"></pre></div>
+
+<xml id="toolbox" style="display: none">
+  <category name="{catLogic}" colour="200">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_operation"></block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean"></block>
+  </category>
+  <category name="{catLoops}" colour="320">
+    <block type="controls_whileUntil"></block>
+  </category>
+  <category name="{catMath}" colour="220">
+    <block type="math_number"></block>
+    <block type="math_arithmetic">
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_floor_division">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="{catText}" colour="50">
+    <block type="text"></block>
+    <block type="text_join"></block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+</xml>
+
+<xml id="workspace" style="display: none">
+  <block type="variables_set" id="10" x="10" y="10">
+    <field name="VAR">n</field>
+    <comment pinned="false" w="240" h="80">spremenljivka n je števec, ki
+predstavlja naslednje število,
+ki ga moramo še izpisati.</comment>
+    <value name="VALUE">
+      <block type="math_number" id="11">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_whileUntil" id="12">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_compare" id="13">
+            <field name="OP">LTE</field>
+            <value name="A">
+              <block type="variables_get" id="14">
+                <field name="VAR">n</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="15">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="text_print" id="16">
+            <value name="TEXT">
+              <shadow type="text" id="17">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="variables_get" id="18">
+                <field name="VAR">n</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="19">
+                <field name="VAR">n</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="20" collapsed="true">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <shadow type="math_number" id="21">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="22">
+                        <field name="VAR">n</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="23">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="math_number" id="24">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
+
+<p align="justify">Stavek <code>dokler</code> (angleško <code>while</code>) označuje, da gre za zanko; za njim pride pogoj za nadaljevanje — v našem primeru je to <code>n &le; 10</code>, torej se zanka izvaja, dokler je pogoj <code>n &le; 10</code> izpolnjen. Pri vsaki ponovitvi zanke se izvedeta stavka <code>izpiši n</code> (ki izpiše trenutno vrednost <code>n</code>) in <code>nastavi n na n + 1</code> (ki poveča <code>n</code> za 1).</p>
+
+<p align="justify">Oglejmo si še en primer problema, ki ga je veliko lažje rešiti z zanko kot brez nje.</p>
+<!-- Left column end -->
+					</div>
+					<div class="col-md-6">
+<!-- Right column start -->
+<h4>Primer</h4>
+
+<div class="alert alert-info" role="alert">
+<p align="justify">Legenda pravi, da je iznajditelj šaha od kralja svoje dežele zahteval naslednje plačilo: eno zrno riža za prvo polje šahovnice; dve zrni za drugo polje; štiri zrna za naslednje polje; in tako naprej, za vsako polje dvakrat toliko zrn kot za prejšnje polje. Šahovnica ima 64 polj. Koliko zrn riža mora kralj v tej zgodbi plačati?</p>
+<p>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#solution1"><span class="fa fa-check"></span> Rešitev</button>
+</p>
+</div>
+
+<p align="justify">Če poskušamo to nalogo reševati ročno, se bomo hitro utrudili in najbrž tudi zmotili: računati moramo 2 · 1 = 2; 2 · 2 = 4; 2 · 4 = 8; 2 · 8 = 16; 2 · 16 = 32; in tako naprej še kar nekaj časa; in na koncu bi morali vse te zmnožke še sešteti. Dolgo, ponavljajoče se zaporedje enih in istih operacij je kot nalašč za reševanje z računalnikom. Poskusimo napisati program, ki reši našo nalogo:
+<pre>
+<img src="img/1223-01-1.png">
+</pre>
+</p>
+
+<p align="justify">V spremenljivki <code>zrnNaPolju</code> hranimo število zrn na trenutnem polju, v <code>skupajZrn</code> pa skupno število zrn na vseh doslej obdelanih poljih. Ko se premaknemo na naslednje polje, moramo <code>zrnNaPolju</code> pomnožiti z 2, da dobimo število zrn na tem naslednjem polju (ki je dvakrat tolikšno kot na prejšnjem), nato pa to število prištejemo k skupnemu številu zrn na vseh poljih doslej (torej k spremenljivki <code>skupajZrn</code>).</p>
+<!-- Right column end -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Pagination in Footer -->
+			<div class="col-md-12">
+				<center>
+				<ul class="pagination pagination-sm">
+					<li><a href="../1222/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
+					<li><a href="../1223/index.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
+					<li><a href="../1223/index.html">26</a></li>
+					<li class="active"><a href="#">27</a></li>
+					<li><a href="../1223/index2.html">28</a></li>
+					<li><a href="../1223/index3.html">29</a></li>
+					<li><a href="../1223/index4.html">30</a></li>
+					<li><a href="../1223/index5.html">31</a></li>
+					<li><a href="../1223/index6.html">32</a></li>
+					<li><a href="../1223/index7.html">33</a></li>
+					<li><a href="../1223/index8.html">34</a></li>
+					<li><a href="../1223/index9.html">35</a></li>
+					<li><a href="../1223/index10.html">36</a></li>
+					<li><a href="../1223/index11.html">37</a></li>
+					<li><a href="../1223/index2.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
+					<li><a href="../1224/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
+				</ul>
+				</center>
+			</div>
+
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- rPage: Highly responsive pagination for Bootstrap -->
+	<script src="../js/responsive-paginate.js"></script>
+	<script>
+	$(document).ready(function () {
+		$(".pagination").rPage();
+	});
+	</script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+	</script>
+
+<!-- Blockly -->
+<script src="../blockly/storage.js"></script>
+<script src="../blockly/blockly_compressed.js"></script>
+<script src="../blockly/blocks_compressed.js"></script>
+<script src="../blockly/javascript_compressed.js"></script>
+<script src="../blockly/python_compressed.js"></script>
+<script src="../blockly/local/custom_blocks.js"></script>
+<script src="index1.js"></script>
+<script>
+  var elementID = "";
+  $("#runButton").click(function() {
+    elementID = "#output";
+  });
+  window.alert = function(msg) {
+    $(elementID).append(msg + "\n");
+  };
+</script>
+
+
+<!-- CookieCuttr -->
+<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="../cc/cookiecuttr.css">
+<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript" src="../cc/setup.cookiecuttr.js"></script>
+
+
+<script>
+document.body.addEventListener("keydown", function (event) {
+    var code = event.keyCode || event.which;
+    var alt  = event.altKey;
+    if (alt && code === 33 /* Alt+PgUp */) {
+        window.location.replace("../1223/index.html");
+    }
+    if (alt && code === 34 /* Alt+PgDn */) {
+        window.location.replace("../1223/index2.html");
+    }
+});
+</script>
+
+</body>
+
+</html>

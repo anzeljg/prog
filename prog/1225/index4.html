@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../favicon.ico" />
+
+	<title>Parametri</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../css/simple-sidebar.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="../css/style.css" rel="stylesheet">
+
+	<!-- Blockly editor -->
+	<link href="../blockly/local/editor.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li>
+				  <a href="#" data-toggle="collapse" data-target="#menu2" role="button" aria-expanded="false">Programiranje in algoritmi</a>
+				  <div id="menu2" class="collapse in">
+					<ul class="sidebar-subnav">
+					<li><a href="../1220/index.html">Uvod</a></li>
+					<li><a href="../1221/index.html">Osnovni koncepti programiranja</a></li>
+					<li><a href="../1222/index.html">Izdelava samostojnih programov in pogojni stavki</a></li>
+					<li><a href="../1223/index.html">Zanke</a></li>
+					<li><a href="../1224/index.html">Tabele</a></li>
+					<li class="active"><a href="../1225/index.html">Funkcije</a></li>
+					<li><a href="../1226/index.html">Nizi</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li><a href="../editor.html">Urejevalnik</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../index.html">Slikovno programiranje</a>
+			</div>
+			<div id="google_cse_wrapper">
+                <script type="text/javascript" src="../js/google-cse.js"></script>
+                <gcse:search linktarget="_self"></gcse:search>
+                <link href="../css/google-cse.css" rel="stylesheet">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#menu-toggle" id="menu-toggle" title="Pokaži/Skrij kazalo"><span class="fa fa-file-text-o"></span></a></li>
+					<li><a href="#license" title="Licenca" data-toggle="modal" data-target="#license"><span class="fa fa-creative-commons"></span></a></li>
+					<li><a href="../1901/index.html" title="Kolofon"><span class="fa fa-book"></span></a></li>
+					<li><a href="../1901/index1.html" title="Viri"><span class="fa fa-paperclip"></span></a></li>
+					<li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span></a></li>
+					<li><a href="https://github.com/anzeljg/prog/releases" title="Prenos"><span class="fa fa-download"></span></a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+		</nav>
+
+		<!-- Modal (popup) window: License -->
+		<div id="license" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Licenca</h4>
+					</div>
+					<div class="modal-body">
+						<p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
+						<p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
+						<p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
+						<p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+<!-- Left column start -->
+<h1>Parametri</h1>
+
+<p align="justify">Naša funkcija <code>Izpisi</code> iz prejšnjega primera je predpostavila, da so meritve shranjene v tabeli <code>meritve</code> in da je indeks dneva, ki nas zanima, shranjen v spremenljivki <code>naj</code>. Takšne predpostavke so neugodne, ker ustvarijo zelo tesno medsebojno odvisnost med klicateljem in funkcijo. Na primer, če bi hoteli nekoč kasneje na podoben način izpisati kakšen dan, ki ga nimamo ravno v spremenljivki <code>naj</code>, nam dosedanja funkcija <code>Izpisi</code> ne bi pri tem nič pomagala. Podobno, če bi nekoč kasneje v glavnem bloku programa preimenovali tabelo <code>meritve</code> v kaj drugega, naša funkcija ne bi več delovala (oz. bi morali tudi njo ustrezno popraviti).</p>
+
+<p align="justify">Zato je bolje, če funkciji podatke, s katerimi bo morala delati, podamo kot <b>parametre</b>. Pri deklaraciji lahko v oklepajih navedemo, koliko parametrov funkcija zahteva in kakšna so njihova imena.</p>
+<!-- Left column end -->
+					</div>
+					<div class="col-md-6">
+						<br />
+<!-- Right column start -->
+<p align="justify">V deklaraciji zdaj piše, da zahteva <code>Izpisi</code> dva parametra z imenoma <code>dan</code> in <code>tabela</code>. Stavki v telesu funkcije ju lahko uporabljajo na enak način kot spremenljivke. Pri klicu pa smo v oklepajih navedli konkretni vrednosti, ki naj ju funkcija v tem konkretnem klicu dobi kot parametra: v našem primeru bo parameter <code>dan</code> dobil vrednost spremenljivke <code>naj</code>, parameter <code>tabela</code> pa bo dobil vrednost spremenljivke <code>meritve</code>.</p>
+
+<p align="justify">Parametrom pod imeni, kot jih vidi funkcija, pravimo včasih tudi <b>formalni parametri</b>; konkretnim vrednostim, ki jih kot parametre podamo ob klicu, pa pravimo <b>dejanski parametri</b> ali <b>argumenti</b>. Formalne parametre lahko uporabljamo le znotraj funkcije, zunaj nje pa se jih ne vidi.</p>
+<!-- Right column end -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+<!-- Second row start -->
+<table width="100%">
+  <tr id="tabRow" height="1em">
+    <td id="tab1_blocks" class="tabon">...</td>
+    <td class="tabmin">&nbsp;</td>
+    <td id="tab1_python" class="taboff">Python</td>
+    <td class="tabmin">&nbsp;</td>
+    <td class="tabmax" align="right">
+      <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
+      <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" id="content1_area"></td>
+  </tr>
+</table>
+<table width="100%">
+  <tr>
+    <td style="position:relative; height:450px;">
+      <div id="content1_blocks" class="content"></div>
+      <pre id="content1_python" class="content"></pre>
+    </td>
+  </tr>
+</table>
+<div style="margin-top:10px"><pre id="output"></pre></div>
+
+<xml id="toolbox" style="display: none">
+  <category name="{catLogic}" colour="200">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_operation"></block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean"></block>
+  </category>
+  <category name="{catLoops}" colour="320">
+    <block type="controls_whileUntil"></block>
+    <block type="controls_for">
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="BY">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_forEach"></block>
+    <block type="controls_flow_statements"></block>
+  </category>
+  <category name="{catMath}" colour="220">
+    <block type="math_number"></block>
+    <block type="math_arithmetic">
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_floor_division">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="{catLists}" colour="10">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with"></block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_getIndex">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_sort"></block>
+  </category>
+  <category name="{catText}" colour="50">
+    <block type="text"></block>
+    <block type="text_join"></block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+</xml>
+
+<xml id="workspace" style="display: none">
+  <block type="text_comment" id="10" x="10" y="10">
+    <value name="TEXT">
+      <shadow type="text" id="11">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="text" id="12">
+        <field name="TEXT">Preberimo vhodne podatke.</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="13">
+        <field name="VAR">n</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="14">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="15">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text" id="16">
+                <field name="TEXT">Vnesi število dni:</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="17">
+            <field name="VAR">meritve</field>
+            <value name="VALUE">
+              <block type="lists_create_with" id="18">
+                <mutation items="0"></mutation>
+              </block>
+            </value>
+            <next>
+              <block type="controls_for" id="19">
+                <field name="VAR">i</field>
+                <value name="FROM">
+                  <shadow type="math_number" id="20">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="math_number" id="21">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number" id="22">
+                    <field name="NUM">10</field>
+                  </shadow>
+                  <block type="variables_get" id="23">
+                    <field name="VAR">n</field>
+                  </block>
+                </value>
+                <value name="BY">
+                  <shadow type="math_number" id="24">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="variables_set" id="25">
+                    <field name="VAR">t</field>
+                    <value name="VALUE">
+                      <block type="text_prompt_ext" id="26">
+                        <mutation type="NUMBER"></mutation>
+                        <field name="TYPE">NUMBER</field>
+                        <value name="TEXT">
+                          <shadow type="text" id="27">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="text" id="28">
+                            <field name="TEXT">Vnesi temperaturo:</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="lists_setIndex" id="29">
+                        <mutation at="false"></mutation>
+                        <field name="MODE">INSERT</field>
+                        <field name="WHERE">LAST</field>
+                        <value name="LIST">
+                          <block type="variables_get" id="30">
+                            <field name="VAR">meritve</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="variables_get" id="31">
+                            <field name="VAR">t</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="text_comment" id="32">
+                    <value name="TEXT">
+                      <shadow type="text" id="33">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="text" id="34">
+                        <field name="TEXT">Poiščimo dan z najvišjo temperaturo.</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="35">
+                        <field name="VAR">naj</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="36">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_for" id="37">
+                            <field name="VAR">d</field>
+                            <value name="FROM">
+                              <shadow type="math_number" id="38">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="math_number" id="39">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="TO">
+                              <shadow type="math_number" id="40">
+                                <field name="NUM">10</field>
+                              </shadow>
+                              <block type="variables_get" id="41">
+                                <field name="VAR">n</field>
+                              </block>
+                            </value>
+                            <value name="BY">
+                              <shadow type="math_number" id="42">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <statement name="DO">
+                              <block type="variables_set" id="43">
+                                <field name="VAR">m1</field>
+                                <value name="VALUE">
+                                  <block type="lists_getIndex" id="44">
+                                    <mutation statement="false" at="true"></mutation>
+                                    <field name="MODE">GET</field>
+                                    <field name="WHERE">FROM_START</field>
+                                    <value name="VALUE">
+                                      <block type="variables_get" id="45">
+                                        <field name="VAR">meritve</field>
+                                      </block>
+                                    </value>
+                                    <value name="AT">
+                                      <block type="variables_get" id="46">
+                                        <field name="VAR">d</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="variables_set" id="47">
+                                    <field name="VAR">m2</field>
+                                    <value name="VALUE">
+                                      <block type="lists_getIndex" id="48">
+                                        <mutation statement="false" at="true"></mutation>
+                                        <field name="MODE">GET</field>
+                                        <field name="WHERE">FROM_START</field>
+                                        <value name="VALUE">
+                                          <block type="variables_get" id="49">
+                                            <field name="VAR">meritve</field>
+                                          </block>
+                                        </value>
+                                        <value name="AT">
+                                          <block type="variables_get" id="50">
+                                            <field name="VAR">naj</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="controls_if" id="51">
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="52">
+                                            <field name="OP">GT</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="53">
+                                                <field name="VAR">m1</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="variables_get" id="54">
+                                                <field name="VAR">m2</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="variables_set" id="55">
+                                            <field name="VAR">naj</field>
+                                            <value name="VALUE">
+                                              <block type="variables_get" id="56">
+                                                <field name="VAR">d</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="procedures_callnoreturn" id="57" inline="true">
+                                <mutation name="Izpisi">
+                                  <arg name="dan"></arg>
+                                  <arg name="tabela"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                  <block type="variables_get" id="58">
+                                    <field name="VAR">naj</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="variables_get" id="59">
+                                    <field name="VAR">meritve</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="text_comment" id="60">
+                                    <value name="TEXT">
+                                      <shadow type="text" id="61">
+                                        <field name="TEXT">abc</field>
+                                      </shadow>
+                                      <block type="text" id="62">
+                                        <field name="TEXT">Poiščimo dan z najnižjo temperaturo.</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="variables_set" id="63">
+                                        <field name="VAR">naj</field>
+                                        <value name="VALUE">
+                                          <block type="math_number" id="64">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="controls_for" id="65">
+                                            <field name="VAR">d</field>
+                                            <value name="FROM">
+                                              <shadow type="math_number" id="66">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="math_number" id="67">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <value name="TO">
+                                              <shadow type="math_number" id="68">
+                                                <field name="NUM">10</field>
+                                              </shadow>
+                                              <block type="variables_get" id="69">
+                                                <field name="VAR">n</field>
+                                              </block>
+                                            </value>
+                                            <value name="BY">
+                                              <shadow type="math_number" id="70">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                            </value>
+                                            <statement name="DO">
+                                              <block type="variables_set" id="71">
+                                                <field name="VAR">m1</field>
+                                                <value name="VALUE">
+                                                  <block type="lists_getIndex" id="72">
+                                                    <mutation statement="false" at="true"></mutation>
+                                                    <field name="MODE">GET</field>
+                                                    <field name="WHERE">FROM_START</field>
+                                                    <value name="VALUE">
+                                                      <block type="variables_get" id="73">
+                                                        <field name="VAR">meritve</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="AT">
+                                                      <block type="variables_get" id="74">
+                                                        <field name="VAR">d</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="variables_set" id="75">
+                                                    <field name="VAR">m2</field>
+                                                    <value name="VALUE">
+                                                      <block type="lists_getIndex" id="76">
+                                                        <mutation statement="false" at="true"></mutation>
+                                                        <field name="MODE">GET</field>
+                                                        <field name="WHERE">FROM_START</field>
+                                                        <value name="VALUE">
+                                                          <block type="variables_get" id="77">
+                                                            <field name="VAR">meritve</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="AT">
+                                                          <block type="variables_get" id="78">
+                                                            <field name="VAR">naj</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="controls_if" id="79">
+                                                        <value name="IF0">
+                                                          <block type="logic_compare" id="80">
+                                                            <field name="OP">LT</field>
+                                                            <value name="A">
+                                                              <block type="variables_get" id="81">
+                                                                <field name="VAR">m1</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="variables_get" id="82">
+                                                                <field name="VAR">m2</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO0">
+                                                          <block type="variables_set" id="83">
+                                                            <field name="VAR">naj</field>
+                                                            <value name="VALUE">
+                                                              <block type="variables_get" id="84">
+                                                                <field name="VAR">d</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="procedures_callnoreturn" id="85" inline="true">
+                                                <mutation name="Izpisi">
+                                                  <arg name="dan"></arg>
+                                                  <arg name="tabela"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
+                                                  <block type="variables_get" id="86">
+                                                    <field name="VAR">naj</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ARG1">
+                                                  <block type="variables_get" id="87">
+                                                    <field name="VAR">meritve</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="100" x="610" y="10">
+    <mutation>
+      <arg name="dan"></arg>
+      <arg name="tabela"></arg>
+    </mutation>
+    <field name="NAME">Izpisi</field>
+    <comment pinned="false" h="80" w="160">Opiši to funkcijo...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="101">
+        <field name="VAR">danOd</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="102" collapsed="true">
+            <field name="OP">MINUS</field>
+            <value name="A">
+              <shadow type="math_number" id="103">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="104">
+                <field name="VAR">dan</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="105">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_number" id="106">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="107">
+            <field name="VAR">danDo</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="108" collapsed="true">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <shadow type="math_number" id="109">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="110">
+                    <field name="VAR">dan</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="111">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="math_number" id="112">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="113">
+                <value name="IF0">
+                  <block type="logic_compare" id="114">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="variables_get" id="115">
+                        <field name="VAR">danOd</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="116">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set" id="117">
+                    <field name="VAR">danOd</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="118">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="119">
+                    <value name="IF0">
+                      <block type="logic_compare" id="120">
+                        <field name="OP">GTE</field>
+                        <value name="A">
+                          <block type="variables_get" id="121">
+                            <field name="VAR">danDo</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="lists_length" id="122">
+                            <value name="VALUE">
+                              <block type="variables_get" id="123">
+                                <field name="VAR">tabela</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="124">
+                        <field name="VAR">danDo</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="125" collapsed="true">
+                            <field name="OP">MINUS</field>
+                            <value name="A">
+                              <shadow type="math_number" id="126">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="lists_length" id="127">
+                                <value name="VALUE">
+                                  <block type="variables_get" id="128">
+                                    <field name="VAR">tabela</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="129">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="math_number" id="130">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="variables_set" id="131">
+                        <field name="VAR">vsota</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="132">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_for" id="133">
+                            <field name="VAR">d</field>
+                            <value name="FROM">
+                              <shadow type="math_number" id="134">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="135">
+                                <field name="VAR">danOd</field>
+                              </block>
+                            </value>
+                            <value name="TO">
+                              <shadow type="math_number" id="136">
+                                <field name="NUM">10</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="137" collapsed="true">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow type="math_number" id="138">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="139">
+                                    <field name="VAR">danDo</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="140">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="math_number" id="141">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="BY">
+                              <shadow type="math_number" id="142">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <statement name="DO">
+                              <block type="variables_set" id="143">
+                                <field name="VAR">m1</field>
+                                <value name="VALUE">
+                                  <block type="lists_getIndex" id="144">
+                                    <mutation statement="false" at="true"></mutation>
+                                    <field name="MODE">GET</field>
+                                    <field name="WHERE">FROM_START</field>
+                                    <value name="VALUE">
+                                      <block type="variables_get" id="145">
+                                        <field name="VAR">tabela</field>
+                                      </block>
+                                    </value>
+                                    <value name="AT">
+                                      <block type="variables_get" id="146">
+                                        <field name="VAR">d</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="variables_set" id="147">
+                                    <field name="VAR">vsota</field>
+                                    <value name="VALUE">
+                                      <block type="math_arithmetic" id="148">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <shadow type="math_number" id="149">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="variables_get" id="150">
+                                            <field name="VAR">vsota</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <shadow type="math_number" id="151">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="variables_get" id="152">
+                                            <field name="VAR">m1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="text_print" id="153">
+                                <value name="TEXT">
+                                  <shadow type="text" id="154">
+                                    <field name="TEXT">abc</field>
+                                  </shadow>
+                                  <block type="text_join" id="155">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="variables_get" id="156">
+                                        <field name="VAR">d</field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="math_arithmetic" id="157" collapsed="true">
+                                        <field name="OP">DIVIDE</field>
+                                        <value name="A">
+                                          <shadow type="math_number" id="158">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="variables_get" id="159">
+                                            <field name="VAR">vsota</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <shadow type="math_number" id="160">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="math_arithmetic" id="161">
+                                            <field name="OP">MINUS</field>
+                                            <value name="A">
+                                              <shadow type="math_number" id="162">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id="163">
+                                                <field name="VAR">danDo</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <shadow type="math_number" id="164">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="math_arithmetic" id="165">
+                                                <field name="OP">ADD</field>
+                                                <value name="A">
+                                                  <shadow type="math_number" id="166">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="167">
+                                                    <field name="VAR">danOd</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <shadow type="math_number" id="168">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                  <block type="math_number" id="169">
+                                                    <field name="NUM">1</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
+<!-- Second row end -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Pagination in Footer -->
+			<div class="col-md-12">
+				<center>
+				<ul class="pagination pagination-sm">
+					<li><a href="../1224/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
+					<li><a href="../1225/index3.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
+					<li><a href="../1225/index.html">54</a></li>
+					<li><a href="../1225/index1.html">55</a></li>
+					<li><a href="../1225/index2.html">56</a></li>
+					<li><a href="../1225/index3.html">57</a></li>
+					<li class="active"><a href="#">58</a></li>
+					<li><a href="../1225/index5.html">59</a></li>
+					<li><a href="../1225/index6.html">60</a></li>
+					<li><a href="../1225/index7.html">61</a></li>
+					<li><a href="../1225/index8.html">62</a></li>
+					<li><a href="../1225/index9.html">63</a></li>
+					<li><a href="../1225/index10.html">64</a></li>
+					<li><a href="../1225/index11.html">65</a></li>
+					<li><a href="../1225/index12.html">66</a></li>
+					<li><a href="../1225/index13.html">67</a></li>
+					<li><a href="../1225/index14.html">68</a></li>
+					<li><a href="../1225/index15.html">69</a></li>
+					<li><a href="../1225/index16.html">70</a></li>
+					<li><a href="../1225/index17.html">71</a></li>
+					<li><a href="../1225/index5.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
+					<li><a href="../1226/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
+				</ul>
+				</center>
+			</div>
+
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- rPage: Highly responsive pagination for Bootstrap -->
+	<script src="../js/responsive-paginate.js"></script>
+	<script>
+	$(document).ready(function () {
+		$(".pagination").rPage();
+	});
+	</script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+	</script>
+
+<!-- Blockly -->
+<script src="../blockly/storage.js"></script>
+<script src="../blockly/blockly_compressed.js"></script>
+<script src="../blockly/blocks_compressed.js"></script>
+<script src="../blockly/javascript_compressed.js"></script>
+<script src="../blockly/python_compressed.js"></script>
+<script src="../blockly/local/custom_blocks.js"></script>
+<script src="index4.js"></script>
+<script>
+  var elementID = "";
+  $("#runButton").click(function() {
+    elementID = "#output";
+  });
+  window.alert = function(msg) {
+    $(elementID).append(msg + "\n");
+  };
+</script>
+
+
+<!-- CookieCuttr -->
+<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="../cc/cookiecuttr.css">
+<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript" src="../cc/setup.cookiecuttr.js"></script>
+
+
+<script>
+document.body.addEventListener("keydown", function (event) {
+    var code = event.keyCode || event.which;
+    var alt  = event.altKey;
+    if (alt && code === 33 /* Alt+PgUp */) {
+        window.location.replace("../1225/index3.html");
+    }
+    if (alt && code === 34 /* Alt+PgDn */) {
+        window.location.replace("../1225/index5.html");
+    }
+});
+</script>
+
+</body>
+
+</html>
