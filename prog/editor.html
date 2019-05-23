@@ -422,6 +422,13 @@
         </shadow>
       </value>
     </block>
+    <block type="text_comment">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
     <block type="text_prompt_ext">
       <value name="TEXT">
         <shadow type="text">
@@ -508,6 +515,7 @@
   };
 
   $("#saveButton").click(function() {
+    var title = prompt("Vnesi ime programa:", "program");
     var workspace = Blockly.getMainWorkspace();
     if (workspace != null) {
       var xml = Blockly.Xml.workspaceToDom(workspace);
@@ -515,7 +523,7 @@
       // TODO: fix browserify so that this call works
       // saveToFile('program.blockly', xml);
       var blob = new Blob([data], {type: 'text/xml'});
-      var filename = 'program.blockly';
+      var filename = title + '.blockly';
       if (window.navigator.msSaveOrOpenBlob) {
         window.navigator.msSaveBlob(blob, filename);
       }
