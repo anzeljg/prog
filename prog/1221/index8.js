@@ -248,6 +248,13 @@ Code12218a.init = function() {
   Code12218a.bindClick('trashButton',
       function() {Code12218a.discard(); Code12218a.renderContent();});
   Code12218a.bindClick('runButton', Code12218a.runJS);
+  Code12218a.bindClick('solve1Button', function() {Code12218a.solve1();});
+  Code12218a.bindClick('solve2Button', function() {Code12218a.solve2();});
+  Code12218a.bindClick('solve3Button', function() {Code12218a.solve3();});
+  Code12218a.bindClick('solve4Button', function() {Code12218a.solve4();});
+  Code12218a.bindClick('solve5Button', function() {Code12218a.solve5();});
+  Code12218a.bindClick('solve6Button', function() {Code12218a.solve6();});
+  Code12218a.bindClick('solve7Button', function() {Code12218a.solve7();});
 
   for (var i = 0; i < Code12218a.TABS_.length; i++) {
     var name = Code12218a.TABS_[i];
@@ -271,6 +278,72 @@ Code12218a.initLanguage = function() {
 
   // Inject language strings.
   document.getElementById('tab1_blocks').textContent = MSG['blocks'];
+};
+
+/**
+ * Solve the task by updating certain block(s).
+ */
+Code12218a.solve1 = function() {
+  $('#output').html(''); // Erase content of the output
+  Code12218a.workspace.clear();
+  window.location.hash = '';
+
+  // Load workspace initial content
+  Blockly.Xml.domToWorkspace(document.getElementById('1221-08-1'), Code12218a.workspace);
+};
+
+Code12218a.solve2 = function() {
+  $('#output').html(''); // Erase content of the output
+  Code12218a.workspace.clear();
+  window.location.hash = '';
+
+  // Load workspace initial content
+  Blockly.Xml.domToWorkspace(document.getElementById('1221-08-2'), Code12218a.workspace);
+};
+
+Code12218a.solve3 = function() {
+  $('#output').html(''); // Erase content of the output
+  Code12218a.workspace.clear();
+  window.location.hash = '';
+
+  // Load workspace initial content
+  Blockly.Xml.domToWorkspace(document.getElementById('1221-08-3'), Code12218a.workspace);
+};
+
+Code12218a.solve4 = function() {
+  $('#output').html(''); // Erase content of the output
+  Code12218a.workspace.clear();
+  window.location.hash = '';
+
+  // Load workspace initial content
+  Blockly.Xml.domToWorkspace(document.getElementById('1221-08-4'), Code12218a.workspace);
+};
+
+Code12218a.solve5 = function() {
+  $('#output').html(''); // Erase content of the output
+  Code12218a.workspace.clear();
+  window.location.hash = '';
+
+  // Load workspace initial content
+  Blockly.Xml.domToWorkspace(document.getElementById('1221-08-5'), Code12218a.workspace);
+};
+
+Code12218a.solve6 = function() {
+  $('#output').html(''); // Erase content of the output
+  Code12218a.workspace.clear();
+  window.location.hash = '';
+
+  // Load workspace initial content
+  Blockly.Xml.domToWorkspace(document.getElementById('1221-08-6'), Code12218a.workspace);
+};
+
+Code12218a.solve7 = function() {
+  $('#output').html(''); // Erase content of the output
+  Code12218a.workspace.clear();
+  window.location.hash = '';
+
+  // Load workspace initial content
+  Blockly.Xml.domToWorkspace(document.getElementById('1221-08-7'), Code12218a.workspace);
 };
 
 /**

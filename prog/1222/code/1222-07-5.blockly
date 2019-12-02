@@ -1,0 +1,1 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="logic_operation" id="{GU2;b*y}Y=BGsJ:QRz)" x="22" y="7"><field name="OP">AND</field><value name="A"><block type="variables_get" id="1Byms!UP~cl[G8TI%0l)"><field name="VAR">a</field></block></value><value name="B"><block type="variables_get" id=")kwf.rP$LKca(HdXHg0."><field name="VAR">b</field></block></value></block></xml>

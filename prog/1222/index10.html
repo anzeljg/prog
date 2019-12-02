@@ -145,10 +145,11 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1222-10-1.png">
+<img src="img/1222-10-1.svg" onerror="this.src='img/1222-10-1.png'">
 </pre>
 					</div>
 					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="solve1Button"><span class="fa fa-arrow-right"></span> Prenesi v urejevalnik</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
 					</div>
 				</div>
@@ -189,10 +190,11 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1222-10-2.png">
+<img src="img/1222-10-2.svg" onerror="this.src='img/1222-10-2.png'">
 </pre>
 					</div>
 					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="solve2Button"><span class="fa fa-arrow-right"></span> Prenesi v urejevalnik</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
 					</div>
 				</div>
@@ -212,10 +214,11 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1222-10-3.png">
+<img src="img/1222-10-3.svg" onerror="this.src='img/1222-10-3.png'">
 </pre>
 					</div>
 					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="solve3Button"><span class="fa fa-arrow-right"></span> Prenesi v urejevalnik</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
 					</div>
 				</div>
@@ -467,6 +470,15 @@ manjše
     $(elementID).append(msg + "\n");
   };
 </script>
+
+<!-- 1222-10-1 solution -->
+<xml xmlns="http://www.w3.org/1999/xhtml" id="1222-10-1" style="display:none"><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="8" y="8"><field name="VAR">stevilo</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR">stevilo</field></block></value><value name="B"><block type="math_number" id="qVzh^];xAZpmC.:V4Xd#"><field name="NUM">42</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">DA</field></block></value></block></statement></block></next></block></xml>
+
+<!-- 1222-10-2 solution -->
+<xml xmlns="http://www.w3.org/1999/xhtml" id="1222-10-2" style="display:none"><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="8" y="8"><field name="VAR">stevilo</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><mutation elseif="1" else="1"></mutation><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR">stevilo</field></block></value><value name="B"><block type="math_number" id="qVzh^];xAZpmC.:V4Xd#"><field name="NUM">42</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">večje</field></block></value></block></statement><value name="IF1"><block type="logic_compare" id="M01Q(nb5z*n1Z*8fb87$"><field name="OP">LT</field><value name="A"><block type="variables_get" id="OBJQv9I7QK}QF#wZ?AGk"><field name="VAR">stevilo</field></block></value><value name="B"><block type="math_number" id="RfpX3BK=x,ZH$!3+#l0{"><field name="NUM">42</field></block></value></block></value><statement name="DO1"><block type="text_print" id="J)u$WZ!9D.3hsWw+@:(B"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="|![^r0lC_:uZ-UG*H,b)"><field name="TEXT">manjše</field></block></value></block></statement><statement name="ELSE"><block type="text_print" id="B05U#l{HA$+?]N6$y}72"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Ff*RntVd.f[dbi4Ke!8J"><field name="TEXT">enako</field></block></value></block></statement></block></next></block></xml>
+
+<!-- 1222-10-3 solution -->
+<xml xmlns="http://www.w3.org/1999/xhtml" id="1222-10-3" style="display:none"><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="8" y="8"><field name="VAR">a</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi prvo celo število:</field></block></value></block></value><next><block type="variables_set" id="y`tx9!h/u/Hxy)me=o!;"><field name="VAR">b</field><value name="VALUE"><block type="text_prompt_ext" id="S;G[im2[X??GmCB*QxdH"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="2U|yUm:c-=oTN]2!H_8!"><field name="TEXT">Vnesi drugo celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><mutation elseif="1" else="1"></mutation><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR">a</field></block></value><value name="B"><block type="variables_get" id="OhgmOFw;!rLQn3Sno1TM"><field name="VAR">b</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">prvo</field></block></value></block></statement><value name="IF1"><block type="logic_compare" id="M01Q(nb5z*n1Z*8fb87$"><field name="OP">LT</field><value name="A"><block type="variables_get" id="OBJQv9I7QK}QF#wZ?AGk"><field name="VAR">a</field></block></value><value name="B"><block type="variables_get" id="}Cc8g@_4Bw,,*Y4U(TGn"><field name="VAR">b</field></block></value></block></value><statement name="DO1"><block type="text_print" id="J)u$WZ!9D.3hsWw+@:(B"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="|![^r0lC_:uZ-UG*H,b)"><field name="TEXT">drugo</field></block></value></block></statement><statement name="ELSE"><block type="text_print" id="B05U#l{HA$+?]N6$y}72"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Ff*RntVd.f[dbi4Ke!8J"><field name="TEXT">enaki</field></block></value></block></statement></block></next></block></next></block></xml>
 
 
 <!-- CookieCuttr -->

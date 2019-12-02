@@ -2,6 +2,7 @@
 #tabRow>td {
   border: 1px solid #ccc;
   border-bottom: none;
+  font-size: 14px;
 }
 td.tabon {
   border-bottom-color: #ddd !important;
@@ -33,6 +34,10 @@ td.tabmax {
 }
 html[dir=rtl] td.tabmax {
   text-align: left;
+}
+
+.blocklyTreeLabel {
+  font-size: 14px !important;
 }
 
 table {

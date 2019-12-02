@@ -246,6 +246,7 @@ Code12234a.init = function() {
   Code12234a.bindClick('trashButton',
       function() {Code12234a.discard(); Code12234a.renderContent();});
   Code12234a.bindClick('runButton', Code12234a.runJS);
+  Code12234a.bindClick('solve1Button', function() {Code12234a.solve1();});
 
   // Load workspace initial content
   Blockly.Xml.domToWorkspace(document.getElementById('workspace'), Code12234a.workspace);
@@ -272,6 +273,18 @@ Code12234a.initLanguage = function() {
 
   // Inject language strings.
   document.getElementById('tab1_blocks').textContent = MSG['blocks'];
+};
+
+/**
+ * Solve the task by updating certain block(s).
+ */
+Code12234a.solve1 = function() {
+  $('#output').html(''); // Erase content of the output
+  Code12234a.workspace.clear();
+  window.location.hash = '';
+
+  // Load workspace initial content
+  Blockly.Xml.domToWorkspace(document.getElementById('1223-04-1'), Code12234a.workspace);
 };
 
 /**

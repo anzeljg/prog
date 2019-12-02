@@ -145,10 +145,11 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1222-04-3.png">
+<img src="img/1222-04-3.svg" onerror="this.src='img/1222-04-3.png'">
 </pre>
 					</div>
 					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="solve1Button"><span class="fa fa-arrow-right"></span> Prenesi v urejevalnik</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
 					</div>
 				</div>
@@ -166,9 +167,9 @@
 
 <p align="justify">Naš program za izračun hitrosti ni najbolj prijazen. Če želimo izračunati povprečno hitrost za drugačne podatke, kot so trenutno navedeni v programu, moramo program spremeniti. Veliko bolje bi bilo, če bi program <b>povprašal</b> uporabnika po vhodnih podatkih:
 <pre>
-<img src="img/1222-04-1.png">
-  Koliko km si prevozil(a)? <u>30</u>
-<img src="img/1222-04-2.png">
+<img src="img/1222-04-1.svg" onerror="this.src='img/1222-04-1.png'">
+Koliko km si prevozil(-a)? <u>30</u>
+<img src="img/1222-04-2.svg" onerror="this.src='img/1222-04-2.png'">
 </pre>
 Izpis:
 <pre>
@@ -176,7 +177,7 @@ Izpis:
 </pre>
 </p>
 
-<p align="justify">Kocka <code>vprašaj za</code> izpiše besedilo, ki ji ga podamo (zakaj potrebujemo navednice?), nato pa počaka, da uporabnik vnese podatek. Denimo, da vnesemo število 30. Uporabnikov vnos smo podčrtali (<u>30</u>); tako bomo počeli tudi v nadaljevanju. Uporabnikov vnos (rezultat funkcije <code>vprašaj za</code>) se priredi spremenljivki <code>pot</code>.</p>
+<p align="justify">Delček <code>vprašaj za</code> izpiše besedilo, ki mu ga podamo (zakaj potrebujemo navednice?), nato pa počaka, da uporabnik vnese podatek. Denimo, da vnesemo število 30. Uporabnikov vnos smo podčrtali (<u>30</u>); tako bomo počeli tudi v nadaljevanju. Uporabnikov vnos (rezultat funkcije <code>vprašaj za</code>) se priredi spremenljivki <code>pot</code>.</p>
 
 <table width="100%">
   <tr id="tabRow" height="1em">
@@ -278,7 +279,7 @@ Izpis:
             <field name="TEXT">abc</field>
           </shadow>
           <block type="text" id="13">
-            <field name="TEXT">Koliko km si prevozil(a)?</field>
+            <field name="TEXT">Koliko km si prevozil(-a)?</field>
           </block>
         </value>
       </block>
@@ -513,7 +514,7 @@ Izpis:
             <mutation items="3"></mutation>
             <value name="ADD0">
               <block type="text" id="67">
-                <field name="TEXT">Vozil(a) si s povprečno hitrostjo </field>
+                <field name="TEXT">Vozil(-a) si s povprečno hitrostjo </field>
               </block>
             </value>
             <value name="ADD1">
@@ -541,17 +542,17 @@ Izpis:
 <p>
 	<span class="label label-warning"><b>POZOR</b></span>
 </p>
-<p align="justify">Nekatere kocke imajo levo zgoraj ikono <span class="fa fa-cog"></span>, ki jo lahko kliknemo, da dodatno prilagodimo izgled in delovanje kocke.</p>
+<p align="justify">Nekateri delčki imajo levo zgoraj ikono <span class="fa fa-cog"></span>, ki jo lahko kliknemo, da dodatno prilagodimo izgled in delovanje delčka.</p>
 </div>
 
 <p align="justify">Zaženimo naš novi program s spodnjimi podatki:
 <pre>
-Koliko kilometrov si prevozil(a)? <u>20</u>
+Koliko kilometrov si prevozil(-a)? <u>20</u>
 Vnesi uro ob začetku vožnje: <u>8</u>
 Vnesi minuto ob začetku vožnje: <u>50</u>
 Vnesi uro ob koncu vožnje: <u>10</u>
 Vnesi minuto ob koncu vožnje: <u>0</u>
-Vozil(a) si s povprečno hitrostjo 17.142857142857142 km/h.
+Vozil(-a) si s povprečno hitrostjo 17.142857142857142 km/h.
 </pre>
 </p>
 
@@ -655,6 +656,9 @@ Jaka, letos praznuješ svoj 15. rojstni dan.
     $(elementID).append(msg + "\n");
   };
 </script>
+
+<!-- 1222-04-3 solution -->
+<xml xmlns="http://www.w3.org/1999/xhtml" id="1222-04-3" style="display:none"><block type="variables_set" id="=i7iHmJy{A+zn%]q$Vx`" x="8" y="8"><field name="VAR">ime</field><value name="VALUE"><block type="text_prompt_ext" id="Vzb,m^6.hjDFK#R//LTY"><mutation type="TEXT"></mutation><field name="TYPE">TEXT</field><value name="TEXT"><shadow type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="Y_SN=Z*lUJ]|qaf]4HVO"><field name="TEXT">Kako ti je ime?</field></block></value></block></value><next><block type="variables_set" id="Uq#Y#:WD@*cm]v%IWs)?"><field name="VAR">rojen</field><value name="VALUE"><block type="text_prompt_ext" id=":OS3X]~.pFC@F=Z|58wI"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="St.|z.NP#K6{#I#Pe~uK"><field name="TEXT">Vnesi svoje leto rojstva:</field></block></value></block></value><next><block type="variables_set" id="C?ChgU[CSxsJYN23?PXU"><field name="VAR">letos</field><value name="VALUE"><block type="text_prompt_ext" id="[cDpE=$Ctw/6U`kYSm[z"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="OpRBvy3FXK]vogFATKT!"><field name="TEXT">Katerega leta smo letos?</field></block></value></block></value></block></next></block></next></block><block type="text_print" id="yvJBTZ;~Si:O2q(E)7@+" x="8" y="112"><value name="TEXT"><shadow type="text" id="hXFp7BPV4q[*;YE_=!th"><field name="TEXT">abc</field></shadow><block type="text_join" id="x.L/;)VZ7O`jxnw$P[?w"><mutation items="4"></mutation><value name="ADD0"><block type="variables_get" id="SAF:UJuGzm5jZnvbh$Gz"><field name="VAR">ime</field></block></value><value name="ADD1"><block type="text" id="zCzB~C:Y9Nci)+-~cKPN"><field name="TEXT">, letos praznuješ svoj </field></block></value><value name="ADD2"><block type="math_arithmetic" id="*}LN=`o%K7Lw4[nWL|#a"><field name="OP">MINUS</field><value name="A"><shadow type="math_number" id="4htq%@+b2rS1X_+3?luk"><field name="NUM">1</field></shadow><block type="variables_get" id="[ZFP!=vL9#9$;}8+9!*@"><field name="VAR">letos</field></block></value><value name="B"><shadow type="math_number" id="=qC!^atVfoK28maK?7w%"><field name="NUM">1</field></shadow><block type="variables_get" id="d-ta~m*P}9}k{p/}njX*"><field name="VAR">rojen</field></block></value></block></value><value name="ADD3"><block type="text" id=")iIaH%jBp!-57?38@}_w"><field name="TEXT">. rojstni dan.</field></block></value></block></value></block></xml>
 
 
 <!-- CookieCuttr -->
