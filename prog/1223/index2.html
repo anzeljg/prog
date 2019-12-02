@@ -128,13 +128,14 @@
 					<div class="modal-body">
 <p align="justify">Pomagamo si lahko s šahovnico na desni ali pa s predelavo programa s prejšnje strani:
 <pre>
-<img src="img/1223-02-1.png">
+<img src="img/1223-02-1.svg" onerror="this.src='img/1223-02-1.png'">
 </pre>
 </p>
 <p align="justify">V obeh primerih lahko ugotovimo, da riža zmanjka na 30. polju.
 </p>
 					</div>
 					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="solve1Button"><span class="fa fa-arrow-right"></span> Prenesi v urejevalnik</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
 					</div>
 				</div>
@@ -458,7 +459,7 @@
 </div>
 
 <p>
-<canvas id="chessboard" width="320" height="320" style="border:1px solid #000"></canvas>
+<canvas id="chessboard" width="322" height="322" style="border:1px solid #000"></canvas>
 <button class="btn btn-primary" data-toggle="modal" data-target="#okrajsave"><span class="fa fa-info"></span></button>
 <div id="skupaj">Skupaj zrn: 0</div>
 <div id="pokrito">Pokritih polj: 0</div>
@@ -539,6 +540,9 @@
     $(elementID).append(msg + "\n");
   };
 </script>
+
+<!-- 1223-02-1 solution -->
+<xml xmlns="http://www.w3.org/1999/xhtml" id="1223-02-1" style="display:none"><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="8" y="8"><field name="VAR">skupajZrn</field><value name="VALUE"><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">0</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR">polje</field><value name="VALUE"><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">1</field></block></value><next><block type="variables_set" id="5F2ML(%k9Z5V^:GXtXg#"><field name="VAR">zrnNaPolju</field><comment pinned="false" h="44" w="191">število zrn na prvem polju</comment><value name="VALUE"><block type="math_number" id="$%17=f~dvkCZ_.r@~(Df"><field name="NUM">1</field></block></value><next><block type="variables_set" id="%`Zoi2X+G`0YBi#V4?ph"><field name="VAR">skupajZrn</field><value name="VALUE"><block type="math_arithmetic" id="^OVeNT{q1V|hN}=}Ir?a" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id=";[EtvK(_$2)dr_dcusVe"><field name="NUM">1</field></shadow><block type="variables_get" id="lbbLZVCM64m=GbSRBB-y"><field name="VAR">skupajZrn</field></block></value><value name="B"><shadow type="math_number" id="hR1m$DlZ{AIjM[V[iUnY"><field name="NUM">1</field></shadow><block type="variables_get" id="e$`kOV{LFt|S0:g52svo"><field name="VAR">zrnNaPolju</field></block></value></block></value><next><block type="controls_whileUntil" id="U,=~G2EPl2#qg.~@czHy"><field name="MODE">WHILE</field><value name="BOOL"><block type="logic_compare" id="a8`A}3*H%Q@F-/O[(pi,"><field name="OP">LT</field><value name="A"><block type="variables_get" id="b:wOSfa$N=-$*y/Mf9zf"><field name="VAR">skupajZrn</field></block></value><value name="B"><block type="math_number" id="BM3+)kY*izb]K!2r^i0u"><field name="NUM">1000000000</field></block></value></block></value><statement name="DO"><block type="variables_set" id="Y[,cy0km:KC[U|/s-65K"><field name="VAR">polje</field><comment pinned="false" h="44.99999237060547" w="251">premaknimo se na naslednje polje</comment><value name="VALUE"><block type="math_arithmetic" id=",2C)8ZRgSSelKhoxUzlZ" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="52{:ApTHVrXGff67S_+p"><field name="NUM">1</field></shadow><block type="variables_get" id="n{^@M,*,9/J`,r:_.C-l"><field name="VAR">polje</field></block></value><value name="B"><shadow type="math_number" id="^HQv.n}rMB#xUaRRoYsl"><field name="NUM">1</field></shadow><block type="math_number" id="B(Q0cw21bN1gnVc|p,Kt"><field name="NUM">1</field></block></value></block></value><next><block type="variables_set" id="U$P4!lP6Lh:1c~2k#fM?"><field name="VAR">zrnNaPolju</field><comment pinned="false" h="46" w="229">izračunajmo število zrn na njem</comment><value name="VALUE"><block type="math_arithmetic" id=":.bTzNSy*(u3Gw,l8qKt" collapsed="true"><field name="OP">MULTIPLY</field><value name="A"><shadow type="math_number" id="K!dc5]mHJ5ua6OK/2?@s"><field name="NUM">1</field></shadow><block type="variables_get" id="Ix2yah-GljY`mXr8:=|m"><field name="VAR">zrnNaPolju</field></block></value><value name="B"><shadow type="math_number" id="mWvelmU^:2j9ZVt[x0~)"><field name="NUM">1</field></shadow><block type="math_number" id="=E65etKIlUef|-v53lkt"><field name="NUM">2</field></block></value></block></value><next><block type="variables_set" id="{$h^Huf*t2P_t^W_Inis"><field name="VAR">skupajZrn</field><value name="VALUE"><block type="math_arithmetic" id="{7)N$Q]yPKt-cHdzj9Vd" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="+RD`w?QA-PXyZz@{pzBy"><field name="NUM">1</field></shadow><block type="variables_get" id="__EI[DCi0gk-_6j7s:T`"><field name="VAR">skupajZrn</field></block></value><value name="B"><shadow type="math_number" id="zpIEUSfc+K6`GFc]yfm$"><field name="NUM">1</field></shadow><block type="variables_get" id="vVNoa9B#j!|o(zNxQK$Y"><field name="VAR">zrnNaPolju</field></block></value></block></value></block></next></block></next></block></statement><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR">polje</field></block></value></block></next></block></next></block></next></block></next></block></next></block></xml>
 
 <!-- Chessboard interactive example -->
 <script type="text/javascript">

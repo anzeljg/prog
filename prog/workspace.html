@@ -22,12 +22,6 @@
 
 	<!-- Blockly editor -->
 	<link href="blockly/local/editor.css" rel="stylesheet">
-	<style>
-	textarea#content1_xml {
-	    font-family: monospace;
-		font-size: 13px;
-	}
-	</style>
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -131,8 +125,6 @@
     <td class="tabmin">&nbsp;</td>
     <td id="tab1_python" class="taboff">Python</td>
     <td class="tabmin">&nbsp;</td>
-    <td id="tab1_xml" class="taboff">XML</td>
-    <td class="tabmin">&nbsp;</td>
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary" id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary" id="trashButton">Počisti</button>
@@ -141,11 +133,12 @@
           <span class="fa fa-upload"></span> Naloži <input type="file" id="loadButton" accept=".blockly" style="display: none;">
         </label>
         <button type="button" class="btn btn-primary" id="saveButton"><span class="fa fa-download"></span> Shrani</button>
+        <button type="button" class="btn btn-primary" id="saveSvgButton"><span class="fa fa-download"></span> Shrani SVG</button>
       </div>
     </td>
   </tr>
   <tr>
-    <td colspan="7" id="content1_area"></td>
+    <td colspan="5" id="content1_area"></td>
   </tr>
 </table>
 <table width="100%">
@@ -153,7 +146,6 @@
     <td style="position:relative; height:450px;">
       <div id="content1_blocks" class="content"></div>
       <pre id="content1_python" class="content"></pre>
-      <textarea id="content1_xml" class="content" wrap="off"></textarea>
     </td>
   </tr>
 </table>
@@ -168,6 +160,11 @@
     <block type="logic_boolean"></block>
     <block type="logic_null"></block>
     <block type="logic_ternary"></block>
+    <block type="condition"></block>
+    <block type="condition1"></block>
+    <block type="condition2"></block>
+    <block type="condition3"></block>
+    <block type="everything_ok"></block>
   </category>
   <category name="{catLoops}" colour="320">
     <block type="controls_repeat_ext">
@@ -273,6 +270,20 @@
         </shadow>
       </value>
     </block>
+    <block type="math_ord">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">A</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_to_number">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">5</field>
+        </shadow>
+      </value>
+    </block>
     <block type="math_constrain">
       <value name="VALUE">
         <shadow type="math_number">
@@ -303,6 +314,15 @@
       </value>
     </block>
     <block type="math_random_float"></block>
+    <block type="index"></block>
+    <block type="index_a"></block>
+    <block type="index_b"></block>
+    <block type="expression"></block>
+    <block type="ellipsis"></block>
+    <block type="stmt_a1"></block>
+    <block type="stmt_a2"></block>
+    <block type="stmt_b1"></block>
+    <block type="stmt_b2"></block>
   </category>
   <category name="{catLists}" colour="10">
     <block type="lists_create_with">
@@ -512,7 +532,8 @@
 <script src="blockly/javascript_compressed.js"></script>
 <script src="blockly/python_compressed.js"></script>
 <script src="blockly/local/custom_blocks.js"></script>
-<script src="workspace.js"></script>
+<script src="blockly/local/algorithm_blocks.js"></script>
+<script src="editor.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -526,14 +547,43 @@
   $("#saveButton").click(function() {
     var title = prompt("Vnesi ime programa:", "program");
     var workspace = Blockly.getMainWorkspace();
-    var workspace = Blockly.getMainWorkspace();
     if (workspace != null) {
       var xml = Blockly.Xml.workspaceToDom(workspace);
       var data = Blockly.Xml.domToText(xml);
       // TODO: fix browserify so that this call works
       // saveToFile('program.blockly', xml);
       var blob = new Blob([data], {type: 'text/xml'});
-      var filename = title . '.blockly';
+      var filename = title + '.blockly';
+      if (window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveBlob(blob, filename);
+      }
+      else {
+        var elem = window.document.createElement('a');
+        elem.href = window.URL.createObjectURL(blob);
+        elem.download = filename;
+        document.body.appendChild(elem);
+        elem.click();
+        document.body.removeChild(elem);
+        window.URL.revokeObjectURL(blob);
+      }
+    }
+  });
+
+  $("#saveSvgButton").click(function() {
+    var title = prompt("Vnesi ime slike:", "slika");
+    var canvas = Blockly.mainWorkspace.svgBlockCanvas_.cloneNode(true);
+    if (canvas.children[0] !== undefined) {
+      canvas.removeAttribute("transform");
+	  var cssContent = Blockly.Css.CONTENT.join('');
+	  var css = '<defs><style type="text/css" xmlns="http://www.w3.org/1999/xhtml"><![CDATA[' + cssContent + ']]></style></defs>';
+	  var bbox = document.getElementsByClassName("blocklyBlockCanvas")[0].getBBox();
+	  var content = new XMLSerializer().serializeToString(canvas);
+	  var data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'
+        + bbox.width + '" height="' + bbox.height + '" viewBox=" ' + bbox.x + ' ' + bbox.y + ' ' + bbox.width + ' ' + bbox.height + '">' +
+        css + content + '</svg>';
+	  console.log(data);
+      var blob = new Blob([data], {type: 'image/svg+xml;base64'});
+      var filename = title + '.svg';
       if (window.navigator.msSaveOrOpenBlob) {
         window.navigator.msSaveBlob(blob, filename);
       }
