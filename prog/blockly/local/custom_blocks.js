@@ -206,6 +206,37 @@ Blockly.Blocks.text_repeat = {
     }
 };
 
+// forEach block for characters/strings: foreach character in string
+Blockly.Blocks.controls_forEach_text = {
+    init: function() {
+        this.jsonInit({
+            message0: "za vsak znak %1 v nizu %2",
+            args0: [{
+                type: "field_variable",
+                name: "VAR",
+                variable: "z"
+            }, {
+                type: "input_value",
+                name: "LIST",
+                check: "String"
+            }],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.Blocks.loops.HUE,
+			tooltip: "Za vsak znak v nizu, nastavi spremenljivko '%1' na ta znak. Pri tem se izvedejo določeni delčki.",
+            helpUrl: Blockly.Msg.CONTROLS_FOREACH_HELPURL
+        });
+        this.appendStatementInput("DO").appendField(Blockly.Msg.CONTROLS_FOREACH_INPUT_DO);
+        var a = this;
+        this.setTooltip(function() {
+            return Blockly.Msg.CONTROLS_FOREACH_TOOLTIP.replace("%1",
+                a.getFieldValue("CHAR"))
+        })
+    },
+    customContextMenu: Blockly.Blocks.controls_for.customContextMenu
+};
+
+
 
 /**
  * Custom block generator functions
@@ -337,4 +368,25 @@ Blockly.Python['text_repeat'] = function(block) {
   var num = Blockly.Python.valueToCode(block, 'NUM', Blockly.Python.ORDER_ATOMIC);
   var code = str + ' * ' + num;
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript.controls_forEach_text = function(a) {
+    var b = Blockly.JavaScript.variableDB_.getName(a.getFieldValue("VAR"), Blockly.Variables.NAME_TYPE),
+        c = Blockly.JavaScript.valueToCode(a, "LIST", Blockly.JavaScript.ORDER_ASSIGNMENT) || "[]",
+        d = Blockly.JavaScript.statementToCode(a, "DO"),
+        d = Blockly.JavaScript.addLoopTrap(d, a.id);
+    a = "";
+    var e = c;
+    c.match(/^\w+$/) || (e = Blockly.JavaScript.variableDB_.getDistinctName(b + "_list", Blockly.Variables.NAME_TYPE), a += "var " + e + " = " + c + ";\n");
+    c = Blockly.JavaScript.variableDB_.getDistinctName(b +
+        "_index", Blockly.Variables.NAME_TYPE);
+    d = Blockly.JavaScript.INDENT + b + " = " + e + "[" + c + "];\n" + d;
+    return a + ("for (var " + c + " in " + e + ") {\n" + d + "}\n")
+};
+Blockly.Python.controls_forEach_text = function(a) {
+    var b = Blockly.Python.variableDB_.getName(a.getFieldValue("VAR"), Blockly.Variables.NAME_TYPE),
+        c = Blockly.Python.valueToCode(a, "LIST", Blockly.Python.ORDER_RELATIONAL) || "''",
+        d = Blockly.Python.statementToCode(a, "DO"),
+        d = Blockly.Python.addLoopTrap(d, a.id) || Blockly.Python.PASS;
+    return "for " + b + " in " + c + ":\n" + d
 };
