@@ -14,6 +14,8 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-toggle.min.css" rel="stylesheet">
+
 	<!-- Custom CSS -->
 	<link href="css/simple-sidebar.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
@@ -121,13 +123,16 @@
 <!-- Content start -->
 <table width="100%">
   <tr id="tabRow" height="1em">
+    <td id="canvas" class="tabmin" rowspan="2" style="display:none">
+      <div style="width:410px!important">&nbsp;</div>
+    </td>
     <td id="tab1_blocks" class="tabon">...</td>
     <td class="tabmin">&nbsp;</td>
     <td id="tab1_python" class="taboff">Python</td>
     <td class="tabmin">&nbsp;</td>
     <td class="tabmax" align="right">
-      <button type="button" class="btn btn-primary" id="runButton"><span class="fa fa-play"></span> Izvedi</button>
-      <button type="button" class="btn btn-primary" id="trashButton">Počisti</button>
+      <button type="button" class="btn btn-primary" id="runButton" onclick="runit()"><span class="fa fa-play"></span> Izvedi</button>
+      <button type="button" class="btn btn-primary" id="trashButton" onclick="clearit()">Počisti</button>
       <div class="btn-group" role="group" aria-label="...">
         <label class="btn btn-primary btn-file">
           <span class="fa fa-upload"></span> Naloži <input type="file" id="loadButton" accept=".blockly" style="display: none;">
@@ -135,6 +140,7 @@
         <button type="button" class="btn btn-primary" id="saveButton"><span class="fa fa-download"></span> Shrani</button>
         <button type="button" class="btn btn-primary" id="saveSvgButton"><span class="fa fa-download"></span> Shrani SVG</button>
       </div>
+      <input type="checkbox" id="turtleCanvas" data-toggle="toggle" data-on="Skrij platno" data-off="Pokaži platno">
     </td>
   </tr>
   <tr>
@@ -143,9 +149,12 @@
 </table>
 <table width="100%">
   <tr>
+    <td id="canvas1_area" style="position:relative; width:410px; height:450px; display:none">
+        <canvas id="mycanvas" style="background-color:#eee;border:1px solid #ccc;margin-right:8px;" width="400" height="450"></canvas>
+    </td>
     <td style="position:relative; height:450px;">
-      <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <div id="content1_blocks" class="content" style="padding-bottom:6px;"></div>
+      <pre id="content1_python" class="content" style="padding-bottom:6px;"></pre>
     </td>
   </tr>
 </table>
@@ -500,6 +509,65 @@
   <sep></sep>
   <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
   <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+  <sep></sep>
+  <category name="{catTurtle}" colour="30">
+    <block type="turtle_move">
+      <field name="DIR">FORWARD</field>
+      <value name="VALUE">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="turtle_turn">
+      <field name="DIR">LEFT</field>
+      <value name="ANGLE">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="turtle_width">
+      <value name="WIDTH">
+        <shadow type="math_number">
+          <field name="NUM">2</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="turtle_pen">
+      <field name="PEN">DOWN</field>
+    </block>
+    <block type="turtle_show">
+      <field name="VISIBLE">SHOW</field>
+    </block>
+    <block type="turtle_shape">
+      <field name="SHAPE">CLASSIC</field>
+    </block>
+    <block type="turtle_setpos">
+      <field name="POSX">0</field>
+      <field name="POSY">0</field>
+    </block>
+    <block type="turtle_color">
+      <field name="COLOR">#000000</field>
+    </block>
+    <block type="turtle_bgcolor">
+      <field name="COLOR">#ffcc66</field>
+    </block>
+    <block type="turtle_circle">
+      <value name="RADIUS">
+        <shadow type="math_number">
+          <field name="NUM">20</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="turtle_arc">
+      <field name="RADIUS">20</field>
+      <field name="ANGLE">90</field>
+    </block>
+    <block type="turtle_pos"></block>
+    <block type="turtle_isdown"></block>
+    <block type="turtle_reset"></block>
+  </category>
 </xml>
 <!-- Content end -->
 					</div>
@@ -517,6 +585,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-toggle.min.js"></script>
 
 	<!-- Menu Toggle Script -->
 	<script>
@@ -526,6 +595,56 @@
 	});
 	</script>
 
+<!-- Skulpt and CodeMirror -->
+<script src="skulpt/skulpt.js"></script>
+<script src="skulpt/skulpt-stdlib.js"></script>
+<script src="skulpt/python.js"></script>
+<script>Sk.python3 = true;</script>
+
+<script type="text/javascript">
+function outf(text) {
+  var mypre = document.getElementById("output");
+  mypre.innerHTML = mypre.innerHTML + text;
+}
+function builtinRead(x) {
+  if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+    throw "File not found: '" + x + "'";
+  return Sk.builtinFiles["files"][x];
+}
+function runit() {
+    var prog = Blockly.Python.workspaceToCode(CodeEditor.workspace);
+    var mypre = document.getElementById("output");
+    mypre.innerHTML = '';
+    Sk.canvas = "mycanvas";
+    Sk.pre = "output";
+    Sk.configure({output:outf, read:builtinRead});
+    try {
+        eval(Sk.importMainWithBody("<stdin>",false,prog));
+    }
+    catch(e) {
+        alert(e.toString())
+    }
+}
+function clearit() {
+    var mypre = document.getElementById("output");
+    mypre.innerHTML = '';
+    // Clear canvas
+    var c = document.getElementById("mycanvas");
+    var ctx = c.getContext("2d");
+    // Use the identity matrix while clearing the canvas
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0,0,400,450);
+    // Just to be safe also do that
+    ctx.fillStyle = "#eeeeee";
+    ctx.fillRect(0,0,400,450);
+    // Clear Blockly workspace
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load Blockly workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('workspace'), CodeEditor.workspace);
+}
+</script>
+
 <!-- Blockly -->
 <script src="blockly/storage.js"></script>
 <script src="blockly/blockly_compressed.js"></script>
@@ -533,7 +652,7 @@
 <script src="blockly/javascript_compressed.js"></script>
 <script src="blockly/python_compressed.js"></script>
 <script src="blockly/local/custom_blocks.js"></script>
-<script src="blockly/local/algorithm_blocks.js"></script>
+<script src="blockly/local/turtle_blocks.js"></script>
 <script src="editor.js"></script>
 <script>
   var elementID = "";
@@ -597,6 +716,18 @@
         document.body.removeChild(elem);
         window.URL.revokeObjectURL(blob);
       }
+    }
+  });
+
+  $('#turtleCanvas').change(function() {
+    if ($(this).prop('checked') == true) {
+		document.getElementById('canvas').style.display = 'table-cell';
+		document.getElementById('canvas1_area').style.display = 'table-cell';
+		Blockly.svgResize(CodeEditor.workspace);
+    } else {
+		document.getElementById('canvas').style.display = 'none';
+		document.getElementById('canvas1_area').style.display = 'none';
+		Blockly.svgResize(CodeEditor.workspace);
     }
   });
 

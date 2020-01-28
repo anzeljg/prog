@@ -277,6 +277,7 @@ CodeEditor.initLanguage = function() {
  * Execute the user's code.
  * Just a quick and dirty eval.  Catch infinite loops.
  */
+/*
 CodeEditor.runJS = function() {
   $('#output').html(''); // Erase content of the output
   Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
@@ -294,15 +295,18 @@ CodeEditor.runJS = function() {
     alert(MSG['badCode'].replace('%1', e));
   }
 };
+*/
 
 /**
  * Discard all blocks from the workspace.
  */
+/*
 CodeEditor.discard = function() {
   $('#output').html(''); // Erase content of the output
   CodeEditor.workspace.clear();
   window.location.hash = '';
 };
+*/
 
 // Load the Code demo's language strings.
 document.write('<script src="blockly/local/msg/' + CodeEditor.LANG + '.js"></script>\n');
