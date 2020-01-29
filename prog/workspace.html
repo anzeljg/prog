@@ -121,10 +121,10 @@
 				<div class="row">
 					<div class="col-md-12">
 <!-- Content start -->
-<table width="100%">
-  <tr id="tabRow" height="1em">
-    <td id="canvas" class="tabmin" rowspan="2" style="display:none">
-      <div style="width:410px!important">&nbsp;</div>
+<table width="100%" height="550">
+  <tr id="tabRow">
+    <td id="content1_canvas" class="tabmin" rowspan="2" style="display:none;">
+	  <canvas id="mycanvas" style="background-color:#eee;border:1px solid #ccc;margin-right:10px;display:block;" width="400" height="550"></canvas>
     </td>
     <td id="tab1_blocks" class="tabon">...</td>
     <td class="tabmin">&nbsp;</td>
@@ -135,32 +135,25 @@
       <button type="button" class="btn btn-primary" id="trashButton" onclick="clearit()">Počisti</button>
       <div class="btn-group" role="group" aria-label="...">
         <label class="btn btn-primary btn-file">
-          <span class="fa fa-upload"></span> Naloži <input type="file" id="loadButton" accept=".blockly" style="display: none;">
+          <span class="fa fa-upload"></span> Naloži <input type="file" id="loadButton" accept=".blockly" style="display:none;">
         </label>
         <button type="button" class="btn btn-primary" id="saveButton"><span class="fa fa-download"></span> Shrani</button>
         <button type="button" class="btn btn-primary" id="saveSvgButton"><span class="fa fa-download"></span> Shrani SVG</button>
-      </div>
+	  </div>
       <input type="checkbox" id="turtleCanvas" data-toggle="toggle" data-on="Skrij platno" data-off="Pokaži platno">
     </td>
   </tr>
   <tr>
-    <td colspan="5" id="content1_area"></td>
+    <td colspan="5" id="content1_area" style="position:relative;height:512px;">
+      <div id="content1_blocks" class="content"></div>
+      <pre id="content1_python" class="content"></pre>
+	</td>
   </tr>
 </table>
-<table width="100%">
-  <tr>
-    <td id="canvas1_area" style="position:relative; width:410px; height:450px; display:none">
-        <canvas id="mycanvas" style="background-color:#eee;border:1px solid #ccc;margin-right:8px;" width="400" height="450"></canvas>
-    </td>
-    <td style="position:relative; height:450px;">
-      <div id="content1_blocks" class="content" style="padding-bottom:6px;"></div>
-      <pre id="content1_python" class="content" style="padding-bottom:6px;"></pre>
-    </td>
-  </tr>
-</table>
-<div style="margin-top:10px"><pre id="output"></pre></div>
 
-<xml id="toolbox" style="display: none">
+<div><pre id="output" style="margin-top:8px"></pre></div>
+
+<xml id="toolbox" style="display:none">
   <category name="{catLogic}" colour="200">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
@@ -633,10 +626,10 @@ function clearit() {
     var ctx = c.getContext("2d");
     // Use the identity matrix while clearing the canvas
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0,0,400,450);
+    ctx.clearRect(0,0,400,550);
     // Just to be safe also do that
     ctx.fillStyle = "#eeeeee";
-    ctx.fillRect(0,0,400,450);
+    ctx.fillRect(0,0,400,550);
     // Clear Blockly workspace
     CodeEditor.workspace.clear();
     window.location.hash = '';
@@ -721,14 +714,13 @@ function clearit() {
 
   $('#turtleCanvas').change(function() {
     if ($(this).prop('checked') == true) {
-		document.getElementById('canvas').style.display = 'table-cell';
-		document.getElementById('canvas1_area').style.display = 'table-cell';
-		Blockly.svgResize(CodeEditor.workspace);
+		document.getElementById('content1_canvas').style.display = 'table-cell';
     } else {
-		document.getElementById('canvas').style.display = 'none';
-		document.getElementById('canvas1_area').style.display = 'none';
-		Blockly.svgResize(CodeEditor.workspace);
+		document.getElementById('content1_canvas').style.display = 'none';
     }
+	Blockly.svgResize(CodeEditor.workspace);
+	// Set table width to 100% to trigger resize
+	document.getElementById('content1_area').style.width = '100%';
   });
 
   function uploadBlocklyWorkspace(event) {
