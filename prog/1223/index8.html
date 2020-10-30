@@ -125,12 +125,12 @@
 					<div class="modal-body">
 <p align="justify">Rešitev (a):
 <pre>
-<img src="img/1223-08-1a.svg" onerror="this.src='img/1223-08-1a.png'">
+<img src="img/1223-08-1a.svg">
 </pre>
 </p>
 <p align="justify">Rešitev (b):
 <pre>
-<img src="img/1223-08-1b.svg" onerror="this.src='img/1223-08-1b.png'">
+<img src="img/1223-08-1b.svg">
 </pre>
 </p>
 
@@ -156,12 +156,12 @@
 					<div class="modal-body">
 <p align="justify">Rešitev (a):
 <pre>
-<img src="img/1223-08-2a.svg" onerror="this.src='img/1223-08-2a.png'">
+<img src="img/1223-08-2a.svg">
 </pre>
 </p>
 <p align="justify">Rešitev (b):
 <pre>
-<img src="img/1223-08-2b.svg" onerror="this.src='img/1223-08-2b.png'">
+<img src="img/1223-08-2b.svg">
 </pre>
 </p>
 					</div>
@@ -237,7 +237,7 @@
   <tr>
     <td style="position:relative; height:350px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
@@ -249,14 +249,14 @@
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -285,7 +285,7 @@
     <block type="controls_forEach"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -339,7 +339,7 @@
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -358,7 +358,7 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -710,6 +710,7 @@
 					<li><a href="../1223/index9.html">35</a></li>
 					<li><a href="../1223/index10.html">36</a></li>
 					<li><a href="../1223/index11.html">37</a></li>
+					<li><a href="../1223/index12.html">38</a></li>
 					<li><a href="../1223/index9.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1224/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -745,13 +746,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index8.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -759,6 +763,18 @@
   });
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
+  };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solveButton', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('solution'), CodeEditor.workspace);
   };
 </script>
 

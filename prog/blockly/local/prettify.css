@@ -1,1 +1,80 @@
-.pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}pre.prettyprint{padding:2px;border:1px solid #888}ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}li.L1,li.L3,li.L5,li.L7,li.L9{background:#eee}
+pre.rin_light{background-color:#fdfdfd!important}
+pre.rin_dark{background-color:#202020!important}
+.rin_light .pln{color:#333333}
+.rin_dark .pln{color:#ebdab4}
+@media screen{
+	/* RIN-LIGHT theme */
+	.rin_light .str{color:#c000c0}
+	.rin_light .kwd{color:#4040f4}
+	.rin_light .com{color:silver;font-style:italic}
+	.rin_light .typ{color:#2080a0}
+	.rin_light .lit{color:#80c000}
+	.rin_light .pun,.rin_light .opn,.rin_light .clo{color:#333333}
+	.rin_light .tag{color:#4040f4}
+	.rin_light .atn{color:#0000a0}
+	.rin_light .atv{color:#c000c0}
+	.rin_light .dec,.rin_light .var{color:#6d79de}
+	.rin_light .fun{color:red}
+	.rin_light .blt{color:#ffa000}
+	/* RIN-DARK theme */
+	.rin_dark .str{color:#b8ba37}
+	.rin_dark .kwd{color:#8ec07c}
+	.rin_dark .com{color:#928375;font-style:italic}
+	.rin_dark .typ{color:#80c000}
+	.rin_dark .lit{color:#c2859a}
+	.rin_dark .pun,.rin_dark .opn,.rin_dark .clo{color:#ebdab4}
+	.rin_dark .tag{color:#8ec07c}
+	.rin_dark .atn{color:#ebdab4}
+	.rin_dark .atv{color:#b8ba37}
+	.rin_dark .dec,.rin_dark .var{color:#f9bc41}
+	.rin_dark .fun{color:red}
+	.rin_dark .blt{color:#f84b3c}
+}
+@media print,projection{
+	/* RIN-LIGHT theme */
+	.rin_light .str{color:#c000c0}
+	.rin_light .kwd{color:#4040f4}
+	.rin_light .com{color:silver;font-style:italic}
+	.rin_light .typ{color:#2080a0}
+	.rin_light .lit{color:#80c000}
+	.rin_light .pun,.rin_light .opn,.rin_light .clo{color:#333333}
+	.rin_light .tag{color:#4040f4}
+	.rin_light .atn{color:#0000a0}
+	.rin_light .atv{color:#c000c0}
+	.rin_light .blt{color:#ffa000}
+	/* RIN-DARK theme */
+	.rin_dark .str{color:#b8ba37}
+	.rin_dark .kwd{color:#8ec07c}
+	.rin_dark .com{color:#928375;font-style:italic}
+	.rin_dark .typ{color:#80c000}
+	.rin_dark .lit{color:#c2859a}
+	.rin_dark .pun,.rin_dark .opn,.rin_dark .clo{color:#ebdab4}
+	.rin_dark .tag{color:#8ec07c}
+	.rin_dark .atn{color:#ebdab4}
+	.rin_dark .atv{color:#b8ba37}
+	.rin_dark .blt{color:#f84b3c}
+}
+pre.prettyprint{padding:2px;border:1px solid #888}
+ol.linenums{margin-top:0;margin-bottom:0}
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}
+
+/*
+   Mapping form CodeMirror theme to Prettify theme:
+   .str <= .cm-string
+   .kwd <= .cm-keyword
+   .com <= .cm-comment
+   .typ <= .cm-def
+   .lit <= .cm-number
+   .pun <= .cm-property
+   .opn <= .cm-property
+   .clo <= .cm-property
+   .tag <= .cm-tag
+   .atn <= .cm-attribute
+   .atv <= .cm-string
+   .dec <= .cm-type
+   .var <= .cm-variable-3
+   .fun <= .cm-error
+   ------------------------
+   .blt <= .cm-builtin
+     └─> dodano v prettify.css in prettify.js!
+ */

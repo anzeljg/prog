@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -124,7 +125,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-05-1.svg" onerror="this.src='img/1224-05-1.png'">
+<img src="img/1224-05-1.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -233,6 +234,7 @@ table#py-tabela td.selected {
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -243,21 +245,21 @@ table#py-tabela td.selected {
   <tr>
     <td style="position:relative; height:350px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -286,7 +288,7 @@ table#py-tabela td.selected {
     <block type="controls_forEach"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -340,7 +342,7 @@ table#py-tabela td.selected {
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -361,7 +363,7 @@ table#py-tabela td.selected {
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -380,7 +382,7 @@ table#py-tabela td.selected {
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -537,22 +539,22 @@ table#py-tabela td.selected {
 				<ul class="pagination pagination-sm">
 					<li><a href="../1223/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1224/index4.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1224/index.html">38</a></li>
-					<li><a href="../1224/index1.html">39</a></li>
-					<li><a href="../1224/index2.html">40</a></li>
-					<li><a href="../1224/index3.html">41</a></li>
-					<li><a href="../1224/index4.html">42</a></li>
-					<li class="active"><a href="#">43</a></li>
-					<li><a href="../1224/index6.html">44</a></li>
-					<li><a href="../1224/index7.html">45</a></li>
-					<li><a href="../1224/index8.html">46</a></li>
-					<li><a href="../1224/index9.html">47</a></li>
-					<li><a href="../1224/index10.html">48</a></li>
-					<li><a href="../1224/index11.html">49</a></li>
-					<li><a href="../1224/index12.html">50</a></li>
-					<li><a href="../1224/index13.html">51</a></li>
-					<li><a href="../1224/index14.html">52</a></li>
-					<li><a href="../1224/index15.html">53</a></li>
+					<li><a href="../1224/index.html">39</a></li>
+					<li><a href="../1224/index1.html">40</a></li>
+					<li><a href="../1224/index2.html">41</a></li>
+					<li><a href="../1224/index3.html">42</a></li>
+					<li><a href="../1224/index4.html">43</a></li>
+					<li class="active"><a href="#">44</a></li>
+					<li><a href="../1224/index6.html">45</a></li>
+					<li><a href="../1224/index7.html">46</a></li>
+					<li><a href="../1224/index8.html">47</a></li>
+					<li><a href="../1224/index9.html">48</a></li>
+					<li><a href="../1224/index10.html">49</a></li>
+					<li><a href="../1224/index11.html">50</a></li>
+					<li><a href="../1224/index12.html">51</a></li>
+					<li><a href="../1224/index13.html">52</a></li>
+					<li><a href="../1224/index14.html">53</a></li>
+					<li><a href="../1224/index15.html">54</a></li>
 					<li><a href="../1224/index6.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1225/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -570,6 +572,7 @@ table#py-tabela td.selected {
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -588,13 +591,16 @@ table#py-tabela td.selected {
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index5.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -603,10 +609,22 @@ table#py-tabela td.selected {
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-05-1'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1224-05-1 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-05-1" style="display:none"><block type="text_comment" id="CKmf,@[lz,xrlaEimC=J" x="8" y="8"><value name="TEXT"><shadow type="text" id="`qfpeEd,4:1I[C7[4x3!"><field name="TEXT">abc</field></shadow><block type="text" id="o57dpHo-@mBJtFm/Op1G"><field name="TEXT">Program izpiše najmanjši element v podani tabeli.</field></block></value><next><block type="variables_set" id="10"><field name="VAR">prodaja</field><value name="VALUE"><block type="lists_create_with" id="11" inline="true"><mutation items="12"></mutation><value name="ADD0"><block type="math_number" id="12"><field name="NUM">182</field></block></value><value name="ADD1"><block type="math_number" id="13"><field name="NUM">250</field></block></value><value name="ADD2"><block type="math_number" id="14"><field name="NUM">225</field></block></value><value name="ADD3"><block type="math_number" id="15"><field name="NUM">315</field></block></value><value name="ADD4"><block type="math_number" id="16"><field name="NUM">328</field></block></value><value name="ADD5"><block type="math_number" id="17"><field name="NUM">160</field></block></value><value name="ADD6"><block type="math_number" id="18"><field name="NUM">51</field></block></value><value name="ADD7"><block type="math_number" id="19"><field name="NUM">36</field></block></value><value name="ADD8"><block type="math_number" id="20"><field name="NUM">340</field></block></value><value name="ADD9"><block type="math_number" id="21"><field name="NUM">280</field></block></value><value name="ADD10"><block type="math_number" id="22"><field name="NUM">378</field></block></value><value name="ADD11"><block type="math_number" id="23"><field name="NUM">320</field></block></value></block></value><next><block type="text_comment" id=",M+C0n(Q~s_cEsZyF{SQ"><value name="TEXT"><shadow type="text" id="`qfpeEd,4:1I[C7[4x3!"><field name="TEXT">abc</field></shadow><block type="text" id="MQzT//ZDIAd1!aDh%O*0"><field name="TEXT">Spremenljivko postavimo na prvi element tabele.</field></block></value><next><block type="variables_set" id="24"><field name="VAR">najProdaja</field><value name="VALUE"><block type="lists_getIndex" id="25"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="26"><field name="VAR">prodaja</field></block></value><value name="AT"><block type="math_number" id="27"><field name="NUM">0</field></block></value></block></value><next><block type="controls_forEach" id="28"><field name="VAR">prodajaMesec</field><value name="LIST"><block type="variables_get" id="29"><field name="VAR">prodaja</field></block></value><statement name="DO"><block type="text_comment" id="m*8e;kk6izwFV.sZu~jG"><value name="TEXT"><shadow type="text" id="`qfpeEd,4:1I[C7[4x3!"><field name="TEXT">abc</field></shadow><block type="text" id=".c;7+_v@hUzl,?bi/cJx"><field name="TEXT">Če je prodaja v trenutnem mesecu manjša od doslej</field></block></value><next><block type="text_comment" id="k0)^Cl=M.S)02PuXYJ#I"><value name="TEXT"><shadow type="text" id="`qfpeEd,4:1I[C7[4x3!"><field name="TEXT">abc</field></shadow><block type="text" id="wWwZ3)q?b39d{aBL?~Z;"><field name="TEXT">najmanjše prodaje, posodobimo spremenljivko.</field></block></value><next><block type="controls_if" id="30"><value name="IF0"><block type="logic_compare" id="31"><field name="OP">LT</field><value name="A"><block type="variables_get" id="32"><field name="VAR">prodajaMesec</field></block></value><value name="B"><block type="variables_get" id="33"><field name="VAR">najProdaja</field></block></value></block></value><statement name="DO0"><block type="variables_set" id="34"><field name="VAR">najProdaja</field><value name="VALUE"><block type="variables_get" id="35"><field name="VAR">prodajaMesec</field></block></value></block></statement></block></next></block></next></block></statement><next><block type="text_print" id="36"><value name="TEXT"><shadow xmlns="" type="text" id="37"><field name="TEXT">abc</field></shadow><block type="variables_get" id="38"><field name="VAR">najProdaja</field></block></value></block></next></block></next></block></next></block></next></block></next></block></xml>
+<xml id="1224-05-1" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="cQKdMBM9xM,!~)}jJrur">prodaja</variable><variable id="Wz%dFalS($}wE;Y`BaNb">najProdaja</variable><variable id="$j8f*+Xm,%9Q9q4-W$@]">prodajaMesec</variable></variables><block type="text_comment" id="CKmf,@[lz,xrlaEimC=J" x="10" y="10"><field name="TEXT">Program izpiše najmanjši element v podani tabeli.</field><next><block type="variables_set" id="10"><field name="VAR" id="cQKdMBM9xM,!~)}jJrur">prodaja</field><value name="VALUE"><block type="lists_create_with" id="11" inline="true"><mutation items="12"></mutation><value name="ADD0"><block type="math_number" id="12"><field name="NUM">182</field></block></value><value name="ADD1"><block type="math_number" id="13"><field name="NUM">250</field></block></value><value name="ADD2"><block type="math_number" id="14"><field name="NUM">225</field></block></value><value name="ADD3"><block type="math_number" id="15"><field name="NUM">315</field></block></value><value name="ADD4"><block type="math_number" id="16"><field name="NUM">328</field></block></value><value name="ADD5"><block type="math_number" id="17"><field name="NUM">160</field></block></value><value name="ADD6"><block type="math_number" id="18"><field name="NUM">51</field></block></value><value name="ADD7"><block type="math_number" id="19"><field name="NUM">36</field></block></value><value name="ADD8"><block type="math_number" id="20"><field name="NUM">340</field></block></value><value name="ADD9"><block type="math_number" id="21"><field name="NUM">280</field></block></value><value name="ADD10"><block type="math_number" id="22"><field name="NUM">378</field></block></value><value name="ADD11"><block type="math_number" id="23"><field name="NUM">320</field></block></value></block></value><next><block type="text_comment" id=",M+C0n(Q~s_cEsZyF{SQ"><field name="TEXT">Spremenljivko postavimo na prvi element tabele.</field><next><block type="variables_set" id="24"><field name="VAR" id="Wz%dFalS($}wE;Y`BaNb">najProdaja</field><value name="VALUE"><block type="lists_getIndex" id="25"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="26"><field name="VAR" id="cQKdMBM9xM,!~)}jJrur">prodaja</field></block></value><value name="AT"><block type="math_number" id="27"><field name="NUM">0</field></block></value></block></value><next><block type="controls_forEach" id="28"><field name="VAR" id="$j8f*+Xm,%9Q9q4-W$@]">prodajaMesec</field><value name="LIST"><block type="variables_get" id="29"><field name="VAR" id="cQKdMBM9xM,!~)}jJrur">prodaja</field></block></value><statement name="DO"><block type="text_comment" id="m*8e;kk6izwFV.sZu~jG"><field name="TEXT">Če je prodaja v trenutnem mesecu manjša od doslej</field><next><block type="text_comment" id="k0)^Cl=M.S)02PuXYJ#I"><field name="TEXT">najmanjše prodaje, posodobimo spremenljivko.</field><next><block type="controls_if" id="30"><value name="IF0"><block type="logic_compare" id="31"><field name="OP">LT</field><value name="A"><block type="variables_get" id="32"><field name="VAR" id="$j8f*+Xm,%9Q9q4-W$@]">prodajaMesec</field></block></value><value name="B"><block type="variables_get" id="33"><field name="VAR" id="Wz%dFalS($}wE;Y`BaNb">najProdaja</field></block></value></block></value><statement name="DO0"><block type="variables_set" id="34"><field name="VAR" id="Wz%dFalS($}wE;Y`BaNb">najProdaja</field><value name="VALUE"><block type="variables_get" id="35"><field name="VAR" id="$j8f*+Xm,%9Q9q4-W$@]">prodajaMesec</field></block></value></block></statement></block></next></block></next></block></statement><next><block type="text_print" id="36"><value name="TEXT"><shadow xmlns="" type="text" id="37"><field name="TEXT">abc</field></shadow><block type="variables_get" id="38"><field name="VAR" id="Wz%dFalS($}wE;Y`BaNb">najProdaja</field></block></value></block></next></block></next></block></next></block></next></block></next></block></xml>
 
 <script>
 function walkTable() {

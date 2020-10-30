@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -128,10 +129,10 @@
 					</div>
 					<div class="modal-body">
 						<p align="justify">Kadar ustvarjamo tabelo, ki vsebuje veliko elementov, lahko ti bloki zasedejo veliko prostora:</p>
-						<pre><img src="img/1224-02-7a.svg" onerror="this.src='img/1224-02-7a.png'"></pre>
-						<p align="justify">Da bi pridobili prostor, lahko kliknemo na delček <code>ustvari tabelo iz</code> z desnim gumbom miške ter izberemo možnost <code>Vnosi v vrsti</code>:
-						<pre><img src="img/1224-02-7b.svg" onerror="this.src='img/1224-02-7b.png'"></pre>
-						<p align="justify">Delček lahko povrnemo v prvotno stanje tako, da nanj kliknemo z desnim gumbom miške ter izberemo možnost <code>Vnosi zunaj</code>.
+						<pre><img src="img/1224-02-7a.svg"></pre>
+						<p align="justify">Da bi pridobili prostor, lahko kliknemo na delček <code>ustvari tabelo iz</code> z desnim gumbom miške ter izberemo možnost <code>Vrstični vnosi</code>:
+						<pre><img src="img/1224-02-7b.svg"></pre>
+						<p align="justify">Delček lahko povrnemo v prvotno stanje tako, da nanj kliknemo z desnim gumbom miške ter izberemo možnost <code>Zunanji vnosi</code>.
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
@@ -151,7 +152,7 @@
 
 <p align="justify">Elementi tabele so dostopni prek <b>indeksov</b>. Indeks elementa je njegova zaporedna številka, zmanjšana za ena. Prvi element ima tako indeks 0, drugi indeks 1, tretji indeks 2 itd. Z delčkom</p>
 <pre>
-<img src="img/1224-02-1.svg" onerror="this.src='img/1224-02-1.png'">
+<img src="img/1224-02-1.svg">
 </pre>
 <p align="justify">pridobimo element tabele na podanem indeksu. Isto lahko zapišemo tudi z izrazom <code>tabela[indeks]</code>.</p>
 
@@ -221,7 +222,7 @@ table#py-tabela td.selected {
 <!-- Right column start -->
 <p align="justify">Številu elementov v tabeli pravimo <b>dolžina</b> tabele. Pridobimo jo z delčkom:
 <pre>
-<img src="img/1224-02-2.svg" onerror="this.src='img/1224-02-2.png'">
+<img src="img/1224-02-2.svg">
 </pre>
 </p>
 
@@ -229,7 +230,7 @@ table#py-tabela td.selected {
 
 <div class="alert alert-info" role="alert">
 <p align="justify">Ustvarimo spodnjo tabelo. Kakšni so rezultati spodnjih izrazov?<br />
-<img src="img/1224-02-3.svg" onerror="this.src='img/1224-02-3.png'">
+<img src="img/1224-02-3.svg">
 <p>
 <div id="cloze115_" class="clozeBlock">
 	<input type="hidden" name="clozeFlag115_.strictMarking" id="clozeFlag115_.strictMarking" value="false"/>
@@ -238,9 +239,9 @@ table#py-tabela td.selected {
 	<input type="hidden" name="clozeFlag115_.listing" id="clozeFlag115_.listing" value="0"/>
 	<input type="hidden" name="clozeFlag115_.dropdown" id="clozeFlag115_.dropdown" value="False"/>
 	<input type="hidden" name="clozeFlag115_.equallength" id="clozeFlag115_.equallength" value="False"/>
-	<img src="img/1224-02-4.svg" onerror="this.src='img/1224-02-4.png'">: <u>50</u><br />
-	<img src="img/1224-02-5.svg" onerror="this.src='img/1224-02-5.png'">: <u>60</u><br />
-	<img src="img/1224-02-6.svg" onerror="this.src='img/1224-02-6.png'">: <u>60</u><br />
+	<img src="img/1224-02-4.svg">: <u>50</u><br />
+	<img src="img/1224-02-5.svg">: <u>60</u><br />
+	<img src="img/1224-02-6.svg">: <u>60</u><br />
 	<div class="blockb"><br />
 		<button class="btn btn-info" name="submit115_" id="submit115_" onClick='clozeSubmit("115_")'><span class="fa fa-question"></span> Preveri</button>
 		<button class="btn btn-info" name="restart115_" style="display: none;" id="restart115_" onClick='clozeRestart("115_")'><span class="fa fa-refresh"></span>  Začni znova</button>
@@ -266,6 +267,7 @@ table#py-tabela td.selected {
       <button class="btn btn-primary" data-toggle="modal" data-target="#okrajsave"><span class="fa fa-info"></span></button>
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -276,21 +278,21 @@ table#py-tabela td.selected {
   <tr>
     <td style="position:relative; height:350px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -319,7 +321,7 @@ table#py-tabela td.selected {
     <block type="controls_forEach"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -373,7 +375,7 @@ table#py-tabela td.selected {
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -387,7 +389,7 @@ table#py-tabela td.selected {
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -406,7 +408,7 @@ table#py-tabela td.selected {
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -574,7 +576,7 @@ table#py-tabela td.selected {
       </block>
     </next>
   </block>
-  <block type="text_print" id="jo},#JxL-3NsLHSI}z[@" x="10" y="215">
+  <block type="text_print" id="jo},#JxL-3NsLHSI}z[@" x="10" y="225">
     <value name="TEXT">
       <shadow type="text" id="QZH(pu]9%ekm]?{8d0*d">
         <field name="TEXT">abc</field>
@@ -600,22 +602,22 @@ table#py-tabela td.selected {
 				<ul class="pagination pagination-sm">
 					<li><a href="../1223/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1224/index1.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1224/index.html">38</a></li>
-					<li><a href="../1224/index1.html">39</a></li>
-					<li class="active"><a href="#">40</a></li>
-					<li><a href="../1224/index3.html">41</a></li>
-					<li><a href="../1224/index4.html">42</a></li>
-					<li><a href="../1224/index5.html">43</a></li>
-					<li><a href="../1224/index6.html">44</a></li>
-					<li><a href="../1224/index7.html">45</a></li>
-					<li><a href="../1224/index8.html">46</a></li>
-					<li><a href="../1224/index9.html">47</a></li>
-					<li><a href="../1224/index10.html">48</a></li>
-					<li><a href="../1224/index11.html">49</a></li>
-					<li><a href="../1224/index12.html">50</a></li>
-					<li><a href="../1224/index13.html">51</a></li>
-					<li><a href="../1224/index14.html">52</a></li>
-					<li><a href="../1224/index15.html">53</a></li>
+					<li><a href="../1224/index.html">39</a></li>
+					<li><a href="../1224/index1.html">40</a></li>
+					<li class="active"><a href="#">41</a></li>
+					<li><a href="../1224/index3.html">42</a></li>
+					<li><a href="../1224/index4.html">43</a></li>
+					<li><a href="../1224/index5.html">44</a></li>
+					<li><a href="../1224/index6.html">45</a></li>
+					<li><a href="../1224/index7.html">46</a></li>
+					<li><a href="../1224/index8.html">47</a></li>
+					<li><a href="../1224/index9.html">48</a></li>
+					<li><a href="../1224/index10.html">49</a></li>
+					<li><a href="../1224/index11.html">50</a></li>
+					<li><a href="../1224/index12.html">51</a></li>
+					<li><a href="../1224/index13.html">52</a></li>
+					<li><a href="../1224/index14.html">53</a></li>
+					<li><a href="../1224/index15.html">54</a></li>
 					<li><a href="../1224/index3.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1225/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -634,6 +636,7 @@ table#py-tabela td.selected {
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -693,13 +696,16 @@ $(function() {
 </script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index2.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {

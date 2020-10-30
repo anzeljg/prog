@@ -1,0 +1,5 @@
+Blockly Q3 2020
+(tag/version 3.20200924.0)
+2020-09-24 22:41 GMT+2
+commit 8d5d2be0284a98f1a53423a5cb07d0a7e36a95c0
+https://github.com/google/blockly/tree/8d5d2be0284a98f1a53423a5cb07d0a7e36a95c0

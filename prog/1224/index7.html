@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -166,7 +167,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-07-1.svg" onerror="this.src='img/1224-07-1.png'">
+<img src="img/1224-07-1.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -227,6 +228,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -235,23 +237,23 @@
 </table>
 <table width="100%">
   <tr>
-    <td style="position:relative; height:350px;">
+    <td style="position:relative; height:360px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -280,7 +282,7 @@
     <block type="controls_forEach"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -334,7 +336,7 @@
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -355,7 +357,7 @@
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -374,7 +376,7 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -546,22 +548,22 @@
 				<ul class="pagination pagination-sm">
 					<li><a href="../1223/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1224/index6.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1224/index.html">38</a></li>
-					<li><a href="../1224/index1.html">39</a></li>
-					<li><a href="../1224/index2.html">40</a></li>
-					<li><a href="../1224/index3.html">41</a></li>
-					<li><a href="../1224/index4.html">42</a></li>
-					<li><a href="../1224/index5.html">43</a></li>
-					<li><a href="../1224/index6.html">44</a></li>
-					<li class="active"><a href="#">45</a></li>
-					<li><a href="../1224/index8.html">46</a></li>
-					<li><a href="../1224/index9.html">47</a></li>
-					<li><a href="../1224/index10.html">48</a></li>
-					<li><a href="../1224/index11.html">49</a></li>
-					<li><a href="../1224/index12.html">50</a></li>
-					<li><a href="../1224/index13.html">51</a></li>
-					<li><a href="../1224/index14.html">52</a></li>
-					<li><a href="../1224/index15.html">53</a></li>
+					<li><a href="../1224/index.html">39</a></li>
+					<li><a href="../1224/index1.html">40</a></li>
+					<li><a href="../1224/index2.html">41</a></li>
+					<li><a href="../1224/index3.html">42</a></li>
+					<li><a href="../1224/index4.html">43</a></li>
+					<li><a href="../1224/index5.html">44</a></li>
+					<li><a href="../1224/index6.html">45</a></li>
+					<li class="active"><a href="#">46</a></li>
+					<li><a href="../1224/index8.html">47</a></li>
+					<li><a href="../1224/index9.html">48</a></li>
+					<li><a href="../1224/index10.html">49</a></li>
+					<li><a href="../1224/index11.html">50</a></li>
+					<li><a href="../1224/index12.html">51</a></li>
+					<li><a href="../1224/index13.html">52</a></li>
+					<li><a href="../1224/index14.html">53</a></li>
+					<li><a href="../1224/index15.html">54</a></li>
 					<li><a href="../1224/index8.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1225/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -579,6 +581,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -597,13 +600,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index7.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -612,10 +618,22 @@
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-07-1'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1224-07-1 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-07-1" style="display:none"><block type="text_comment" id="VMXuStlLF5iRxd|A++Zd" x="8" y="8"><value name="TEXT"><shadow type="text" id="0pjdfei59maTXqn`%*hJ"><field name="TEXT">abc</field></shadow><block type="text" id="Q2a(w+vTqAlq!23VBm`l"><field name="TEXT">Program izpiše DA, če so vsi elementi tabele</field></block></value><next><block type="text_comment" id="5^bo:i2u4Cc7KFmpd;$g"><value name="TEXT"><shadow type="text" id="0pjdfei59maTXqn`%*hJ"><field name="TEXT">abc</field></shadow><block type="text" id="P-~@dSc-hLQ/z[m~L^bF"><field name="TEXT">enaki najmanj 100. Sicer izpiše NE.</field></block></value><next><block type="variables_set" id=",Z[mpimt~A+N^$k.Ogz/"><field name="VAR">prodaja</field><value name="VALUE"><block type="lists_create_with" id="lHOZn=FY%p.,1={peQ~8" inline="true"><mutation items="12"></mutation><value name="ADD0"><block type="math_number" id="+cowKR(h?5(|#Kq%bhAy"><field name="NUM">182</field></block></value><value name="ADD1"><block type="math_number" id=")hk:]N]tn#J/^/cQg!$%"><field name="NUM">250</field></block></value><value name="ADD2"><block type="math_number" id="OX_No,mArk.Ifz%2XV,o"><field name="NUM">225</field></block></value><value name="ADD3"><block type="math_number" id="8`1T!ZSO$Uqr9O`/,5$z"><field name="NUM">315</field></block></value><value name="ADD4"><block type="math_number" id=";gdFmG1n6m*O87@d=i$Y"><field name="NUM">328</field></block></value><value name="ADD5"><block type="math_number" id="zrRu$B;`~{au4KO=UwR{"><field name="NUM">160</field></block></value><value name="ADD6"><block type="math_number" id="+RrU#{/a:K$@C;4+1LQn"><field name="NUM">51</field></block></value><value name="ADD7"><block type="math_number" id="#3oD@OVf30(6NKIa)VC5"><field name="NUM">36</field></block></value><value name="ADD8"><block type="math_number" id="lUwb1fjPBelKZ1dQ).wv"><field name="NUM">340</field></block></value><value name="ADD9"><block type="math_number" id="+DSipVcIRY4vwUFXTYQp"><field name="NUM">280</field></block></value><value name="ADD10"><block type="math_number" id="[M^4zXhzY8jZgS}HW7?]"><field name="NUM">378</field></block></value><value name="ADD11"><block type="math_number" id="aduN,+DL1HCOPSLernR%"><field name="NUM">320</field></block></value></block></value><next><block type="variables_set" id="|%bbj?3]$:orW5s92$HE"><field name="VAR">vsi</field><value name="VALUE"><block type="logic_boolean" id="oq8Ehe+%kvP0**b$fvT{"><field name="BOOL">TRUE</field></block></value><next><block type="controls_forEach" id="Qd^tUJJPcUl%!oK]qGjG"><field name="VAR">prodajaMesec</field><value name="LIST"><block type="variables_get" id="p;H6z4^0sqdW6|smvmRa"><field name="VAR">prodaja</field></block></value><statement name="DO"><block type="controls_if" id="|2q(g9nc*]cfsT3eD9N)"><value name="IF0"><block type="logic_compare" id="+8]t/Me}0Th^$PR_:^FB"><field name="OP">LT</field><value name="A"><block type="variables_get" id="roq#(o!rRtY8ag%t#+w/"><field name="VAR">prodajaMesec</field></block></value><value name="B"><block type="math_number" id="kTqD8+Vvi-x5-26$OcN9"><field name="NUM">100</field></block></value></block></value><statement name="DO0"><block type="variables_set" id="UmdGZBW8e4QphbP?bqqb"><field name="VAR">vsi</field><value name="VALUE"><block type="logic_boolean" id="A7V.F%5#kAJaTOSDiQ|u"><field name="BOOL">FALSE</field></block></value></block></statement></block></statement><next><block type="controls_if" id="-05Tuf(x1F|fbGikurWG"><mutation else="1"></mutation><value name="IF0"><block type="variables_get" id="}F3e:V+k]RHw!a+r:#/f"><field name="VAR">vsi</field></block></value><statement name="DO0"><block type="text_print" id="6biw?(yH(#7LQO8T%hr;"><value name="TEXT"><shadow type="text" id="qztH9z9xJAe$?oLxGK/o"><field name="TEXT">abc</field></shadow><block type="text" id="{cU~OpGa_pKy*$`uc.x^"><field name="TEXT">DA</field></block></value></block></statement><statement name="ELSE"><block type="text_print" id="_{E_xNW6B`ZVEQw6AW$b"><value name="TEXT"><shadow type="text" id="qztH9z9xJAe$?oLxGK/o"><field name="TEXT">abc</field></shadow><block type="text" id="{R#m:khp]Z~fF)Gpjob2"><field name="TEXT">NE</field></block></value></block></statement></block></next></block></next></block></next></block></next></block></next></block></xml>
+<xml id="1224-07-1" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="AfuMp{6%+WPmQ9UKg,+|">prodaja</variable><variable id="brSjt;!.t.73)gPu}PNN">vsi</variable><variable id="g%{yVh,4VfjP@^~7Gs|.">prodajaMesec</variable></variables><block type="text_comment" id="VMXuStlLF5iRxd|A++Zd" x="10" y="10"><field name="TEXT">Program izpiše DA, če so vsi elementi tabele</field><next><block type="text_comment" id="5^bo:i2u4Cc7KFmpd;$g"><field name="TEXT">enaki najmanj 100. Sicer izpiše NE.</field><next><block type="variables_set" id=",Z[mpimt~A+N^$k.Ogz/"><field name="VAR" id="AfuMp{6%+WPmQ9UKg,+|">prodaja</field><value name="VALUE"><block type="lists_create_with" id="lHOZn=FY%p.,1={peQ~8" inline="true"><mutation items="12"></mutation><value name="ADD0"><block type="math_number" id="+cowKR(h?5(|#Kq%bhAy"><field name="NUM">182</field></block></value><value name="ADD1"><block type="math_number" id=")hk:]N]tn#J/^/cQg!$%"><field name="NUM">250</field></block></value><value name="ADD2"><block type="math_number" id="OX_No,mArk.Ifz%2XV,o"><field name="NUM">225</field></block></value><value name="ADD3"><block type="math_number" id="8`1T!ZSO$Uqr9O`/,5$z"><field name="NUM">315</field></block></value><value name="ADD4"><block type="math_number" id=";gdFmG1n6m*O87@d=i$Y"><field name="NUM">328</field></block></value><value name="ADD5"><block type="math_number" id="zrRu$B;`~{au4KO=UwR{"><field name="NUM">160</field></block></value><value name="ADD6"><block type="math_number" id="+RrU#{/a:K$@C;4+1LQn"><field name="NUM">51</field></block></value><value name="ADD7"><block type="math_number" id="#3oD@OVf30(6NKIa)VC5"><field name="NUM">36</field></block></value><value name="ADD8"><block type="math_number" id="lUwb1fjPBelKZ1dQ).wv"><field name="NUM">340</field></block></value><value name="ADD9"><block type="math_number" id="+DSipVcIRY4vwUFXTYQp"><field name="NUM">280</field></block></value><value name="ADD10"><block type="math_number" id="[M^4zXhzY8jZgS}HW7?]"><field name="NUM">378</field></block></value><value name="ADD11"><block type="math_number" id="aduN,+DL1HCOPSLernR%"><field name="NUM">320</field></block></value></block></value><next><block type="variables_set" id="|%bbj?3]$:orW5s92$HE"><field name="VAR" id="brSjt;!.t.73)gPu}PNN">vsi</field><value name="VALUE"><block type="logic_boolean" id="oq8Ehe+%kvP0**b$fvT{"><field name="BOOL">TRUE</field></block></value><next><block type="controls_forEach" id="Qd^tUJJPcUl%!oK]qGjG"><field name="VAR" id="g%{yVh,4VfjP@^~7Gs|.">prodajaMesec</field><value name="LIST"><block type="variables_get" id="p;H6z4^0sqdW6|smvmRa"><field name="VAR" id="AfuMp{6%+WPmQ9UKg,+|">prodaja</field></block></value><statement name="DO"><block type="controls_if" id="|2q(g9nc*]cfsT3eD9N)"><value name="IF0"><block type="logic_compare" id="+8]t/Me}0Th^$PR_:^FB"><field name="OP">LT</field><value name="A"><block type="variables_get" id="roq#(o!rRtY8ag%t#+w/"><field name="VAR" id="g%{yVh,4VfjP@^~7Gs|.">prodajaMesec</field></block></value><value name="B"><block type="math_number" id="kTqD8+Vvi-x5-26$OcN9"><field name="NUM">100</field></block></value></block></value><statement name="DO0"><block type="variables_set" id="UmdGZBW8e4QphbP?bqqb"><field name="VAR" id="brSjt;!.t.73)gPu}PNN">vsi</field><value name="VALUE"><block type="logic_boolean" id="A7V.F%5#kAJaTOSDiQ|u"><field name="BOOL">FALSE</field></block></value></block></statement></block></statement><next><block type="controls_if" id="-05Tuf(x1F|fbGikurWG"><mutation else="1"></mutation><value name="IF0"><block type="variables_get" id="}F3e:V+k]RHw!a+r:#/f"><field name="VAR" id="brSjt;!.t.73)gPu}PNN">vsi</field></block></value><statement name="DO0"><block type="text_print" id="6biw?(yH(#7LQO8T%hr;"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="qztH9z9xJAe$?oLxGK/o"><field name="TEXT">abc</field></shadow><block type="text" id="{cU~OpGa_pKy*$`uc.x^"><field name="TEXT">DA</field></block></value></block></statement><statement name="ELSE"><block type="text_print" id="_{E_xNW6B`ZVEQw6AW$b"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="qztH9z9xJAe$?oLxGK/o"><field name="TEXT">abc</field></shadow><block type="text" id="{R#m:khp]Z~fF)Gpjob2"><field name="TEXT">NE</field></block></value></block></statement></block></next></block></next></block></next></block></next></block></next></block></xml>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

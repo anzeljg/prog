@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -125,7 +126,7 @@
 					<div class="modal-body">
 <p>
 <pre>
-<img src="img/1226-13-7.svg" onerror="this.src='img/1226-13-7.png'"></pre>
+<img src="img/1226-13-7.svg">
 </pre>
 </p>
 					</div>
@@ -182,6 +183,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -192,21 +194,21 @@
   <tr>
     <td style="position:relative; height:400px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_whileUntil"></block>
     <block type="controls_for">
       <value name="FROM">
@@ -229,7 +231,7 @@
     <block type="controls_forEach_text"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -305,7 +307,7 @@
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -335,7 +337,7 @@
     </block>
     <block type="lists_sort"></block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_append">
@@ -358,6 +360,8 @@
       </value>
     </block>
     <block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
       <value name="VALUE">
         <block type="variables_get">
           <field name="VAR">{textVariable}</field>
@@ -417,8 +421,8 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
-  <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
+  <category name="{catFunctions}" categorystyle="procedure_category" custom="PROCEDURE"></category>
 </xml>
 <!-- Second row end -->
 					</div>
@@ -431,20 +435,20 @@
 				<ul class="pagination pagination-sm">
 					<li><a href="../1225/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1226/index12.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1226/index.html">72</a></li>
-					<li><a href="../1226/index1.html">73</a></li>
-					<li><a href="../1226/index2.html">74</a></li>
-					<li><a href="../1226/index3.html">75</a></li>
-					<li><a href="../1226/index4.html">76</a></li>
-					<li><a href="../1226/index5.html">77</a></li>
-					<li><a href="../1226/index6.html">78</a></li>
-					<li><a href="../1226/index7.html">79</a></li>
-					<li><a href="../1226/index8.html">80</a></li>
-					<li><a href="../1226/index9.html">81</a></li>
-					<li><a href="../1226/index10.html">82</a></li>
-					<li><a href="../1226/index11.html">83</a></li>
-					<li><a href="../1226/index12.html">84</a></li>
-					<li class="active"><a href="#">85</a></li>
+					<li><a href="../1226/index.html">73</a></li>
+					<li><a href="../1226/index1.html">74</a></li>
+					<li><a href="../1226/index2.html">75</a></li>
+					<li><a href="../1226/index3.html">76</a></li>
+					<li><a href="../1226/index4.html">77</a></li>
+					<li><a href="../1226/index5.html">78</a></li>
+					<li><a href="../1226/index6.html">79</a></li>
+					<li><a href="../1226/index7.html">80</a></li>
+					<li><a href="../1226/index8.html">81</a></li>
+					<li><a href="../1226/index9.html">82</a></li>
+					<li><a href="../1226/index10.html">83</a></li>
+					<li><a href="../1226/index11.html">84</a></li>
+					<li><a href="../1226/index12.html">85</a></li>
+					<li class="active"><a href="#">86</a></li>
 					<li><a href="../1901/index.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1901/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -462,6 +466,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -480,13 +485,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index13.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -495,10 +503,22 @@
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1226-13-7'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1226-13-7 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1226-13-7" style="display:none"><block type="procedures_defnoreturn" id="T;[(1!H;G#70HO=IQ*gN" x="8" y="8"><mutation><arg name="dolzina"></arg><arg name="prvi"></arg></mutation><field name="NAME">Koledar</field><comment pinned="false" h="80" w="160">Opiši to funkcijo...</comment><statement name="STACK"><block type="variables_set" id="ReMJGrEMTyVOy`.4~+n;"><field name="VAR">vrstica</field><value name="VALUE"><block type="text" id="PQ=O$0O52vw%t]_g9,f*"><field name="TEXT"></field></block></value><next><block type="controls_for" id="kr(QgkMnp+xWmp=j{_Pf"><field name="VAR">i</field><value name="FROM"><shadow type="math_number" id="8U_y;2lvvKsw}1g{r=nh"><field name="NUM">0</field></shadow><block type="math_number" id="?SadPgzbxj5`z:xNsCNp"><field name="NUM">1</field></block></value><value name="TO"><shadow type="math_number" id="-YKC=Kv,u%v])eRdPx[]"><field name="NUM">10</field></shadow><block type="math_arithmetic" id="SQNg4.8Fle,`TzjB*0U8" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="P6mxIe}B%e[a+wC)h{b,"><field name="NUM">1</field></shadow><block type="variables_get" id="#.y!nRd?ff?gt0WB?szX"><field name="VAR">dolzina</field></block></value><value name="B"><shadow type="math_number" id="Ak3]z{_r0!:8UBu#?.$("><field name="NUM">1</field></shadow><block type="variables_get" id="H9o3IHm}|OQCBDzSzn.O"><field name="VAR">prvi</field></block></value></block></value><value name="BY"><shadow type="math_number" id="2hkylH+7E,i0K$FsdZ@$"><field name="NUM">1</field></shadow></value><statement name="DO"><block type="variables_set" id="g4=D6TUNsHceM^;6+VCN"><field name="VAR">n</field><value name="VALUE"><block type="math_arithmetic" id="HiC!.iE=!(4r]78*Fb9]"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="W29-QN1y{qCX3FR*PQW9"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="M;mel+|p!:f)`#A0-Ra:" collapsed="true"><field name="OP">MINUS</field><value name="A"><shadow type="math_number" id="XqhXFvRdf*,ZdSZUH?u$"><field name="NUM">1</field></shadow><block type="variables_get" id="+xOGGyI715Tm09wJ1^zD"><field name="VAR">i</field></block></value><value name="B"><shadow type="math_number" id="D?{k~qVr-z~?0V[D|1f7"><field name="NUM">1</field></shadow><block type="variables_get" id="^TLt/.[`glAX2=Fr=iwR"><field name="VAR">prvi</field></block></value></block></value><value name="B"><shadow type="math_number" id="95(]pWL4A!v_^L;7FLYi"><field name="NUM">1</field></shadow><block type="math_number" id="Id[rFWA(qUwYnT(whr4r"><field name="NUM">1</field></block></value></block></value><next><block type="controls_if" id=")6t?k2``7mqYD)^*jF^)"><mutation else="1"></mutation><value name="IF0"><block type="logic_compare" id="Q^O!$=2oqKgOYgoG#qDi"><field name="OP">LT</field><value name="A"><block type="variables_get" id="VKLq=[s#CTy/qaU%llXo"><field name="VAR">i</field></block></value><value name="B"><block type="variables_get" id="X5Vj+cIH:/2uB!cryxpg"><field name="VAR">prvi</field></block></value></block></value><statement name="DO0"><block type="text_append" id="[LaM6AzbE[)f,WNQ)#A1"><field name="VAR">vrstica</field><value name="TEXT"><shadow type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="text" id="PQo.Z#?on-(3!+3,Lrp|"><field name="TEXT">   </field><comment pinned="true" h="42" w="110">3 presledki</comment></block></value></block></statement><statement name="ELSE"><block type="controls_if" id="V$jh4s2Zetcap3k163)J"><mutation else="1"></mutation><value name="IF0"><block type="logic_compare" id="#1gaS8*/-@RSjG,[4YKR"><field name="OP">LT</field><value name="A"><block type="variables_get" id="Y~Hj2aK.5[?weOr#+m._"><field name="VAR">n</field></block></value><value name="B"><block type="math_number" id="`qKx+VyZy?_G!oOv555b"><field name="NUM">10</field></block></value></block></value><statement name="DO0"><block type="text_append" id="s_=[Y$vWGCF6V/fE}l4M"><field name="VAR">vrstica</field><value name="TEXT"><shadow type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="text" id="Gbg`@|!2g_Ol|ex$]]3|"><field name="TEXT">  </field><comment pinned="true" h="42" w="110">2 presledka</comment></block></value><next><block type="text_append" id="Zg6dJ$B5)*l4V.vi.u2z"><field name="VAR">vrstica</field><value name="TEXT"><shadow type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="variables_get" id="zssYtv(A9l*krdsJiN3H"><field name="VAR">n</field></block></value></block></next></block></statement><statement name="ELSE"><block type="text_append" id="WGxsTVlyWhO_9(X7D)f."><field name="VAR">vrstica</field><value name="TEXT"><shadow type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="text" id="H|S~tV[DJR,;#$aQCiHl"><field name="TEXT"> </field><comment pinned="true" h="42" w="110">1 presledek</comment></block></value><next><block type="text_append" id="w#y7/ew3vO2tmqwS@e8p"><field name="VAR">vrstica</field><value name="TEXT"><shadow type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="variables_get" id="l)0azpx:msBt9=`M}n%("><field name="VAR">n</field></block></value></block></next></block></statement></block></statement><next><block type="controls_if" id="_kT6Og-:k?`)5*%L:,XT"><value name="IF0"><block type="logic_compare" id="|@6}R6gMY(?Vhb`%Irpm"><field name="OP">EQ</field><value name="A"><block type="math_modulo" id="dYzf4v$|;Rk;9kHX_(S_" collapsed="true"><value name="DIVIDEND"><shadow type="math_number" id="=sx4ENbxwezCykpGP:lm"><field name="NUM">64</field></shadow><block type="variables_get" id="=GdZ6.a7GwovVGn,EUN,"><field name="VAR">i</field></block></value><value name="DIVISOR"><shadow type="math_number" id="YL[a-=UYC~kEw(H(J}Xd"><field name="NUM">10</field></shadow><block type="math_number" id="%HiPHP]T0BBNJv,osDq}"><field name="NUM">7</field></block></value></block></value><value name="B"><block type="math_number" id="zFtiYS[jcs0`5#AjDBFV"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_print" id="baXh/wtlX`KuK.I0^L?o"><value name="TEXT"><shadow type="text" id="`~Vi9xs{dq{:JVT%x+Z["><field name="TEXT">abc</field></shadow><block type="variables_get" id="!@S0#R!b.]HoUqIt6FGB"><field name="VAR">vrstica</field></block></value><next><block type="variables_set" id="d1.P6)dpt6?^4~`iCA7k"><field name="VAR">vrstica</field><value name="VALUE"><block type="text" id="D`V0]Qqku!${s]uu.r8)"><field name="TEXT"></field></block></value></block></next></block></statement></block></next></block></next></block></statement><next><block type="text_print" id="yIbY=x*4O3yQAv*~()%("><value name="TEXT"><shadow type="text" id="`~Vi9xs{dq{:JVT%x+Z["><field name="TEXT">abc</field></shadow><block type="variables_get" id=",K~]gz4k*)hqYz@5SO{V"><field name="VAR">vrstica</field></block></value></block></next></block></next></block></statement></block><block type="procedures_callnoreturn" id="5$lb}Z.4t?l?N{X%`-2L" inline="true" x="8" y="563"><mutation name="Koledar"><arg name="dolzina"></arg><arg name="prvi"></arg></mutation><value name="ARG0"><block type="math_number" id="VXO;Fjm8jBp}{m4782rT"><field name="NUM">31</field></block></value><value name="ARG1"><block type="math_number" id="y}w0UQwhen].}F9K]F3|"><field name="NUM">3</field></block></value></block></xml>
+<xml id="1226-13-7" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="n+9.zq4lfThE4s?G78c#">dolzina</variable><variable id="}G?)DHruBb%Tjux5Tsyw">prvi</variable><variable id="}XQW%UURgN8dr:xZ2{Kd">vrstica</variable><variable id="^W~ovWB%r.iH.1^_IAjg">i</variable><variable id="Q5)lCC#=-c}8LAsK;da2">n</variable></variables><block type="procedures_defnoreturn" id="T;[(1!H;G#70HO=IQ*gN" x="10" y="10"><mutation><arg name="dolzina" varid="n+9.zq4lfThE4s?G78c#"></arg><arg name="prvi" varid="}G?)DHruBb%Tjux5Tsyw"></arg></mutation><field name="NAME">Koledar</field><comment pinned="false" h="80" w="160">Opiši to funkcijo...</comment><statement name="STACK"><block type="variables_set" id="ReMJGrEMTyVOy`.4~+n;"><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field><value name="VALUE"><block type="text" id="PQ=O$0O52vw%t]_g9,f*"><field name="TEXT"></field></block></value><next><block type="controls_for" id="kr(QgkMnp+xWmp=j{_Pf"><field name="VAR" id="^W~ovWB%r.iH.1^_IAjg">i</field><value name="FROM"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="8U_y;2lvvKsw}1g{r=nh"><field name="NUM">0</field></shadow><block type="math_number" id="?SadPgzbxj5`z:xNsCNp"><field name="NUM">1</field></block></value><value name="TO"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="-YKC=Kv,u%v])eRdPx[]"><field name="NUM">10</field></shadow><block type="math_arithmetic" id="SQNg4.8Fle,`TzjB*0U8" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="P6mxIe}B%e[a+wC)h{b,"><field name="NUM">1</field></shadow><block type="variables_get" id="#.y!nRd?ff?gt0WB?szX"><field name="VAR" id="n+9.zq4lfThE4s?G78c#">dolzina</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="Ak3]z{_r0!:8UBu#?.$("><field name="NUM">1</field></shadow><block type="variables_get" id="H9o3IHm}|OQCBDzSzn.O"><field name="VAR" id="}G?)DHruBb%Tjux5Tsyw">prvi</field></block></value></block></value><value name="BY"><shadow type="math_number" id="2hkylH+7E,i0K$FsdZ@$"><field name="NUM">1</field></shadow></value><statement name="DO"><block type="variables_set" id="g4=D6TUNsHceM^;6+VCN"><field name="VAR" id="Q5)lCC#=-c}8LAsK;da2">n</field><value name="VALUE"><block type="math_arithmetic" id="HiC!.iE=!(4r]78*Fb9]"><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="W29-QN1y{qCX3FR*PQW9"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="M;mel+|p!:f)`#A0-Ra:" collapsed="true"><field name="OP">MINUS</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="XqhXFvRdf*,ZdSZUH?u$"><field name="NUM">1</field></shadow><block type="variables_get" id="+xOGGyI715Tm09wJ1^zD"><field name="VAR" id="^W~ovWB%r.iH.1^_IAjg">i</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="D?{k~qVr-z~?0V[D|1f7"><field name="NUM">1</field></shadow><block type="variables_get" id="^TLt/.[`glAX2=Fr=iwR"><field name="VAR" id="}G?)DHruBb%Tjux5Tsyw">prvi</field></block></value></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="95(]pWL4A!v_^L;7FLYi"><field name="NUM">1</field></shadow><block type="math_number" id="Id[rFWA(qUwYnT(whr4r"><field name="NUM">1</field></block></value></block></value><next><block type="controls_if" id=")6t?k2``7mqYD)^*jF^)"><mutation else="1"></mutation><value name="IF0"><block type="logic_compare" id="Q^O!$=2oqKgOYgoG#qDi"><field name="OP">LT</field><value name="A"><block type="variables_get" id="VKLq=[s#CTy/qaU%llXo"><field name="VAR" id="^W~ovWB%r.iH.1^_IAjg">i</field></block></value><value name="B"><block type="variables_get" id="X5Vj+cIH:/2uB!cryxpg"><field name="VAR" id="}G?)DHruBb%Tjux5Tsyw">prvi</field></block></value></block></value><statement name="DO0"><block type="text_append" id="[LaM6AzbE[)f,WNQ)#A1"><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="text" id="PQo.Z#?on-(3!+3,Lrp|"><field name="TEXT">   </field><comment pinned="true" h="42" w="110">3 presledki</comment></block></value></block></statement><statement name="ELSE"><block type="controls_if" id="V$jh4s2Zetcap3k163)J"><mutation else="1"></mutation><value name="IF0"><block type="logic_compare" id="#1gaS8*/-@RSjG,[4YKR"><field name="OP">LT</field><value name="A"><block type="variables_get" id="Y~Hj2aK.5[?weOr#+m._"><field name="VAR" id="Q5)lCC#=-c}8LAsK;da2">n</field></block></value><value name="B"><block type="math_number" id="`qKx+VyZy?_G!oOv555b"><field name="NUM">10</field></block></value></block></value><statement name="DO0"><block type="text_append" id="s_=[Y$vWGCF6V/fE}l4M"><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="text" id="Gbg`@|!2g_Ol|ex$]]3|"><field name="TEXT">  </field><comment pinned="true" h="42" w="110">2 presledka</comment></block></value><next><block type="text_append" id="Zg6dJ$B5)*l4V.vi.u2z"><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="variables_get" id="zssYtv(A9l*krdsJiN3H"><field name="VAR" id="Q5)lCC#=-c}8LAsK;da2">n</field></block></value></block></next></block></statement><statement name="ELSE"><block type="text_append" id="WGxsTVlyWhO_9(X7D)f."><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="text" id="H|S~tV[DJR,;#$aQCiHl"><field name="TEXT"> </field><comment pinned="true" h="42" w="110">1 presledek</comment></block></value><next><block type="text_append" id="w#y7/ew3vO2tmqwS@e8p"><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="AFqvK`#E[xrt};VzOJE3"><field name="TEXT"></field></shadow><block type="variables_get" id="l)0azpx:msBt9=`M}n%("><field name="VAR" id="Q5)lCC#=-c}8LAsK;da2">n</field></block></value></block></next></block></statement></block></statement><next><block type="controls_if" id="_kT6Og-:k?`)5*%L:,XT"><value name="IF0"><block type="logic_compare" id="|@6}R6gMY(?Vhb`%Irpm"><field name="OP">EQ</field><value name="A"><block type="math_modulo" id="dYzf4v$|;Rk;9kHX_(S_" collapsed="true"><value name="DIVIDEND"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="=sx4ENbxwezCykpGP:lm"><field name="NUM">64</field></shadow><block type="variables_get" id="=GdZ6.a7GwovVGn,EUN,"><field name="VAR" id="^W~ovWB%r.iH.1^_IAjg">i</field></block></value><value name="DIVISOR"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="YL[a-=UYC~kEw(H(J}Xd"><field name="NUM">10</field></shadow><block type="math_number" id="%HiPHP]T0BBNJv,osDq}"><field name="NUM">7</field></block></value></block></value><value name="B"><block type="math_number" id="zFtiYS[jcs0`5#AjDBFV"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_print" id="baXh/wtlX`KuK.I0^L?o"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="`~Vi9xs{dq{:JVT%x+Z["><field name="TEXT">abc</field></shadow><block type="variables_get" id="!@S0#R!b.]HoUqIt6FGB"><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field></block></value><next><block type="variables_set" id="d1.P6)dpt6?^4~`iCA7k"><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field><value name="VALUE"><block type="text" id="D`V0]Qqku!${s]uu.r8)"><field name="TEXT"></field></block></value></block></next></block></statement></block></next></block></next></block></statement><next><block type="text_print" id="yIbY=x*4O3yQAv*~()%("><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="`~Vi9xs{dq{:JVT%x+Z["><field name="TEXT">abc</field></shadow><block type="variables_get" id=",K~]gz4k*)hqYz@5SO{V"><field name="VAR" id="}XQW%UURgN8dr:xZ2{Kd">vrstica</field></block></value></block></next></block></next></block></statement></block><block type="procedures_callnoreturn" id="5$lb}Z.4t?l?N{X%`-2L" inline="true" x="10" y="610"><mutation name="Koledar"><arg name="dolzina"></arg><arg name="prvi"></arg></mutation><value name="ARG0"><block type="math_number" id="VXO;Fjm8jBp}{m4782rT"><field name="NUM">31</field></block></value><value name="ARG1"><block type="math_number" id="y}w0UQwhen].}F9K]F3|"><field name="NUM">3</field></block></value></block></xml>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

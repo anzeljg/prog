@@ -1,1 +1,607 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="737.1091918945312" height="332" viewBox=" 22 23 737.1091918945312 332"><defs><style type="text/css" xmlns="http://www.w3.org/1999/xhtml"><![CDATA[.blocklySvg {background-color: #fff;outline: none;overflow: hidden;display: block;}.blocklyWidgetDiv {display: none;position: absolute;z-index: 99999;}.injectionDiv {height: 100%;position: relative;}.blocklyNonSelectable {user-select: none;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;}.blocklyTooltipDiv {background-color: #ffffc7;border: 1px solid #ddc;box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);color: #000;display: none;font-family: sans-serif;font-size: 9pt;opacity: 0.9;padding: 2px;position: absolute;z-index: 100000;}.blocklyResizeSE {cursor: se-resize;fill: #aaa;}.blocklyResizeSW {cursor: sw-resize;fill: #aaa;}.blocklyResizeLine {stroke: #888;stroke-width: 1;}.blocklyHighlightedConnectionPath {fill: none;stroke: #fc3;stroke-width: 4px;}.blocklyPathLight {fill: none;stroke-linecap: round;stroke-width: 1;}.blocklySelected>.blocklyPath {stroke: #fc3;stroke-width: 3px;}.blocklySelected>.blocklyPathLight {display: none;}.blocklyDragging>.blocklyPath,.blocklyDragging>.blocklyPathLight {fill-opacity: .8;stroke-opacity: .8;}.blocklyDragging>.blocklyPathDark {display: none;}.blocklyDisabled>.blocklyPath {fill-opacity: .5;stroke-opacity: .5;}.blocklyDisabled>.blocklyPathLight,.blocklyDisabled>.blocklyPathDark {display: none;}.blocklyText {cursor: default;fill: #fff;font-family: sans-serif;font-size: 11pt;}.blocklyNonEditableText>text {pointer-events: none;}.blocklyNonEditableText>rect,.blocklyEditableText>rect {fill: #fff;fill-opacity: .6;}.blocklyNonEditableText>text,.blocklyEditableText>text {fill: #000;}.blocklyEditableText:hover>rect {stroke: #fff;stroke-width: 2;}.blocklyBubbleText {fill: #000;}.blocklyFlyoutButton {fill: #888;cursor: default;}.blocklyFlyoutButtonShadow {fill: #666;}.blocklyFlyoutButton:hover {fill: #aaa;}.blocklySvg text {user-select: none;-moz-user-select: none;-webkit-user-select: none;cursor: inherit;}.blocklyHidden {display: none;}.blocklyFieldDropdown:not(.blocklyHidden) {display: block;}.blocklyIconGroup {cursor: default;}.blocklyIconGroup:not(:hover),.blocklyIconGroupReadonly {opacity: .6;}.blocklyIconShape {fill: #00f;stroke: #fff;stroke-width: 1px;}.blocklyIconSymbol {fill: #fff;}.blocklyMinimalBody {margin: 0;padding: 0;}.blocklyCommentTextarea {background-color: #ffc;border: 0;margin: 0;padding: 2px;resize: none;}.blocklyHtmlInput {border: none;border-radius: 4px;font-family: sans-serif;height: 100%;margin: 0;outline: none;padding: 0 1px;width: 100%}.blocklyMainBackground {stroke-width: 1;stroke: #c6c6c6;}.blocklyMutatorBackground {fill: #fff;stroke: #ddd;stroke-width: 1;}.blocklyFlyoutBackground {fill: #ddd;fill-opacity: .8;}.blocklyScrollbarBackground {opacity: 0;}.blocklyScrollbarHandle {fill: #ccc;}.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,.blocklyScrollbarHandle:hover {fill: #bbb;}.blocklyZoom>image {opacity: .4;}.blocklyZoom>image:hover {opacity: .6;}.blocklyZoom>image:active {opacity: .8;}.blocklyFlyout .blocklyScrollbarHandle {fill: #bbb;}.blocklyFlyout .blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,.blocklyFlyout .blocklyScrollbarHandle:hover {fill: #aaa;}.blocklyInvalidInput {background: #faa;}.blocklyAngleCircle {stroke: #444;stroke-width: 1;fill: #ddd;fill-opacity: .8;}.blocklyAngleMarks {stroke: #444;stroke-width: 1;}.blocklyAngleGauge {fill: #f88;fill-opacity: .8;}.blocklyAngleLine {stroke: #f00;stroke-width: 2;stroke-linecap: round;}.blocklyContextMenu {border-radius: 4px;}.blocklyDropdownMenu {padding: 0 !important;}.blocklyWidgetDiv .goog-option-selected .goog-menuitem-checkbox,.blocklyWidgetDiv .goog-option-selected .goog-menuitem-icon {background: url(<<<PATH>>>/sprites.png) no-repeat -48px -16px !important;}.blocklyToolboxDiv {background-color: #ddd;overflow-x: visible;overflow-y: auto;position: absolute;}.blocklyTreeRoot {padding: 4px 0;}.blocklyTreeRoot:focus {outline: none;}.blocklyTreeRow {height: 22px;line-height: 22px;margin-bottom: 3px;padding-right: 8px;white-space: nowrap;}.blocklyHorizontalTree {float: left;margin: 1px 5px 8px 0;}.blocklyHorizontalTreeRtl {float: right;margin: 1px 0 8px 5px;}.blocklyToolboxDiv[dir="RTL"] .blocklyTreeRow {margin-left: 8px;}.blocklyTreeRow:not(.blocklyTreeSelected):hover {background-color: #e4e4e4;}.blocklyTreeSeparator {border-bottom: solid #e5e5e5 1px;height: 0;margin: 5px 0;}.blocklyTreeSeparatorHorizontal {border-right: solid #e5e5e5 1px;width: 0;padding: 5px 0;margin: 0 5px;}.blocklyTreeIcon {background-image: url(<<<PATH>>>/sprites.png);height: 16px;vertical-align: middle;width: 16px;}.blocklyTreeIconClosedLtr {background-position: -32px -1px;}.blocklyTreeIconClosedRtl {background-position: 0px -1px;}.blocklyTreeIconOpen {background-position: -16px -1px;}.blocklyTreeSelected>.blocklyTreeIconClosedLtr {background-position: -32px -17px;}.blocklyTreeSelected>.blocklyTreeIconClosedRtl {background-position: 0px -17px;}.blocklyTreeSelected>.blocklyTreeIconOpen {background-position: -16px -17px;}.blocklyTreeIconNone,.blocklyTreeSelected>.blocklyTreeIconNone {background-position: -48px -1px;}.blocklyTreeLabel {cursor: default;font-family: sans-serif;font-size: 16px;padding: 0 3px;vertical-align: middle;}.blocklyTreeSelected .blocklyTreeLabel {color: #fff;}.blocklyWidgetDiv .goog-palette {outline: none;cursor: default;}.blocklyWidgetDiv .goog-palette-table {border: 1px solid #666;border-collapse: collapse;}.blocklyWidgetDiv .goog-palette-cell {height: 13px;width: 15px;margin: 0;border: 0;text-align: center;vertical-align: middle;border-right: 1px solid #666;font-size: 1px;}.blocklyWidgetDiv .goog-palette-colorswatch {position: relative;height: 13px;width: 15px;border: 1px solid #666;}.blocklyWidgetDiv .goog-palette-cell-hover .goog-palette-colorswatch {border: 1px solid #FFF;}.blocklyWidgetDiv .goog-palette-cell-selected .goog-palette-colorswatch {border: 1px solid #000;color: #fff;}.blocklyWidgetDiv .goog-menu {background: #fff;border-color: #ccc #666 #666 #ccc;border-style: solid;border-width: 1px;cursor: default;font: normal 13px Arial, sans-serif;margin: 0;outline: none;padding: 4px 0;position: absolute;overflow-y: auto;overflow-x: hidden;max-height: 100%;z-index: 20000;}.blocklyWidgetDiv .goog-menuitem {color: #000;font: normal 13px Arial, sans-serif;list-style: none;margin: 0;padding: 4px 7em 4px 28px;white-space: nowrap;}.blocklyWidgetDiv .goog-menuitem.goog-menuitem-rtl {padding-left: 7em;padding-right: 28px;}.blocklyWidgetDiv .goog-menu-nocheckbox .goog-menuitem,.blocklyWidgetDiv .goog-menu-noicon .goog-menuitem {padding-left: 12px;}.blocklyWidgetDiv .goog-menu-noaccel .goog-menuitem {padding-right: 20px;}.blocklyWidgetDiv .goog-menuitem-content {color: #000;font: normal 13px Arial, sans-serif;}.blocklyWidgetDiv .goog-menuitem-disabled .goog-menuitem-accel,.blocklyWidgetDiv .goog-menuitem-disabled .goog-menuitem-content {color: #ccc !important;}.blocklyWidgetDiv .goog-menuitem-disabled .goog-menuitem-icon {opacity: 0.3;-moz-opacity: 0.3;filter: alpha(opacity=30);}.blocklyWidgetDiv .goog-menuitem-highlight,.blocklyWidgetDiv .goog-menuitem-hover {background-color: #d6e9f8;border-color: #d6e9f8;border-style: dotted;border-width: 1px 0;padding-bottom: 3px;padding-top: 3px;}.blocklyWidgetDiv .goog-menuitem-checkbox,.blocklyWidgetDiv .goog-menuitem-icon {background-repeat: no-repeat;height: 16px;left: 6px;position: absolute;right: auto;vertical-align: middle;width: 16px;}.blocklyWidgetDiv .goog-menuitem-rtl .goog-menuitem-checkbox,.blocklyWidgetDiv .goog-menuitem-rtl .goog-menuitem-icon {left: auto;right: 6px;}.blocklyWidgetDiv .goog-option-selected .goog-menuitem-checkbox,.blocklyWidgetDiv .goog-option-selected .goog-menuitem-icon {background: url(//ssl.gstatic.com/editor/editortoolbar.png) no-repeat -512px 0;}.blocklyWidgetDiv .goog-menuitem-accel {color: #999;direction: ltr;left: auto;padding: 0 6px;position: absolute;right: 0;text-align: right;}.blocklyWidgetDiv .goog-menuitem-rtl .goog-menuitem-accel {left: 0;right: auto;text-align: left;}.blocklyWidgetDiv .goog-menuitem-mnemonic-hint {text-decoration: underline;}.blocklyWidgetDiv .goog-menuitem-mnemonic-separator {color: #999;font-size: 12px;padding-left: 4px;}.blocklyWidgetDiv .goog-menuseparator {border-top: 1px solid #ccc;margin: 4px 0;padding: 0;}]]></style></defs><g xmlns="http://www.w3.org/2000/svg" class="blocklyBlockCanvas"><g class="blocklyDraggable" transform="translate(22.000000000000227,23)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#00b700" d="m 0,8 A 8,8 0 0,1 8,0 H 366.0447235107422 v 25 H 50 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 155 a 8,8 0 0,0 8,8 H 366.0447235107422 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" fill="#00e500" d="m 0,8 A 8,8 0 0,1 8,0 H 366.0447235107422 v 25 H 50 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 155 a 8,8 0 0,0 8,8 H 366.0447235107422 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#4ded4d" d="m 0.5,7.5 A 7.5,7.5 0 0,1 8,0.5 H 365.5447235107422 M 365.5447235107422,0.5 M 365.5447235107422,25.5 M 21.989592359914347,194.01040764008565 a 8.5,8.5 0 0,0 6.0104076400856545,2.4895923599143455 H 365.5447235107422 M 365.5447235107422,196.5 M 361.0447235107422,215.3 l 3.68,-2.1 M 2.6966991411008934,218.3033008588991 A 7.5,7.5 0 0,1 0.5,213 V 8&#10;"/><g class="blocklyIconGroup" display="block" transform="translate(10,5)"><rect class="blocklyIconShape" rx="4" ry="4" height="16" width="16"/><path class="blocklyIconSymbol" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"/><circle class="blocklyIconShape" r="2.7" cx="8" cy="8"/></g><g class="blocklyIconGroup" display="block" transform="translate(37,5)"><circle class="blocklyIconShape" r="8" cx="8" cy="8"/><path class="blocklyIconSymbol" d="m6.8,10h2c0.003,-0.617 0.271,-0.962 0.633,-1.266 2.875,-2.405 0.607,-5.534 -3.765,-3.874v1.7c3.12,-1.657 3.698,0.118 2.336,1.25 -1.201,0.998 -1.201,1.528 -1.204,2.19z"/><rect class="blocklyIconSymbol" x="6.8" y="10.78" height="2" width="2"/></g><text class="blocklyText" y="12.5" transform="translate(64,5)">funkcija</text><g class="blocklyEditableText" transform="translate(123.72005462646484,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="138.76092529296875"/><text class="blocklyText" y="12.5">KolikokratNajmanjsi</text></g><text class="blocklyText" y="12.5" transform="translate(262.4809799194336,5)">s parametri: t</text><text class="blocklyText" y="12.5" transform="translate(324.41624450683594,201)">vrni</text><g class="blocklyDraggable" transform="translate(367.0447235107422,196)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,0 H 98.26040649414062 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,0 H 98.26040649414062 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,0.5 H 97.76040649414062 M 97.76040649414062,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="88.26040649414062"/><text class="blocklyText" y="12.5">kolikokrat<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g></g><g class="blocklyDraggable" transform="translate(21,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 189.0334186553955 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 29.5 l -6,4 -3,0 -6,-4 H 0 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 189.0334186553955 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 29.5 l -6,4 -3,0 -6,-4 H 0 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,7.5 A 7.5,7.5 0 0,1 8,0.5 H 15 l 6,4 3,0 6,-4 H 188.5334186553955 M 188.5334186553955,0.5 M 184.0334186553955,19.3 l 3.68,-2.1 M 0.5,24.5 V 8&#10;"/><text class="blocklyText" y="12.5" transform="translate(10,5)">nastavi</text><g class="blocklyEditableText" transform="translate(66.46219635009766,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="88.26040649414062"/><text class="blocklyText" y="12.5">kolikokrat<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g><text class="blocklyText" y="12.5" transform="translate(154.72260284423828,5)">na</text><g class="blocklyDraggable" transform="translate(190.0334186553955,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 28.155407905578613 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 28.155407905578613 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 27.655407905578613 M 27.655407905578613,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="18.155407905578613"/><text class="blocklyText" y="12.5">0</text></g></g><g class="blocklyDraggable" transform="translate(0,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,0 H 15 l 6,4 3,0 6,-4 H 189.04059028625488 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 29.5 l -6,4 -3,0 -6,-4 H 0 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,0 H 15 l 6,4 3,0 6,-4 H 189.04059028625488 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 29.5 l -6,4 -3,0 -6,-4 H 0 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,0.5 H 15 l 6,4 3,0 6,-4 H 188.54059028625488 M 188.54059028625488,0.5 M 184.04059028625488,19.3 l 3.68,-2.1 M 0.5,24.5 V 0.5&#10;"/><text class="blocklyText" y="12.5" transform="translate(10,5)">nastavi</text><g class="blocklyEditableText" transform="translate(66.46219635009766,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="88.267578125"/><text class="blocklyText" y="12.5">najmanjsi<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g><text class="blocklyText" y="12.5" transform="translate(154.72977447509766,5)">na</text><g class="blocklyDraggable" transform="translate(0,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#b7007a" d="m 0,0 H 15 l 6,4 3,0 6,-4 H 268.9120330810547 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 87.49052810668945 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 63 a 8,8 0 0,0 8,8 H 268.9120330810547 v 10 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" fill="#e50099" d="m 0,0 H 15 l 6,4 3,0 6,-4 H 268.9120330810547 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 87.49052810668945 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 63 a 8,8 0 0,0 8,8 H 268.9120330810547 v 10 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#ed4db8" d="m 0.5,0.5 H 15 l 6,4 3,0 6,-4 H 268.4120330810547 M 268.4120330810547,0.5 M 263.9120330810547,19.3 l 3.68,-2.1 M 268.4120330810547,25.5 M 59.4801204666038,102.01040764008566 a 8.5,8.5 0 0,0 6.0104076400856545,2.4895923599143455 H 268.4120330810547 M 2.6966991411008934,111.3033008588991 A 7.5,7.5 0 0,1 0.5,106 V 0.5&#10;"/><text class="blocklyText" y="12.5" transform="translate(10,5)">za vsak element</text><g class="blocklyEditableText" transform="translate(125.95587158203125,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="78.49398040771484"/><text class="blocklyText" y="12.5">element<tspan style="fill: rgb(229, 0, 153);"> ▾</tspan></text></g><text class="blocklyText" y="12.5" transform="translate(204.4498519897461,5)">v tabeli</text><text class="blocklyText" y="12.5" transform="translate(10,30)">izvedi</text><g class="blocklyDraggable" transform="translate(269.9120330810547,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,0 H 40.39926719665527 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,0 H 40.39926719665527 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,0.5 H 39.89926719665527 M 39.89926719665527,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="30.399267196655273"/><text class="blocklyText" y="12.5">t<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g></g><g class="blocklyDraggable" transform="translate(58.49052810668945,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#007ab7" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 87.49052810668945 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 16 H 87.49052810668945 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 13 a 8,8 0 0,0 8,8 H 87.49052810668945 v 10 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" fill="#0098e5" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 87.49052810668945 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 16 H 87.49052810668945 l -6,4 -3,0 -6,-4 h -7 a 8,8 0 0,0 -8,8 v 13 a 8,8 0 0,0 8,8 H 87.49052810668945 v 10 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#4db7ed" d="m 0.5,7.5 A 7.5,7.5 0 0,1 8,0.5 H 15 l 6,4 3,0 6,-4 H 86.99052810668945 M 86.99052810668945,0.5 M 82.49052810668945,19.3 l 3.68,-2.1 M 86.99052810668945,36.5 M 59.4801204666038,63.01040764008565 a 8.5,8.5 0 0,0 6.0104076400856545,2.4895923599143455 H 86.99052810668945 M 2.6966991411008934,72.3033008588991 A 7.5,7.5 0 0,1 0.5,67 V 8&#10;"/><g class="blocklyIconGroup" display="block" transform="translate(10,5)"><rect class="blocklyIconShape" rx="4" ry="4" height="16" width="16"/><path class="blocklyIconSymbol" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"/><circle class="blocklyIconShape" r="2.7" cx="8" cy="8"/></g><text class="blocklyText" y="12.5" transform="translate(37,5)">če</text><text class="blocklyText" y="12.5" transform="translate(10,41)">izvedi</text><g class="blocklyDraggable" transform="translate(88.49052810668945,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#007ab7" d="m 0,0 H 20 H 267.65024185180664 v 36 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;M 106.49398040771484,5 h -90.49398040771484 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 90.49398040771484 z M 257.65024185180664,5 h -100.267578125 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 100.267578125 z"/><path class="blocklyPath" fill="#0098e5" d="m 0,0 H 20 H 267.65024185180664 v 36 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;M 106.49398040771484,5 h -90.49398040771484 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 90.49398040771484 z M 257.65024185180664,5 h -100.267578125 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 100.267578125 z"/><path class="blocklyPathLight" stroke="#4db7ed" d="m 0.5,0.5 H 19.5 M 19.5,0.5 H 267.15024185180664 M 0.5,35.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;M 106.99398040771484,5.5 v 27 h -90.49398040771484 M 10.9,24.3 l 3.68,-2.1 M 258.15024185180664,5.5 v 27 h -100.267578125 M 152.28266372680665,24.3 l 3.68,-2.1"/><g class="blocklyEditableText" transform="translate(116.49398040771484,10)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="34.8886833190918"/><text class="blocklyText" y="12.5">=<tspan style="fill: rgb(0, 152, 229);"> ▾</tspan></text></g><g class="blocklyDraggable" transform="translate(17,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,0 H 88.49398040771484 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,0 H 88.49398040771484 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,0.5 H 87.99398040771484 M 87.99398040771484,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="78.49398040771484"/><text class="blocklyText" y="12.5">element<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g></g><g class="blocklyDraggable" transform="translate(158.38266372680664,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,0 H 98.267578125 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,0 H 98.267578125 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,0.5 H 97.767578125 M 97.767578125,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="88.267578125"/><text class="blocklyText" y="12.5">najmanjsi<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g></g></g><g class="blocklyDraggable" transform="translate(58.49052810668945,37)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 189.0334186553955 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 189.0334186553955 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,7.5 A 7.5,7.5 0 0,1 8,0.5 H 15 l 6,4 3,0 6,-4 H 188.5334186553955 M 188.5334186553955,0.5 M 184.0334186553955,19.3 l 3.68,-2.1 M 2.6966991411008934,22.303300858899107 A 7.5,7.5 0 0,1 0.5,17 V 8&#10;"/><text class="blocklyText" y="12.5" transform="translate(10,5)">nastavi</text><g class="blocklyEditableText" transform="translate(66.46219635009766,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="88.26040649414062"/><text class="blocklyText" y="12.5">kolikokrat<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g><text class="blocklyText" y="12.5" transform="translate(154.72260284423828,5)">na</text><g class="blocklyDraggable" transform="translate(190.0334186553955,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 106.80245208740234 l 8,0 0,4 8,4 -16,8 8,4 v 4 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 106.80245208740234 l 8,0 0,4 8,4 -16,8 8,4 v 4 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 106.30245208740234 M 106.30245208740234,0.5 h 8 M 0.5,23.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(126.26040649414062,10)" style="cursor: default; display: none;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="34.8886833190918"/><text class="blocklyText" y="12.5">+<tspan style="fill: rgb(0, 76, 229);"> ▾</tspan></text></g><g class="blocklyDraggable" transform="translate(17,6)" style="display: none;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,0 H 98.26040649414062 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,0 H 98.26040649414062 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,0.5 H 97.76040649414062 M 97.76040649414062,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="88.26040649414062"/><text class="blocklyText" y="12.5">kolikokrat<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g></g><g class="blocklyDraggable" transform="translate(168.14908981323242,6)" style="display: none;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 28.155407905578613 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 28.155407905578613 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 27.655407905578613 M 27.655407905578613,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="18.155407905578613"/><text class="blocklyText" y="12.5">1</text></g></g><text class="blocklyText" y="12.5" transform="translate(10,5)">kolikokrat + 1</text></g></g></g></g><g class="blocklyDraggable" transform="translate(190.04059028625488,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 153.75096130371094 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 153.75096130371094 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 5 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 153.25096130371094 M 153.25096130371094,0.5 M 148.75096130371094,19.3 l 3.68,-2.1 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="85.79734802246094"/><text class="blocklyText" y="12.5">minimum<tspan style="fill: rgb(0, 76, 229);"> ▾</tspan></text></g><text class="blocklyText" y="12.5" transform="translate(95.79734802246094,5)">tabele</text><g class="blocklyDraggable" transform="translate(154.75096130371094,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,0 H 40.39926719665527 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,0 H 40.39926719665527 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,0.5 H 39.89926719665527 M 39.89926719665527,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="30.399267196655273"/><text class="blocklyText" y="12.5">t<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g></g></g></g></g></g><g class="blocklyDraggable" transform="translate(22.99999999999841,277.00000762939453)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 167.05177116394043 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 16 H 29.5 l -6,4 -3,0 -6,-4 H 0 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 167.05177116394043 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 16 H 29.5 l -6,4 -3,0 -6,-4 H 0 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,7.5 A 7.5,7.5 0 0,1 8,0.5 H 15 l 6,4 3,0 6,-4 H 166.55177116394043 M 166.55177116394043,0.5 M 162.05177116394043,19.3 l 3.68,-2.1 M 0.5,35.5 V 8&#10;"/><text class="blocklyText" y="12.5" transform="translate(10,5)">nastavi</text><g class="blocklyEditableText" transform="translate(66.46219635009766,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="66.27875900268555"/><text class="blocklyText" y="12.5">tabela<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g><text class="blocklyText" y="12.5" transform="translate(132.7409553527832,5)">na</text><g class="blocklyDraggable" transform="translate(0,37)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#b79900" d="m 0,0 H 15 l 6,4 3,0 6,-4 H 60.592979431152344 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 16 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" fill="#e5bf00" d="m 0,0 H 15 l 6,4 3,0 6,-4 H 60.592979431152344 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 16 H 29.5 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#edd24d" d="m 0.5,0.5 H 15 l 6,4 3,0 6,-4 H 60.092979431152344 M 60.092979431152344,0.5 M 55.592979431152344,19.3 l 3.68,-2.1 M 2.6966991411008934,33.30330085889911 A 7.5,7.5 0 0,1 0.5,28 V 0.5&#10;"/><text class="blocklyText" y="12.5" transform="translate(10,5)">izpiši</text><g class="blocklyDraggable" transform="translate(61.592979431152344,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#00b700" d="m 0,0 H 20 H 344.52930974960327 v 36 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;M 334.52930974960327,5 h -78.27875900268555 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 78.27875900268555 z"/><path class="blocklyPath" fill="#00e500" d="m 0,0 H 20 H 344.52930974960327 v 36 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;M 334.52930974960327,5 h -78.27875900268555 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 78.27875900268555 z"/><path class="blocklyPathLight" stroke="#4ded4d" d="m 0.5,0.5 H 19.5 M 19.5,0.5 H 344.02930974960327 M 0.5,35.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;M 335.02930974960327,5.5 v 27 h -78.27875900268555 M 251.15055074691773,24.3 l 3.68,-2.1"/><text class="blocklyText" y="12.5" transform="translate(236.17642974853516,10)">t</text><text class="blocklyText" y="12.5" transform="translate(10,10)">KolikokratNajmanjsi</text><text class="blocklyText" y="12.5" transform="translate(148.76092529296875,10)">s parametri:</text><g class="blocklyDraggable" transform="translate(257.2505507469177,6.000000000000057)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d="m 0,0 H 76.27875900268555 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#9900e5" d="m 0,0 H 76.27875900268555 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d="m 0.5,0.5 H 75.77875900268555 M 75.77875900268555,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: default;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="66.27875900268555"/><text class="blocklyText" y="12.5">tabela<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text></g></g></g></g><g class="blocklyDraggable" transform="translate(168.05177116394043,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#b71e00" d="m 0,0 H 47 H 567.0574245452881 v 36 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;M 193.19252967834473,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 247.50334548950195,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 293.65875339508057,5 h -30.155407905578613 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 30.155407905578613 z M 347.9695692062378,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 402.280385017395,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 448.43579292297363,5 h -30.155407905578613 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 30.155407905578613 z M 502.74660873413086,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 557.0574245452881,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z"/><path class="blocklyPath" fill="#e52600" d="m 0,0 H 47 H 567.0574245452881 v 36 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;M 193.19252967834473,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 247.50334548950195,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 293.65875339508057,5 h -30.155407905578613 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 30.155407905578613 z M 347.9695692062378,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 402.280385017395,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 448.43579292297363,5 h -30.155407905578613 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 30.155407905578613 z M 502.74660873413086,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z M 557.0574245452881,5 h -38.31081581115723 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 7 h 38.31081581115723 z"/><path class="blocklyPathLight" stroke="#ed674d" d="m 0.5,0.5 H 46.5 M 46.5,0.5 H 566.5574245452881 M 0.5,35.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;M 193.69252967834473,5.5 v 27 h -38.31081581115723 M 149.7817138671875,24.3 l 3.68,-2.1 M 248.00334548950195,5.5 v 27 h -38.31081581115723 M 204.09252967834473,24.3 l 3.68,-2.1 M 294.15875339508057,5.5 v 27 h -30.155407905578613 M 258.40334548950193,24.3 l 3.68,-2.1 M 348.4695692062378,5.5 v 27 h -38.31081581115723 M 304.55875339508054,24.3 l 3.68,-2.1 M 402.780385017395,5.5 v 27 h -38.31081581115723 M 358.86956920623777,24.3 l 3.68,-2.1 M 448.93579292297363,5.5 v 27 h -30.155407905578613 M 413.180385017395,24.3 l 3.68,-2.1 M 503.24660873413086,5.5 v 27 h -38.31081581115723 M 459.3357929229736,24.3 l 3.68,-2.1 M 557.5574245452881,5.5 v 27 h -38.31081581115723 M 513.6466087341308,24.3 l 3.68,-2.1"/><g class="blocklyIconGroup" display="block" transform="translate(10,5)"><rect class="blocklyIconShape" rx="4" ry="4" height="16" width="16"/><path class="blocklyIconSymbol" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"/><circle class="blocklyIconShape" r="2.7" cx="8" cy="8"/></g><text class="blocklyText" y="12.5" transform="translate(37,10)">ustvari tabelo iz</text><g class="blocklyDraggable" transform="translate(264.50334548950195,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 28.155407905578613 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 28.155407905578613 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 27.655407905578613 M 27.655407905578613,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="18.155407905578613"/><text class="blocklyText" y="12.5">8</text></g></g><g class="blocklyDraggable" transform="translate(310.65875339508057,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 35.81081581115723 M 35.81081581115723,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="26.310815811157227"/><text class="blocklyText" y="12.5">13</text></g></g><g class="blocklyDraggable" transform="translate(364.9695692062378,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 35.81081581115723 M 35.81081581115723,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="26.310815811157227"/><text class="blocklyText" y="12.5">15</text></g></g><g class="blocklyDraggable" transform="translate(155.8817138671875,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 35.81081581115723 M 35.81081581115723,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="26.310815811157227"/><text class="blocklyText" y="12.5">10</text></g></g><g class="blocklyDraggable" transform="translate(419.280385017395,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 28.155407905578613 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 28.155407905578613 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 27.655407905578613 M 27.655407905578613,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="18.155407905578613"/><text class="blocklyText" y="12.5">8</text></g></g><g class="blocklyDraggable" transform="translate(465.43579292297363,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 35.81081581115723 M 35.81081581115723,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="26.310815811157227"/><text class="blocklyText" y="12.5">15</text></g></g><g class="blocklyDraggable" transform="translate(519.7466087341309,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 35.81081581115723 M 35.81081581115723,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="26.310815811157227"/><text class="blocklyText" y="12.5">17</text></g></g><g class="blocklyDraggable" transform="translate(210.19252967834473,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPath" fill="#004ce5" d="m 0,0 H 36.31081581115723 v 25 H 0 V 20 c 0,-10 -8,8 -8,-7.5 s 8,2.5 8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d="m 0.5,0.5 H 35.81081581115723 M 35.81081581115723,0.5 M 0.5,24.5 V 18.5 m -7.36,-0.5 q -1.52,-5.5 0,-11 m 7.36,1 V 0.5 H 1&#10;"/><g class="blocklyEditableText" transform="translate(10,5)" style="cursor: text;"><rect rx="4" ry="4" x="-5" y="0" height="16" width="26.310815811157227"/><text class="blocklyText" y="12.5">15</text></g></g></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 10 715.0177612304688 352" class="blocklySvg geras-renderer rin_light-theme" width="715.0177612304688" height="352" style="background-color: transparent"><style xmlns="http://www.w3.org/1999/xhtml">.geras-renderer.rin_light-theme .blocklyText, 
+.geras-renderer.rin_light-theme .blocklyFlyoutLabelText {
+font: normal 11pt sans-serif;
+}
+.geras-renderer.rin_light-theme .blocklyText {
+fill: #fff;
+}
+.geras-renderer.rin_light-theme .blocklyNonEditableText&gt;rect,
+.geras-renderer.rin_light-theme .blocklyEditableText&gt;rect {
+fill: #fff;
+fill-opacity: .6;
+stroke: none;
+}
+.geras-renderer.rin_light-theme .blocklyNonEditableText&gt;text,
+.geras-renderer.rin_light-theme .blocklyEditableText&gt;text {
+fill: #000;
+}
+.geras-renderer.rin_light-theme .blocklyFlyoutLabelText {
+fill: #000;
+}
+.geras-renderer.rin_light-theme .blocklyText.blocklyBubbleText {
+fill: #000;
+}
+.geras-renderer.rin_light-theme .blocklyEditableText:not(.editing):hover&gt;rect {
+stroke: #fff;
+stroke-width: 2;
+}
+.geras-renderer.rin_light-theme .blocklyHtmlInput {
+font-family: sans-serif;
+font-weight: normal;
+}
+.geras-renderer.rin_light-theme .blocklySelected&gt;.blocklyPath {
+stroke: #fc3;
+stroke-width: 3px;
+}
+.geras-renderer.rin_light-theme .blocklyHighlightedConnectionPath {
+stroke: #fc3;
+}
+.geras-renderer.rin_light-theme .blocklyReplaceable .blocklyPath {
+fill-opacity: .5;
+}
+.geras-renderer.rin_light-theme .blocklyReplaceable .blocklyPathLight,
+.geras-renderer.rin_light-theme .blocklyReplaceable .blocklyPathDark {
+display: none;
+}
+.geras-renderer.rin_light-theme .blocklyInsertionMarker&gt;.blocklyPath {
+fill-opacity: 0.2;
+stroke: none;
+}
+.geras-renderer.rin_light-theme .blocklyInsertionMarker&gt;.blocklyPathLight,
+.geras-renderer.rin_light-theme .blocklyInsertionMarker&gt;.blocklyPathDark {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklySvg {
+background-color: #fff;
+outline: none;
+overflow: hidden;
+position: absolute;
+display: block;
+}
+.blocklyWidgetDiv {
+display: none;
+position: absolute;
+z-index: 99999;
+}
+.injectionDiv {
+height: 100%;
+position: relative;
+overflow: hidden;
+touch-action: none;
+}
+.blocklyNonSelectable {
+user-select: none;
+-ms-user-select: none;
+-webkit-user-select: none;
+}
+.blocklyWsDragSurface {
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+}
+.blocklyWsDragSurface.blocklyOverflowVisible {
+overflow: visible;
+}
+.blocklyBlockDragSurface {
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+overflow: visible !important;
+z-index: 50;
+}
+.blocklyBlockCanvas.blocklyCanvasTransitioning,
+.blocklyBubbleCanvas.blocklyCanvasTransitioning {
+transition: transform .5s;
+}
+.blocklyTooltipDiv {
+background-color: #ffffc7;
+border: 1px solid #ddc;
+box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);
+color: #000;
+display: none;
+font: 9pt sans-serif;
+opacity: .9;
+padding: 2px;
+position: absolute;
+z-index: 100000;
+}
+.blocklyDropDownDiv {
+position: absolute;
+left: 0;
+top: 0;
+z-index: 1000;
+display: none;
+border: 1px solid;
+border-color: #dadce0;
+background-color: #fff;
+border-radius: 2px;
+padding: 4px;
+box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+}
+.blocklyDropDownDiv.blocklyFocused {
+box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+.blocklyDropDownContent {
+max-height: 300px;
+overflow: auto;
+overflow-x: hidden;
+position: relative;
+}
+.blocklyDropDownArrow {
+position: absolute;
+left: 0;
+top: 0;
+width: 16px;
+height: 16px;
+z-index: -1;
+background-color: inherit;
+border-color: inherit;
+}
+.blocklyDropDownButton {
+display: inline-block;
+float: left;
+padding: 0;
+margin: 4px;
+border-radius: 4px;
+outline: none;
+border: 1px solid;
+transition: box-shadow .1s;
+cursor: pointer;
+}
+.blocklyArrowTop {
+border-top: 1px solid;
+border-left: 1px solid;
+border-top-left-radius: 4px;
+border-color: inherit;
+}
+.blocklyArrowBottom {
+border-bottom: 1px solid;
+border-right: 1px solid;
+border-bottom-right-radius: 4px;
+border-color: inherit;
+}
+.blocklyResizeSE {
+cursor: se-resize;
+fill: #aaa;
+}
+.blocklyResizeSW {
+cursor: sw-resize;
+fill: #aaa;
+}
+.blocklyResizeLine {
+stroke: #515A5A;
+stroke-width: 1;
+}
+.blocklyHighlightedConnectionPath {
+fill: none;
+stroke: #fc3;
+stroke-width: 4px;
+}
+.blocklyPathLight {
+fill: none;
+stroke-linecap: round;
+stroke-width: 1;
+}
+.blocklySelected&gt;.blocklyPathLight {
+display: none;
+}
+.blocklyDraggable {
+cursor: url("blockly/media/handopen.cur"), auto;
+cursor: grab;
+cursor: -webkit-grab;
+}
+.blocklyDragging {
+cursor: url("blockly/media/handclosed.cur"), auto;
+cursor: grabbing;
+cursor: -webkit-grabbing;
+}
+.blocklyDraggable:active {
+cursor: url("blockly/media/handclosed.cur"), auto;
+cursor: grabbing;
+cursor: -webkit-grabbing;
+}
+.blocklyBlockDragSurface .blocklyDraggable {
+cursor: url("blockly/media/handclosed.cur"), auto;
+cursor: grabbing;
+cursor: -webkit-grabbing;
+}
+.blocklyDragging.blocklyDraggingDelete {
+cursor: url("blockly/media/handdelete.cur"), auto;
+}
+.blocklyDragging&gt;.blocklyPath,
+.blocklyDragging&gt;.blocklyPathLight {
+fill-opacity: .8;
+stroke-opacity: .8;
+}
+.blocklyDragging&gt;.blocklyPathDark {
+display: none;
+}
+.blocklyDisabled&gt;.blocklyPath {
+fill-opacity: .5;
+stroke-opacity: .5;
+}
+.blocklyDisabled&gt;.blocklyPathLight,
+.blocklyDisabled&gt;.blocklyPathDark {
+display: none;
+}
+.blocklyInsertionMarker&gt;.blocklyPath,
+.blocklyInsertionMarker&gt;.blocklyPathLight,
+.blocklyInsertionMarker&gt;.blocklyPathDark {
+fill-opacity: .2;
+stroke: none;
+}
+.blocklyMultilineText {
+font-family: monospace;
+}
+.blocklyNonEditableText&gt;text {
+pointer-events: none;
+}
+.blocklyFlyout {
+position: absolute;
+z-index: 20;
+}
+.blocklyText text {
+cursor: default;
+}
+.blocklySvg text,
+.blocklyBlockDragSurface text {
+user-select: none;
+-ms-user-select: none;
+-webkit-user-select: none;
+cursor: inherit;
+}
+.blocklyHidden {
+display: none;
+}
+.blocklyFieldDropdown:not(.blocklyHidden) {
+display: block;
+}
+.blocklyIconGroup {
+cursor: default;
+}
+.blocklyIconGroup:not(:hover),
+.blocklyIconGroupReadonly {
+opacity: .6;
+}
+.blocklyIconShape {
+fill: #00f;
+stroke: #fff;
+stroke-width: 1px;
+}
+.blocklyIconSymbol {
+fill: #fff;
+}
+.blocklyMinimalBody {
+margin: 0;
+padding: 0;
+}
+.blocklyHtmlInput {
+border: none;
+border-radius: 4px;
+height: 100%;
+margin: 0;
+outline: none;
+padding: 0;
+width: 100%;
+text-align: center;
+display: block;
+box-sizing: border-box;
+}
+.blocklyHtmlInput::-ms-clear {
+display: none;
+}
+.blocklyMainBackground {
+stroke-width: 1;
+stroke: #c6c6c6;
+}
+.blocklyMutatorBackground {
+fill: #fff;
+stroke: #ddd;
+stroke-width: 1;
+}
+.blocklyFlyoutBackground {
+fill: #ddd;
+fill-opacity: .8;
+}
+.blocklyMainWorkspaceScrollbar {
+z-index: 20;
+}
+.blocklyFlyoutScrollbar {
+z-index: 30;
+}
+.blocklyScrollbarHorizontal,
+.blocklyScrollbarVertical {
+position: absolute;
+outline: none;
+}
+.blocklyScrollbarBackground {
+opacity: 0;
+}
+.blocklyScrollbarHandle {
+fill: #ccc;
+}
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+fill: #bbb;
+}
+.blocklyFlyout .blocklyScrollbarHandle {
+fill: #bbb;
+}
+.blocklyFlyout .blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyFlyout .blocklyScrollbarHandle:hover {
+fill: #aaa;
+}
+.blocklyInvalidInput {
+background: #faa;
+}
+.blocklyVerticalMarker {
+stroke-width: 3px;
+fill: rgba(255,255,255,.5);
+pointer-events: none;
+}
+.blocklyComputeCanvas {
+position: absolute;
+width: 0;
+height: 0;
+}
+.blocklyNoPointerEvents {
+pointer-events: none;
+}
+.blocklyContextMenu {
+border-radius: 4px;
+max-height: 100%;
+}
+.blocklyDropdownMenu {
+border-radius: 2px;
+padding: 0 !important;
+}
+.blocklyDropdownMenu .blocklyMenuItem {
+padding-left: 28px;
+}
+.blocklyDropdownMenu .blocklyMenuItemRtl {
+padding-left: 5px;
+padding-right: 28px;
+}
+.blocklyWidgetDiv .blocklyMenu {
+background: #fff;
+border: 1px solid transparent;
+box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+font: normal 13px Arial, sans-serif;
+margin: 0;
+outline: none;
+padding: 4px 0;
+position: absolute;
+overflow-y: auto;
+overflow-x: hidden;
+max-height: 100%;
+z-index: 20000;
+}
+.blocklyWidgetDiv .blocklyMenu.blocklyFocused {
+box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+.blocklyDropDownDiv .blocklyMenu {
+font: normal 13px "Helvetica Neue", Helvetica, sans-serif;
+outline: none;
+z-index: 20000;
+}
+.blocklyMenuItem {
+border: none;
+color: #000;
+cursor: pointer;
+list-style: none;
+margin: 0;
+min-width: 7em;
+padding: 6px 15px;
+white-space: nowrap;
+}
+.blocklyMenuItemDisabled {
+color: #ccc;
+cursor: inherit;
+}
+.blocklyMenuItemHighlight {
+background-color: rgba(0,0,0,.1);
+}
+.blocklyMenuItemCheckbox {
+height: 16px;
+position: absolute;
+width: 16px;
+}
+.blocklyMenuItemSelected .blocklyMenuItemCheckbox {
+background: url(blockly/media/sprites.png) no-repeat -48px -16px;
+float: left;
+margin-left: -24px;
+position: static;
+}
+.blocklyMenuItemRtl .blocklyMenuItemCheckbox {
+float: right;
+margin-right: -24px;
+}
+.blocklyCommentTextarea {
+background-color: #fef49c;
+border: 0;
+outline: 0;
+margin: 0;
+padding: 3px;
+resize: none;
+display: block;
+overflow: hidden;
+}
+.blocklyFlyoutButton {
+fill: #888;
+cursor: default;
+}
+.blocklyFlyoutButtonShadow {
+fill: #666;
+}
+.blocklyFlyoutButton:hover {
+fill: #aaa;
+}
+.blocklyFlyoutLabel {
+cursor: default;
+}
+.blocklyFlyoutLabelBackground {
+opacity: 0;
+}
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+background-color: rgba(255, 255, 255, 0.2);
+}
+.blocklyToolboxDiv[layout="h"] .blocklyToolboxCategory {
+margin: 1px 5px 1px 0;
+}
+.blocklyToolboxDiv[dir="RTL"][layout="h"] .blocklyToolboxCategory {
+margin: 1px 0 1px 5px;
+}
+.blocklyTreeRow {
+height: 22px;
+line-height: 22px;
+margin-bottom: 3px;
+padding-right: 8px;
+white-space: nowrap;
+}
+.blocklyToolboxDiv[dir="RTL"] .blocklyTreeRow {
+margin-left: 8px;
+padding-right: 0px
+}
+.blocklyTreeIcon {
+background-image: url(blockly/media/sprites.png);
+height: 16px;
+vertical-align: middle;
+visibility: hidden;
+width: 16px;
+}
+.blocklyTreeIconClosed {
+background-position: -32px -1px;
+}
+.blocklyToolboxDiv[dir="RTL"] .blocklyTreeIconClosed {
+background-position: 0 -1px;
+}
+.blocklyTreeSelected&gt;.blocklyTreeIconClosed {
+background-position: -32px -17px;
+}
+.blocklyToolboxDiv[dir="RTL"] .blocklyTreeSelected&gt;.blocklyTreeIconClosed {
+background-position: 0 -17px;
+}
+.blocklyTreeIconOpen {
+background-position: -16px -1px;
+}
+.blocklyTreeSelected&gt;.blocklyTreeIconOpen {
+background-position: -16px -17px;
+}
+.blocklyTreeLabel {
+cursor: default;
+font: 16px sans-serif;
+padding: 0 3px;
+vertical-align: middle;
+}
+.blocklyToolboxDelete .blocklyTreeLabel {
+cursor: url("blockly/media/handdelete.cur"), auto;
+}
+.blocklyTreeSelected .blocklyTreeLabel {
+color: #fff;
+}
+.blocklyTreeSeparator {
+border-bottom: solid #e5e5e5 1px;
+height: 0;
+margin: 5px 0;
+}
+.blocklyToolboxDiv[layout="h"] .blocklyTreeSeparator {
+border-right: solid #e5e5e5 1px;
+border-bottom: none;
+height: auto;
+margin: 0 5px 0 5px;
+padding: 5px 0;
+width: 0;
+}
+.blocklyToolboxDelete {
+cursor: url("blockly/media/handdelete.cur"), auto;
+}
+.blocklyToolboxGrab {
+cursor: url("blockly/media/handclosed.cur"), auto;
+cursor: grabbing;
+cursor: -webkit-grabbing;
+}
+.blocklyToolboxDiv {
+background-color: #ddd;
+overflow-x: visible;
+overflow-y: auto;
+padding: 4px 0 4px 0;
+position: absolute;
+z-index: 70;
+-webkit-tap-highlight-color: transparent;
+}
+.blocklyToolboxContents {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+}
+.blocklyToolboxContents:focus {
+outline: none;
+}
+.blocklyZoom&gt;image, .blocklyZoom&gt;svg&gt;image {
+opacity: .4;
+}
+.blocklyZoom&gt;image:hover, .blocklyZoom&gt;svg&gt;image:hover {
+opacity: .6;
+}
+.blocklyZoom&gt;image:active, .blocklyZoom&gt;svg&gt;image:active {
+opacity: .8;
+}
+.blocklyAngleCircle {
+stroke: #444;
+stroke-width: 1;
+fill: #ddd;
+fill-opacity: .8;
+}
+.blocklyAngleMarks {
+stroke: #444;
+stroke-width: 1;
+}
+.blocklyAngleGauge {
+fill: #f88;
+fill-opacity: .8;
+pointer-events: none;
+}
+.blocklyAngleLine {
+stroke: #f00;
+stroke-width: 2;
+stroke-linecap: round;
+pointer-events: none;
+}
+.blocklyColourTable {
+border-collapse: collapse;
+display: block;
+outline: none;
+padding: 1px;
+}
+.blocklyColourTable&gt;tr&gt;td {
+border: .5px solid #888;
+box-sizing: border-box;
+cursor: pointer;
+display: inline-block;
+height: 20px;
+padding: 0;
+width: 20px;
+}
+.blocklyColourTable&gt;tr&gt;td.blocklyColourHighlighted {
+border-color: #eee;
+box-shadow: 2px 2px 7px 2px rgba(0,0,0,.3);
+position: relative;
+}
+.blocklyColourSelected, .blocklyColourSelected:hover {
+border-color: #eee !important;
+outline: 1px solid #333;
+position: relative;
+}
+.blocklyHtmlTextAreaInput {
+font-family: monospace;
+resize: none;
+overflow: hidden;
+height: 100%;
+text-align: left;
+}
+undefined</style><g class="blocklyBlockCanvas"><g class="blocklyMarker"><g width="100" height="5"><rect width="100" height="5" style="display: none"/><rect class="blocklyVerticalMarker" rx="10" ry="10" style="display: none"/><path transform="" style="display: none"/><path transform="" style="display: none" fill="none" stroke-width="4"/></g></g><g class="blocklyCursor"><g width="100" height="5"><rect width="100" height="5" style="display: none"><animate attributeType="XML" attributeName="fill" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></rect><rect class="blocklyVerticalMarker" rx="10" ry="10" style="display: none"/><path transform="" style="display: none"><animate attributeType="XML" attributeName="fill" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></path><path transform="" style="display: none" fill="none" stroke-width="4"><animate attributeType="XML" attributeName="stroke" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></path></g></g><g data-id="C:l?Y.qB$ig_EsgOv]^l" class="blocklyDraggable" transform="translate(10,10)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#00b700" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 291.1580810546875  v 5  H 299.1580810546875  V 5  H 299.1580810546875  V 23  H 299.1580810546875  V 27  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 170 a 8 8 0 0,0 8,8  H 299.1580810546875  H 299.1580810546875  V 218  H 299.1580810546875  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 299.1580810546875  V 236  V 240  h -291.1580810546875 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#00e500" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 291.1580810546875  v 5  H 299.1580810546875  V 5  H 299.1580810546875  V 23  H 299.1580810546875  V 27  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 170 a 8 8 0 0,0 8,8  H 299.1580810546875  H 299.1580810546875  V 218  H 299.1580810546875  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 299.1580810546875  V 236  V 240  h -291.1580810546875 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#4ded4d" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 298.6580810546875  H 298.6580810546875  M 20,213  m 1.9895923599143455,-1.9895923599143455 a 8.5 8.5 0 0,0 6.0104076400856545,2.4895923599143455  l 270.6580810546875,0  H 298.6580810546875  M 299.1580810546875,218  m -5,14.3  l 3.68,-2.1  M 0,240  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 8 &#10;"/><g class="blocklyIconGroup" display="block" transform="translate(10,5)"><rect class="blocklyIconShape" rx="4" ry="4" height="16" width="16"/><path class="blocklyIconSymbol" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"/><circle class="blocklyIconShape" r="2.7" cx="8" cy="8"/></g><g class="blocklyIconGroup" display="block" transform="translate(37,5)"><circle class="blocklyIconShape" r="8" cx="8" cy="8"/><path class="blocklyIconSymbol" d="m6.8,10h2c0.003,-0.617 0.271,-0.962 0.633,-1.266 2.875,-2.4050.607,-5.534 -3.765,-3.874v1.7c3.12,-1.657 3.698,0.118 2.336,1.25-1.201,0.998 -1.201,1.528 -1.204,2.19z"/><rect class="blocklyIconSymbol" x="6.8" y="10.78" height="2" width="2"/></g><g data-id="F0y9xImEXT*:@^Sss[p9" class="blocklyDraggable" style="display: block;" transform="translate(21,28)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 158.9949188232422  v 5  H 188.9949188232422  V 5  H 188.9949188232422  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 188.9949188232422  V 23  V 27  h -159.4949188232422  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 158.9949188232422  v 5  H 188.9949188232422  V 5  H 188.9949188232422  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 188.9949188232422  V 23  V 27  h -159.4949188232422  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 188.4949188232422  H 188.4949188232422  M 188.9949188232422,5  m -5,14.3  l 3.68,-2.1  M 0.5,26.5  V 8 &#10;"/><g data-id="#|A+G*A?NSPgD2!}#o|%" class="blocklyDraggable" style="display: block;" transform="translate(181.9949188232422,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 28.153182983398438  v 5  H 36.15318298339844  V 5  H 36.15318298339844  V 23  H 36.15318298339844  V 23  V 27  h -28.153182983398438  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 28.153182983398438  v 5  H 36.15318298339844  V 5  H 36.15318298339844  V 23  H 36.15318298339844  V 23  V 27  h -28.153182983398438  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 35.65318298339844  H 35.65318298339844  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="18.153182983398438" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">0</text></g></g><g data-id="JZpJC]!twC3up~dT~jh)" class="blocklyDraggable" transform="translate(0,28)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 159.00209045410156  v 5  H 189.00209045410156  V 5  H 189.00209045410156  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 189.00209045410156  V 23  V 27  h -159.50209045410156  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 159.00209045410156  v 5  H 189.00209045410156  V 5  H 189.00209045410156  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 189.00209045410156  V 23  V 27  h -159.50209045410156  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 188.50209045410156  H 188.50209045410156  M 189.00209045410156,5  m -5,14.3  l 3.68,-2.1  M 0.5,26.5  V 0.5 &#10;"/><g data-id="3GmWfyZjm-RomKrLOLOz" class="blocklyDraggable" style="display: block;" transform="translate(182.00209045410156,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 153.71937561035156  v 5  H 161.71937561035156  V 5  H 161.71937561035156  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 161.71937561035156  V 23  V 27  h -153.71937561035156  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 153.71937561035156  v 5  H 161.71937561035156  V 5  H 161.71937561035156  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 161.71937561035156  V 23  V 27  h -153.71937561035156  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 161.21937561035156  H 161.21937561035156  M 161.71937561035156,5  m -5,14.3  l 3.68,-2.1  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g data-id="F5P-[L?%{N[H5{*dxn@6" class="blocklyDraggable" style="display: block;" transform="translate(154.71937561035156,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 8,0  h 40.393707275390625  v 5  H 48.393707275390625  V 5  H 48.393707275390625  V 23  H 48.393707275390625  V 23  V 27  h -40.393707275390625  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 8,0  h 40.393707275390625  v 5  H 48.393707275390625  V 5  H 48.393707275390625  V 23  H 48.393707275390625  V 23  V 27  h -40.393707275390625  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 8,0  m 0.5,0.5  H 47.893707275390625  H 47.893707275390625  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="30.393707275390625" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">t<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g></g><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="85.77665710449219" class="blocklyFieldRect blocklyDropdownRect" stroke="#4d82ed" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">minimum<tspan style="fill: rgb(0, 76, 229);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(103.77665710449219,5)"><text class="blocklyText" x="0" y="14">tabele</text></g></g><g data-id=",Y9Fp4,)d7)1iI7;`A7s" class="blocklyDraggable" transform="translate(0,28)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#b7007a" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 238.85174560546875  v 5  H 268.85174560546875  V 5  H 268.85174560546875  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 268.85174560546875  V 27  H 87.48028564453125  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 71 a 8 8 0 0,0 8,8  H 268.85174560546875  H 268.85174560546875  V 114  V 124  h -239.35174560546875  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#e50099" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 238.85174560546875  v 5  H 268.85174560546875  V 5  H 268.85174560546875  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 268.85174560546875  V 27  H 87.48028564453125  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 71 a 8 8 0 0,0 8,8  H 268.85174560546875  H 268.85174560546875  V 114  V 124  h -239.35174560546875  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#ed4db8" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 268.35174560546875  H 268.35174560546875  M 268.85174560546875,5  m -5,14.3  l 3.68,-2.1  M 57.48028564453125,114  m 1.9895923599143455,-1.9895923599143455 a 8.5 8.5 0 0,0 6.0104076400856545,2.4895923599143455  l 202.8714599609375,0  H 268.35174560546875  M 0,124  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 0.5 &#10;"/><g data-id="F=5G-ZGk9|gbD9L|cDW2" class="blocklyDraggable" style="display: block;" transform="translate(261.85174560546875,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 8,0  h 40.393707275390625  v 5  H 48.393707275390625  V 5  H 48.393707275390625  V 23  H 48.393707275390625  V 23  V 27  h -40.393707275390625  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 8,0  h 40.393707275390625  v 5  H 48.393707275390625  V 5  H 48.393707275390625  V 23  H 48.393707275390625  V 23  V 27  h -40.393707275390625  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 8,0  m 0.5,0.5  H 47.893707275390625  H 47.893707275390625  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="30.393707275390625" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">t<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g></g><g data-id="[69hmarmUyJ!,ES+D^uE" class="blocklyDraggable" style="display: block;" transform="translate(58.48028564453125,28)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#007ab7" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 57.48028564453125  v 5  H 87.48028564453125  V 5  H 87.48028564453125  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 14  H 87.48028564453125  V 38  H 87.48028564453125  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 17 a 8 8 0 0,0 8,8  H 87.48028564453125  H 87.48028564453125  V 71  V 81  h -57.98028564453125  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#0098e5" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 57.48028564453125  v 5  H 87.48028564453125  V 5  H 87.48028564453125  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 14  H 87.48028564453125  V 38  H 87.48028564453125  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 17 a 8 8 0 0,0 8,8  H 87.48028564453125  H 87.48028564453125  V 71  V 81  h -57.98028564453125  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#4db7ed" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 86.98028564453125  H 86.98028564453125  M 87.48028564453125,5  m -5,14.3  l 3.68,-2.1  M 57.48028564453125,71  m 1.9895923599143455,-1.9895923599143455 a 8.5 8.5 0 0,0 6.0104076400856545,2.4895923599143455  l 21.5,0  H 86.98028564453125  M 0,81  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 8 &#10;"/><g class="blocklyIconGroup" display="block" transform="translate(10,5)"><rect class="blocklyIconShape" rx="4" ry="4" height="16" width="16"/><path class="blocklyIconSymbol" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"/><circle class="blocklyIconShape" r="2.7" cx="8" cy="8"/></g><g data-id="THxiWzNTsQ.rIWosk0@E" class="blocklyDraggable" style="display: block;" transform="translate(80.48028564453125,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#007ab7" d=" m 8,0  h 267.60340881347656  v 5  H 275.60340881347656  V 5  H 275.60340881347656  V 34  H 275.60340881347656  V 34  V 38  h -267.60340881347656  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10; M 24,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 90.47529602050781  v -29 z M 165.35719299316406,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 100.2462158203125  v -29 z"/><path class="blocklyPath" stroke="none" fill="#0098e5" d=" m 8,0  h 267.60340881347656  v 5  H 275.60340881347656  V 5  H 275.60340881347656  V 34  H 275.60340881347656  V 34  V 38  h -267.60340881347656  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10; M 24,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 90.47529602050781  v -29 z M 165.35719299316406,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 100.2462158203125  v -29 z"/><path class="blocklyPathLight" stroke="#4db7ed" d=" m 8,0  m 0.5,0.5  H 275.10340881347656  H 275.10340881347656  M 8.5,37.5  M 8.5,37.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10; M 114.97529602050781,5.5  v 29  h -90.47529602050781  M 24,10  m -5,14.3  l 3.68,-2.1  M 266.10340881347656,5.5  v 29  h -100.2462158203125  M 165.35719299316406,10  m -5,14.3  l 3.68,-2.1 "/><g data-id="4id/uk8gPwXqK3kCK-xP" class="blocklyDraggable" style="display: block;" transform="translate(17,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 8,0  h 88.47529602050781  v 5  H 96.47529602050781  V 5  H 96.47529602050781  V 23  H 96.47529602050781  V 23  V 27  h -88.47529602050781  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 8,0  h 88.47529602050781  v 5  H 96.47529602050781  V 5  H 96.47529602050781  V 23  H 96.47529602050781  V 23  V 27  h -88.47529602050781  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 8,0  m 0.5,0.5  H 95.97529602050781  H 95.97529602050781  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="78.47529602050781" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">element<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g></g><g data-id="w_o-3pgDJL3SOS|b}^WL" class="blocklyDraggable" style="display: block;" transform="translate(158.35719299316406,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 8,0  h 98.2462158203125  v 5  H 106.2462158203125  V 5  H 106.2462158203125  V 23  H 106.2462158203125  V 23  V 27  h -98.2462158203125  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 8,0  h 98.2462158203125  v 5  H 106.2462158203125  V 5  H 106.2462158203125  V 23  H 106.2462158203125  V 23  V 27  h -98.2462158203125  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 8,0  m 0.5,0.5  H 105.7462158203125  H 105.7462158203125  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="88.2462158203125" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">najmanjsi<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g></g><g class="blocklyEditableText" transform="translate(119.47529602050781,10)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="34.88189697265625" class="blocklyFieldRect blocklyDropdownRect" stroke="#4db7ed" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">=<tspan style="fill: rgb(0, 152, 229);"> ▾</tspan></text><image style="display: none;"/></g></g><g data-id="(%5@[j[$?WwT7S#gEq-A" class="blocklyDraggable" style="display: block;" transform="translate(58.48028564453125,39)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 158.9949188232422  v 5  H 188.9949188232422  V 5  H 188.9949188232422  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 188.9949188232422  V 23  V 27  h -159.4949188232422  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 158.9949188232422  v 5  H 188.9949188232422  V 5  H 188.9949188232422  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 3  H 188.9949188232422  V 23  V 27  h -159.4949188232422  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 188.4949188232422  H 188.4949188232422  M 188.9949188232422,5  m -5,14.3  l 3.68,-2.1  M 0,27  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 8 &#10;"/><g data-id="SmCo^D10Cuvl.O8ZfYi|" class="blocklyDraggable" style="display: block;" transform="translate(181.9949188232422,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 112.77876281738281  v 5  H 120.77876281738281  V 5  l 6,3  -12,6  6,3  v 6  H 120.77876281738281  V 23  V 27  h -112.77876281738281  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 112.77876281738281  v 5  H 120.77876281738281  V 5  l 6,3  -12,6  6,3  v 6  H 120.77876281738281  V 23  V 27  h -112.77876281738281  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 120.27876281738281  H 120.27876281738281  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g data-id="6?/g*0d%X,k[zC1XHmXh" class="blocklyDraggable" style="display: none;" transform="translate(-8,-5)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 8,0  h 98.23904418945312  v 5  H 106.23904418945312  V 5  H 106.23904418945312  V 23  H 106.23904418945312  V 23  V 27  h -98.23904418945312  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 8,0  h 98.23904418945312  v 5  H 106.23904418945312  V 5  H 106.23904418945312  V 23  H 106.23904418945312  V 23  V 27  h -98.23904418945312  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 8,0  m 0.5,0.5  H 105.73904418945312  H 105.73904418945312  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="88.23904418945312" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">kolikokrat<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g></g><g data-id="gG:L1=J_i/}6A;ZvhjZo" class="blocklyDraggable" style="display: none;" transform="translate(-8,-5)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 28.153182983398438  v 5  H 36.15318298339844  V 5  H 36.15318298339844  V 23  H 36.15318298339844  V 23  V 27  h -28.153182983398438  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 28.153182983398438  v 5  H 36.15318298339844  V 5  H 36.15318298339844  V 23  H 36.15318298339844  V 23  V 27  h -28.153182983398438  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 35.65318298339844  H 35.65318298339844  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="18.153182983398438" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">1</text></g></g><g class="blocklyEditableText" style="cursor: default; display: none;"><rect rx="4" ry="4" x="0" y="0" height="0" width="0" class="blocklyFieldRect blocklyDropdownRect" stroke="#4d82ed" fill="transparent"/><text class="blocklyText"><tspan style="fill: rgb(0, 76, 229);"> ▾</tspan></text><image/></g><g transform="translate(18,5)"><text class="blocklyText" x="0" y="14">kolikokrat + 1</text></g></g><g transform="translate(10,5)"><text class="blocklyText" x="0" y="14">nastavi</text></g><g class="blocklyEditableText" transform="translate(61.44950866699219,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="88.23904418945312" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">kolikokrat<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(154.6885528564453,5)"><text class="blocklyText" x="0" y="14">na</text></g></g><g transform="translate(37,5)"><text class="blocklyText" x="0" y="14">če</text></g><g transform="translate(10,43)"><text class="blocklyText" x="0" y="14">izvedi</text></g></g><g transform="translate(10,5)"><text class="blocklyText" x="0" y="14">za vsak element</text></g><g class="blocklyEditableText" transform="translate(120.92694091796875,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="78.47529602050781" class="blocklyFieldRect blocklyDropdownRect" stroke="#ed4db8" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">element<tspan style="fill: rgb(229, 0, 153);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(204.40223693847656,5)"><text class="blocklyText" x="0" y="14">v tabeli</text></g><g transform="translate(10,32)"><text class="blocklyText" x="0" y="14">izvedi</text></g></g><g transform="translate(10,5)"><text class="blocklyText" x="0" y="14">nastavi</text></g><g class="blocklyEditableText" transform="translate(61.44950866699219,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="88.2462158203125" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">najmanjsi<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(154.6957244873047,5)"><text class="blocklyText" x="0" y="14">na</text></g></g><g transform="translate(10,5)"><text class="blocklyText" x="0" y="14">nastavi</text></g><g class="blocklyEditableText" transform="translate(61.44950866699219,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="88.23904418945312" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">kolikokrat<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(154.6885528564453,5)"><text class="blocklyText" x="0" y="14">na</text></g></g><g data-id="3(R[6nho!wBOeC?~xG:F" class="blocklyDraggable" style="display: block;" transform="translate(292.1580810546875,213)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 8,0  h 98.23904418945312  v 5  H 106.23904418945312  V 5  H 106.23904418945312  V 23  H 106.23904418945312  V 23  V 27  h -98.23904418945312  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 8,0  h 98.23904418945312  v 5  H 106.23904418945312  V 5  H 106.23904418945312  V 23  H 106.23904418945312  V 23  V 27  h -98.23904418945312  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 8,0  m 0.5,0.5  H 105.73904418945312  H 105.73904418945312  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="88.23904418945312" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">kolikokrat<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g></g><g transform="translate(64,5)"><text class="blocklyText" x="0" y="14">izvedi</text></g><g class="blocklyEditableText" transform="translate(106.48028564453125,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="138.72576904296875" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">KolikokratNajmanjsi</text></g><g transform="translate(250.2060546875,5)"><text class="blocklyText" x="0" y="14">s/z: t</text></g><g transform="translate(257.5360565185547,218)"><text class="blocklyText" x="0" y="14">vrni</text></g></g><g data-id="=UJ5WlfQG~eQ.~L!s@f9" class="blocklyDraggable" transform="translate(10,280)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 137.019287109375  v 5  H 167.019287109375  V 5  H 167.019287109375  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 14  H 167.019287109375  V 34  V 38  h -137.519287109375  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 137.019287109375  v 5  H 167.019287109375  V 5  H 167.019287109375  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 14  H 167.019287109375  V 34  V 38  h -137.519287109375  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 166.519287109375  H 166.519287109375  M 167.019287109375,5  m -5,14.3  l 3.68,-2.1  M 0.5,37.5  V 8 &#10;"/><g data-id="t`2hs:Iin:}KWCt$Q:$8" class="blocklyDraggable" style="display: block;" transform="translate(160.019287109375,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#b71e00" d=" m 8,0  h 545.9984741210938  v 5  H 553.9984741210938  V 5  H 553.9984741210938  V 34  H 553.9984741210938  V 34  V 38  h -545.9984741210938  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10; M 162.85391235351562,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 214.1602783203125,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 265.4666442871094,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 30.153182983398438  v -29 z M 308.6198272705078,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 359.9261932373047,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 411.23255920410156,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 30.153182983398438  v -29 z M 454.3857421875,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 505.6921081542969,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z"/><path class="blocklyPath" stroke="none" fill="#e52600" d=" m 8,0  h 545.9984741210938  v 5  H 553.9984741210938  V 5  H 553.9984741210938  V 34  H 553.9984741210938  V 34  V 38  h -545.9984741210938  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10; M 162.85391235351562,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 214.1602783203125,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 265.4666442871094,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 30.153182983398438  v -29 z M 308.6198272705078,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 359.9261932373047,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 411.23255920410156,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 30.153182983398438  v -29 z M 454.3857421875,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z M 505.6921081542969,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 38.306365966796875  v -29 z"/><path class="blocklyPathLight" stroke="#ed674d" d=" m 8,0  m 0.5,0.5  H 553.4984741210938  H 553.4984741210938  M 8.5,37.5  M 8.5,37.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10; M 201.6602783203125,5.5  v 29  h -38.306365966796875  M 162.85391235351562,10  m -5,14.3  l 3.68,-2.1  M 252.96664428710938,5.5  v 29  h -38.306365966796875  M 214.1602783203125,10  m -5,14.3  l 3.68,-2.1  M 296.1198272705078,5.5  v 29  h -30.153182983398438  M 265.4666442871094,10  m -5,14.3  l 3.68,-2.1  M 347.4261932373047,5.5  v 29  h -38.306365966796875  M 308.6198272705078,10  m -5,14.3  l 3.68,-2.1  M 398.73255920410156,5.5  v 29  h -38.306365966796875  M 359.9261932373047,10  m -5,14.3  l 3.68,-2.1  M 441.8857421875,5.5  v 29  h -30.153182983398438  M 411.23255920410156,10  m -5,14.3  l 3.68,-2.1  M 493.1921081542969,5.5  v 29  h -38.306365966796875  M 454.3857421875,10  m -5,14.3  l 3.68,-2.1  M 544.4984741210938,5.5  v 29  h -38.306365966796875  M 505.6921081542969,10  m -5,14.3  l 3.68,-2.1 "/><g class="blocklyIconGroup" display="block" transform="translate(18,10)"><rect class="blocklyIconShape" rx="4" ry="4" height="16" width="16"/><path class="blocklyIconSymbol" d="m4.203,7.296 0,1.368 -0.92,0.677 -0.11,0.41 0.9,1.559 0.41,0.11 1.043,-0.457 1.187,0.683 0.127,1.134 0.3,0.3 1.8,0 0.3,-0.299 0.127,-1.138 1.185,-0.682 1.046,0.458 0.409,-0.11 0.9,-1.559 -0.11,-0.41 -0.92,-0.677 0,-1.366 0.92,-0.677 0.11,-0.41 -0.9,-1.559 -0.409,-0.109 -1.046,0.458 -1.185,-0.682 -0.127,-1.138 -0.3,-0.299 -1.8,0 -0.3,0.3 -0.126,1.135 -1.187,0.682 -1.043,-0.457 -0.41,0.11 -0.899,1.559 0.108,0.409z"/><circle class="blocklyIconShape" r="2.7" cx="8" cy="8"/></g><g data-id="(Ctxs3!v_gO*R|C0A2)o" class="blocklyDraggable" style="display: block;" transform="translate(155.85391235351562,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 43.806365966796875  H 43.806365966796875  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="26.306365966796875" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">10</text></g></g><g data-id="+.-2-n.qz1WkeOT-dp1x" class="blocklyDraggable" style="display: block;" transform="translate(207.1602783203125,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 43.806365966796875  H 43.806365966796875  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="26.306365966796875" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">15</text></g></g><g data-id="B|LrTZ4FmU1@d~iUu0go" class="blocklyDraggable" style="display: block;" transform="translate(258.4666442871094,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 28.153182983398438  v 5  H 36.15318298339844  V 5  H 36.15318298339844  V 23  H 36.15318298339844  V 23  V 27  h -28.153182983398438  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 28.153182983398438  v 5  H 36.15318298339844  V 5  H 36.15318298339844  V 23  H 36.15318298339844  V 23  V 27  h -28.153182983398438  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 35.65318298339844  H 35.65318298339844  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="18.153182983398438" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">8</text></g></g><g data-id="vjH0:}kPH]aR(3ycCjEL" class="blocklyDraggable" style="display: block;" transform="translate(301.6198272705078,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 43.806365966796875  H 43.806365966796875  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="26.306365966796875" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">13</text></g></g><g data-id="yI4^=#[)Mius!#Nv]=.#" class="blocklyDraggable" style="display: block;" transform="translate(352.9261932373047,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 43.806365966796875  H 43.806365966796875  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="26.306365966796875" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">15</text></g></g><g data-id="T9Ou)5rIotrpD#U3da8i" class="blocklyDraggable" style="display: block;" transform="translate(404.23255920410156,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 28.153182983398438  v 5  H 36.15318298339844  V 5  H 36.15318298339844  V 23  H 36.15318298339844  V 23  V 27  h -28.153182983398438  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 28.153182983398438  v 5  H 36.15318298339844  V 5  H 36.15318298339844  V 23  H 36.15318298339844  V 23  V 27  h -28.153182983398438  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 35.65318298339844  H 35.65318298339844  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="18.153182983398438" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">8</text></g></g><g data-id="1TP7IC3J!f%0^y/Sf[{h" class="blocklyDraggable" style="display: block;" transform="translate(447.3857421875,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 43.806365966796875  H 43.806365966796875  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="26.306365966796875" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">15</text></g></g><g data-id="Xvqz|..=?^rKOlp$xcwr" class="blocklyDraggable" style="display: block;" transform="translate(498.6921081542969,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#003db7" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#004ce5" d=" m 8,0  h 36.306365966796875  v 5  H 44.306365966796875  V 5  H 44.306365966796875  V 23  H 44.306365966796875  V 23  V 27  h -36.306365966796875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#4d82ed" d=" m 8,0  m 0.5,0.5  H 43.806365966796875  H 43.806365966796875  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="26.306365966796875" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="14">17</text></g></g><g transform="translate(45,10)"><text class="blocklyText" x="0" y="14">ustvari tabelo iz</text></g></g><g data-id="OIi,9^H_oYRT*QwVr{_?" class="blocklyDraggable" transform="translate(0,39)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#b79900" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 30.584075927734375  v 5  H 60.584075927734375  V 5  H 60.584075927734375  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 14  H 60.584075927734375  V 34  V 38  h -31.084075927734375  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#e5bf00" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 30.584075927734375  v 5  H 60.584075927734375  V 5  H 60.584075927734375  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 14  H 60.584075927734375  V 34  V 38  h -31.084075927734375  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#edd24d" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 60.084075927734375  H 60.084075927734375  M 60.584075927734375,5  m -5,14.3  l 3.68,-2.1  M 0,38  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 0.5 &#10;"/><g data-id="I_G,$,v+5IPmW:[`gDsO" class="blocklyDraggable" style="display: block;" transform="translate(53.584075927734375,0)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#00b700" d=" m 8,0  h 289.8681945800781  v 5  H 297.8681945800781  V 5  H 297.8681945800781  V 34  H 297.8681945800781  V 34  V 38  h -289.8681945800781  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10; M 209.6047821044922,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 78.26341247558594  v -29 z"/><path class="blocklyPath" stroke="none" fill="#00e500" d=" m 8,0  h 289.8681945800781  v 5  H 297.8681945800781  V 5  H 297.8681945800781  V 34  H 297.8681945800781  V 34  V 38  h -289.8681945800781  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10; M 209.6047821044922,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 9  h 78.26341247558594  v -29 z"/><path class="blocklyPathLight" stroke="#4ded4d" d=" m 8,0  m 0.5,0.5  H 297.3681945800781  H 297.3681945800781  M 8.5,37.5  M 8.5,37.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10; M 288.3681945800781,5.5  v 29  h -78.26341247558594  M 209.6047821044922,10  m -5,14.3  l 3.68,-2.1 "/><g transform="translate(189.53176879882812,10)"><text class="blocklyText" x="0" y="14">t</text></g><g transform="translate(18,10)"><text class="blocklyText" x="0" y="14">KolikokratNajmanjsi</text></g><g transform="translate(156.72576904296875,10)"><text class="blocklyText" x="0" y="14">s/z:</text></g><g data-id="XF$H;Syo(OdzS;~B|68F" class="blocklyDraggable" style="display: block;" transform="translate(202.6047821044922,6)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a00b7" d=" m 8,0  h 76.26341247558594  v 5  H 84.26341247558594  V 5  H 84.26341247558594  V 23  H 84.26341247558594  V 23  V 27  h -76.26341247558594  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#9900e5" d=" m 8,0  h 76.26341247558594  v 5  H 84.26341247558594  V 5  H 84.26341247558594  V 23  H 84.26341247558594  V 23  V 27  h -76.26341247558594  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#b84ded" d=" m 8,0  m 0.5,0.5  H 83.76341247558594  H 83.76341247558594  M 8.5,26.5  M 8.5,26.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="66.26341247558594" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">tabela<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g></g></g><g transform="translate(10,5)"><text class="blocklyText" x="0" y="14">izpiši</text></g></g><g transform="translate(10,5)"><text class="blocklyText" x="0" y="14">nastavi</text></g><g class="blocklyEditableText" transform="translate(61.44950866699219,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="18" width="66.26341247558594" class="blocklyFieldRect blocklyDropdownRect" stroke="#b84ded" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="14">tabela<tspan style="fill: rgb(153, 0, 229);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(132.71292114257812,5)"><text class="blocklyText" x="0" y="14">na</text></g></g></g></svg>

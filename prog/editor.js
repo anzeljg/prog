@@ -233,7 +233,8 @@ CodeEditor.init = function() {
        toolbox: toolboxXml,
        zoom:
            {controls: true,
-            wheel: true}
+            wheel: true},
+	   theme: 'rin_light'
       });
 
   CodeEditor.loadBlocks('');

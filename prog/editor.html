@@ -137,15 +137,24 @@
         <label class="btn btn-primary btn-file">
           <span class="fa fa-upload"></span> Naloži <input type="file" id="loadButton" accept=".blockly" style="display:none;">
         </label>
-        <button type="button" class="btn btn-primary" id="saveButton"><span class="fa fa-download"></span> Shrani</button>
+	    <button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		  <span class="fa fa-download"></span> Shrani
+		  <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="menu1">
+		  <li><a href="#" id="saveXmlButton">Shrani program</a></li>
+		  <li><a href="#" id="saveSvgButton">Shrani SVG sliko programa</a></li>
+		  <li><a href="#" id="savePngButton">Shrani PNG sliko programa</a></li>
+		</ul>
 	  </div>
-      <input type="checkbox" id="turtleCanvas" data-toggle="toggle" data-on="Skrij platno" data-off="Pokaži platno">
+      <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
+	  <input type="checkbox" id="turtleCanvas" data-toggle="toggle" data-on="Skrij platno" data-off="Pokaži platno">
     </td>
   </tr>
   <tr>
     <td colspan="5" id="content1_area" style="position:relative;height:512px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
 	</td>
   </tr>
 </table>
@@ -153,7 +162,7 @@
 <div><pre id="output" style="margin-top:8px"></pre></div>
 
 <xml id="toolbox" style="display:none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
@@ -162,7 +171,7 @@
     <block type="logic_null"></block>
     <block type="logic_ternary"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -192,7 +201,7 @@
     <block type="controls_forEach_text"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -312,7 +321,7 @@
     </block>
     <block type="math_random_float"></block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -329,7 +338,7 @@
     <block type="lists_indexOf">
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR">list</field>
+          <field name="VAR">{listVariable}</field>
         </block>
       </value>
     </block>
@@ -363,11 +372,26 @@
     </block>
     <block type="lists_sort"></block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
-    <block type="text_append">
+    <block type="text_print">
       <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_comment">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+	<block type="text_append">
+      <field name="VAR">{textVariable}</field>
+	  <value name="TEXT">
         <shadow type="text"></shadow>
       </value>
     </block>
@@ -392,10 +416,11 @@
         </shadow>
       </value>
     </block>
-    <block type="text_indexOf">
+	<block type="text_indexOf">
+      <field name="END">FIRST</field>
       <value name="VALUE">
         <block type="variables_get">
-          <field name="VAR">text</field>
+          <field name="VAR">{textVariable}</field>
         </block>
       </value>
       <value name="FIND">
@@ -404,7 +429,9 @@
         </shadow>
       </value>
     </block>
-    <block type="text_charAt">
+	<block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
       <value name="VALUE">
         <block type="variables_get">
           <field name="VAR">{textVariable}</field>
@@ -432,20 +459,6 @@
         </shadow>
       </value>
     </block>
-    <block type="text_print">
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="text_comment">
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
     <block type="text_prompt_ext">
       <value name="TEXT">
         <shadow type="text">
@@ -464,7 +477,7 @@
       <field name="OPTION">CONTAINS</field>
       <value name="TEXT">
         <block type="variables_get">
-          <field name="VAR">besedilo</field>
+          <field name="VAR">{textVariable}</field>
         </block>
       </value>
     </block>
@@ -472,23 +485,23 @@
       <field name="CHECK">ISALPHA</field>
       <value name="TEXT">
         <block type="variables_get">
-          <field name="VAR">besedilo</field>
+          <field name="VAR">{textVariable}</field>
         </block>
       </value>
     </block>
     <block type="text_replace">
       <value name="TEXT">
         <block type="variables_get">
-          <field name="VAR">besedilo</field>
+          <field name="VAR">{textVariable}</field>
         </block>
       </value>
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
-  <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
+  <category name="{catFunctions}" categorystyle="procedure_category" custom="PROCEDURE"></category>
   <sep></sep>
-  <category name="{catTurtle}" colour="30">
+  <category name="{catTurtle}" categorystyle="turtle_category">
     <block type="turtle_move">
       <field name="DIR">FORWARD</field>
       <value name="VALUE">
@@ -611,10 +624,10 @@ function clearit() {
     var ctx = c.getContext("2d");
     // Use the identity matrix while clearing the canvas
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0,0,400,550);
+    ctx.clearRect(0, 0, 400, 550);
     // Just to be safe also do that
     ctx.fillStyle = "#eeeeee";
-    ctx.fillRect(0,0,400,550);
+    ctx.fillRect(0, 0, 400, 550);
     // Clear Blockly workspace
     CodeEditor.workspace.clear();
     window.location.hash = '';
@@ -624,13 +637,16 @@ function clearit() {
 </script>
 
 <!-- Blockly -->
-<script src="blockly/storage.js"></script>
+<script src="blockly/local/storage.js"></script>
 <script src="blockly/blockly_compressed.js"></script>
 <script src="blockly/blocks_compressed.js"></script>
 <script src="blockly/javascript_compressed.js"></script>
 <script src="blockly/python_compressed.js"></script>
-<script src="blockly/local/custom_blocks.js"></script>
-<script src="blockly/local/turtle_blocks.js"></script>
+<script src="blockly/local/blocks/custom_blocks.js"></script>
+<script src="blockly/local/blocks/turtle_blocks.js"></script>
+<script src="blockly/local/theme/rin_light.js"></script>
+<script src="blockly/local/theme/rin_dark.js"></script>
+<script src="blockly/local/theme.js"></script>
 <script src="editor.js"></script>
 <script>
   var elementID = "";
@@ -642,29 +658,187 @@ function clearit() {
     $(elementID).append(msg + "\n");
   };
 
-  $("#saveButton").click(function() {
-    var title = prompt("Vnesi ime programa:", "program");
+  /**
+   * Create an SVG of the blocks on the workspace.
+   * @param {!Blockly.WorkspaceSvg} workspace The workspace.
+   * @param {!Function} callback Callback.
+   * @param {string=} customCss Custom CSS to append to the SVG.
+   */
+  function workspaceToSvg(workspace, customCss) {
+
+    // Go through all text areas and set their value.
+    var textAreas = document.getElementsByTagName('textarea');
+    for (var i = 0; i < textAreas.length; i++) {
+	  textAreas[i].innerHTML = textAreas[i].value;
+    }
+
+    var bBox = workspace.getBlocksBoundingBox();
+    var x = bBox.x || bBox.left;
+    var y = bBox.y || bBox.top;
+    var width = bBox.width || bBox.right - x;
+    var height = bBox.height || bBox.bottom - y;
+
+    var blockCanvas = workspace.getCanvas();
+    var clone = blockCanvas.cloneNode(true);
+    clone.removeAttribute('transform');
+  
+    var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svg.appendChild(clone);
+    svg.setAttribute('viewBox',
+	    x + ' ' + y + ' ' + width + ' ' + height);
+
+    svg.setAttribute('class', 'blocklySvg ' +
+	  (workspace.options.renderer || 'geras') + '-renderer ' +
+	  (workspace.getTheme ? workspace.getTheme().name + '-theme' : ''));
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute("style", 'background-color: transparent');
+
+    var css = [].slice.call(document.head.querySelectorAll('style'))
+	    .filter(function(el) { return /\.blocklySvg/.test(el.innerText) ||
+		  (el.id.indexOf('blockly-') === 0); }).map(function(el) {
+		  return el.innerText; }).join('\n');
+    var style = document.createElement('style');
+    style.innerHTML = css + '\n' + customCss;
+    svg.insertBefore(style, svg.firstChild);
+
+    var svgAsXML = (new XMLSerializer).serializeToString(svg);
+    svgAsXML = svgAsXML.replace(/&nbsp/g, '&#160');
+    var data = 'data:image/svg+xml,' + encodeURIComponent(svgAsXML);
+	
+	return data;
+  }
+
+
+  /**
+   * Convert an SVG datauri into a PNG datauri.
+   * @param {string} data SVG datauri.
+   * @param {number} width Image width.
+   * @param {number} height Image height.
+   * @param {!Function} callback Callback.
+   */
+  function svgToPng_(data, width, height, callback) {
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+    var img = new Image();
+
+    var pixelDensity = 1;
+    canvas.width = width * pixelDensity;
+    canvas.height = height * pixelDensity;
+    img.onload = function() {
+      context.drawImage(
+          img, 0, 0, width, height, 0, 0, canvas.width, canvas.height);
+      try {
+        var dataUri = canvas.toDataURL('image/png');
+        callback(dataUri);
+      } catch (err) {
+        console.warn('Error converting the workspace svg to a png');
+        callback('');
+      }
+    };
+    img.src = data;
+  }
+
+  /**
+   * Create an SVG of the blocks on the workspace, to be converted to PNG.
+   * @param {!Blockly.WorkspaceSvg} workspace The workspace.
+   * @param {!Function} callback Callback.
+   * @param {string=} customCss Custom CSS to append to the SVG.
+   */
+  function workspaceToPng(workspace, callback, customCss) {
+
+    // Go through all text areas and set their value.
+    var textAreas = document.getElementsByTagName('textarea');
+    for (var i = 0; i < textAreas.length; i++) {
+      textAreas[i].innerHTML = textAreas[i].value;
+    }
+
+    var bBox = workspace.getBlocksBoundingBox();
+    var x = bBox.x || bBox.left;
+    var y = bBox.y || bBox.top;
+    var width = bBox.width || bBox.right - x;
+    var height = bBox.height || bBox.bottom - y;
+
+    var blockCanvas = workspace.getCanvas();
+    var clone = blockCanvas.cloneNode(true);
+    clone.removeAttribute('transform');
+  
+    var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svg.appendChild(clone);
+    svg.setAttribute('viewBox',
+        x + ' ' + y + ' ' + width + ' ' + height);
+
+    svg.setAttribute('class', 'blocklySvg ' +
+      (workspace.options.renderer || 'geras') + '-renderer ' +
+      (workspace.getTheme ? workspace.getTheme().name + '-theme' : ''));
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute("style", 'background-color: transparent');
+
+    var css = [].slice.call(document.head.querySelectorAll('style'))
+        .filter(function(el) { return /\.blocklySvg/.test(el.innerText) ||
+          (el.id.indexOf('blockly-') === 0); }).map(function(el) {
+          return el.innerText; }).join('\n');
+    var style = document.createElement('style');
+    style.innerHTML = css + '\n' + customCss;
+    svg.insertBefore(style, svg.firstChild);
+
+    var svgAsXML = (new XMLSerializer).serializeToString(svg);
+    svgAsXML = svgAsXML.replace(/&nbsp/g, '&#160');
+    var data = 'data:image/svg+xml,' + encodeURIComponent(svgAsXML);
+
+    svgToPng_(data, width, height, callback);
+  }
+
+
+  function saveToFile(filename, data) {
+    var a = document.createElement('a');
+    a.download = filename;
+    a.target = '_self';
+    a.href = data;
+    document.body.appendChild(a);
+    a.click();
+    a.parentNode.removeChild(a);
+  }
+
+  $('#saveXmlButton').click(function() {
+    var title = prompt('Vnesi ime programa:', 'program');
     var workspace = Blockly.getMainWorkspace();
     if (workspace != null) {
       var xml = Blockly.Xml.workspaceToDom(workspace);
       var data = Blockly.Xml.domToText(xml);
-      // TODO: fix browserify so that this call works
-      // saveToFile('program.blockly', xml);
-      var blob = new Blob([data], {type: 'text/xml'});
+	  var blob = new Blob([data], {type: 'text/xml'});
+	  data = window.URL.createObjectURL(blob);
       var filename = title + '.blockly';
-      if (window.navigator.msSaveOrOpenBlob) {
-        window.navigator.msSaveBlob(blob, filename);
-      }
-      else {
-        var elem = window.document.createElement('a');
-        elem.href = window.URL.createObjectURL(blob);
-        elem.download = filename;
-        document.body.appendChild(elem);
-        elem.click();
-        document.body.removeChild(elem);
-        window.URL.revokeObjectURL(blob);
-      }
+	  saveToFile(filename, data);
     }
+  });
+
+  $('#saveSvgButton').click(function() {
+    var title = prompt('Vnesi ime slike:', 'slika');
+    var workspace = Blockly.getMainWorkspace();
+    if (workspace != null) {
+      var data = workspaceToSvg(workspace);
+      var filename = title + '.svg';
+	  saveToFile(filename, data);
+    }
+  });
+
+  $('#savePngButton').click(function() {
+    var title = prompt('Vnesi ime slike:', 'slika');
+	var filename = title + '.png';
+    var workspace = Blockly.getMainWorkspace();
+    workspaceToPng(workspace, function(datauri) {
+      var a = document.createElement('a');
+      a.download = filename;
+      a.target = '_self';
+      a.href = datauri;
+      document.body.appendChild(a);
+      a.click();
+      a.parentNode.removeChild(a);
+    });
   });
 
   $('#turtleCanvas').change(function() {

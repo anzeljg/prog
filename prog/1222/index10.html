@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -145,7 +146,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1222-10-1.svg" onerror="this.src='img/1222-10-1.png'">
+<img src="img/1222-10-1.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -190,7 +191,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1222-10-2.svg" onerror="this.src='img/1222-10-2.png'">
+<img src="img/1222-10-2.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -214,7 +215,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1222-10-3.svg" onerror="this.src='img/1222-10-3.png'">
+<img src="img/1222-10-3.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -310,6 +311,7 @@ manjše
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -320,21 +322,21 @@ manjše
   <tr>
     <td style="position:relative; height:450px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -373,7 +375,7 @@ manjše
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -392,7 +394,7 @@ manjše
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 <!-- Right column end -->
 					</div>
@@ -436,6 +438,7 @@ manjše
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -454,13 +457,16 @@ manjše
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index10.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -469,16 +475,46 @@ manjše
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1222-10-1'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve2Button', function() {CodeEditor.solve2();});
+  CodeEditor.solve2 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1222-10-2'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve3Button', function() {CodeEditor.solve3();});
+  CodeEditor.solve3 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1222-10-3'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1222-10-1 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1222-10-1" style="display:none"><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="8" y="8"><field name="VAR">stevilo</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR">stevilo</field></block></value><value name="B"><block type="math_number" id="qVzh^];xAZpmC.:V4Xd#"><field name="NUM">42</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">DA</field></block></value></block></statement></block></next></block></xml>
+<xml id="1222-10-1" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="G=E1HqJ`U_I:rvm6S|-y">stevilo</variable></variables><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="10" y="10"><field name="VAR" id="G=E1HqJ`U_I:rvm6S|-y">stevilo</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR" id="G=E1HqJ`U_I:rvm6S|-y">stevilo</field></block></value><value name="B"><block type="math_number" id="qVzh^];xAZpmC.:V4Xd#"><field name="NUM">42</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">DA</field></block></value></block></statement></block></next></block></xml>
 
 <!-- 1222-10-2 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1222-10-2" style="display:none"><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="8" y="8"><field name="VAR">stevilo</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><mutation elseif="1" else="1"></mutation><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR">stevilo</field></block></value><value name="B"><block type="math_number" id="qVzh^];xAZpmC.:V4Xd#"><field name="NUM">42</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">večje</field></block></value></block></statement><value name="IF1"><block type="logic_compare" id="M01Q(nb5z*n1Z*8fb87$"><field name="OP">LT</field><value name="A"><block type="variables_get" id="OBJQv9I7QK}QF#wZ?AGk"><field name="VAR">stevilo</field></block></value><value name="B"><block type="math_number" id="RfpX3BK=x,ZH$!3+#l0{"><field name="NUM">42</field></block></value></block></value><statement name="DO1"><block type="text_print" id="J)u$WZ!9D.3hsWw+@:(B"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="|![^r0lC_:uZ-UG*H,b)"><field name="TEXT">manjše</field></block></value></block></statement><statement name="ELSE"><block type="text_print" id="B05U#l{HA$+?]N6$y}72"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Ff*RntVd.f[dbi4Ke!8J"><field name="TEXT">enako</field></block></value></block></statement></block></next></block></xml>
+<xml id="1222-10-2" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="Jvi8C1(M`55PC{PGR!X;">stevilo</variable></variables><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="10" y="10"><field name="VAR" id="Jvi8C1(M`55PC{PGR!X;">stevilo</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><mutation elseif="1" else="1"></mutation><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR" id="Jvi8C1(M`55PC{PGR!X;">stevilo</field></block></value><value name="B"><block type="math_number" id="qVzh^];xAZpmC.:V4Xd#"><field name="NUM">42</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">večje</field></block></value></block></statement><value name="IF1"><block type="logic_compare" id="M01Q(nb5z*n1Z*8fb87$"><field name="OP">LT</field><value name="A"><block type="variables_get" id="OBJQv9I7QK}QF#wZ?AGk"><field name="VAR" id="Jvi8C1(M`55PC{PGR!X;">stevilo</field></block></value><value name="B"><block type="math_number" id="RfpX3BK=x,ZH$!3+#l0{"><field name="NUM">42</field></block></value></block></value><statement name="DO1"><block type="text_print" id="J)u$WZ!9D.3hsWw+@:(B"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="|![^r0lC_:uZ-UG*H,b)"><field name="TEXT">manjše</field></block></value></block></statement><statement name="ELSE"><block type="text_print" id="B05U#l{HA$+?]N6$y}72"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Ff*RntVd.f[dbi4Ke!8J"><field name="TEXT">enako</field></block></value></block></statement></block></next></block></xml>
 
 <!-- 1222-10-3 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1222-10-3" style="display:none"><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="8" y="8"><field name="VAR">a</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi prvo celo število:</field></block></value></block></value><next><block type="variables_set" id="y`tx9!h/u/Hxy)me=o!;"><field name="VAR">b</field><value name="VALUE"><block type="text_prompt_ext" id="S;G[im2[X??GmCB*QxdH"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="2U|yUm:c-=oTN]2!H_8!"><field name="TEXT">Vnesi drugo celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><mutation elseif="1" else="1"></mutation><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR">a</field></block></value><value name="B"><block type="variables_get" id="OhgmOFw;!rLQn3Sno1TM"><field name="VAR">b</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">prvo</field></block></value></block></statement><value name="IF1"><block type="logic_compare" id="M01Q(nb5z*n1Z*8fb87$"><field name="OP">LT</field><value name="A"><block type="variables_get" id="OBJQv9I7QK}QF#wZ?AGk"><field name="VAR">a</field></block></value><value name="B"><block type="variables_get" id="}Cc8g@_4Bw,,*Y4U(TGn"><field name="VAR">b</field></block></value></block></value><statement name="DO1"><block type="text_print" id="J)u$WZ!9D.3hsWw+@:(B"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="|![^r0lC_:uZ-UG*H,b)"><field name="TEXT">drugo</field></block></value></block></statement><statement name="ELSE"><block type="text_print" id="B05U#l{HA$+?]N6$y}72"><value name="TEXT"><shadow type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Ff*RntVd.f[dbi4Ke!8J"><field name="TEXT">enaki</field></block></value></block></statement></block></next></block></next></block></xml>
+<xml id="1222-10-3" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="z[+hfmsAj-a@M_2MXPb:">a</variable><variable id="hMH/S4W/Lgxg,I+h^_A4">b</variable></variables><block type="variables_set" id="N;Wa8OQIh]siL}Lo/ZPh" x="10" y="10"><field name="VAR" id="z[+hfmsAj-a@M_2MXPb:">a</field><value name="VALUE"><block type="text_prompt_ext" id="WF=V^VlB]C,5{JGiqB5@"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="H.vo0k*BcjG$kdVV=!u/"><field name="TEXT">Vnesi prvo celo število:</field></block></value></block></value><next><block type="variables_set" id="y`tx9!h/u/Hxy)me=o!;"><field name="VAR" id="hMH/S4W/Lgxg,I+h^_A4">b</field><value name="VALUE"><block type="text_prompt_ext" id="S;G[im2[X??GmCB*QxdH"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="K4w=WfeWp+:5-phE3?!="><field name="TEXT">abc</field></shadow><block type="text" id="2U|yUm:c-=oTN]2!H_8!"><field name="TEXT">Vnesi drugo celo število:</field></block></value></block></value><next><block type="controls_if" id="fN[3;2TL#$VzLdxY7~t]"><mutation elseif="1" else="1"></mutation><value name="IF0"><block type="logic_compare" id="IalA6R^j4cwu{JW;_Ma!"><field name="OP">GT</field><value name="A"><block type="variables_get" id="|S3c:AAh=b]OGL|NBja!"><field name="VAR" id="z[+hfmsAj-a@M_2MXPb:">a</field></block></value><value name="B"><block type="variables_get" id="OhgmOFw;!rLQn3Sno1TM"><field name="VAR" id="hMH/S4W/Lgxg,I+h^_A4">b</field></block></value></block></value><statement name="DO0"><block type="text_print" id="mDQWi+8|AC]m(|Ucp3Z-"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Vs.~daD}RI8,0I2L9SEq"><field name="TEXT">prvo</field></block></value></block></statement><value name="IF1"><block type="logic_compare" id="M01Q(nb5z*n1Z*8fb87$"><field name="OP">LT</field><value name="A"><block type="variables_get" id="OBJQv9I7QK}QF#wZ?AGk"><field name="VAR" id="z[+hfmsAj-a@M_2MXPb:">a</field></block></value><value name="B"><block type="variables_get" id="}Cc8g@_4Bw,,*Y4U(TGn"><field name="VAR" id="hMH/S4W/Lgxg,I+h^_A4">b</field></block></value></block></value><statement name="DO1"><block type="text_print" id="J)u$WZ!9D.3hsWw+@:(B"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="|![^r0lC_:uZ-UG*H,b)"><field name="TEXT">drugo</field></block></value></block></statement><statement name="ELSE"><block type="text_print" id="B05U#l{HA$+?]N6$y}72"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="nUP!niDt)!-v8{AUpLX+"><field name="TEXT">abc</field></shadow><block type="text" id="Ff*RntVd.f[dbi4Ke!8J"><field name="TEXT">enaki</field></block></value></block></statement></block></next></block></next></block></xml>
 
 
 <!-- CookieCuttr -->

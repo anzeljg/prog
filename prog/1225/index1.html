@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -130,7 +131,7 @@
 
 <p>
 <pre>
-<img src="img/1225-01-1.svg" onerror="this.src='img/1225-01-1.png'">
+<img src="img/1225-01-1.svg">
 </pre>
 </p>
 
@@ -155,6 +156,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -165,21 +167,21 @@
   <tr>
     <td style="position:relative; height:310px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -218,7 +220,7 @@
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -237,8 +239,8 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
-  <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
+  <category name="{catFunctions}" categorystyle="procedure_category" custom="PROCEDURE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -295,7 +297,7 @@
       </block>
     </value>
   </block>
-  <block type="variables_set" id="20" x="10" y="200">
+  <block type="variables_set" id="20" x="10" y="210">
     <field name="VAR">c</field>
     <value name="VALUE">
       <block type="math_arithmetic" id="21">
@@ -359,24 +361,24 @@ in s to vrednostjo računa naprej – v našem primeru se ta vrednost sešteje s
 				<ul class="pagination pagination-sm">
 					<li><a href="../1224/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1225/index.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1225/index.html">54</a></li>
-					<li class="active"><a href="#">55</a></li>
-					<li><a href="../1225/index2.html">56</a></li>
-					<li><a href="../1225/index3.html">57</a></li>
-					<li><a href="../1225/index4.html">58</a></li>
-					<li><a href="../1225/index5.html">59</a></li>
-					<li><a href="../1225/index6.html">60</a></li>
-					<li><a href="../1225/index7.html">61</a></li>
-					<li><a href="../1225/index8.html">62</a></li>
-					<li><a href="../1225/index9.html">63</a></li>
-					<li><a href="../1225/index10.html">64</a></li>
-					<li><a href="../1225/index11.html">65</a></li>
-					<li><a href="../1225/index12.html">66</a></li>
-					<li><a href="../1225/index13.html">67</a></li>
-					<li><a href="../1225/index14.html">68</a></li>
-					<li><a href="../1225/index15.html">69</a></li>
-					<li><a href="../1225/index16.html">70</a></li>
-					<li><a href="../1225/index17.html">71</a></li>
+					<li><a href="../1225/index.html">55</a></li>
+					<li class="active"><a href="#">56</a></li>
+					<li><a href="../1225/index2.html">57</a></li>
+					<li><a href="../1225/index3.html">58</a></li>
+					<li><a href="../1225/index4.html">59</a></li>
+					<li><a href="../1225/index5.html">60</a></li>
+					<li><a href="../1225/index6.html">61</a></li>
+					<li><a href="../1225/index7.html">62</a></li>
+					<li><a href="../1225/index8.html">63</a></li>
+					<li><a href="../1225/index9.html">64</a></li>
+					<li><a href="../1225/index10.html">65</a></li>
+					<li><a href="../1225/index11.html">66</a></li>
+					<li><a href="../1225/index12.html">67</a></li>
+					<li><a href="../1225/index13.html">68</a></li>
+					<li><a href="../1225/index14.html">69</a></li>
+					<li><a href="../1225/index15.html">70</a></li>
+					<li><a href="../1225/index16.html">71</a></li>
+					<li><a href="../1225/index17.html">72</a></li>
 					<li><a href="../1225/index2.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1226/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -394,6 +396,7 @@ in s to vrednostjo računa naprej – v našem primeru se ta vrednost sešteje s
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -412,13 +415,16 @@ in s to vrednostjo računa naprej – v našem primeru se ta vrednost sešteje s
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index1.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {

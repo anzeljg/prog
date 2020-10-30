@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -231,7 +232,7 @@
 <div class="alert alert-info" role="alert">
 <p align="justify">Kaj izpiše spodnji program, če je vrednost spremenljivke <code>tocke</code> enaka 3? Kaj se izpiše, če je enaka 7, 0, 10 oziroma 15?
 <pre>
-<img src="img/1222-07-1.svg" onerror="this.src='img/1222-07-1.png'">
+<img src="img/1222-07-1.svg">
 </pre>
 </p>
 <p>
@@ -241,9 +242,9 @@
 
 <h1>Logični izrazi</h1>
 
-<p align="justify">Matematični izrazi, kot so npr. <code>1 + 2</code> ali <code>(3.7 - 2.6) / 5.4</code>, so nam že precej domači. Pri programiranju pa nam pogosto pridejo prav tudi <b>logični</b> izrazi. Primera logičnih izrazov sta, denimo, <code>3 &le; 4</code> in <code>5 &gt; 9</code>. Logični izraz ima samo dve možni vrednosti: <img src="img/1222-07-2.svg" onerror="this.src='img/1222-07-2.png'"> (<code>true</code>) in <img src="img/1222-07-3.svg" onerror="this.src='img/1222-07-3.png'"> (<code>false</code>). Vrednost izraza <code>3 &le; 4</code> je torej resnica, vrednost izraza <code>5 &gt; 9</code> pa neresnica, saj število 5 ni večje od števila 9. Sledi še nekaj primerov:
+<p align="justify">Matematični izrazi, kot so npr. <code>1 + 2</code> ali <code>(3.7 - 2.6) / 5.4</code>, so nam že precej domači. Pri programiranju pa nam pogosto pridejo prav tudi <b>logični</b> izrazi. Primera logičnih izrazov sta, denimo, <code>3 &le; 4</code> in <code>5 &gt; 9</code>. Logični izraz ima samo dve možni vrednosti: <img src="img/1222-07-2.svg"> (<code>true</code>) in <img src="img/1222-07-3.svg"> (<code>false</code>). Vrednost izraza <code>3 &le; 4</code> je torej resnica, vrednost izraza <code>5 &gt; 9</code> pa neresnica, saj število 5 ni večje od števila 9. Sledi še nekaj primerov:
 <pre>
-<img src="img/1222-07-4.svg" onerror="this.src='img/1222-07-4.png'">
+<img src="img/1222-07-4.svg">
 </pre>
 Izpis:
 <pre>
@@ -258,13 +259,13 @@ true
 					<div class="col-md-6">
 						<br />
 <!-- Right column start -->
-<p align="justify">Logične izraze lahko med seboj povezujemo z <b>logičnimi operatorji</b> <code>in</code>, <code>ali</code> in <code>ne</code>. Izraz <img src="img/1222-07-5.svg" onerror="this.src='img/1222-07-5.png'"> je resničen, samo če sta resnična podizraza <code>a</code> in <code>b</code>. Izraz <img src="img/1222-07-6.svg" onerror="this.src='img/1222-07-6.png'"> je resničen, če je vsaj eden od podizrazov resničen; neresničen je samo tedaj, ko sta oba podizraza neresnična. Izraz <img src="img/1222-07-7.svg" onerror="this.src='img/1222-07-7.png'"> pa je resničen, če je podizraz <code>a</code> neresničen, in obratno.</p>
+<p align="justify">Logične izraze lahko med seboj povezujemo z <b>logičnimi operatorji</b> <code>in</code>, <code>ali</code> in <code>ne</code>. Izraz <img src="img/1222-07-5.svg"> je resničen, samo če sta resnična podizraza <code>a</code> in <code>b</code>. Izraz <img src="img/1222-07-6.svg"> je resničen, če je vsaj eden od podizrazov resničen; neresničen je samo tedaj, ko sta oba podizraza neresnična. Izraz <img src="img/1222-07-7.svg"> pa je resničen, če je podizraz <code>a</code> neresničen, in obratno.</p>
 
 <p>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#table">Tabela logičnih operatorjev</button>
 </p>
 
-<p align="justify">Na primer vrednost izraza <br /><img src="img/1222-07-8.svg" onerror="this.src='img/1222-07-8.png'"> je enaka <code>false</code>, saj je prvi podizraz resničen, drugi pa neresničen. Vrednost izraza <br /><img src="img/1222-07-9.svg" onerror="this.src='img/1222-07-9.png'"> pa je enaka <code>true</code>.</p>
+<p align="justify">Na primer vrednost izraza <br /><img src="img/1222-07-8.svg"> je enaka <code>false</code>, saj je prvi podizraz resničen, drugi pa neresničen. Vrednost izraza <br /><img src="img/1222-07-9.svg"> pa je enaka <code>true</code>.</p>
 
 <p align="justify">Oglejmo si primer uporabe logičnih operatorjev. Leto je prestopno, če je deljivo s 400 ali pa če je deljivo s 4, vendar ne s 100. Zapišimo to pravilo v obliki programa. Spomnimo se, da je število <i>a</i> deljivo s številom <i>b</i> natanko tedaj, ko je ostanek pri deljenju <i>a</i> z <i>b</i> enak 0.</p>
 
@@ -277,6 +278,7 @@ true
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -285,23 +287,23 @@ true
 </table>
 <table width="100%">
   <tr>
-    <td style="position:relative; height:440px;">
+    <td style="position:relative; height:470px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -340,7 +342,7 @@ true
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -359,7 +361,7 @@ true
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -612,6 +614,7 @@ true
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -630,13 +633,16 @@ true
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index7.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {

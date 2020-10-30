@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -145,7 +146,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-08-3.svg" onerror="this.src='img/1224-08-3.png'">
+<img src="img/1224-08-3.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -167,7 +168,7 @@
 
 <p align="justify">Pri sprehodu po tabeli včasih poleg trenutnega elementa potrebujemo tudi njegov indeks. V tem primeru lahko uporabimo to zanko:
 <pre>
-<img src="img/1224-08-1.svg" onerror="this.src='img/1224-08-1.png'">
+<img src="img/1224-08-1.svg">
 </pre>
 </p>
 
@@ -187,7 +188,7 @@
 
 <p align="justify">Popravi program tako, da bo izpisal <i>imena</i> mesecev, ko je bilo prodanih več kot 300 kilogramov sladkarij. Pomagaj si s to tabelo:
 <pre>
-<img src="img/1224-08-2.svg" onerror="this.src='img/1224-08-2.png'">
+<img src="img/1224-08-2.svg">
 </pre>
 </p>
 <p>
@@ -210,6 +211,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -220,21 +222,21 @@
   <tr>
     <td style="position:relative; height:350px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -263,7 +265,7 @@
     <block type="controls_forEach"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -317,7 +319,7 @@
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -338,7 +340,7 @@
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -357,7 +359,7 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -512,22 +514,22 @@
 				<ul class="pagination pagination-sm">
 					<li><a href="../1223/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1224/index7.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1224/index.html">38</a></li>
-					<li><a href="../1224/index1.html">39</a></li>
-					<li><a href="../1224/index2.html">40</a></li>
-					<li><a href="../1224/index3.html">41</a></li>
-					<li><a href="../1224/index4.html">42</a></li>
-					<li><a href="../1224/index5.html">43</a></li>
-					<li><a href="../1224/index6.html">44</a></li>
-					<li><a href="../1224/index7.html">45</a></li>
-					<li class="active"><a href="#">46</a></li>
-					<li><a href="../1224/index9.html">47</a></li>
-					<li><a href="../1224/index10.html">48</a></li>
-					<li><a href="../1224/index11.html">49</a></li>
-					<li><a href="../1224/index12.html">50</a></li>
-					<li><a href="../1224/index13.html">51</a></li>
-					<li><a href="../1224/index14.html">52</a></li>
-					<li><a href="../1224/index15.html">53</a></li>
+					<li><a href="../1224/index.html">39</a></li>
+					<li><a href="../1224/index1.html">40</a></li>
+					<li><a href="../1224/index2.html">41</a></li>
+					<li><a href="../1224/index3.html">42</a></li>
+					<li><a href="../1224/index4.html">43</a></li>
+					<li><a href="../1224/index5.html">44</a></li>
+					<li><a href="../1224/index6.html">45</a></li>
+					<li><a href="../1224/index7.html">46</a></li>
+					<li class="active"><a href="#">47</a></li>
+					<li><a href="../1224/index9.html">48</a></li>
+					<li><a href="../1224/index10.html">49</a></li>
+					<li><a href="../1224/index11.html">50</a></li>
+					<li><a href="../1224/index12.html">51</a></li>
+					<li><a href="../1224/index13.html">52</a></li>
+					<li><a href="../1224/index14.html">53</a></li>
+					<li><a href="../1224/index15.html">54</a></li>
 					<li><a href="../1224/index9.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1225/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -545,6 +547,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -563,13 +566,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index8.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -578,10 +584,22 @@
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-08-3'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1224-08-3 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-08-3" style="display:none"><block type="text_comment" id="[aCIY?1oX-U0y8ZuS(e0" x="8" y="8"><value name="TEXT"><shadow type="text" id="#z4q4^?ZXdK@YlOl0dXh"><field name="TEXT">abc</field></shadow><block type="text" id="~4=a44R^uL|u|(F?;vbf"><field name="TEXT">Program izpiše ime vseh mesecev, ko je bilo</field></block></value><next><block type="text_comment" id=",Vsa|/(CXRT;[F@TPP9c"><value name="TEXT"><shadow type="text" id="#z4q4^?ZXdK@YlOl0dXh"><field name="TEXT">abc</field></shadow><block type="text" id="R+xc[yUFX$Y9s)=_#HIR"><field name="TEXT">prodanih več kot 300 kg sladkarij.</field></block></value><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR">prodaja</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="12"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">182</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">250</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">225</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">315</field></block></value><value name="ADD4"><block type="math_number" id="s~eFJbi:@d:,z!(v@R4F"><field name="NUM">328</field></block></value><value name="ADD5"><block type="math_number" id=",_D4tJF0z;9#}x~A[f}Z"><field name="NUM">160</field></block></value><value name="ADD6"><block type="math_number" id="W|8[]i{cNDCXV7?|Znyw"><field name="NUM">51</field></block></value><value name="ADD7"><block type="math_number" id="SB/uAyPg$.NAeY^.jcyJ"><field name="NUM">36</field></block></value><value name="ADD8"><block type="math_number" id="siD;Pfpi0^d/./jo85eH"><field name="NUM">340</field></block></value><value name="ADD9"><block type="math_number" id="`zdH4.)C:5Ys4TYJ^jRF"><field name="NUM">280</field></block></value><value name="ADD10"><block type="math_number" id="J70k8~dtb{@F01ti7;,!"><field name="NUM">378</field></block></value><value name="ADD11"><block type="math_number" id="*vcJO+)2ZBdOWkw1{QWH"><field name="NUM">320</field></block></value></block></value><next><block type="text_comment" id="@ZKuPLj@%OUwv?OaB=L0"><value name="TEXT"><shadow type="text" id="#z4q4^?ZXdK@YlOl0dXh"><field name="TEXT">abc</field></shadow><block type="text" id="vfxxdXb}9Gt!nf/]DZ`f"><field name="TEXT">Namesto kratic bi lahko uporabili polna imena.</field></block></value><next><block type="variables_set" id=",Z[mpimt~A+N^$k.Ogz/"><field name="VAR">meseci</field><value name="VALUE"><block type="lists_create_with" id="lHOZn=FY%p.,1={peQ~8" inline="true"><mutation items="12"></mutation><value name="ADD0"><block type="text" id="Hi1B,GN941*RGvz@n#6i"><field name="TEXT">jan</field></block></value><value name="ADD1"><block type="text" id="$TR)qwD!8Af,p4E1hSF!"><field name="TEXT">feb</field></block></value><value name="ADD2"><block type="text" id="XlH4L5P5+Is%Zw@W6V!h"><field name="TEXT">mar</field></block></value><value name="ADD3"><block type="text" id="3B,nu2S*]j5na.h%LqJ="><field name="TEXT">apr</field></block></value><value name="ADD4"><block type="text" id="(S]LEvs=?4[QivGoBunt"><field name="TEXT">maj</field></block></value><value name="ADD5"><block type="text" id="lMzCiU)|s0=gZ8m3S/oK"><field name="TEXT">jun</field></block></value><value name="ADD6"><block type="text" id="Z0|fnNXCu6.5gLH1r)nm"><field name="TEXT">jul</field></block></value><value name="ADD7"><block type="text" id="YOfP9ZB{?lQZDaO1yj_h"><field name="TEXT">avg</field></block></value><value name="ADD8"><block type="text" id="I/4UyZ%P81cL8!4GnL^a"><field name="TEXT">sep</field></block></value><value name="ADD9"><block type="text" id="(jHAPO9()LZfac4TRpka"><field name="TEXT">okt</field></block></value><value name="ADD10"><block type="text" id="d@P:,yZG@EtFW5wxYGa0"><field name="TEXT">nov</field></block></value><value name="ADD11"><block type="text" id="WR8l{F1VqKnwH8^QQmZ1"><field name="TEXT">dec</field></block></value></block></value><next><block type="controls_for" id="acQyBbxu6{TFXf.#Maf+"><field name="VAR">indeksMeseca</field><value name="FROM"><shadow type="math_number" id="I;VMIFo/Pm,!c}1et]Jn"><field name="NUM">0</field></shadow></value><value name="TO"><shadow type="math_number" id="KdFS4=[4oFy`7:jqbEsM"><field name="NUM">10</field></shadow><block type="lists_length" id="*[@Tyh-$h(.gE?14[]ga"><value name="VALUE"><block type="variables_get" id="F@?Ko}4`2sfwOiFSWCCR"><field name="VAR">prodaja</field></block></value></block></value><value name="BY"><shadow type="math_number" id="Z~Rk+3O,[w;0V2TjY!Fa"><field name="NUM">1</field></shadow></value><statement name="DO"><block type="text_comment" id="!hDgeJWM-@+P$/ERZXcF"><value name="TEXT"><shadow type="text" id="#z4q4^?ZXdK@YlOl0dXh"><field name="TEXT">abc</field></shadow><block type="text" id="/U,d(OtZEkL.m@D,(Bzd"><field name="TEXT">Če je prodaja v mesecu s trenutnim indeksom</field></block></value><next><block type="text_comment" id="cI[C92[YLz:j`D*Jh(y["><value name="TEXT"><shadow type="text" id="#z4q4^?ZXdK@YlOl0dXh"><field name="TEXT">abc</field></shadow><block type="text" id="5qg-9{0@jya6$RlCz4Y%"><field name="TEXT">večja od 300, izpišemo njegovo ime.</field></block></value><next><block type="controls_if" id="gHj|^V_;f9~?|8~3LbRx"><value name="IF0"><block type="logic_compare" id="V^X(6.8I6I6`g:V{hK2P"><field name="OP">GT</field><value name="A"><block type="lists_getIndex" id="iwx-G-#?8o[DoB[v/TWA"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="F.E=;[d+sV2i1:,HB@p`"><field name="VAR">prodaja</field></block></value><value name="AT"><block type="variables_get" id="Ba|z+OzNDwv|zO6|E|4%"><field name="VAR">indeksMeseca</field></block></value></block></value><value name="B"><block type="math_number" id="ilCi8cZN*+Q|l6|ip?#D"><field name="NUM">300</field></block></value></block></value><statement name="DO0"><block type="text_print" id="#%9@!N|k%w/9ds5W||:q"><value name="TEXT"><shadow type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="lists_getIndex" id="n{S!~ifj;MDBk~r)+-k2"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="JEnMlJtsfi06DNhYQ=bQ"><field name="VAR">meseci</field></block></value><value name="AT"><block type="variables_get" id="n62I;%stjH@l)p/GgTuB"><field name="VAR">indeksMeseca</field></block></value></block></value></block></statement></block></next></block></next></block></statement></block></next></block></next></block></next></block></next></block></next></block></xml>
+<xml id="1224-08-3" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="A@5|1|:Kc]UHJiLC#t.8">prodaja</variable><variable id="?GC(D:cjA[`Q}!|)Z!E5">meseci</variable><variable id="sJ+aVbeDLD~nV`Qu9d2X">indeksMeseca</variable></variables><block type="text_comment" id="[aCIY?1oX-U0y8ZuS(e0" x="10" y="10"><field name="TEXT">Program izpiše ime vseh mesecev, ko je bilo</field><next><block type="text_comment" id=",Vsa|/(CXRT;[F@TPP9c"><field name="TEXT">prodanih več kot 300 kg sladkarij.</field><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR" id="A@5|1|:Kc]UHJiLC#t.8">prodaja</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="12"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">182</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">250</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">225</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">315</field></block></value><value name="ADD4"><block type="math_number" id="s~eFJbi:@d:,z!(v@R4F"><field name="NUM">328</field></block></value><value name="ADD5"><block type="math_number" id=",_D4tJF0z;9#}x~A[f}Z"><field name="NUM">160</field></block></value><value name="ADD6"><block type="math_number" id="W|8[]i{cNDCXV7?|Znyw"><field name="NUM">51</field></block></value><value name="ADD7"><block type="math_number" id="SB/uAyPg$.NAeY^.jcyJ"><field name="NUM">36</field></block></value><value name="ADD8"><block type="math_number" id="siD;Pfpi0^d/./jo85eH"><field name="NUM">340</field></block></value><value name="ADD9"><block type="math_number" id="`zdH4.)C:5Ys4TYJ^jRF"><field name="NUM">280</field></block></value><value name="ADD10"><block type="math_number" id="J70k8~dtb{@F01ti7;,!"><field name="NUM">378</field></block></value><value name="ADD11"><block type="math_number" id="*vcJO+)2ZBdOWkw1{QWH"><field name="NUM">320</field></block></value></block></value><next><block type="text_comment" id="@ZKuPLj@%OUwv?OaB=L0"><field name="TEXT">Namesto kratic bi lahko uporabili polna imena.</field><next><block type="variables_set" id=",Z[mpimt~A+N^$k.Ogz/"><field name="VAR" id="?GC(D:cjA[`Q}!|)Z!E5">meseci</field><value name="VALUE"><block type="lists_create_with" id="lHOZn=FY%p.,1={peQ~8" inline="true"><mutation items="12"></mutation><value name="ADD0"><block type="text" id="Hi1B,GN941*RGvz@n#6i"><field name="TEXT">jan</field></block></value><value name="ADD1"><block type="text" id="$TR)qwD!8Af,p4E1hSF!"><field name="TEXT">feb</field></block></value><value name="ADD2"><block type="text" id="XlH4L5P5+Is%Zw@W6V!h"><field name="TEXT">mar</field></block></value><value name="ADD3"><block type="text" id="3B,nu2S*]j5na.h%LqJ="><field name="TEXT">apr</field></block></value><value name="ADD4"><block type="text" id="(S]LEvs=?4[QivGoBunt"><field name="TEXT">maj</field></block></value><value name="ADD5"><block type="text" id="lMzCiU)|s0=gZ8m3S/oK"><field name="TEXT">jun</field></block></value><value name="ADD6"><block type="text" id="Z0|fnNXCu6.5gLH1r)nm"><field name="TEXT">jul</field></block></value><value name="ADD7"><block type="text" id="YOfP9ZB{?lQZDaO1yj_h"><field name="TEXT">avg</field></block></value><value name="ADD8"><block type="text" id="I/4UyZ%P81cL8!4GnL^a"><field name="TEXT">sep</field></block></value><value name="ADD9"><block type="text" id="(jHAPO9()LZfac4TRpka"><field name="TEXT">okt</field></block></value><value name="ADD10"><block type="text" id="d@P:,yZG@EtFW5wxYGa0"><field name="TEXT">nov</field></block></value><value name="ADD11"><block type="text" id="WR8l{F1VqKnwH8^QQmZ1"><field name="TEXT">dec</field></block></value></block></value><next><block type="controls_for" id="acQyBbxu6{TFXf.#Maf+"><field name="VAR" id="sJ+aVbeDLD~nV`Qu9d2X">indeksMeseca</field><value name="FROM"><shadow type="math_number" id="I;VMIFo/Pm,!c}1et]Jn"><field name="NUM">0</field></shadow></value><value name="TO"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="KdFS4=[4oFy`7:jqbEsM"><field name="NUM">10</field></shadow><block type="lists_length" id="*[@Tyh-$h(.gE?14[]ga"><value name="VALUE"><block type="variables_get" id="F@?Ko}4`2sfwOiFSWCCR"><field name="VAR" id="A@5|1|:Kc]UHJiLC#t.8">prodaja</field></block></value></block></value><value name="BY"><shadow type="math_number" id="Z~Rk+3O,[w;0V2TjY!Fa"><field name="NUM">1</field></shadow></value><statement name="DO"><block type="text_comment" id="!hDgeJWM-@+P$/ERZXcF"><field name="TEXT">Če je prodaja v mesecu s trenutnim indeksom</field><next><block type="text_comment" id="cI[C92[YLz:j`D*Jh(y["><field name="TEXT">večja od 300, izpišemo njegovo ime.</field><next><block type="controls_if" id="gHj|^V_;f9~?|8~3LbRx"><value name="IF0"><block type="logic_compare" id="V^X(6.8I6I6`g:V{hK2P"><field name="OP">GT</field><value name="A"><block type="lists_getIndex" id="iwx-G-#?8o[DoB[v/TWA"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="F.E=;[d+sV2i1:,HB@p`"><field name="VAR" id="A@5|1|:Kc]UHJiLC#t.8">prodaja</field></block></value><value name="AT"><block type="variables_get" id="Ba|z+OzNDwv|zO6|E|4%"><field name="VAR" id="sJ+aVbeDLD~nV`Qu9d2X">indeksMeseca</field></block></value></block></value><value name="B"><block type="math_number" id="ilCi8cZN*+Q|l6|ip?#D"><field name="NUM">300</field></block></value></block></value><statement name="DO0"><block type="text_print" id="#%9@!N|k%w/9ds5W||:q"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="lists_getIndex" id="n{S!~ifj;MDBk~r)+-k2"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="JEnMlJtsfi06DNhYQ=bQ"><field name="VAR" id="?GC(D:cjA[`Q}!|)Z!E5">meseci</field></block></value><value name="AT"><block type="variables_get" id="n62I;%stjH@l)p/GgTuB"><field name="VAR" id="sJ+aVbeDLD~nV`Qu9d2X">indeksMeseca</field></block></value></block></value></block></statement></block></next></block></next></block></statement></block></next></block></next></block></next></block></next></block></next></block></xml>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

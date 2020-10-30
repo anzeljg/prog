@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -145,7 +146,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-13-5.svg" onerror="this.src='img/1224-13-5.png'">
+<img src="img/1224-13-5.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -211,7 +212,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-13-6.svg" onerror="this.src='img/1224-13-6.png'">
+<img src="img/1224-13-6.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -256,7 +257,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-13-7.svg" onerror="this.src='img/1224-13-7.png'">
+<img src="img/1224-13-7.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -331,6 +332,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -341,21 +343,21 @@
   <tr>
     <td style="position:relative; height:350px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -384,7 +386,7 @@
     <block type="controls_forEach"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -438,7 +440,7 @@
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -468,7 +470,7 @@
     </block>
     <block type="lists_sort"></block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -487,7 +489,7 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 <!-- Second row end -->
 					</div>
@@ -500,22 +502,22 @@
 				<ul class="pagination pagination-sm">
 					<li><a href="../1223/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1224/index12.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1224/index.html">38</a></li>
-					<li><a href="../1224/index1.html">39</a></li>
-					<li><a href="../1224/index2.html">40</a></li>
-					<li><a href="../1224/index3.html">41</a></li>
-					<li><a href="../1224/index4.html">42</a></li>
-					<li><a href="../1224/index5.html">43</a></li>
-					<li><a href="../1224/index6.html">44</a></li>
-					<li><a href="../1224/index7.html">45</a></li>
-					<li><a href="../1224/index8.html">46</a></li>
-					<li><a href="../1224/index9.html">47</a></li>
-					<li><a href="../1224/index10.html">48</a></li>
-					<li><a href="../1224/index11.html">49</a></li>
-					<li><a href="../1224/index12.html">50</a></li>
-					<li class="active"><a href="#">51</a></li>
-					<li><a href="../1224/index14.html">52</a></li>
-					<li><a href="../1224/index15.html">53</a></li>
+					<li><a href="../1224/index.html">39</a></li>
+					<li><a href="../1224/index1.html">40</a></li>
+					<li><a href="../1224/index2.html">41</a></li>
+					<li><a href="../1224/index3.html">42</a></li>
+					<li><a href="../1224/index4.html">43</a></li>
+					<li><a href="../1224/index5.html">44</a></li>
+					<li><a href="../1224/index6.html">45</a></li>
+					<li><a href="../1224/index7.html">46</a></li>
+					<li><a href="../1224/index8.html">47</a></li>
+					<li><a href="../1224/index9.html">48</a></li>
+					<li><a href="../1224/index10.html">49</a></li>
+					<li><a href="../1224/index11.html">50</a></li>
+					<li><a href="../1224/index12.html">51</a></li>
+					<li class="active"><a href="#">52</a></li>
+					<li><a href="../1224/index14.html">53</a></li>
+					<li><a href="../1224/index15.html">54</a></li>
 					<li><a href="../1224/index14.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1225/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -533,6 +535,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -551,13 +554,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index13.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -566,16 +572,46 @@
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-13-5'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve2Button', function() {CodeEditor.solve2();});
+  CodeEditor.solve2 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-13-6'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve3Button', function() {CodeEditor.solve3();});
+  CodeEditor.solve3 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-13-7'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1224-13-5 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-13-5" style="display:none"><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="8" y="8"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=".!5X~3Dk4UEuR|tYDd(t"><field name="TEXT">Program postavi vse negativne elemente na 0.</field></block></value><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">3</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">10</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">-5</field></block></value></block></value><next><block type="controls_for" id=".OR7r1)x(vh=AtKX79kn"><field name="VAR">indeks</field><value name="FROM"><shadow type="math_number" id="s~6n.]Gb2S53z3..szp-"><field name="NUM">0</field></shadow><block type="math_number" id="+E|PhN*pG+n5;4}nD?Kd"><field name="NUM">0</field></block></value><value name="TO"><shadow type="math_number" id="}@HhQf.lSqK5u(Dayn,l"><field name="NUM">10</field></shadow><block type="lists_length" id="1HHSMCsKe|1GK7AN8er}"><value name="VALUE"><block type="variables_get" id="l51izXM[r)!C2PAszF97"><field name="VAR">tabela</field></block></value></block></value><value name="BY"><shadow type="math_number" id=")MyA#vr9`IyNEJ:D{AE#"><field name="NUM">1</field></shadow></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="lists_getIndex" id="sm;EDFI6=[V`{*?/A#T-"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="17MRKxos_x41~hCT|j_E"><field name="VAR">tabela</field></block></value><value name="AT"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR">indeks</field></block></value></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="lists_setIndex" id="vD!SIl64YCD4yvnNNQxv"><mutation at="true"></mutation><field name="MODE">SET</field><field name="WHERE">FROM_START</field><value name="LIST"><block type="variables_get" id="]6*hYm(|EK#WtO+3EPRz"><field name="VAR">tabela</field></block></value><value name="AT"><block type="variables_get" id="Kj$QatYV9)IEOvx[ec%="><field name="VAR">indeks</field></block></value><value name="TO"><block type="math_number" id="6{+1H#9Kf:]6WG+(`wE^"><field name="NUM">0</field></block></value></block></statement></block></statement><next><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR">tabela</field></block></value></block></next></block></next></block></next></block></xml>
+<xml id="1224-13-5" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="(nN6!A}US78fj~.N4g8n">tabela</variable><variable id="6A78w`O)XmHhdDmEsD8h">indeks</variable></variables><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="10" y="10"><field name="TEXT">Program postavi vse negativne elemente na 0.</field><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR" id="(nN6!A}US78fj~.N4g8n">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">3</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">10</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">-5</field></block></value></block></value><next><block type="controls_for" id=".OR7r1)x(vh=AtKX79kn"><field name="VAR" id="6A78w`O)XmHhdDmEsD8h">indeks</field><value name="FROM"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="s~6n.]Gb2S53z3..szp-"><field name="NUM">0</field></shadow><block type="math_number" id="+E|PhN*pG+n5;4}nD?Kd"><field name="NUM">0</field></block></value><value name="TO"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="}@HhQf.lSqK5u(Dayn,l"><field name="NUM">10</field></shadow><block type="lists_length" id="1HHSMCsKe|1GK7AN8er}"><value name="VALUE"><block type="variables_get" id="l51izXM[r)!C2PAszF97"><field name="VAR" id="(nN6!A}US78fj~.N4g8n">tabela</field></block></value></block></value><value name="BY"><shadow type="math_number" id=")MyA#vr9`IyNEJ:D{AE#"><field name="NUM">1</field></shadow></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="lists_getIndex" id="sm;EDFI6=[V`{*?/A#T-"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="17MRKxos_x41~hCT|j_E"><field name="VAR" id="(nN6!A}US78fj~.N4g8n">tabela</field></block></value><value name="AT"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR" id="6A78w`O)XmHhdDmEsD8h">indeks</field></block></value></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="lists_setIndex" id="vD!SIl64YCD4yvnNNQxv"><mutation at="true"></mutation><field name="MODE">SET</field><field name="WHERE">FROM_START</field><value name="LIST"><block type="variables_get" id="]6*hYm(|EK#WtO+3EPRz"><field name="VAR" id="(nN6!A}US78fj~.N4g8n">tabela</field></block></value><value name="AT"><block type="variables_get" id="Kj$QatYV9)IEOvx[ec%="><field name="VAR" id="6A78w`O)XmHhdDmEsD8h">indeks</field></block></value><value name="TO"><block type="math_number" id="6{+1H#9Kf:]6WG+(`wE^"><field name="NUM">0</field></block></value></block></statement></block></statement><next><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR" id="(nN6!A}US78fj~.N4g8n">tabela</field></block></value></block></next></block></next></block></next></block></xml>
 
 <!-- 1224-13-6 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-13-6" style="display:none"><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="8" y="8"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=".!5X~3Dk4UEuR|tYDd(t"><field name="TEXT">Program izpiše indeks zadnjega negativnega</field></block></value><next><block type="text_comment" id="aS7f2F?y|^{o3L/47Vcq"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=",HPwYBR5X[q:)V9-,~^T"><field name="TEXT">elementa oz. -1, če takšnega elementa v tabeli ni.</field></block></value><next><block type="text_comment" id="VWz_2rab.tym@Q)MB[rS"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id="17wk]R$SoIi/7{V^cE__"><field name="TEXT">Npr. za spodnjo tabelo program izpiše: 3</field></block></value><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="5"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value></block></value><next><block type="text_comment" id="bf?`vbmMcBm:x;P_3|kH"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id="9]!qoaj/IRW++oH}Z}~)"><field name="TEXT">Za tabelo2 bi program izpisal: -1</field></block></value><next><block type="variables_set" id="[B77k%8yR,Y*skWZ}pE+"><field name="VAR">tabela2</field><value name="VALUE"><block type="lists_create_with" id="/.1~+agBNuYk8lP~NHJO" inline="true"><mutation items="5"></mutation><value name="ADD0"><block type="math_number" id="zaUexXt,-RY*S_JTJXdy"><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="IQ3,]6n/X7LtCDyZi+km"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="LDCn)f0_6eO--L{p~m)g"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id="8.SI[!f,kKb9a}PV?5PP"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="YgSa-b-;(n;(2)@To4N)"><field name="NUM">0</field></block></value></block></value></block></next></block></next></block></next></block></next></block></next></block><block type="variables_set" id="gU=-qeA90:PX,}mFMVfc" x="8" y="218"><field name="VAR">zadnjiIndeks</field><value name="VALUE"><block type="math_number" id="8lIo*ZajKd0vIV;72,4%"><field name="NUM">-1</field></block></value><next><block type="controls_for" id=".OR7r1)x(vh=AtKX79kn"><field name="VAR">indeks</field><value name="FROM"><shadow type="math_number" id="s~6n.]Gb2S53z3..szp-"><field name="NUM">0</field></shadow><block type="math_arithmetic" id=")G2DRDt*J{zDRz%)^^9q"><field name="OP">MINUS</field><value name="A"><shadow type="math_number" id="gSryNq3v,D,zdT8p@}O;"><field name="NUM">1</field></shadow><block type="lists_length" id="1HHSMCsKe|1GK7AN8er}"><value name="VALUE"><block type="variables_get" id="l51izXM[r)!C2PAszF97"><field name="VAR">tabela</field></block></value></block></value><value name="B"><shadow type="math_number" id="-bGp_lUQd:4tI#S.+*IX"><field name="NUM">1</field></shadow><block type="math_number" id="}|l^42gqu1BJ9s#/E=yS"><field name="NUM">1</field></block></value></block></value><value name="TO"><shadow type="math_number" id="}@HhQf.lSqK5u(Dayn,l"><field name="NUM">10</field></shadow><block type="math_number" id="+E|PhN*pG+n5;4}nD?Kd"><field name="NUM">-1</field></block></value><value name="BY"><shadow type="math_number" id=")MyA#vr9`IyNEJ:D{AE#"><field name="NUM">1</field></shadow><block type="math_number" id="lzj:Gj`M=,CtqxPFi`{T"><field name="NUM">-1</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="lists_getIndex" id="sm;EDFI6=[V`{*?/A#T-"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="17MRKxos_x41~hCT|j_E"><field name="VAR">tabela</field></block></value><value name="AT"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR">indeks</field></block></value></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_comment" id="S|0k``WAG%tNV]hiuDOe"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id="Se`V2{yanwf}Nv7}UG#4"><field name="TEXT">Našli smo negativni element. Shranimo</field></block></value><next><block type="text_comment" id="F,k,V}Vns(aiJAw-U~^~"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id="q]|xVhzao;4#n5=ab5|d"><field name="TEXT">njegov indeks in prekinimo zanko.</field></block></value><next><block type="variables_set" id="TTj9+=jhKRT41Ndu:|*~"><field name="VAR">zadnjiIndeks</field><value name="VALUE"><block type="variables_get" id="]6*hYm(|EK#WtO+3EPRz"><field name="VAR">indeks</field></block></value><next><block type="controls_flow_statements" id="r,.}iEeK0dXk9-%w,gW{"><field name="FLOW">BREAK</field></block></next></block></next></block></next></block></statement></block></statement><next><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR">zadnjiIndeks</field></block></value></block></next></block></next></block></xml>
+<xml id="1224-13-6" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="V(*(:j8/F1IUJob_xuZF">zadnjiIndeks</variable><variable id="5DIl]fF[;?*rI|i]u|u6">indeks</variable><variable id="|vv~DqCDYSh;LM;oCFVg">tabela</variable><variable id="IH^ntwpcwvP=4L|?DnG}">tabela2</variable></variables><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="10" y="10"><field name="TEXT">Program izpiše indeks zadnjega negativnega</field><next><block type="text_comment" id="aS7f2F?y|^{o3L/47Vcq"><field name="TEXT">elementa oz. -1, če takšnega elementa v tabeli ni.</field><next><block type="text_comment" id="VWz_2rab.tym@Q)MB[rS"><field name="TEXT">Npr. za spodnjo tabelo program izpiše: 3</field><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR" id="|vv~DqCDYSh;LM;oCFVg">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="5"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value></block></value><next><block type="text_comment" id="bf?`vbmMcBm:x;P_3|kH"><field name="TEXT">Za tabelo2 bi program izpisal: -1</field><next><block type="variables_set" id="[B77k%8yR,Y*skWZ}pE+"><field name="VAR" id="IH^ntwpcwvP=4L|?DnG}">tabela2</field><value name="VALUE"><block type="lists_create_with" id="/.1~+agBNuYk8lP~NHJO" inline="true"><mutation items="5"></mutation><value name="ADD0"><block type="math_number" id="zaUexXt,-RY*S_JTJXdy"><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="IQ3,]6n/X7LtCDyZi+km"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="LDCn)f0_6eO--L{p~m)g"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id="8.SI[!f,kKb9a}PV?5PP"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="YgSa-b-;(n;(2)@To4N)"><field name="NUM">0</field></block></value></block></value></block></next></block></next></block></next></block></next></block></next></block><block type="variables_set" id="gU=-qeA90:PX,}mFMVfc" x="10" y="220"><field name="VAR" id="V(*(:j8/F1IUJob_xuZF">zadnjiIndeks</field><value name="VALUE"><block type="math_number" id="8lIo*ZajKd0vIV;72,4%"><field name="NUM">-1</field></block></value><next><block type="controls_for" id=".OR7r1)x(vh=AtKX79kn"><field name="VAR" id="5DIl]fF[;?*rI|i]u|u6">indeks</field><value name="FROM"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="s~6n.]Gb2S53z3..szp-"><field name="NUM">0</field></shadow><block type="math_arithmetic" id=")G2DRDt*J{zDRz%)^^9q"><field name="OP">MINUS</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="gSryNq3v,D,zdT8p@}O;"><field name="NUM">1</field></shadow><block type="lists_length" id="1HHSMCsKe|1GK7AN8er}"><value name="VALUE"><block type="variables_get" id="l51izXM[r)!C2PAszF97"><field name="VAR" id="|vv~DqCDYSh;LM;oCFVg">tabela</field></block></value></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="-bGp_lUQd:4tI#S.+*IX"><field name="NUM">1</field></shadow><block type="math_number" id="}|l^42gqu1BJ9s#/E=yS"><field name="NUM">1</field></block></value></block></value><value name="TO"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="}@HhQf.lSqK5u(Dayn,l"><field name="NUM">10</field></shadow><block type="math_number" id="+E|PhN*pG+n5;4}nD?Kd"><field name="NUM">-1</field></block></value><value name="BY"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id=")MyA#vr9`IyNEJ:D{AE#"><field name="NUM">1</field></shadow><block type="math_number" id="lzj:Gj`M=,CtqxPFi`{T"><field name="NUM">-1</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="lists_getIndex" id="sm;EDFI6=[V`{*?/A#T-"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="17MRKxos_x41~hCT|j_E"><field name="VAR" id="|vv~DqCDYSh;LM;oCFVg">tabela</field></block></value><value name="AT"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR" id="5DIl]fF[;?*rI|i]u|u6">indeks</field></block></value></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_comment" id="S|0k``WAG%tNV]hiuDOe"><field name="TEXT">Našli smo negativni element. Shranimo</field><next><block type="text_comment" id="F,k,V}Vns(aiJAw-U~^~"><field name="TEXT">njegov indeks in prekinimo zanko.</field><next><block type="variables_set" id="TTj9+=jhKRT41Ndu:|*~"><field name="VAR" id="V(*(:j8/F1IUJob_xuZF">zadnjiIndeks</field><value name="VALUE"><block type="variables_get" id="]6*hYm(|EK#WtO+3EPRz"><field name="VAR" id="5DIl]fF[;?*rI|i]u|u6">indeks</field></block></value><next><block type="controls_flow_statements" id="r,.}iEeK0dXk9-%w,gW{"><field name="FLOW">BREAK</field></block></next></block></next></block></next></block></statement></block></statement><next><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR" id="V(*(:j8/F1IUJob_xuZF">zadnjiIndeks</field></block></value></block></next></block></next></block></xml>
 
 <!-- 1224-13-7 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-13-7" style="display:none"><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="8" y="8"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=".!5X~3Dk4UEuR|tYDd(t"><field name="TEXT">Program poišče drugi največji el. ob predpostavki,</field></block></value><next><block type="text_comment" id="aS7f2F?y|^{o3L/47Vcq"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=",HPwYBR5X[q:)V9-,~^T"><field name="TEXT">da so vsa števila pozitivna in da tabela vsebuje</field></block></value><next><block type="text_comment" id="VWz_2rab.tym@Q)MB[rS"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id="17wk]R$SoIi/7{V^cE__"><field name="TEXT">vsaj dva različna elementa</field></block></value><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="7"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">100</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">50</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">70</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">100</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">70</field></block></value><value name="ADD5"><block type="math_number" id="3{bhG]hHX:E%3_HtZ01F"><field name="NUM">30</field></block></value><value name="ADD6"><block type="math_number" id="4JY.s2-VqulaiAS{d?V?"><field name="NUM">60</field></block></value></block></value></block></next></block></next></block></next></block><block type="text_comment" id="bf?`vbmMcBm:x;P_3|kH" x="8" y="158"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id="9]!qoaj/IRW++oH}Z}~)"><field name="TEXT">Poiščimo največji element.</field></block></value><next><block type="variables_set" id="gU=-qeA90:PX,}mFMVfc"><field name="VAR">najvecji</field><value name="VALUE"><block type="math_number" id="8lIo*ZajKd0vIV;72,4%"><field name="NUM">0</field></block></value><next><block type="controls_forEach" id="83/xf2_{Za8tV72Ph}Y}"><field name="VAR">element</field><value name="LIST"><block type="variables_get" id="+V0DAX};Ig^d_H$]0g!Q"><field name="VAR">tabela</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">GT</field><value name="A"><block type="variables_get" id="[QA]8hO=$:xe/v=1k9bw"><field name="VAR">element</field></block></value><value name="B"><block type="variables_get" id="iGkr_o+/3a`Z:daFD5,Y"><field name="VAR">najvecji</field></block></value></block></value><statement name="DO0"><block type="variables_set" id="TTj9+=jhKRT41Ndu:|*~"><field name="VAR">najvecji</field><value name="VALUE"><block type="variables_get" id="]6*hYm(|EK#WtO+3EPRz"><field name="VAR">element</field></block></value></block></statement></block></statement></block></next></block></next></block><block type="text_comment" id="F,k,V}Vns(aiJAw-U~^~" x="8" y="353"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id="q]|xVhzao;4#n5=ab5|d"><field name="TEXT">Poiščimo drugi največji element.</field></block></value><next><block type="variables_set" id="VoN`|t=t3@:*ry95EQi("><field name="VAR">drugiNajvecji</field><value name="VALUE"><block type="math_number" id="4}MrdgGCf)}WswJWBV$F"><field name="NUM">0</field></block></value><next><block type="controls_forEach" id="}u9dAcLxZK}$Xn*-dQe;"><field name="VAR">element</field><value name="LIST"><block type="variables_get" id="HRDh(rwOF]%4`a:Li764"><field name="VAR">tabela</field></block></value><statement name="DO"><block type="controls_if" id="p~EL{g+g7YA%`!R96]@("><value name="IF0"><block type="logic_operation" id="-#5.H^{$Z;@`@?%Yy-Bj"><field name="OP">AND</field><value name="A"><block type="logic_compare" id="%;`9jfUWd/JX7]8heD9o"><field name="OP">LT</field><value name="A"><block type="variables_get" id="dzUU)+w[Z-/w+xEEbldy"><field name="VAR">element</field></block></value><value name="B"><block type="variables_get" id="[hv0:bW!.A/Hmj-r+MXV"><field name="VAR">najvecji</field></block></value></block></value><value name="B"><block type="logic_compare" id="CMCp/(A-W.F@ewqWHvd3"><field name="OP">GT</field><value name="A"><block type="variables_get" id="Hnii?-oZ8[bJ#``$8p$n"><field name="VAR">element</field></block></value><value name="B"><block type="variables_get" id="^7=A5wouCR|/Kih,p?ou"><field name="VAR">drugiNajvecji</field></block></value></block></value></block></value><statement name="DO0"><block type="variables_set" id="eO$ix8nsquysrJf}f#_C"><field name="VAR">drugiNajvecji</field><value name="VALUE"><block type="variables_get" id="ghUQN-|xRyY_FJXl*Z5J"><field name="VAR">element</field></block></value></block></statement></block></statement><next><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR">drugiNajvecji</field></block></value></block></next></block></next></block></next></block></xml>
+<xml id="1224-13-7" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="^H(sGTxX8b7t9Em{(V!~">najvecji</variable><variable id="[hSAt1`n^Xn//ESK1A2x">drugiNajvecji</variable><variable id="(IfcaKHLI].9B[K(U[W?">element</variable><variable id="ffjj$hJc8}n3(lsv!IG8">tabela</variable></variables><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="10" y="10"><field name="TEXT">Program poišče drugi največji el. ob predpostavki,</field><next><block type="text_comment" id="aS7f2F?y|^{o3L/47Vcq"><field name="TEXT">da so vsa števila pozitivna in da tabela vsebuje</field><next><block type="text_comment" id="VWz_2rab.tym@Q)MB[rS"><field name="TEXT">vsaj dva različna elementa.</field><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR" id="ffjj$hJc8}n3(lsv!IG8">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="7"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">100</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">50</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">70</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">100</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">70</field></block></value><value name="ADD5"><block type="math_number" id="3{bhG]hHX:E%3_HtZ01F"><field name="NUM">30</field></block></value><value name="ADD6"><block type="math_number" id="4JY.s2-VqulaiAS{d?V?"><field name="NUM">60</field></block></value></block></value></block></next></block></next></block></next></block><block type="text_comment" id="bf?`vbmMcBm:x;P_3|kH" x="10" y="150"><field name="TEXT">Poiščimo največji element.</field><next><block type="variables_set" id="gU=-qeA90:PX,}mFMVfc"><field name="VAR" id="^H(sGTxX8b7t9Em{(V!~">najvecji</field><value name="VALUE"><block type="math_number" id="8lIo*ZajKd0vIV;72,4%"><field name="NUM">0</field></block></value><next><block type="controls_forEach" id="83/xf2_{Za8tV72Ph}Y}"><field name="VAR" id="(IfcaKHLI].9B[K(U[W?">element</field><value name="LIST"><block type="variables_get" id="+V0DAX};Ig^d_H$]0g!Q"><field name="VAR" id="ffjj$hJc8}n3(lsv!IG8">tabela</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">GT</field><value name="A"><block type="variables_get" id="[QA]8hO=$:xe/v=1k9bw"><field name="VAR" id="(IfcaKHLI].9B[K(U[W?">element</field></block></value><value name="B"><block type="variables_get" id="iGkr_o+/3a`Z:daFD5,Y"><field name="VAR" id="^H(sGTxX8b7t9Em{(V!~">najvecji</field></block></value></block></value><statement name="DO0"><block type="variables_set" id="TTj9+=jhKRT41Ndu:|*~"><field name="VAR" id="^H(sGTxX8b7t9Em{(V!~">najvecji</field><value name="VALUE"><block type="variables_get" id="]6*hYm(|EK#WtO+3EPRz"><field name="VAR" id="(IfcaKHLI].9B[K(U[W?">element</field></block></value></block></statement></block></statement></block></next></block></next></block><block type="text_comment" id="F,k,V}Vns(aiJAw-U~^~" x="10" y="350"><field name="TEXT">Poiščimo drugi največji element.</field><next><block type="variables_set" id="VoN`|t=t3@:*ry95EQi("><field name="VAR" id="[hSAt1`n^Xn//ESK1A2x">drugiNajvecji</field><value name="VALUE"><block type="math_number" id="4}MrdgGCf)}WswJWBV$F"><field name="NUM">0</field></block></value><next><block type="controls_forEach" id="}u9dAcLxZK}$Xn*-dQe;"><field name="VAR" id="(IfcaKHLI].9B[K(U[W?">element</field><value name="LIST"><block type="variables_get" id="HRDh(rwOF]%4`a:Li764"><field name="VAR" id="ffjj$hJc8}n3(lsv!IG8">tabela</field></block></value><statement name="DO"><block type="controls_if" id="p~EL{g+g7YA%`!R96]@("><value name="IF0"><block type="logic_operation" id="-#5.H^{$Z;@`@?%Yy-Bj"><field name="OP">AND</field><value name="A"><block type="logic_compare" id="%;`9jfUWd/JX7]8heD9o"><field name="OP">LT</field><value name="A"><block type="variables_get" id="dzUU)+w[Z-/w+xEEbldy"><field name="VAR" id="(IfcaKHLI].9B[K(U[W?">element</field></block></value><value name="B"><block type="variables_get" id="[hv0:bW!.A/Hmj-r+MXV"><field name="VAR" id="^H(sGTxX8b7t9Em{(V!~">najvecji</field></block></value></block></value><value name="B"><block type="logic_compare" id="CMCp/(A-W.F@ewqWHvd3"><field name="OP">GT</field><value name="A"><block type="variables_get" id="Hnii?-oZ8[bJ#``$8p$n"><field name="VAR" id="(IfcaKHLI].9B[K(U[W?">element</field></block></value><value name="B"><block type="variables_get" id="^7=A5wouCR|/Kih,p?ou"><field name="VAR" id="[hSAt1`n^Xn//ESK1A2x">drugiNajvecji</field></block></value></block></value></block></value><statement name="DO0"><block type="variables_set" id="eO$ix8nsquysrJf}f#_C"><field name="VAR" id="[hSAt1`n^Xn//ESK1A2x">drugiNajvecji</field><value name="VALUE"><block type="variables_get" id="ghUQN-|xRyY_FJXl*Z5J"><field name="VAR" id="(IfcaKHLI].9B[K(U[W?">element</field></block></value></block></statement></block></statement><next><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR" id="[hSAt1`n^Xn//ESK1A2x">drugiNajvecji</field></block></value></block></next></block></next></block></next></block></xml>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
 	<link href="../css/font-awesome.min.css" rel="stylesheet">
@@ -179,7 +180,7 @@
 
 <div class="alert alert-info" role="alert">
 <p>Razvrsti naslednja navodila v smiselno zaporedje:</p>
-<div id="content_blocks" style="width:100%; height:200px; margin-bottom:10px; margin-top:4px;"></div>
+<div id="content_blocks" style="width:100%; height:210px; margin-bottom:10px; margin-top:4px;"></div>
 <button type="button" class="btn btn-info"  id="resetButton"><span class="fa fa-refresh"></span> Ponastavi</button>
 <button type="button" class="btn btn-info"  id="checkButton"><span class="fa fa-check"></span> Preveri</button>
 </div>
@@ -260,27 +261,32 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/msg/js/sl.js"></script>
-<script src="../blockly/local/algorithm_blocks.js"></script>
+<script src="../blockly/local/blocks/algorithm_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
 <script>
 'use strict';
 
 /**
  * Create a namespace for the application.
  */
-var Code12211b = {};
+var CodeEditor = {};
 
-Code12211b.workspace = Blockly.inject('content_blocks',
+CodeEditor.workspace = Blockly.inject('content_blocks',
 	{grid:
 		{spacing: 25,
 		length: 0,
 		colour: '#ccc',
 		snap: true},
 	media: '../blockly/media/',
-	toolbox: document.getElementById('toolbox')
+	maxInstances: {step1: 1, step2: 1, step3: 1, step4: 1, step5: 1},
+	toolbox: document.getElementById('toolbox'),
+	theme: 'rin_light'
 });
 
 /**
@@ -289,7 +295,7 @@ Code12211b.workspace = Blockly.inject('content_blocks',
  * @param {!Element|string} el Button element or ID thereof.
  * @param {!Function} func Event handler to bind.
  */
-Code12211b.bindClick = function(el, func) {
+CodeEditor.bindClick = function(el, func) {
   if (typeof el == 'string') {
     el = document.getElementById(el);
   }
@@ -297,23 +303,23 @@ Code12211b.bindClick = function(el, func) {
   el.addEventListener('touchend', func, true);
 };
 
-Code12211b.bindClick('resetButton', function() {Code12211b.discard();});
-Code12211b.bindClick('checkButton', function() {Code12211b.runJS();});
+CodeEditor.bindClick('resetButton', function() {CodeEditor.discard();});
+CodeEditor.bindClick('checkButton', function() {CodeEditor.runJS();});
 
 /**
  * Discard all blocks from the workspace.
  */
-Code12211b.discard = function() {
-  var count = Code12211b.workspace.getAllBlocks().length;
-  Code12211b.workspace.clear();
+CodeEditor.discard = function() {
+  var count = CodeEditor.workspace.getAllBlocks().length;
+  CodeEditor.workspace.clear();
   window.location.hash = '';
 };
 
 /**
- * Execute the user's Code12211b.
+ * Execute the user's CodeEditor.
  * Just a quick and dirty eval.  Catch infinite loops.
  */
-Code12211b.runJS = function() {
+CodeEditor.runJS = function() {
   Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
   var timeouts = 0;
   var checkTimeout = function() {
@@ -321,7 +327,7 @@ Code12211b.runJS = function() {
       throw 'Timeout';
     }
   };
-  var code = Blockly.JavaScript.workspaceToCode(Code12211b.workspace);
+  var code = Blockly.JavaScript.workspaceToCode(CodeEditor.workspace);
   code = code.replace(/\r?\n|\r/g, "")
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   if (code == 'wakeUp();getUp();eatBreakfast();dressUp();gotoBus();') {

@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -123,25 +124,25 @@
 <p align="justify">Interaktivni tolmač se lahko uporablja kot kalkulator:</p>
 
 <pre>
-<img src="img/1221-03-1.svg" onerror="this.src='img/1221-03-1.png'">
+<img src="img/1221-03-1.svg">
 </pre>
 
 <p align="justify">Za množenje v besedilnih programskih jezikih uporabljamo znak <code>*</code> namesto znaka <code>×</code>:</p>
 
 <pre>
-<img src="img/1221-03-2.svg" onerror="this.src='img/1221-03-2.png'">
+<img src="img/1221-03-2.svg">
 </pre>
 
 <p align="justify">Večina besedilnih programskih jezikov pozna kar dve različni vrsti deljenja, realnoštevilsko (znak <code>/</code>) in celoštevilsko (znak <code>//</code>). Realnoštevilsko deljenje deluje tako, kot smo vajeni pri kalkulatorjih: rezultat izračuna na določeno število decimalnih mest natančno. Celoštevilsko deljenje pa števke za decimalno piko odreže in tako ohrani samo celi del količnika. V slikovnem programskem jeziku to dosežemo tako, da rezultat deljenja zaokrožimo navzdol.</p>
 
 <pre>
-<img src="img/1221-03-3.svg" onerror="this.src='img/1221-03-3.png'">
+<img src="img/1221-03-3.svg">
 </pre>
 
 <p align="justify">Pogosto nam bo prišel prav tudi ostanek pri celoštevilskem deljenju, ki ga v besedilnih programskih jezikih označimo z znakom <code>%</code>:</p>
 
 <pre>
-<img src="img/1221-03-4.svg" onerror="this.src='img/1221-03-4.png'">
+<img src="img/1221-03-4.svg">
 </pre>
 <!-- Left column end -->
 					</div>
@@ -151,7 +152,7 @@
 <p align="justify">Včasih nam bo prišlo prav tudi potenciranje (znak <code>^</code>), na primer 5<sup>2</sup>:</p>
 
 <pre>
-<img src="img/1221-03-5.svg" onerror="this.src='img/1221-03-5.png'">
+<img src="img/1221-03-5.svg">
 </pre>
 
 <p align="justify">Delčki so v interaktivnem tolmaču razporejeni v kategorije. Klikni kategorijo in izberi ustrezni delček. Izbrani delček nato povleci na delovno površino interaktivnega tolmača. Preizkusi vse ukaze v interaktivnem tolmaču:</p>
@@ -165,6 +166,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -175,14 +177,14 @@
   <tr>
     <td style="position:relative; height:400px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -221,7 +223,7 @@
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text_print">
       <value name="TEXT">
         <shadow type="text">
@@ -270,6 +272,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -288,13 +291,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index3.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {

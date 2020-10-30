@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -124,7 +125,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1225-05-1.svg" onerror="this.src='img/1225-05-1.png'">
+<img src="img/1225-05-1.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -173,6 +174,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -181,23 +183,23 @@
 </table>
 <table width="100%">
   <tr>
-    <td style="position:relative; height:520px;">
+    <td style="position:relative; height:530px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_whileUntil"></block>
     <block type="controls_for">
       <value name="FROM">
@@ -219,7 +221,7 @@
     <block type="controls_forEach"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -258,7 +260,7 @@
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -288,7 +290,7 @@
     </block>
     <block type="lists_sort"></block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -307,8 +309,8 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
-  <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
+  <category name="{catFunctions}" categorystyle="procedure_category" custom="PROCEDURE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -460,7 +462,7 @@
       </block>
     </statement>
   </block>
-  <block type="variables_set" id="BY(z9?D}|~qvCKWQSaJX" x="10" y="275">
+  <block type="variables_set" id="BY(z9?D}|~qvCKWQSaJX" x="10" y="295">
     <field name="VAR">j</field>
     <value name="VALUE">
       <block type="math_number" id="qyjuuZs]]]GOyjr@YN*!">
@@ -508,14 +510,7 @@
             </value>
             <next>
               <block type="text_comment" id="J;NwRkIryEd9_xOZ?LUL">
-                <value name="TEXT">
-                  <shadow type="text" id="VLF2ooMWSI#g5kIo@b?E">
-                    <field name="TEXT">abc</field>
-                  </shadow>
-                  <block type="text" id=":jN+Dk_/DI1Ry[(?97|;">
-                    <field name="TEXT">izpiše: 1</field>
-                  </block>
-                </value>
+			    <field name="TEXT">izpiše: 1</field>
                 <next>
                   <block type="text_print" id="wN__{@oXze]zMQC6Dyr*">
                     <value name="TEXT">
@@ -528,14 +523,7 @@
                     </value>
                     <next>
                       <block type="text_comment" id="6[FGEyT+U1-GyPNxB(_-">
-                        <value name="TEXT">
-                          <shadow type="text" id="VLF2ooMWSI#g5kIo@b?E">
-                            <field name="TEXT">abc</field>
-                          </shadow>
-                          <block type="text" id=")kPh;B2tdAM3%{[mf!h%">
-                            <field name="TEXT">izpiše: [10, 22, 12, 123]</field>
-                          </block>
-                        </value>
+					    <field name="TEXT">izpiše: [10, 22, 12, 123]</field>
                         <next>
                           <block type="text_print" id="[Wr,tnpUUQWaKo(OGn_u">
                             <value name="TEXT">
@@ -571,24 +559,24 @@
 				<ul class="pagination pagination-sm">
 					<li><a href="../1224/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1225/index4.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1225/index.html">54</a></li>
-					<li><a href="../1225/index1.html">55</a></li>
-					<li><a href="../1225/index2.html">56</a></li>
-					<li><a href="../1225/index3.html">57</a></li>
-					<li><a href="../1225/index4.html">58</a></li>
-					<li class="active"><a href="#">59</a></li>
-					<li><a href="../1225/index6.html">60</a></li>
-					<li><a href="../1225/index7.html">61</a></li>
-					<li><a href="../1225/index8.html">62</a></li>
-					<li><a href="../1225/index9.html">63</a></li>
-					<li><a href="../1225/index10.html">64</a></li>
-					<li><a href="../1225/index11.html">65</a></li>
-					<li><a href="../1225/index12.html">66</a></li>
-					<li><a href="../1225/index13.html">67</a></li>
-					<li><a href="../1225/index14.html">68</a></li>
-					<li><a href="../1225/index15.html">69</a></li>
-					<li><a href="../1225/index16.html">70</a></li>
-					<li><a href="../1225/index17.html">71</a></li>
+					<li><a href="../1225/index.html">55</a></li>
+					<li><a href="../1225/index1.html">56</a></li>
+					<li><a href="../1225/index2.html">57</a></li>
+					<li><a href="../1225/index3.html">58</a></li>
+					<li><a href="../1225/index4.html">59</a></li>
+					<li class="active"><a href="#">60</a></li>
+					<li><a href="../1225/index6.html">61</a></li>
+					<li><a href="../1225/index7.html">62</a></li>
+					<li><a href="../1225/index8.html">63</a></li>
+					<li><a href="../1225/index9.html">64</a></li>
+					<li><a href="../1225/index10.html">65</a></li>
+					<li><a href="../1225/index11.html">66</a></li>
+					<li><a href="../1225/index12.html">67</a></li>
+					<li><a href="../1225/index13.html">68</a></li>
+					<li><a href="../1225/index14.html">69</a></li>
+					<li><a href="../1225/index15.html">70</a></li>
+					<li><a href="../1225/index16.html">71</a></li>
+					<li><a href="../1225/index17.html">72</a></li>
 					<li><a href="../1225/index6.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1226/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -606,6 +594,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -624,13 +613,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index5.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -639,10 +631,22 @@
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1225-05-1'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1225-05-1 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1225-05-1" style="display:none"><block type="procedures_defreturn" id="Rv/Nifr2Oo=aYUWHuyo*" x="8" y="8"><mutation statements="false"><arg name="a"></arg><arg name="b"></arg></mutation><field name="NAME">vsota</field><comment pinned="false" h="80" w="160">Opiši to funkcijo...</comment><value name="RETURN"><block type="math_arithmetic" id="p.d_H;43%@5MkaWGX#K4"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="-g83?8^AMsm6,5|PwN|)"><field name="NUM">1</field></shadow><block type="variables_get" id=")8j`,wDqj{-24yCz*x#P"><field name="VAR">a</field></block></value><value name="B"><shadow type="math_number" id="LA[YvTa}QtuO/*A?/loL"><field name="NUM">1</field></shadow><block type="variables_get" id="$G4/]Aq:F+$V7NmZb8gF"><field name="VAR">b</field></block></value></block></value></block></xml>
+<xml id="1225-05-1" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="HU6hNMu,35x%G8k0(y@h">a</variable><variable id="xX%weM/5?d)^#-:R39[R">b</variable></variables><block type="procedures_defreturn" id="Rv/Nifr2Oo=aYUWHuyo*" x="10" y="10"><mutation statements="false"><arg name="a" varid="HU6hNMu,35x%G8k0(y@h"></arg><arg name="b" varid="xX%weM/5?d)^#-:R39[R"></arg></mutation><field name="NAME">vsota</field><comment pinned="false" h="80" w="160">Opiši to funkcijo...</comment><value name="RETURN"><block type="math_arithmetic" id="p.d_H;43%@5MkaWGX#K4"><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="-g83?8^AMsm6,5|PwN|)"><field name="NUM">1</field></shadow><block type="variables_get" id=")8j`,wDqj{-24yCz*x#P"><field name="VAR" id="HU6hNMu,35x%G8k0(y@h">a</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="LA[YvTa}QtuO/*A?/loL"><field name="NUM">1</field></shadow><block type="variables_get" id="$G4/]Aq:F+$V7NmZb8gF"><field name="VAR" id="xX%weM/5?d)^#-:R39[R">b</field></block></value></block></value></block></xml>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -145,7 +146,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-12-1.svg" onerror="this.src='img/1224-12-1.png'">
+<img src="img/1224-12-1.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -190,7 +191,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-12-2.svg" onerror="this.src='img/1224-12-2.png'">
+<img src="img/1224-12-2.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -235,7 +236,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-12-3.svg" onerror="this.src='img/1224-12-3.png'">
+<img src="img/1224-12-3.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -280,7 +281,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1224-12-4.svg" onerror="this.src='img/1224-12-4.png'">
+<img src="img/1224-12-4.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -367,6 +368,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -377,21 +379,21 @@
   <tr>
     <td style="position:relative; height:350px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -420,7 +422,7 @@
     <block type="controls_forEach"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -474,7 +476,7 @@
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -504,7 +506,7 @@
     </block>
     <block type="lists_sort"></block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -523,7 +525,7 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 <!-- Second row end -->
 					</div>
@@ -536,22 +538,22 @@
 				<ul class="pagination pagination-sm">
 					<li><a href="../1223/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1224/index11.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1224/index.html">38</a></li>
-					<li><a href="../1224/index1.html">39</a></li>
-					<li><a href="../1224/index2.html">40</a></li>
-					<li><a href="../1224/index3.html">41</a></li>
-					<li><a href="../1224/index4.html">42</a></li>
-					<li><a href="../1224/index5.html">43</a></li>
-					<li><a href="../1224/index6.html">44</a></li>
-					<li><a href="../1224/index7.html">45</a></li>
-					<li><a href="../1224/index8.html">46</a></li>
-					<li><a href="../1224/index9.html">47</a></li>
-					<li><a href="../1224/index10.html">48</a></li>
-					<li><a href="../1224/index11.html">49</a></li>
-					<li class="active"><a href="#">50</a></li>
-					<li><a href="../1224/index13.html">51</a></li>
-					<li><a href="../1224/index14.html">52</a></li>
-					<li><a href="../1224/index15.html">53</a></li>
+					<li><a href="../1224/index.html">39</a></li>
+					<li><a href="../1224/index1.html">40</a></li>
+					<li><a href="../1224/index2.html">41</a></li>
+					<li><a href="../1224/index3.html">42</a></li>
+					<li><a href="../1224/index4.html">43</a></li>
+					<li><a href="../1224/index5.html">44</a></li>
+					<li><a href="../1224/index6.html">45</a></li>
+					<li><a href="../1224/index7.html">46</a></li>
+					<li><a href="../1224/index8.html">47</a></li>
+					<li><a href="../1224/index9.html">48</a></li>
+					<li><a href="../1224/index10.html">49</a></li>
+					<li><a href="../1224/index11.html">50</a></li>
+					<li class="active"><a href="#">51</a></li>
+					<li><a href="../1224/index13.html">52</a></li>
+					<li><a href="../1224/index14.html">53</a></li>
+					<li><a href="../1224/index15.html">54</a></li>
 					<li><a href="../1224/index13.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1225/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -569,6 +571,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -587,13 +590,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index12.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -602,19 +608,58 @@
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-12-1'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve2Button', function() {CodeEditor.solve2();});
+  CodeEditor.solve2 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-12-2'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve3Button', function() {CodeEditor.solve3();});
+  CodeEditor.solve3 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-12-3'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve4Button', function() {CodeEditor.solve4();});
+  CodeEditor.solve4 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1224-12-4'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1224-12-1 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-12-1" style="display:none"><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="8" y="8"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=".!5X~3Dk4UEuR|tYDd(t"><field name="TEXT">Program izpiše vse negativne elemente v tabeli.</field></block></value><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">3</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">10</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">-5</field></block></value></block></value><next><block type="controls_forEach" id="sSAci1eJ4q:,ej6.7`Rx"><field name="VAR">element</field><value name="LIST"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR">tabela</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="variables_get" id="tW0Vn7-3XwZ~!GShl1Gf"><field name="VAR">element</field></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR">element</field></block></value></block></statement></block></statement></block></next></block></next></block></xml>
+<xml id="1224-12-1" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="/);[8+$(R4@#xsh1(q_-">tabela</variable><variable id="Y_6/]!(0P#*UG0vZpZvv">element</variable></variables><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="10" y="10"><field name="TEXT">Program izpiše vse negativne elemente v tabeli.</field><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR" id="/);[8+$(R4@#xsh1(q_-">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">3</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">10</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">-5</field></block></value></block></value><next><block type="controls_forEach" id="sSAci1eJ4q:,ej6.7`Rx"><field name="VAR" id="Y_6/]!(0P#*UG0vZpZvv">element</field><value name="LIST"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR" id="/);[8+$(R4@#xsh1(q_-">tabela</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="variables_get" id="tW0Vn7-3XwZ~!GShl1Gf"><field name="VAR" id="Y_6/]!(0P#*UG0vZpZvv">element</field></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR" id="Y_6/]!(0P#*UG0vZpZvv">element</field></block></value></block></statement></block></statement></block></next></block></next></block></xml>
 
 <!-- 1224-12-2 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-12-2" style="display:none"><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="8" y="8"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=".!5X~3Dk4UEuR|tYDd(t"><field name="TEXT">Program izpiše vse večkratnike števila 3 v tabeli.</field></block></value><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">18</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">16</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">9</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">18</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">31</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">30</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">16</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">15</field></block></value></block></value><next><block type="controls_forEach" id="sSAci1eJ4q:,ej6.7`Rx"><field name="VAR">element</field><value name="LIST"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR">tabela</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">EQ</field><value name="A"><block type="math_modulo" id="S{0QzTSs[!-`gcY1;}A2"><value name="DIVIDEND"><shadow type="math_number" id="*wS}db4M|vG:BZ*0:^H9"><field name="NUM">64</field></shadow><block type="variables_get" id="tW0Vn7-3XwZ~!GShl1Gf"><field name="VAR">element</field></block></value><value name="DIVISOR"><shadow type="math_number" id="J;rHvEj$k)EMC94HikqQ"><field name="NUM">10</field></shadow><block type="math_number" id="n7Tc^q^iL+^mhn`Ur:m^"><field name="NUM">3</field></block></value></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR">element</field></block></value></block></statement></block></statement></block></next></block></next></block></xml>
+<xml id="1224-12-2" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="W?#Ak_~suIH9{ztmx{Wq">tabela</variable><variable id="*xz{Pm~cUUaJ$,p14te1">element</variable></variables><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="10" y="10"><field name="TEXT">Program izpiše vse večkratnike števila 3 v tabeli.</field><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR" id="W?#Ak_~suIH9{ztmx{Wq">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">18</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">16</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">9</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">18</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">31</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">30</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">16</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">15</field></block></value></block></value><next><block type="controls_forEach" id="sSAci1eJ4q:,ej6.7`Rx"><field name="VAR" id="*xz{Pm~cUUaJ$,p14te1">element</field><value name="LIST"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR" id="W?#Ak_~suIH9{ztmx{Wq">tabela</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">EQ</field><value name="A"><block type="math_modulo" id="S{0QzTSs[!-`gcY1;}A2"><value name="DIVIDEND"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="*wS}db4M|vG:BZ*0:^H9"><field name="NUM">64</field></shadow><block type="variables_get" id="tW0Vn7-3XwZ~!GShl1Gf"><field name="VAR" id="*xz{Pm~cUUaJ$,p14te1">element</field></block></value><value name="DIVISOR"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="J;rHvEj$k)EMC94HikqQ"><field name="NUM">10</field></shadow><block type="math_number" id="n7Tc^q^iL+^mhn`Ur:m^"><field name="NUM">3</field></block></value></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR" id="*xz{Pm~cUUaJ$,p14te1">element</field></block></value></block></statement></block></statement></block></next></block></next></block></xml>
 
 <!-- 1224-12-3 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-12-3" style="display:none"><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="8" y="8"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=".!5X~3Dk4UEuR|tYDd(t"><field name="TEXT">Program izpiše št. negativnih elementov v tabeli.</field></block></value><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">3</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">10</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">-5</field></block></value></block></value><next><block type="variables_set" id="KK%0TbR;@p`@^2.~cD)0"><field name="VAR">stevec</field><value name="VALUE"><block type="math_number" id="X=JsYVOg~0ISj.gq4.F]"><field name="NUM">0</field></block></value><next><block type="controls_forEach" id="sSAci1eJ4q:,ej6.7`Rx"><field name="VAR">element</field><value name="LIST"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR">tabela</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="variables_get" id="tW0Vn7-3XwZ~!GShl1Gf"><field name="VAR">element</field></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="variables_set" id=".4}LQYzhOvME4j0(8]fs"><field name="VAR">stevec</field><value name="VALUE"><block type="math_arithmetic" id="8|aWFFbiN26Dee7.)eb7" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="Uh)Yl!dfq~693(^T]4%2"><field name="NUM">1</field></shadow><block type="variables_get" id="Gd$}iH]GKEmkQd}^#Ns)"><field name="VAR">stevec</field></block></value><value name="B"><shadow type="math_number" id="7a^w+OCgdx/@22K7**I~"><field name="NUM">1</field></shadow><block type="math_number" id="()i:~(2Weo|mxROamI^B"><field name="NUM">1</field></block></value></block></value></block></statement></block></statement><next><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR">stevec</field></block></value></block></next></block></next></block></next></block></next></block></xml>
+<xml id="1224-12-3" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="RTwG*LaZ3lV733S4pQ%{">tabela</variable><variable id="N{_S}cTJ@k_*ay;o/5r4">stevec</variable><variable id="s)chEK],@?qPv`qyz:J2">element</variable></variables><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="10" y="10"><field name="TEXT">Program izpiše št. negativnih elementov v tabeli.</field><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR" id="RTwG*LaZ3lV733S4pQ%{">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">3</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">10</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">-5</field></block></value></block></value><next><block type="variables_set" id="KK%0TbR;@p`@^2.~cD)0"><field name="VAR" id="N{_S}cTJ@k_*ay;o/5r4">stevec</field><value name="VALUE"><block type="math_number" id="X=JsYVOg~0ISj.gq4.F]"><field name="NUM">0</field></block></value><next><block type="controls_forEach" id="sSAci1eJ4q:,ej6.7`Rx"><field name="VAR" id="s)chEK],@?qPv`qyz:J2">element</field><value name="LIST"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR" id="RTwG*LaZ3lV733S4pQ%{">tabela</field></block></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="variables_get" id="tW0Vn7-3XwZ~!GShl1Gf"><field name="VAR" id="s)chEK],@?qPv`qyz:J2">element</field></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="variables_set" id=".4}LQYzhOvME4j0(8]fs"><field name="VAR" id="N{_S}cTJ@k_*ay;o/5r4">stevec</field><value name="VALUE"><block type="math_arithmetic" id="8|aWFFbiN26Dee7.)eb7" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="Uh)Yl!dfq~693(^T]4%2"><field name="NUM">1</field></shadow><block type="variables_get" id="Gd$}iH]GKEmkQd}^#Ns)"><field name="VAR" id="N{_S}cTJ@k_*ay;o/5r4">stevec</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="7a^w+OCgdx/@22K7**I~"><field name="NUM">1</field></shadow><block type="math_number" id="()i:~(2Weo|mxROamI^B"><field name="NUM">1</field></block></value></block></value></block></statement></block></statement><next><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR" id="N{_S}cTJ@k_*ay;o/5r4">stevec</field></block></value></block></next></block></next></block></next></block></next></block></xml>
 
 <!-- 1224-12-4 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1224-12-4" style="display:none"><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="8" y="8"><value name="TEXT"><shadow type="text" id="9Y8e/y%;cBWJ2,D:z1sv"><field name="TEXT">abc</field></shadow><block type="text" id=".!5X~3Dk4UEuR|tYDd(t"><field name="TEXT">Program izpiše indekse negativnih elementov v tabeli.</field></block></value><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">3</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">10</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">-5</field></block></value></block></value><next><block type="controls_for" id=".OR7r1)x(vh=AtKX79kn"><field name="VAR">indeks</field><value name="FROM"><shadow type="math_number" id="s~6n.]Gb2S53z3..szp-"><field name="NUM">0</field></shadow><block type="math_number" id="+E|PhN*pG+n5;4}nD?Kd"><field name="NUM">0</field></block></value><value name="TO"><shadow type="math_number" id="}@HhQf.lSqK5u(Dayn,l"><field name="NUM">10</field></shadow><block type="lists_length" id="1HHSMCsKe|1GK7AN8er}"><value name="VALUE"><block type="variables_get" id="l51izXM[r)!C2PAszF97"><field name="VAR">tabela</field></block></value></block></value><value name="BY"><shadow type="math_number" id=")MyA#vr9`IyNEJ:D{AE#"><field name="NUM">1</field></shadow></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="lists_getIndex" id="sm;EDFI6=[V`{*?/A#T-"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="17MRKxos_x41~hCT|j_E"><field name="VAR">tabela</field></block></value><value name="AT"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR">indeks</field></block></value></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR">indeks</field></block></value></block></statement></block></statement></block></next></block></next></block></xml>
+<xml id="1224-12-4" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="[~:0hOp]bCtD050GCFug">tabela</variable><variable id="{{kTEm0-Hd$??|5P=|[~">indeks</variable></variables><block type="text_comment" id="D{OHXp+XQd]BZSv)fnc:" x="10" y="10"><field name="TEXT">Program izpiše indekse neg. elementov v tabeli.</field><next><block type="variables_set" id="B6y;/MxdnaM2RjT2jy}-"><field name="VAR" id="[~:0hOp]bCtD050GCFug">tabela</field><value name="VALUE"><block type="lists_create_with" id="d^~)Nq2WmF}=YOM7f43*" inline="true"><mutation items="8"></mutation><value name="ADD0"><block type="math_number" id="wS$,!D/,MNJu{rpB,Dr."><field name="NUM">-6</field></block></value><value name="ADD1"><block type="math_number" id="*auufRP4qnMUo%?yg5cr"><field name="NUM">10</field></block></value><value name="ADD2"><block type="math_number" id="tpK(rgbmYS+Dflq+u^{n"><field name="NUM">7</field></block></value><value name="ADD3"><block type="math_number" id=",Up{*Z59pSFr=1e3s1*]"><field name="NUM">-11</field></block></value><value name="ADD4"><block type="math_number" id="udJ|vcK!,jYT18k8SGIs"><field name="NUM">0</field></block></value><value name="ADD5"><block type="math_number" id="7g?S8bqp%*W[;QA!EeEM"><field name="NUM">3</field></block></value><value name="ADD6"><block type="math_number" id="{BV~[wP,*cJ]@s/}F(+S"><field name="NUM">10</field></block></value><value name="ADD7"><block type="math_number" id="[`ZwNK1wQ6S/FVvSiC09"><field name="NUM">-5</field></block></value></block></value><next><block type="controls_for" id=".OR7r1)x(vh=AtKX79kn"><field name="VAR" id="{{kTEm0-Hd$??|5P=|[~">indeks</field><value name="FROM"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="s~6n.]Gb2S53z3..szp-"><field name="NUM">0</field></shadow><block type="math_number" id="+E|PhN*pG+n5;4}nD?Kd"><field name="NUM">0</field></block></value><value name="TO"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="}@HhQf.lSqK5u(Dayn,l"><field name="NUM">10</field></shadow><block type="lists_length" id="1HHSMCsKe|1GK7AN8er}"><value name="VALUE"><block type="variables_get" id="l51izXM[r)!C2PAszF97"><field name="VAR" id="[~:0hOp]bCtD050GCFug">tabela</field></block></value></block></value><value name="BY"><shadow type="math_number" id=")MyA#vr9`IyNEJ:D{AE#"><field name="NUM">1</field></shadow></value><statement name="DO"><block type="controls_if" id=";MuOG.raXIX0DT#+zX9,"><value name="IF0"><block type="logic_compare" id="/42Lk3PVe#(]A8Nd9K)|"><field name="OP">LT</field><value name="A"><block type="lists_getIndex" id="sm;EDFI6=[V`{*?/A#T-"><mutation statement="false" at="true"></mutation><field name="MODE">GET</field><field name="WHERE">FROM_START</field><value name="VALUE"><block type="variables_get" id="17MRKxos_x41~hCT|j_E"><field name="VAR" id="[~:0hOp]bCtD050GCFug">tabela</field></block></value><value name="AT"><block type="variables_get" id=".JcyY-aJqW%1q7UnfNXq"><field name="VAR" id="{{kTEm0-Hd$??|5P=|[~">indeks</field></block></value></block></value><value name="B"><block type="math_number" id="71NDL,NEQ~]}9T8PZ32B"><field name="NUM">0</field></block></value></block></value><statement name="DO0"><block type="text_print" id="~2[E=fJj40~F(rpx.wv#"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="{f!hv-c+k|er}_LDE{,Z"><field name="TEXT">abc</field></shadow><block type="variables_get" id="7TU/dpflI*0_/a!qV/2q"><field name="VAR" id="{{kTEm0-Hd$??|5P=|[~">indeks</field></block></value></block></statement></block></statement></block></next></block></next></block></xml>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -145,7 +146,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1221-08-1.svg" onerror="this.src='img/1221-08-1.png'">
+<img src="img/1221-08-1.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -190,10 +191,10 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1221-08-2.svg" onerror="this.src='img/1221-08-2.png'">
+<img src="img/1221-08-2.svg">
 </pre>
 <p align="justify">Enostavne delčke, ki bi zavzeli preveč prostora lahko tudi skrčimo tako, da z desnim gumbom miške kliknemo delček in nato <code>Skrči delček</code>.</p>
-<p align="justify">Tako imamo v gornji rešitvi skrčen delček <img src="img/1221-08-2a.svg" onerror="this.src='img/1221-08-2a.png'">, ki je v bistvu enak <img src="img/1221-08-2b.svg" onerror="this.src='img/1221-08-2b.png'">.</p>
+<p align="justify">Tako imamo v gornji rešitvi skrčen delček <img src="img/1221-08-2a.svg">, ki je v bistvu enak <img src="img/1221-08-2b.svg">.</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" id="solve2Button"><span class="fa fa-arrow-right"></span> Prenesi v urejevalnik</button>
@@ -282,7 +283,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1221-08-4.svg" onerror="this.src='img/1221-08-4.png'">
+<img src="img/1221-08-4.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -327,7 +328,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1221-08-5.svg" onerror="this.src='img/1221-08-5.png'">
+<img src="img/1221-08-5.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -351,7 +352,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1221-08-6.svg" onerror="this.src='img/1221-08-6.png'">
+<img src="img/1221-08-6.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -375,7 +376,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1221-08-7.svg" onerror="this.src='img/1221-08-7.png'">
+<img src="img/1221-08-7.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -490,6 +491,7 @@
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -500,14 +502,14 @@
   <tr>
     <td style="position:relative; height:400px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display:none">
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -546,7 +548,7 @@
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_print">
       <value name="TEXT">
@@ -564,7 +566,7 @@
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 <!-- Right column end -->
 					</div>
@@ -604,6 +606,7 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -622,13 +625,16 @@
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index8.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -637,28 +643,94 @@
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1221-08-1'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve2Button', function() {CodeEditor.solve2();});
+  CodeEditor.solve2 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1221-08-2'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve3Button', function() {CodeEditor.solve3();});
+  CodeEditor.solve3 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1221-08-3'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve4Button', function() {CodeEditor.solve4();});
+  CodeEditor.solve4 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1221-08-4'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve5Button', function() {CodeEditor.solve5();});
+  CodeEditor.solve5 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1221-08-5'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve6Button', function() {CodeEditor.solve6();});
+  CodeEditor.solve6 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1221-08-6'), CodeEditor.workspace);
+  };
+
+  CodeEditor.bindClick('solve7Button', function() {CodeEditor.solve7();});
+  CodeEditor.solve7 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1221-08-7'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1221-08-1 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1221-08-1" style="display:none"><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="8" y="8"><field name="VAR">ploscina</field><value name="VALUE"><block type="math_arithmetic" id="b`if%ZtJ.g0V;:_RzNWd"><field name="OP">MULTIPLY</field><value name="A"><shadow type="math_number" id="itW,Q5;(*]e=SVRsr-D*"><field name="NUM">1</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">7</field></block></value><value name="B"><shadow type="math_number" id=",C6esfhJG_6kLGcF{u9k"><field name="NUM">1</field></shadow><block type="math_number" id="#m?emO7dIiQLg#vnG.`t"><field name="NUM">7</field></block></value></block></value><next><block type="text_print" id=":Wle=?Jldhu/WtZ^d[o@"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="QmE-aJiP/Wtjw1i^pr]i"><field name="VAR">ploscina</field></block></value></block></next></block></xml>
+<xml id="1221-08-1" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="^|m,.{Q`6OY=CIRbR(qc">ploscina</variable></variables><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="10" y="10"><field name="VAR" id="^|m,.{Q`6OY=CIRbR(qc">ploscina</field><value name="VALUE"><block type="math_arithmetic" id="b`if%ZtJ.g0V;:_RzNWd"><field name="OP">MULTIPLY</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="itW,Q5;(*]e=SVRsr-D*"><field name="NUM">1</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">7</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id=",C6esfhJG_6kLGcF{u9k"><field name="NUM">1</field></shadow><block type="math_number" id="#m?emO7dIiQLg#vnG.`t"><field name="NUM">7</field></block></value></block></value><next><block type="text_print" id=":Wle=?Jldhu/WtZ^d[o@"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="QmE-aJiP/Wtjw1i^pr]i"><field name="VAR" id="^|m,.{Q`6OY=CIRbR(qc">ploscina</field></block></value></block></next></block></xml>
 
 <!-- 1221-08-2 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1221-08-2" style="display:none"><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="8" y="8"><field name="VAR">povp1</field><value name="VALUE"><block type="math_arithmetic" id="b`if%ZtJ.g0V;:_RzNWd"><field name="OP">DIVIDE</field><value name="A"><shadow type="math_number" id="itW,Q5;(*]e=SVRsr-D*"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="LO~UuD@9o^wdW)lOQu`K" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="`|x]}+`z11!{VslPhCVu"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="P)|V)!D,7iIHv}ECrOGm"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="Wb#+L1d?:|QZu{__](`|"><field name="NUM">1</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">3</field></block></value><value name="B"><shadow type="math_number" id="nP|?ww}98k64zOQ1`_Kp"><field name="NUM">1</field></shadow><block type="math_number" id="8%c[e`Ge(2R$$//u)%A/"><field name="NUM">5</field></block></value></block></value><value name="B"><shadow type="math_number" id="Iap,0g:7jT8Su~lvZ3|a"><field name="NUM">1</field></shadow><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">4</field></block></value></block></value><value name="B"><shadow type="math_number" id=",C6esfhJG_6kLGcF{u9k"><field name="NUM">1</field></shadow><block type="math_number" id="#m?emO7dIiQLg#vnG.`t"><field name="NUM">3</field></block></value></block></value><next><block type="text_print" id=":Wle=?Jldhu/WtZ^d[o@"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="QmE-aJiP/Wtjw1i^pr]i"><field name="VAR">povp1</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR">povp2</field><value name="VALUE"><block type="math_arithmetic" id="uvKyKCOAG]3zcz*ZV!v+"><field name="OP">DIVIDE</field><value name="A"><shadow type="math_number" id="itW,Q5;(*]e=SVRsr-D*"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="[XoB2N,gAO~6EJ|8K#xZ" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="`|x]}+`z11!{VslPhCVu"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="JRR1BNulkB,XvB*0fRBa"><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="Wb#+L1d?:|QZu{__](`|"><field name="NUM">1</field></shadow><block type="math_number" id="h.0YVP{6|!iBe^B^C5$S"><field name="NUM">3</field></block></value><value name="B"><shadow type="math_number" id="nP|?ww}98k64zOQ1`_Kp"><field name="NUM">1</field></shadow><block type="math_number" id="3RM|86[CLcWxdD-m4yMP"><field name="NUM">5</field></block></value></block></value><value name="B"><shadow type="math_number" id="Iap,0g:7jT8Su~lvZ3|a"><field name="NUM">1</field></shadow><block type="math_number" id="pKcbjVa634SAEmn1!wxZ"><field name="NUM">3</field></block></value></block></value><value name="B"><shadow type="math_number" id=",C6esfhJG_6kLGcF{u9k"><field name="NUM">1</field></shadow><block type="math_number" id="54s+FO`Pkv7ISczR,+TN"><field name="NUM">3</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR">povp2</field></block></value></block></next></block></next></block></next></block></xml>
+<xml id="1221-08-2" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="IKaBn/,[bjTO%N}EYY!%">povp1</variable><variable id="t1;t`!j~w3h(8a4=*zfC">povp2</variable></variables><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="10" y="10"><field name="VAR" id="IKaBn/,[bjTO%N}EYY!%">povp1</field><value name="VALUE"><block type="math_arithmetic" id="b`if%ZtJ.g0V;:_RzNWd"><field name="OP">DIVIDE</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="itW,Q5;(*]e=SVRsr-D*"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="LO~UuD@9o^wdW)lOQu`K" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="`|x]}+`z11!{VslPhCVu"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="P)|V)!D,7iIHv}ECrOGm"><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="Wb#+L1d?:|QZu{__](`|"><field name="NUM">1</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">3</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="nP|?ww}98k64zOQ1`_Kp"><field name="NUM">1</field></shadow><block type="math_number" id="8%c[e`Ge(2R$$//u)%A/"><field name="NUM">5</field></block></value></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="Iap,0g:7jT8Su~lvZ3|a"><field name="NUM">1</field></shadow><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">4</field></block></value></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id=",C6esfhJG_6kLGcF{u9k"><field name="NUM">1</field></shadow><block type="math_number" id="#m?emO7dIiQLg#vnG.`t"><field name="NUM">3</field></block></value></block></value><next><block type="text_print" id=":Wle=?Jldhu/WtZ^d[o@"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="QmE-aJiP/Wtjw1i^pr]i"><field name="VAR" id="IKaBn/,[bjTO%N}EYY!%">povp1</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR" id="t1;t`!j~w3h(8a4=*zfC">povp2</field><value name="VALUE"><block type="math_arithmetic" id="uvKyKCOAG]3zcz*ZV!v+"><field name="OP">DIVIDE</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="itW,Q5;(*]e=SVRsr-D*"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="[XoB2N,gAO~6EJ|8K#xZ" collapsed="true"><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="`|x]}+`z11!{VslPhCVu"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="JRR1BNulkB,XvB*0fRBa"><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="Wb#+L1d?:|QZu{__](`|"><field name="NUM">1</field></shadow><block type="math_number" id="h.0YVP{6|!iBe^B^C5$S"><field name="NUM">3</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="nP|?ww}98k64zOQ1`_Kp"><field name="NUM">1</field></shadow><block type="math_number" id="3RM|86[CLcWxdD-m4yMP"><field name="NUM">5</field></block></value></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="Iap,0g:7jT8Su~lvZ3|a"><field name="NUM">1</field></shadow><block type="math_number" id="pKcbjVa634SAEmn1!wxZ"><field name="NUM">3</field></block></value></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id=",C6esfhJG_6kLGcF{u9k"><field name="NUM">1</field></shadow><block type="math_number" id="54s+FO`Pkv7ISczR,+TN"><field name="NUM">3</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR" id="t1;t`!j~w3h(8a4=*zfC">povp2</field></block></value></block></next></block></next></block></next></block></xml>
 
 <!-- 1221-08-3 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1221-08-3" style="display:none"><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="8" y="8"><field name="VAR">vsak</field><value name="VALUE"><block type="math_floor_division" id="7FaKte#YxkjHB$g7IUQm"><value name="DIVIDEND"><shadow type="math_number" id="65.%KnPlGi=[vq9dlFzc"><field name="NUM">64</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">50</field></block></value><value name="DIVISOR"><shadow type="math_number" id="h{xPAXV6vL/C7poVA,SI"><field name="NUM">10</field></shadow><block type="math_number" id="8%c[e`Ge(2R$$//u)%A/"><field name="NUM">6</field></block></value></block></value><next><block type="text_print" id=":Wle=?Jldhu/WtZ^d[o@"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="QmE-aJiP/Wtjw1i^pr]i"><field name="VAR">vsak</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR">ostane</field><value name="VALUE"><block type="math_modulo" id="k[g{AqZjyJh5!IU@+Y~{"><value name="DIVIDEND"><shadow type="math_number" id="XSI_Z~I95yz4/YSKBtVo"><field name="NUM">64</field></shadow><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">50</field></block></value><value name="DIVISOR"><shadow type="math_number" id=".EHa52]Kwx?g0P5GyPUR"><field name="NUM">10</field></shadow><block type="math_number" id="#m?emO7dIiQLg#vnG.`t"><field name="NUM">6</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR">ostane</field></block></value></block></next></block></next></block></next></block></xml>
+<xml id="1221-08-3" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="p?Mf?[l#6IwooY@d{3)Y">vsak</variable><variable id="HKpzx]aX-|mp.c1:/`x#">ostane</variable></variables><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="10" y="10"><field name="VAR" id="p?Mf?[l#6IwooY@d{3)Y">vsak</field><value name="VALUE"><block type="math_floor_division" id="7FaKte#YxkjHB$g7IUQm"><value name="DIVIDEND"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="65.%KnPlGi=[vq9dlFzc"><field name="NUM">64</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">50</field></block></value><value name="DIVISOR"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="h{xPAXV6vL/C7poVA,SI"><field name="NUM">10</field></shadow><block type="math_number" id="8%c[e`Ge(2R$$//u)%A/"><field name="NUM">6</field></block></value></block></value><next><block type="text_print" id=":Wle=?Jldhu/WtZ^d[o@"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="QmE-aJiP/Wtjw1i^pr]i"><field name="VAR" id="p?Mf?[l#6IwooY@d{3)Y">vsak</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR" id="HKpzx]aX-|mp.c1:/`x#">ostane</field><value name="VALUE"><block type="math_modulo" id="k[g{AqZjyJh5!IU@+Y~{"><value name="DIVIDEND"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="XSI_Z~I95yz4/YSKBtVo"><field name="NUM">64</field></shadow><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">50</field></block></value><value name="DIVISOR"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id=".EHa52]Kwx?g0P5GyPUR"><field name="NUM">10</field></shadow><block type="math_number" id="#m?emO7dIiQLg#vnG.`t"><field name="NUM">6</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR" id="HKpzx]aX-|mp.c1:/`x#">ostane</field></block></value></block></next></block></next></block></next></block></xml>
 
 <!-- 1221-08-4 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1221-08-4" style="display:none"><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="8" y="8"><field name="VAR">razlika</field><value name="VALUE"><block type="math_arithmetic" id="a06[EdJU#UKYWvz3|`0["><field name="OP">MINUS</field><value name="A"><shadow type="math_number" id="p}pV(B9y_c?(Ur6iJ5$J"><field name="NUM">1</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">500</field></block></value><value name="B"><shadow type="math_number" id="sG219DL6vRY=:8)t@.;4"><field name="NUM">1</field></shadow><block type="math_number" id="8%c[e`Ge(2R$$//u)%A/"><field name="NUM">300</field></block></value></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR">odstotki</field><value name="VALUE"><block type="math_arithmetic" id="13]G1MOwhObLoRq=/ppE"><field name="OP">DIVIDE</field><value name="A"><shadow type="math_number" id="ah0fT5R~E2plQV,(A5:1"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="kDmwp2]x;qoKcL?Vrz#6"><field name="OP">MULTIPLY</field><value name="A"><shadow type="math_number" id="B.UNHUg02v,]{1t-zSSo"><field name="NUM">1</field></shadow><block type="math_number" id="#m?emO7dIiQLg#vnG.`t"><field name="NUM">100</field></block></value><value name="B"><shadow type="math_number" id="8C;Xr)%*cjHaj|4wS?:9"><field name="NUM">1</field></shadow><block type="variables_get" id="Ei^tLz?3nS4cP01TOwf^"><field name="VAR">razlika</field></block></value></block></value><value name="B"><shadow type="math_number" id="aT;xw?f_/bymxIq)W7l-"><field name="NUM">1</field></shadow><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">500</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR">odstotki</field></block></value></block></next></block></next></block></xml>
+<xml id="1221-08-4" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id=",hf}BJs8~cQ.48lDP:KS">razlika</variable><variable id="^n,(Kwp+@7Gc09oHGn!E">odstotki</variable></variables><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="10" y="10"><field name="VAR" id=",hf}BJs8~cQ.48lDP:KS">razlika</field><value name="VALUE"><block type="math_arithmetic" id="a06[EdJU#UKYWvz3|`0["><field name="OP">MINUS</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="p}pV(B9y_c?(Ur6iJ5$J"><field name="NUM">1</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">500</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="sG219DL6vRY=:8)t@.;4"><field name="NUM">1</field></shadow><block type="math_number" id="8%c[e`Ge(2R$$//u)%A/"><field name="NUM">300</field></block></value></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR" id="^n,(Kwp+@7Gc09oHGn!E">odstotki</field><value name="VALUE"><block type="math_arithmetic" id="13]G1MOwhObLoRq=/ppE"><field name="OP">DIVIDE</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="ah0fT5R~E2plQV,(A5:1"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="kDmwp2]x;qoKcL?Vrz#6"><field name="OP">MULTIPLY</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="B.UNHUg02v,]{1t-zSSo"><field name="NUM">1</field></shadow><block type="math_number" id="#m?emO7dIiQLg#vnG.`t"><field name="NUM">100</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="8C;Xr)%*cjHaj|4wS?:9"><field name="NUM">1</field></shadow><block type="variables_get" id="Ei^tLz?3nS4cP01TOwf^"><field name="VAR" id=",hf}BJs8~cQ.48lDP:KS">razlika</field></block></value></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="aT;xw?f_/bymxIq)W7l-"><field name="NUM">1</field></shadow><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">500</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR" id="^n,(Kwp+@7Gc09oHGn!E">odstotki</field></block></value></block></next></block></next></block></xml>
 
 <!-- 1221-08-5 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1221-08-5" style="display:none"><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="8" y="8"><field name="VAR">hojaNaMinuto</field><value name="VALUE"><block type="math_arithmetic" id="a06[EdJU#UKYWvz3|`0["><field name="OP">DIVIDE</field><value name="A"><shadow type="math_number" id="p}pV(B9y_c?(Ur6iJ5$J"><field name="NUM">1</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">5</field></block></value><value name="B"><shadow type="math_number" id="sG219DL6vRY=:8)t@.;4"><field name="NUM">1</field></shadow><block type="math_number" id="8%c[e`Ge(2R$$//u)%A/"><field name="NUM">60</field></block></value></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR">hoja</field><value name="VALUE"><block type="math_arithmetic" id="13]G1MOwhObLoRq=/ppE"><field name="OP">MULTIPLY</field><value name="A"><shadow type="math_number" id="ah0fT5R~E2plQV,(A5:1"><field name="NUM">1</field></shadow><block type="variables_get" id="Ei^tLz?3nS4cP01TOwf^"><field name="VAR">hojaNaMinuto</field></block></value><value name="B"><shadow type="math_number" id="aT;xw?f_/bymxIq)W7l-"><field name="NUM">1</field></shadow><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">37</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR">hoja</field></block></value></block></next></block></next></block></xml>
+<xml id="1221-08-5" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="Q@/1LO$.laYoNyVhDZ/w">hojaNaMinuto</variable><variable id="!dud}?9_,Qh9t}!:X{sF">hoja</variable></variables><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="10" y="10"><field name="VAR" id="Q@/1LO$.laYoNyVhDZ/w">hojaNaMinuto</field><value name="VALUE"><block type="math_arithmetic" id="a06[EdJU#UKYWvz3|`0["><field name="OP">DIVIDE</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="p}pV(B9y_c?(Ur6iJ5$J"><field name="NUM">1</field></shadow><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">5</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="sG219DL6vRY=:8)t@.;4"><field name="NUM">1</field></shadow><block type="math_number" id="8%c[e`Ge(2R$$//u)%A/"><field name="NUM">60</field></block></value></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR" id="!dud}?9_,Qh9t}!:X{sF">hoja</field><value name="VALUE"><block type="math_arithmetic" id="13]G1MOwhObLoRq=/ppE"><field name="OP">MULTIPLY</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="ah0fT5R~E2plQV,(A5:1"><field name="NUM">1</field></shadow><block type="variables_get" id="Ei^tLz?3nS4cP01TOwf^"><field name="VAR" id="Q@/1LO$.laYoNyVhDZ/w">hojaNaMinuto</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="aT;xw?f_/bymxIq)W7l-"><field name="NUM">1</field></shadow><block type="math_number" id="bDG}hBBc4z#.%Kub8|Y]"><field name="NUM">37</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR" id="!dud}?9_,Qh9t}!:X{sF">hoja</field></block></value></block></next></block></next></block></xml>
 
 <!-- 1221-08-6 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1221-08-6" style="display:none"><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="8" y="8"><field name="VAR">a</field><value name="VALUE"><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">4</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR">prostornina</field><value name="VALUE"><block type="math_arithmetic" id="13]G1MOwhObLoRq=/ppE"><field name="OP">MULTIPLY</field><value name="A"><shadow type="math_number" id="ah0fT5R~E2plQV,(A5:1"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="a06[EdJU#UKYWvz3|`0["><field name="OP">MULTIPLY</field><value name="A"><shadow type="math_number" id="p}pV(B9y_c?(Ur6iJ5$J"><field name="NUM">1</field></shadow><block type="variables_get" id="xQ0vi6WtEqTDO5hJ;8a,"><field name="VAR">a</field></block></value><value name="B"><shadow type="math_number" id="sG219DL6vRY=:8)t@.;4"><field name="NUM">1</field></shadow><block type="variables_get" id="WTplzbKB4]hj8K.(t6RK"><field name="VAR">a</field></block></value></block></value><value name="B"><shadow type="math_number" id="aT;xw?f_/bymxIq)W7l-"><field name="NUM">1</field></shadow><block type="variables_get" id="Ei^tLz?3nS4cP01TOwf^"><field name="VAR">a</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR">prostornina</field></block></value></block></next></block></next></block></xml>
+<xml id="1221-08-6" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="+i|(0lf5H47M9DWwdqe@">a</variable><variable id="l6`aD/mcQ.cL-CI(Ex_J">prostornina</variable></variables><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="10" y="10"><field name="VAR" id="+i|(0lf5H47M9DWwdqe@">a</field><value name="VALUE"><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">4</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR" id="l6`aD/mcQ.cL-CI(Ex_J">prostornina</field><value name="VALUE"><block type="math_arithmetic" id="13]G1MOwhObLoRq=/ppE"><field name="OP">MULTIPLY</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="ah0fT5R~E2plQV,(A5:1"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="a06[EdJU#UKYWvz3|`0["><field name="OP">MULTIPLY</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="p}pV(B9y_c?(Ur6iJ5$J"><field name="NUM">1</field></shadow><block type="variables_get" id="xQ0vi6WtEqTDO5hJ;8a,"><field name="VAR" id="+i|(0lf5H47M9DWwdqe@">a</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="sG219DL6vRY=:8)t@.;4"><field name="NUM">1</field></shadow><block type="variables_get" id="WTplzbKB4]hj8K.(t6RK"><field name="VAR" id="+i|(0lf5H47M9DWwdqe@">a</field></block></value></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="aT;xw?f_/bymxIq)W7l-"><field name="NUM">1</field></shadow><block type="variables_get" id="Ei^tLz?3nS4cP01TOwf^"><field name="VAR" id="+i|(0lf5H47M9DWwdqe@">a</field></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR" id="l6`aD/mcQ.cL-CI(Ex_J">prostornina</field></block></value></block></next></block></next></block></xml>
 
 <!-- 1221-08-7 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1221-08-7" style="display:none"><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="8" y="8"><field name="VAR">a</field><value name="VALUE"><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">5</field></block></value><next><block type="variables_set" id="/ql[=J2bwt$)M.y-w;2]"><field name="VAR">b</field><value name="VALUE"><block type="math_number" id="am|$z,O;,o/Kv.E:LLF%"><field name="NUM">3</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR">obseg</field><value name="VALUE"><block type="math_arithmetic" id="13]G1MOwhObLoRq=/ppE"><field name="OP">MULTIPLY</field><value name="A"><shadow type="math_number" id="ah0fT5R~E2plQV,(A5:1"><field name="NUM">1</field></shadow><block type="math_number" id="RnStRx]-RVy5:#nj[;Ni"><field name="NUM">2</field></block></value><value name="B"><shadow type="math_number" id="aT;xw?f_/bymxIq)W7l-"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="a06[EdJU#UKYWvz3|`0["><field name="OP">ADD</field><value name="A"><shadow type="math_number" id="p}pV(B9y_c?(Ur6iJ5$J"><field name="NUM">1</field></shadow><block type="variables_get" id="xQ0vi6WtEqTDO5hJ;8a,"><field name="VAR">a</field></block></value><value name="B"><shadow type="math_number" id="sG219DL6vRY=:8)t@.;4"><field name="NUM">1</field></shadow><block type="variables_get" id="WTplzbKB4]hj8K.(t6RK"><field name="VAR">b</field></block></value></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR">obseg</field></block></value></block></next></block></next></block></next></block></xml>
+<xml id="1221-08-7" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="=7jM`fV410;]Zj3RTNN}">a</variable><variable id="qP3l-P-{m}iETkrw)4Na">b</variable><variable id="uI{uTKUj+]n|GHKcN4Zg">obseg</variable></variables><block type="variables_set" id="6.8G6aK!8yjtk7C!.!_." x="10" y="10"><field name="VAR" id="=7jM`fV410;]Zj3RTNN}">a</field><value name="VALUE"><block type="math_number" id="o#erq/JvO:y#^XjA?co!"><field name="NUM">5</field></block></value><next><block type="variables_set" id="/ql[=J2bwt$)M.y-w;2]"><field name="VAR" id="qP3l-P-{m}iETkrw)4Na">b</field><value name="VALUE"><block type="math_number" id="am|$z,O;,o/Kv.E:LLF%"><field name="NUM">3</field></block></value><next><block type="variables_set" id="JPt!7vJ8FoL(h51*N37-"><field name="VAR" id="uI{uTKUj+]n|GHKcN4Zg">obseg</field><value name="VALUE"><block type="math_arithmetic" id="13]G1MOwhObLoRq=/ppE"><field name="OP">MULTIPLY</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="ah0fT5R~E2plQV,(A5:1"><field name="NUM">1</field></shadow><block type="math_number" id="RnStRx]-RVy5:#nj[;Ni"><field name="NUM">2</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="aT;xw?f_/bymxIq)W7l-"><field name="NUM">1</field></shadow><block type="math_arithmetic" id="a06[EdJU#UKYWvz3|`0["><field name="OP">ADD</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="p}pV(B9y_c?(Ur6iJ5$J"><field name="NUM">1</field></shadow><block type="variables_get" id="xQ0vi6WtEqTDO5hJ;8a,"><field name="VAR" id="=7jM`fV410;]Zj3RTNN}">a</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="sG219DL6vRY=:8)t@.;4"><field name="NUM">1</field></shadow><block type="variables_get" id="WTplzbKB4]hj8K.(t6RK"><field name="VAR" id="qP3l-P-{m}iETkrw)4Na">b</field></block></value></block></value></block></value><next><block type="text_print" id="Uw/^ms+Y,%=][4:V$B/k"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="|rXLyD3G4n+9QoLvi5=L"><field name="TEXT">abc</field></shadow><block type="variables_get" id="cY*]sSVUbZT~oatry@`-"><field name="VAR" id="uI{uTKUj+]n|GHKcN4Zg">obseg</field></block></value></block></next></block></next></block></next></block></xml>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

@@ -194,7 +194,7 @@ dvanajst
   <tr>
     <td style="position:relative; height:400px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
@@ -202,19 +202,19 @@ dvanajst
   <button type="button" class="btn btn-info"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
   <button type="button" class="btn btn-info"  id="trashButton">Počisti</button>
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#hint1"><span class="fa fa-question"></span> Namig</button>
-  <button type="button" class="btn btn-info"  id="solveButton"><span class="fa fa-check"></span> Rešitev</button>
+  <button type="button" class="btn btn-info"  id="solve1Button"><span class="fa fa-check"></span> Rešitev</button>
 </div>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catLogic}" colour="200">
+  <category name="{catLogic}" categorystyle="logic_category">
     <block type="controls_if"></block>
     <block type="logic_compare"></block>
     <block type="logic_operation"></block>
     <block type="logic_negate"></block>
     <block type="logic_boolean"></block>
   </category>
-  <category name="{catLoops}" colour="320">
+  <category name="{catLoops}" categorystyle="loop_category">
     <block type="controls_whileUntil"></block>
     <block type="controls_for">
       <value name="FROM">
@@ -237,7 +237,7 @@ dvanajst
     <block type="controls_forEach_text"></block>
     <block type="controls_flow_statements"></block>
   </category>
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -276,7 +276,7 @@ dvanajst
       </value>
     </block>
   </category>
-  <category name="{catLists}" colour="10">
+  <category name="{catLists}" categorystyle="list_category">
     <block type="lists_create_with">
       <mutation items="0"></mutation>
     </block>
@@ -306,7 +306,7 @@ dvanajst
     </block>
     <block type="lists_sort"></block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_append">
@@ -329,6 +329,8 @@ dvanajst
       </value>
     </block>
     <block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
       <value name="VALUE">
         <block type="variables_get">
           <field name="VAR">{textVariable}</field>
@@ -388,8 +390,8 @@ dvanajst
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
-  <category name="{catFunctions}" colour="120" custom="PROCEDURE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
+  <category name="{catFunctions}" categorystyle="procedure_category" custom="PROCEDURE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -401,14 +403,7 @@ dvanajst
     <comment pinned="false" h="80" w="160">Opiši to funkcijo...</comment>
     <statement name="STACK">
       <block type="text_comment" id="11">
-        <value name="TEXT">
-          <shadow type="text" id="12">
-            <field name="TEXT">abc</field>
-          </shadow>
-          <block type="text" id="13">
-            <field name="TEXT">Poiščimo dolžino najdaljšega niza v tabeli.</field>
-          </block>
-        </value>
+	    <field name="TEXT">Poiščimo dolžino najdaljšega niza v tabeli.</field>
         <next>
           <block type="variables_set" id="14">
             <field name="VAR">naj</field>
@@ -473,14 +468,7 @@ dvanajst
                 </statement>
                 <next>
                   <block type="text_comment" id="28">
-                    <value name="TEXT">
-                      <shadow type="text" id="29">
-                        <field name="TEXT">abc</field>
-                      </shadow>
-                      <block type="text" id="30">
-                        <field name="TEXT">Izpišemo nize z ustreznim številom presledkov.</field>
-                      </block>
-                    </value>
+				    <field name="TEXT">Izpišemo nize z ustreznim številom presledkov.</field>
                     <next>
                       <block type="controls_forEach" id="31">
                         <field name="VAR">s</field>
@@ -559,7 +547,7 @@ dvanajst
       </block>
     </statement>
   </block>
-  <block type="procedures_callnoreturn" id="48" inline="true" x="10" y="385">
+  <block type="procedures_callnoreturn" id="48" inline="true" x="10" y="430">
     <mutation name="Izpisi">
       <arg name="t"></arg>
     </mutation>
@@ -600,14 +588,7 @@ dvanajst
     <comment pinned="false" h="80" w="160">Opiši to funkcijo...</comment>
     <statement name="STACK">
       <block type="text_comment" id="11">
-        <value name="TEXT">
-          <shadow type="text" id="12">
-            <field name="TEXT">abc</field>
-          </shadow>
-          <block type="text" id="13">
-            <field name="TEXT">Poiščimo dolžino najdaljšega niza v tabeli.</field>
-          </block>
-        </value>
+	    <field name="TEXT">Poiščimo dolžino najdaljšega niza v tabeli.</field>
         <next>
           <block type="variables_set" id="14">
             <field name="VAR">naj</field>
@@ -672,14 +653,7 @@ dvanajst
                 </statement>
                 <next>
                   <block type="text_comment" id="28">
-                    <value name="TEXT">
-                      <shadow type="text" id="29">
-                        <field name="TEXT">abc</field>
-                      </shadow>
-                      <block type="text" id="30">
-                        <field name="TEXT">Izpišemo nize z ustreznim številom presledkov.</field>
-                      </block>
-                    </value>
+				    <field name="TEXT">Izpišemo nize z ustreznim številom presledkov.</field>
                     <next>
                       <block type="controls_forEach" id="31">
                         <field name="VAR">s</field>
@@ -756,7 +730,7 @@ dvanajst
       </block>
     </statement>
   </block>
-  <block type="procedures_callnoreturn" id="47" inline="true" x="10" y="385">
+  <block type="procedures_callnoreturn" id="47" inline="true" x="10" y="430">
     <mutation name="Izpisi">
       <arg name="t"></arg>
     </mutation>
@@ -799,20 +773,20 @@ dvanajst
 				<ul class="pagination pagination-sm">
 					<li><a href="../1225/index.html" aria-label="Previous Unit"><span aria-hidden="true">&laquo;</span></a></li>
 					<li><a href="../1226/index10.html" aria-label="Previous Page"><span aria-hidden="true">&#x2039;</span></a></li>
-					<li><a href="../1226/index.html">72</a></li>
-					<li><a href="../1226/index1.html">73</a></li>
-					<li><a href="../1226/index2.html">74</a></li>
-					<li><a href="../1226/index3.html">75</a></li>
-					<li><a href="../1226/index4.html">76</a></li>
-					<li><a href="../1226/index5.html">77</a></li>
-					<li><a href="../1226/index6.html">78</a></li>
-					<li><a href="../1226/index7.html">79</a></li>
-					<li><a href="../1226/index8.html">80</a></li>
-					<li><a href="../1226/index9.html">81</a></li>
-					<li><a href="../1226/index10.html">82</a></li>
-					<li class="active"><a href="#">83</a></li>
-					<li><a href="../1226/index12.html">84</a></li>
-					<li><a href="../1226/index13.html">85</a></li>
+					<li><a href="../1226/index.html">73</a></li>
+					<li><a href="../1226/index1.html">74</a></li>
+					<li><a href="../1226/index2.html">75</a></li>
+					<li><a href="../1226/index3.html">76</a></li>
+					<li><a href="../1226/index4.html">77</a></li>
+					<li><a href="../1226/index5.html">78</a></li>
+					<li><a href="../1226/index6.html">79</a></li>
+					<li><a href="../1226/index7.html">80</a></li>
+					<li><a href="../1226/index8.html">81</a></li>
+					<li><a href="../1226/index9.html">82</a></li>
+					<li><a href="../1226/index10.html">83</a></li>
+					<li class="active"><a href="#">84</a></li>
+					<li><a href="../1226/index12.html">85</a></li>
+					<li><a href="../1226/index13.html">86</a></li>
 					<li><a href="../1226/index12.html" aria-label="Next Page"><span aria-hidden="true">&#x203A;</span></a></li>
 					<li><a href="../1901/index.html" aria-label="Next Unit"><span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
@@ -848,13 +822,16 @@ dvanajst
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index11.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -862,6 +839,19 @@ dvanajst
   });
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
+  };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button',
+      function() {CodeEditor.solve1(); CodeEditor.renderContent();})
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('solution'), CodeEditor.workspace);
   };
 </script>
 

@@ -14,6 +14,7 @@
 
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-toggle.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -145,7 +146,7 @@
 					</div>
 					<div class="modal-body">
 <pre>
-<img src="img/1222-04-3.svg" onerror="this.src='img/1222-04-3.png'">
+<img src="img/1222-04-3.svg">
 </pre>
 					</div>
 					<div class="modal-footer">
@@ -167,9 +168,9 @@
 
 <p align="justify">Naš program za izračun hitrosti ni najbolj prijazen. Če želimo izračunati povprečno hitrost za drugačne podatke, kot so trenutno navedeni v programu, moramo program spremeniti. Veliko bolje bi bilo, če bi program <b>povprašal</b> uporabnika po vhodnih podatkih:
 <pre>
-<img src="img/1222-04-1.svg" onerror="this.src='img/1222-04-1.png'">
+<img src="img/1222-04-1.svg">
 Koliko km si prevozil(-a)? <u>30</u>
-<img src="img/1222-04-2.svg" onerror="this.src='img/1222-04-2.png'">
+<img src="img/1222-04-2.svg">
 </pre>
 Izpis:
 <pre>
@@ -188,6 +189,7 @@ Izpis:
     <td class="tabmax" align="right">
       <button type="button" class="btn btn-primary"  id="runButton"><span class="fa fa-play"></span> Izvedi</button>
       <button type="button" class="btn btn-primary"  id="trashButton">Počisti</button>
+	  <input type="checkbox" id="theme" data-toggle="toggle" data-on="Temno" data-off="Svetlo">
     </td>
   </tr>
   <tr>
@@ -196,16 +198,16 @@ Izpis:
 </table>
 <table width="100%">
   <tr>
-    <td style="position:relative; height:420px;">
+    <td style="position:relative; height:450px;">
       <div id="content1_blocks" class="content"></div>
-      <pre id="content1_python" class="content"></pre>
+      <pre id="content1_python" class="content rin_light"></pre>
     </td>
   </tr>
 </table>
 <div style="margin-top:10px"><pre id="output"></pre></div>
 
 <xml id="toolbox" style="display: none">
-  <category name="{catMath}" colour="220">
+  <category name="{catMath}" categorystyle="math_category">
     <block type="math_number"></block>
     <block type="math_arithmetic">
       <value name="A">
@@ -244,7 +246,7 @@ Izpis:
       </value>
     </block>
   </category>
-  <category name="{catText}" colour="50">
+  <category name="{catText}" categorystyle="text_category">
     <block type="text"></block>
     <block type="text_join"></block>
     <block type="text_print">
@@ -263,7 +265,7 @@ Izpis:
     </block>
   </category>
   <sep></sep>
-  <category name="{catVariables}" colour="280" custom="VARIABLE"></category>
+  <category name="{catVariables}" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>
 
 <xml id="workspace" style="display: none">
@@ -361,7 +363,7 @@ Izpis:
       </block>
     </next>
   </block>
-  <block type="variables_set" id="30" x="10" y="155">
+  <block type="variables_set" id="30" x="10" y="170">
     <field name="VAR">razlikaUr</field>
     <comment pinned="false" h="80" w="160">izračunamo porabo časa v urah</comment>
     <value name="VALUE">
@@ -480,7 +482,7 @@ Izpis:
       </block>
     </next>
   </block>
-  <block type="variables_set" id="58" x="10" y="275">
+  <block type="variables_set" id="58" x="10" y="300">
     <field name="VAR">povprecnaHitrost</field>
     <comment pinned="false" h="80" w="160">izračunamo in izpišemo povprečno hitrost v km/h</comment>
     <value name="VALUE">
@@ -622,6 +624,7 @@ Jaka, letos praznuješ svoj 15. rojstni dan.
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-toggle.min.js"></script>
 
 	<!-- rPage: Highly responsive pagination for Bootstrap -->
 	<script src="../js/responsive-paginate.js"></script>
@@ -640,13 +643,16 @@ Jaka, letos praznuješ svoj 15. rojstni dan.
 	</script>
 
 <!-- Blockly -->
-<script src="../blockly/storage.js"></script>
+<script src="../blockly/local/storage.js"></script>
 <script src="../blockly/blockly_compressed.js"></script>
 <script src="../blockly/blocks_compressed.js"></script>
 <script src="../blockly/javascript_compressed.js"></script>
 <script src="../blockly/python_compressed.js"></script>
-<script src="../blockly/local/custom_blocks.js"></script>
-<script src="index4.js"></script>
+<script src="../blockly/local/blocks/custom_blocks.js"></script>
+<script src="../blockly/local/theme/rin_light.js"></script>
+<script src="../blockly/local/theme/rin_dark.js"></script>
+<script src="../blockly/local/theme.js"></script>
+<script src="../blockly/local/editor1.js"></script>
 <script>
   var elementID = "";
   $("#runButton").click(function() {
@@ -655,10 +661,22 @@ Jaka, letos praznuješ svoj 15. rojstni dan.
   window.alert = function(msg) {
     $(elementID).append(msg + "\n");
   };
+
+  /**
+   * Solve the task(s) by updating certain block(s).
+   */
+  CodeEditor.bindClick('solve1Button', function() {CodeEditor.solve1();});
+  CodeEditor.solve1 = function() {
+    $('#output').html(''); // Erase content of the output
+    CodeEditor.workspace.clear();
+    window.location.hash = '';
+    // Load workspace initial content
+    Blockly.Xml.domToWorkspace(document.getElementById('1222-04-3'), CodeEditor.workspace);
+  };
 </script>
 
 <!-- 1222-04-3 solution -->
-<xml xmlns="http://www.w3.org/1999/xhtml" id="1222-04-3" style="display:none"><block type="variables_set" id="=i7iHmJy{A+zn%]q$Vx`" x="8" y="8"><field name="VAR">ime</field><value name="VALUE"><block type="text_prompt_ext" id="Vzb,m^6.hjDFK#R//LTY"><mutation type="TEXT"></mutation><field name="TYPE">TEXT</field><value name="TEXT"><shadow type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="Y_SN=Z*lUJ]|qaf]4HVO"><field name="TEXT">Kako ti je ime?</field></block></value></block></value><next><block type="variables_set" id="Uq#Y#:WD@*cm]v%IWs)?"><field name="VAR">rojen</field><value name="VALUE"><block type="text_prompt_ext" id=":OS3X]~.pFC@F=Z|58wI"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="St.|z.NP#K6{#I#Pe~uK"><field name="TEXT">Vnesi svoje leto rojstva:</field></block></value></block></value><next><block type="variables_set" id="C?ChgU[CSxsJYN23?PXU"><field name="VAR">letos</field><value name="VALUE"><block type="text_prompt_ext" id="[cDpE=$Ctw/6U`kYSm[z"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="OpRBvy3FXK]vogFATKT!"><field name="TEXT">Katerega leta smo letos?</field></block></value></block></value></block></next></block></next></block><block type="text_print" id="yvJBTZ;~Si:O2q(E)7@+" x="8" y="112"><value name="TEXT"><shadow type="text" id="hXFp7BPV4q[*;YE_=!th"><field name="TEXT">abc</field></shadow><block type="text_join" id="x.L/;)VZ7O`jxnw$P[?w"><mutation items="4"></mutation><value name="ADD0"><block type="variables_get" id="SAF:UJuGzm5jZnvbh$Gz"><field name="VAR">ime</field></block></value><value name="ADD1"><block type="text" id="zCzB~C:Y9Nci)+-~cKPN"><field name="TEXT">, letos praznuješ svoj </field></block></value><value name="ADD2"><block type="math_arithmetic" id="*}LN=`o%K7Lw4[nWL|#a"><field name="OP">MINUS</field><value name="A"><shadow type="math_number" id="4htq%@+b2rS1X_+3?luk"><field name="NUM">1</field></shadow><block type="variables_get" id="[ZFP!=vL9#9$;}8+9!*@"><field name="VAR">letos</field></block></value><value name="B"><shadow type="math_number" id="=qC!^atVfoK28maK?7w%"><field name="NUM">1</field></shadow><block type="variables_get" id="d-ta~m*P}9}k{p/}njX*"><field name="VAR">rojen</field></block></value></block></value><value name="ADD3"><block type="text" id=")iIaH%jBp!-57?38@}_w"><field name="TEXT">. rojstni dan.</field></block></value></block></value></block></xml>
+<xml id="1222-04-3" style="display:none" xmlns="https://developers.google.com/blockly/xml"><variables><variable id="?},hdiDudw9ar^C9h!JU">ime</variable><variable id="omSjr?;V^:2a1LMI=ocH">rojen</variable><variable id="4c{*1~R}u[+!XYy}/oZq">letos</variable></variables><block type="variables_set" id="=i7iHmJy{A+zn%]q$Vx`" x="10" y="10"><field name="VAR" id="?},hdiDudw9ar^C9h!JU">ime</field><value name="VALUE"><block type="text_prompt_ext" id="Vzb,m^6.hjDFK#R//LTY"><mutation type="TEXT"></mutation><field name="TYPE">TEXT</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="Y_SN=Z*lUJ]|qaf]4HVO"><field name="TEXT">Kako ti je ime?</field></block></value></block></value><next><block type="variables_set" id="Uq#Y#:WD@*cm]v%IWs)?"><field name="VAR" id="omSjr?;V^:2a1LMI=ocH">rojen</field><value name="VALUE"><block type="text_prompt_ext" id=":OS3X]~.pFC@F=Z|58wI"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="St.|z.NP#K6{#I#Pe~uK"><field name="TEXT">Vnesi svoje leto rojstva:</field></block></value></block></value><next><block type="variables_set" id="C?ChgU[CSxsJYN23?PXU"><field name="VAR" id="4c{*1~R}u[+!XYy}/oZq">letos</field><value name="VALUE"><block type="text_prompt_ext" id="[cDpE=$Ctw/6U`kYSm[z"><mutation type="NUMBER"></mutation><field name="TYPE">NUMBER</field><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="#i`S+L63T|7Kge6j#c@S"><field name="TEXT">abc</field></shadow><block type="text" id="OpRBvy3FXK]vogFATKT!"><field name="TEXT">Katerega leta smo letos?</field></block></value></block></value></block></next></block></next></block><block type="text_print" id="yvJBTZ;~Si:O2q(E)7@+" x="10" y="130"><value name="TEXT"><shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="hXFp7BPV4q[*;YE_=!th"><field name="TEXT">abc</field></shadow><block type="text_join" id="x.L/;)VZ7O`jxnw$P[?w"><mutation items="4"></mutation><value name="ADD0"><block type="variables_get" id="SAF:UJuGzm5jZnvbh$Gz"><field name="VAR" id="?},hdiDudw9ar^C9h!JU">ime</field></block></value><value name="ADD1"><block type="text" id="zCzB~C:Y9Nci)+-~cKPN"><field name="TEXT">, letos praznuješ svoj </field></block></value><value name="ADD2"><block type="math_arithmetic" id="*}LN=`o%K7Lw4[nWL|#a"><field name="OP">MINUS</field><value name="A"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="4htq%@+b2rS1X_+3?luk"><field name="NUM">1</field></shadow><block type="variables_get" id="[ZFP!=vL9#9$;}8+9!*@"><field name="VAR" id="4c{*1~R}u[+!XYy}/oZq">letos</field></block></value><value name="B"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="=qC!^atVfoK28maK?7w%"><field name="NUM">1</field></shadow><block type="variables_get" id="d-ta~m*P}9}k{p/}njX*"><field name="VAR" id="omSjr?;V^:2a1LMI=ocH">rojen</field></block></value></block></value><value name="ADD3"><block type="text" id=")iIaH%jBp!-57?38@}_w"><field name="TEXT">. rojstni dan.</field></block></value></block></value></block></xml>
 
 
 <!-- CookieCuttr -->
