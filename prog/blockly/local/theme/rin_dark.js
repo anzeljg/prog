@@ -34,6 +34,9 @@ Blockly.Themes.rin_dark.defaultBlockStyles = {
   },
   "turtle_blocks": {
     "colourPrimary": "#f9bc41"
+  },
+  "music_blocks": {
+    "colourPrimary": "#33ad5c"
   }
 };
 
@@ -61,6 +64,9 @@ Blockly.Themes.rin_dark.categoryStyles = {
   },
   "turtle_category": {
     "colour": "#f9bc41"
+  },
+  "music_category": {
+    "colour": "#33ad5c"
   }
 };
 

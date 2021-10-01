@@ -1,5 +1,5 @@
-Blockly Q3 2020
-(tag/version 3.20200924.0)
-2020-09-24 22:41 GMT+2
-commit 8d5d2be0284a98f1a53423a5cb07d0a7e36a95c0
-https://github.com/google/blockly/tree/8d5d2be0284a98f1a53423a5cb07d0a7e36a95c0
+Blockly Q2 2021
+(tag/version 6.20210701.0)
+2021-07-01 17:57 GMT+2
+commit 64188ae27297b1ca23a3244cc987dfbfc6e98f34
+https://github.com/google/blockly/tree/64188ae27297b1ca23a3244cc987dfbfc6e98f34

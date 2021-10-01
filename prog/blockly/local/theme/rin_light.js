@@ -34,6 +34,9 @@ Blockly.Themes.rin_light.defaultBlockStyles = {
   },
   "turtle_blocks": {
     "colourPrimary": "#e57200" // HSV(30, 1, 0.9)
+  },
+  "music_blocks": {
+    "colourPrimary": "#009933" // HSV(140, 1, 0.6)
   }
 };
 
@@ -61,6 +64,9 @@ Blockly.Themes.rin_light.categoryStyles = {
   },
   "turtle_category": {
     "colour": "#e57200" // HSV(30, 1, 0.9)
+  },
+  "music_category": {
+    "colour": "#009933" // HSV(140, 1, 0.6)
   }
 };
 
