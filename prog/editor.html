@@ -124,7 +124,7 @@
 <table width="100%" height="550">
   <tr id="tabRow">
     <td id="content1_canvas" class="tabmin" rowspan="2" style="display:none;">
-	  <canvas id="mycanvas" style="background-color:#eee;border:1px solid #ccc;margin-right:10px;display:block;" width="400" height="550"></canvas>
+	  <div id="mycanvas" style="background-color:#eee;border:1px solid #ccc;margin-right:10px;display:block;width:400px;height:550px;"></div>
     </td>
     <td id="tab1_blocks" class="tabon">...</td>
     <td class="tabmin">&nbsp;</td>
@@ -587,52 +587,43 @@
 	</script>
 
 <!-- Skulpt and CodeMirror -->
-<script src="skulpt/skulpt.js"></script>
-<script src="skulpt/skulpt-stdlib.js"></script>
-<script src="skulpt/python.js"></script>
-<script>Sk.python3 = true;</script>
+<script src="js/skulpt/codemirrorepl.js"></script>
+<script src="js/skulpt/skulpt.min.js"></script>
+<script src="js/skulpt/skulpt-stdlib.js"></script>
+<script src="js/skulpt/python.js"></script>
 
 <script type="text/javascript">
-function outf(text) {
-  var mypre = document.getElementById("output");
-  mypre.innerHTML = mypre.innerHTML + text;
-}
+var output = $('#output');
+var outf = function (text) {
+	output.text(output.text() + text);
+};
+
 function builtinRead(x) {
-  if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-    throw "File not found: '" + x + "'";
-  return Sk.builtinFiles["files"][x];
+	if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+		throw "File not found: '" + x + "'";
+	return Sk.builtinFiles["files"][x];
 }
+
 function runit() {
-    var prog = Blockly.Python.workspaceToCode(CodeEditor.workspace);
-    var mypre = document.getElementById("output");
-    mypre.innerHTML = '';
-    Sk.canvas = "mycanvas";
-    Sk.pre = "output";
-    Sk.configure({output:outf, read:builtinRead});
-    try {
-        eval(Sk.importMainWithBody("<stdin>",false,prog));
-    }
-    catch(e) {
-        alert(e.toString())
-    }
+	var prog = Blockly.Python.workspaceToCode(CodeEditor.workspace);
+	Sk.configure({output: outf, read: builtinRead, __future__: Sk.python3});
+    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+	Sk.TurtleGraphics.width  = 400;
+	Sk.TurtleGraphics.height = 550;
+	$('#mycanvas').show();
+	try {
+		Sk.misceval.asyncToPromise(function() {
+			return Sk.importMainWithBody("<stdin>", false, prog, true);
+		});
+	} catch(e) {
+		outf(e.toString() + "\n")
+	}
+
 }
+
 function clearit() {
-    var mypre = document.getElementById("output");
-    mypre.innerHTML = '';
-    // Clear canvas
-    var c = document.getElementById("mycanvas");
-    var ctx = c.getContext("2d");
-    // Use the identity matrix while clearing the canvas
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, 400, 550);
-    // Just to be safe also do that
-    ctx.fillStyle = "#eeeeee";
-    ctx.fillRect(0, 0, 400, 550);
-    // Clear Blockly workspace
-    CodeEditor.workspace.clear();
-    window.location.hash = '';
-    // Load Blockly workspace initial content
-    Blockly.Xml.domToWorkspace(document.getElementById('workspace'), CodeEditor.workspace);
+	$('#output').text('');
+	$('#mycanvas').hide();
 }
 </script>
 
